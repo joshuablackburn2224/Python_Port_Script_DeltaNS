@@ -27,6 +27,11 @@ with open(fname, 'r', encoding =None) as file:
       vlanNameFinal = vlanNameList2[0]
       print(vlanNameFinal)
       print(vlanNameStringFromList)
-      print (portNumbers)
+      for i in range (len(portNumbers)):
+        portNumberString = portNumbers[i]
+        switchNumber = int(portNumberString[0])
+        portNumber = int(portNumberString[2])
+        print(switchNumber, portNumber)
+        print(portNumberString)
   
 #    else if()
