@@ -1,8 +1,11 @@
 import re
-fname = "C:/Users/joshu/Documents/Delta Internship/Port Script/Special Ports/sample.log"
+from pathlib import Path
+
+#grabs the file name from parent directory of script using path so absolute path is not used. Will probably have to be changed to accept inputs from user, file names will be different in the future.
+path = Path(__file__).parent / "sample.log"
 # 10.38.254.2Stout_MC_10.38.254.2
 
-with open(fname, 'r', encoding =None) as file:
+with open(path, 'r', encoding =None) as file:
   #substrings to help search for unique identifier for device ID
   substr1 = "Slot-1"
   substr2 = ".1"
