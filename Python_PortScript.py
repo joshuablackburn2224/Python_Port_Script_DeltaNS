@@ -1,5 +1,5 @@
 import re
-fname = "C:/Users/joshu/Documents/Delta Internship/Port Script/Special Ports/sample.log"
+fname = "C:/Users/joshu/Documents/Delta Internship/Port Script/Python_Port_Script/sample.log"
 # 10.38.254.2Stout_MC_10.38.254.2
 
 with open(fname, 'r', encoding =None) as file:
@@ -20,15 +20,47 @@ with open(fname, 'r', encoding =None) as file:
       print(deviceName)
     #logic for identifying vlan names
     if substring3 in line and substring4 in line:
+      #split string at configure vlan and convert back from list to string
       vlanNameLineList = line.rsplit(substring3)
       vlanNameLineList.pop(0)
       vlanNameStringFromList = vlanNameLineList[0]
+      #create portnumbers list and discover tag with regex
       portNumbersList = re.findall(("\d:\d*-?\d*\d"), vlanNameStringFromList)
+      tagFlag = True
+      if "untagged" in vlanNameStringFromList:
+        tagFlag = False
+      tag = ""
+      #isolate vlan name, save as vlanNameFinal by converting back from list to string
       vlanNameOnlyList = vlanNameStringFromList.rsplit(substring4)
       vlanNameFinal = vlanNameOnlyList[0]
-      print(vlanNameFinal)
+      #isolate tag, save as tagFinal by converting back from list to String
+      #begin iterating through portNumbersList
       for i in range (len(portNumbersList)):
+        #create flag, set to False initially, True if range of port Numbers present
+        flag = False
+        #convert portNumbersList to String for Modifications
         portNumberString = portNumbersList[i]
-        print(portNumberString)
+        if "-" in portNumberString:
+          flag = True
+        #create list of isolated integers from String
+        portNumbersModifiableList = re.findall("\d*",portNumberString)
+        #remove all blank spaces from list
+        while "" in portNumbersModifiableList:
+         portNumbersModifiableList.remove("")
+        #isolate switch number
+        switchNumber = int(portNumbersModifiableList[0])
+        #logic for printing switch and port numbers when a range is and is not present
+        if tagFlag == True:
+          tag = "tagged"
+        else:
+          tag = "untagged"
+        if flag != True:
+          portNumber = int(portNumbersModifiableList[1])
+          print(vlanNameFinal,switchNumber, portNumber, tag)
+        else:
+          portNumberStart = int(portNumbersModifiableList[1])
+          portNumberEnd = int(portNumbersModifiableList[2])
+          for i in range (portNumberStart, portNumberEnd):
+            print(vlanNameFinal, switchNumber, i, tag)
   
 #    else if()
