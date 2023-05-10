@@ -6,13 +6,7 @@ import csv
 path = Path(__file__).parent / "10.38.254.21Stout_IC1_Config.log"
 # 10.38.254.2Stout_MC_10.38.254.2
 
-#logic for creating csvFile and initating writing
-csvPath = Path(__file__).parent / "output.csv"
-outfile = open(csvPath, "w")
 
-writer = csv.writer(outfile)
-header = ['device', 'vlan name', 'switch number', 'port number', 'tag']
-writer.writerow(header)
 
 with open(path, 'r', encoding =None) as file:
   #substrings to help search for unique identifier for device ID
@@ -30,9 +24,20 @@ with open(path, 'r', encoding =None) as file:
       findEnd = re.search(substr2, line)
       Span1 = findEnd.span()
       index2 = Span1[0]
-      print(index2)
       deviceName = line[index1 + len(substr1) + 1: index2]
-      print(deviceName)
+      #logic for creating csvFile and initating writing
+    fileName = deviceName + "SpecialPorts.csv"
+
+file.close()
+   
+csvPath = Path(__file__).parent / fileName
+outfile = open(csvPath, "w")
+writer = csv.writer(outfile)
+header = ['device', 'vlan name', 'switch number', 'port number', 'tag']
+writer.writerow(header)
+
+with open(path, 'r', encoding =None) as file:
+  for line in file:
     #logic for identifying vlan names
     if substring3 in line and substring4 in line:
       #split string at configure vlan and convert back from list to string
