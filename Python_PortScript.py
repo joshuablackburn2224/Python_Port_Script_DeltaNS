@@ -1,3 +1,5 @@
+# github https://github.com/joshuablackburn2224/Python_Port_Script_DeltaNS/settings
+# authors Joshua Blackburn , Kevin Shin , Sean Rice
 import re
 from pathlib import Path
 import csv
