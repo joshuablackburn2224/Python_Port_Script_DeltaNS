@@ -3,21 +3,21 @@ from pathlib import Path
 import csv
 
 #grabs the file name from parent directory of script using path so absolute path is not used. Will probably have to be changed to accept inputs from user, file names will be different in the future.
-path = Path(__file__).parent / "10.38.254.41Stout_IC2_10.38.254.41.log"
+path = Path(__file__).parent / "10.38.254.21Stout_IC1_Config.log"
 # 10.38.254.2Stout_MC_10.38.254.2
 
+#logic for creating csvFile and initating writing
 csvPath = Path(__file__).parent / "output.csv"
 outfile = open(csvPath, "w")
 
 writer = csv.writer(outfile)
-
-header = ['device', 'vlan name', 'switch number', 'port numer', 'tag']
+header = ['device', 'vlan name', 'switch number', 'port number', 'tag']
 writer.writerow(header)
 
 with open(path, 'r', encoding =None) as file:
   #substrings to help search for unique identifier for device ID
   substr1 = "Slot-1"
-  substr2 = ".1"
+  substr2 = "\.\d"
   deviceName = ""
   #substrings to help search for unique identifier for vlan names
   substring3 = "configure vlan"
@@ -27,7 +27,10 @@ with open(path, 'r', encoding =None) as file:
   #logic for finding device name
     if substr1 in line:
       index1 = line.find(substr1)
-      index2 = line.find(substr2)
+      findEnd = re.search(substr2, line)
+      Span1 = findEnd.span()
+      index2 = Span1[0]
+      print(index2)
       deviceName = line[index1 + len(substr1) + 1: index2]
       print(deviceName)
     #logic for identifying vlan names
