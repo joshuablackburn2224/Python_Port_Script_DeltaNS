@@ -3,7 +3,7 @@ fname = "C:/Users/joshu/Documents/Delta Internship/Port Script/Special Ports/sam
 # 10.38.254.2Stout_MC_10.38.254.2
 
 with open(fname, 'r', encoding =None) as file:
-  #search for unique identifier for device ID
+  #search for unique identifier for device ID, which is between Slot-1 and .1, the input lines
   substr1 = "Slot-1"
   substr2 = ".1"
   deviceName = ""
