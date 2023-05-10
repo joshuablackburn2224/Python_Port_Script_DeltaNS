@@ -7,15 +7,12 @@ path = Path(__file__).parent / "10.38.254.21Stout_IC1_Config.log"
 # 10.38.254.2Stout_MC_10.38.254.2
 
 
-
+#initial opening of file
 with open(path, 'r', encoding =None) as file:
   #substrings to help search for unique identifier for device ID
   substr1 = "Slot-1"
   substr2 = "\.\d"
   deviceName = ""
-  #substrings to help search for unique identifier for vlan names
-  substring3 = "configure vlan"
-  substring4 = " add ports"
   #driver loop
   for line in file:
   #logic for finding device name
@@ -25,19 +22,24 @@ with open(path, 'r', encoding =None) as file:
       Span1 = findEnd.span()
       index2 = Span1[0]
       deviceName = line[index1 + len(substr1) + 1: index2]
-      #logic for creating csvFile and initating writing
-    fileName = deviceName + "SpecialPorts.csv"
 
+#close file after retrieving device ID
 file.close()
-   
+
+#logic for creating and writing to csv file with unique name
+fileName = deviceName + "SpecialPorts.csv"
 csvPath = Path(__file__).parent / fileName
 outfile = open(csvPath, "w")
 writer = csv.writer(outfile)
 header = ['device', 'vlan name', 'switch number', 'port number', 'tag']
 writer.writerow(header)
 
+#open file second time to iterate through and find all vlan names and ports
 with open(path, 'r', encoding =None) as file:
   for line in file:
+     #substrings to help search for unique identifier for vlan names
+    substring3 = "configure vlan"
+    substring4 = " add ports"
     #logic for identifying vlan names
     if substring3 in line and substring4 in line:
       #split string at configure vlan and convert back from list to string
@@ -70,15 +72,15 @@ with open(path, 'r', encoding =None) as file:
         #isolate switch number
         switchNumber = int(portNumbersModifiableList[0])
         switchNumberString = portNumbersModifiableList[0]
-        #logic for printing switch and port numbers when a range is and is not present
+        #logic for setting tagged or untagged in display
         if tagFlag == True:
           tag = "tagged"
         else:
           tag = "untagged"
+          #logic for writing switch and port numbers when a range is and is not present
         if flag != True:
           portNumber = int(portNumbersModifiableList[1])
           portNumberString = portNumbersModifiableList[1]
-          print(vlanNameFinal,switchNumber, portNumber, tag)
           writeableSwitchPortNumber = switchNumberString + ":" + portNumberString
           newRow = []
           newRow = [deviceName, vlanNameFinal, writeableSwitchPortNumber, tag]
@@ -87,7 +89,6 @@ with open(path, 'r', encoding =None) as file:
           portNumberStart = int(portNumbersModifiableList[1])
           portNumberEnd = int(portNumbersModifiableList[2])
           for i in range (portNumberStart, portNumberEnd + 1):
-            print(vlanNameFinal, switchNumber, i, tag)
             newRow = []
             writeableSwitchPortNumber = switchNumberString + ":" + str(i)
             newRow = [deviceName, vlanNameFinal, writeableSwitchPortNumber, tag]
