@@ -5,7 +5,7 @@ from pathlib import Path
 import csv
 
 #grabs the file name from parent directory of script using path so absolute path is not used. Will probably have to be changed to accept inputs from user, file names will be different in the future.
-path = Path(__file__).parent / "10.38.254.21Stout_IC1_Config.log"
+path = Path(__file__).parent / "sample.log"
 # 10.38.254.2Stout_MC_10.38.254.2
 
 
