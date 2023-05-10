@@ -4,7 +4,6 @@ import csv
 
 #grabs the file name from parent directory of script using path so absolute path is not used. Will probably have to be changed to accept inputs from user, file names will be different in the future.
 path = Path(__file__).parent / "10.38.254.41Stout_IC2_10.38.254.41.log"
-path2 = path = Path(__file__).parent / "portNumbers.csv"
 # 10.38.254.2Stout_MC_10.38.254.2
 
 csvPath = Path(__file__).parent / "output.csv"
@@ -62,6 +61,7 @@ with open(path, 'r', encoding =None) as file:
          portNumbersModifiableList.remove("")
         #isolate switch number
         switchNumber = int(portNumbersModifiableList[0])
+        switchNumberString = portNumbersModifiableList[0]
         #logic for printing switch and port numbers when a range is and is not present
         if tagFlag == True:
           tag = "tagged"
@@ -69,9 +69,11 @@ with open(path, 'r', encoding =None) as file:
           tag = "untagged"
         if flag != True:
           portNumber = int(portNumbersModifiableList[1])
+          portNumberString = portNumbersModifiableList[1]
           print(vlanNameFinal,switchNumber, portNumber, tag)
+          writeableSwitchPortNumber = switchNumberString + ":" + portNumberString
           newRow = []
-          newRow = [deviceName, vlanNameFinal, switchNumber, portNumber, tag]
+          newRow = [deviceName, vlanNameFinal, writeableSwitchPortNumber, tag]
           writer.writerow(newRow)
         else:
           portNumberStart = int(portNumbersModifiableList[1])
@@ -79,7 +81,8 @@ with open(path, 'r', encoding =None) as file:
           for i in range (portNumberStart, portNumberEnd + 1):
             print(vlanNameFinal, switchNumber, i, tag)
             newRow = []
-            newRow = [deviceName, vlanNameFinal, switchNumber, i, tag]
+            writeableSwitchPortNumber = switchNumberString + ":" + str(i)
+            newRow = [deviceName, vlanNameFinal, writeableSwitchPortNumber, tag]
             writer.writerow(newRow)
 
 outfile.close()
