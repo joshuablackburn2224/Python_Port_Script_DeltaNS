@@ -22,8 +22,11 @@ with open(fname, 'r', encoding =None) as file:
       vlanName = line.rsplit(substring3)
       vlanName.pop(0)
       vlanNameStringFromList = vlanName[0]
-      vlanName2 = vlanNameStringFromList.rsplit(substring4)
-      vlanNameFinal = vlanName2[0]
+      portNumbers = re.findall(("\d:\d*-?\d*\d"), vlanNameStringFromList)
+      vlanNameList2 = vlanNameStringFromList.rsplit(substring4)
+      vlanNameFinal = vlanNameList2[0]
       print(vlanNameFinal)
+      print(vlanNameStringFromList)
+      print (portNumbers)
   
 #    else if()
