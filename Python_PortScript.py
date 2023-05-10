@@ -1,10 +1,13 @@
 import re
 from pathlib import Path
+import csv
 
 #grabs the file name from parent directory of script using path so absolute path is not used. Will probably have to be changed to accept inputs from user, file names will be different in the future.
-path = Path(__file__).parent / "sample.log"
+path = Path(__file__).parent / "10.38.254.41Stout_IC2_10.38.254.41.log"
+path2 = path = Path(__file__).parent / "portNumbers.csv"
 # 10.38.254.2Stout_MC_10.38.254.2
-
+finalFile = open(path2, 'w')
+writer = csv.writer(finalFile)
 with open(path, 'r', encoding =None) as file:
   #substrings to help search for unique identifier for device ID
   substr1 = "Slot-1"
@@ -60,10 +63,16 @@ with open(path, 'r', encoding =None) as file:
         if flag != True:
           portNumber = int(portNumbersModifiableList[1])
           print(vlanNameFinal,switchNumber, portNumber, tag)
+          data1 = [vlanNameFinal, switchNumber, portNumber, tag]
+          writer.writerow(data1)
         else:
           portNumberStart = int(portNumbersModifiableList[1])
           portNumberEnd = int(portNumbersModifiableList[2])
-          for i in range (portNumberStart, portNumberEnd):
+          for i in range (portNumberStart, portNumberEnd + 1):
             print(vlanNameFinal, switchNumber, i, tag)
+            data2 = [vlanNameFinal, switchNumber, i, tag]
+            writer.writerow(data2)
+
+finalFile.close()
   
 #    else if()
