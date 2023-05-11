@@ -39,7 +39,22 @@ with open(path, 'r', encoding =None) as file:
       splitLine = line.rsplit(substring1)
       almostDeviceName = splitLine[1].strip()
       deviceName = almostDeviceName.strip('\"')
-      print (deviceName)
+  if len(deviceName) > 1:
+    print(deviceName)
+  else:
+    #substrings to help search for unique identifier for device ID
+    substr1 = "Slot-"
+    substr2 = "\.\d"
+    deviceName = ""
+    #driver loop
+    for line in file:
+    #logic for finding device name
+     if substr1 in line:
+       index1 = line.find(substr1)
+       findEnd = re.search(substr2, line)
+       Span1 = findEnd.span()
+       index2 = Span1[0]
+       deviceName = line[index1 + len(substr1) + 1: index2]
 
 #close file after retrieving device ID
 file.close()
