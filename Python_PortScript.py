@@ -30,18 +30,16 @@ else:
 #initial opening of file
 with open(path, 'r', encoding =None) as file:
   #substrings to help search for unique identifier for device ID
-  substr1 = "Slot-1"
-  substr2 = "\.\d"
+  substring1 = "sysName"
   deviceName = ""
   #driver loop
   for line in file:
   #logic for finding device name
-    if substr1 in line:
-      index1 = line.find(substr1)
-      findEnd = re.search(substr2, line)
-      Span1 = findEnd.span()
-      index2 = Span1[0]
-      deviceName = line[index1 + len(substr1) + 1: index2]
+    if substring1 in line:
+      splitLine = line.rsplit(substring1)
+      almostDeviceName = splitLine[1].strip()
+      deviceName = almostDeviceName.strip('\"')
+      print (deviceName)
 
 #close file after retrieving device ID
 file.close()
@@ -51,7 +49,7 @@ fileName = deviceName + "_SpecialPorts.csv"
 csvPath = Path(__file__).parent / fileName
 outfile = open(csvPath, "w")
 writer = csv.writer(outfile)
-header = ['device', 'vlan name', 'switch number', 'port number', 'tag']
+header = ['device', 'vlan name', 'switch:port number', 'tag']
 writer.writerow(header)
 
 #open file second time to iterate through and find all vlan names and ports
