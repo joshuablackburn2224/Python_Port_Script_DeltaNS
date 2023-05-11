@@ -1,0 +1,945 @@
+﻿
+telnet session telnet0 on /dev/ptyb0
+
+*****************************************************************************
+**                              Warning Notice                             **
+** This system is restricted solely to Dearborn Public Schools authorized  **
+** users for legitimate school purposes only as defined in the Dearborn    **
+** Public Schools Acceptable Use Policy.  The actual or attempted          **
+** unauthorized access, use, or modification of this system is strictly    **
+** prohibited by Dearborn Public Schools.  Unauthorized users are subject  **
+** to school disciplinary proceedings and/or criminal and civil penalties  **
+** under state, federal, or other applicable domestic and foreign laws.    **
+** The use of this system may be monitored and recorded for administrative **
+** and security reasons.  Anyone accessing this system expressly consents  **
+** to such monitoring and is advised that if monitoring reveals possible   **
+** evidence of criminal activity, Dearborn Public Schools may provide the  **
+** evidence of such activity to law enforcement officials.  All users must **
+** comply with Dearborn Public Schools Acceptable Use Policy regarding the **
+** protection of Dearborn Public Schools Information assets.               **
+** Contact Information:                                                    **
+**                      Dearborn Public School HelpDesk,                   **
+**                  18700 Audette Dearborn, MI  48124-4295                 **
+**                              (313) 730-0319                             **
+**      ITDesk@dearborn.k12.mi.us      http://www.dearbornschools.org      **
+**                                                                         **
+*****************************************************************************
+
+login: Davidc
+password: 
+
+ExtremeXOS
+Copyright (C) 1996-2016 Extreme Networks. All rights reserved.
+This product is protected by one or more US patents listed at http://www.extremenetworks.com/patents along with their foreign counterparts.
+==============================================================================
+
+Press the <tab> or '?' key at any time for completions.
+Remember to save your configuration changes.
+
+
+Slot-1 IO038SW1-IC1.1 # dis clipaging 
+Slot-1 IO038SW1-IC1.2 # sho configuration 
+#
+# Module nodemgr configuration.
+#
+
+#
+# Module devmgr configuration.
+#
+configure snmp sysName "IO038SW1-IC1"
+configure snmp sysLocation "038 Stout IC1"
+configure snmp sysContact "Help Desk"
+configure timezone name EST -300 autodst name EDT 60 begins every second sunday march at 2 0 ends every first sunday november at 2 0
+configure slot 1 module X460-48p
+configure sys-recovery-level slot 1 reset
+configure slot 2 module X440-48p
+configure sys-recovery-level slot 2 reset
+
+#
+# Module vlan configuration.
+#
+configure vlan default delete ports all
+configure vr VR-Default delete ports 1:1-58,2:1-48
+configure vr VR-Default add ports 1:1-58,2:1-48
+configure vlan default delete ports 1:1-58,2:1-48
+create qosprofile "QP5"
+create vlan "Administration1"
+configure vlan Administration1 tag 115
+create vlan "Chromebook"
+configure vlan Chromebook tag 176
+create vlan "guestwireless"
+configure vlan guestwireless tag 134
+create vlan "Kronos"
+configure vlan Kronos tag 114
+create vlan "Lab1"
+configure vlan Lab1 tag 129
+create vlan "Lab2"
+configure vlan Lab2 tag 130
+create vlan "MediaCenter1"
+configure vlan MediaCenter1 tag 117
+create vlan "NetMgmt"
+configure vlan NetMgmt tag 5
+create vlan "No_Loop"
+configure vlan No_Loop tag 666
+create vlan "Security"
+configure vlan Security tag 106
+create vlan "staffwireless"
+configure vlan staffwireless tag 133
+create vlan "StaffWirelessDPI"
+configure vlan StaffWirelessDPI tag 136
+create vlan "Streaming"
+configure vlan Streaming tag 119
+create vlan "Students1"
+configure vlan Students1 tag 125
+create vlan "Students2"
+configure vlan Students2 tag 126
+create vlan "studentwireless"
+configure vlan studentwireless tag 135
+create vlan "StudentWirelessDPI"
+configure vlan StudentWirelessDPI tag 137
+create vlan "Video1"
+configure vlan Video1 tag 105
+create vlan "Voice2"
+configure vlan Voice2 tag 102
+enable diffserv examination port 1:1
+disable dot1p examination port 1:1
+enable diffserv examination port 1:2
+disable dot1p examination port 1:2
+enable diffserv examination port 1:3
+disable dot1p examination port 1:3
+enable diffserv examination port 1:4
+disable dot1p examination port 1:4
+enable diffserv examination port 1:5
+disable dot1p examination port 1:5
+enable diffserv examination port 1:6
+disable dot1p examination port 1:6
+enable diffserv examination port 1:7
+disable dot1p examination port 1:7
+enable diffserv examination port 1:8
+disable dot1p examination port 1:8
+enable diffserv examination port 1:9
+disable dot1p examination port 1:9
+enable diffserv examination port 1:10
+disable dot1p examination port 1:10
+enable diffserv examination port 1:11
+disable dot1p examination port 1:11
+enable diffserv examination port 1:12
+disable dot1p examination port 1:12
+enable diffserv examination port 1:13
+disable dot1p examination port 1:13
+enable diffserv examination port 1:14
+disable dot1p examination port 1:14
+enable diffserv examination port 1:15
+disable dot1p examination port 1:15
+enable diffserv examination port 1:16
+disable dot1p examination port 1:16
+enable diffserv examination port 1:17
+disable dot1p examination port 1:17
+enable diffserv examination port 1:18
+disable dot1p examination port 1:18
+enable diffserv examination port 1:19
+disable dot1p examination port 1:19
+enable diffserv examination port 1:20
+disable dot1p examination port 1:20
+enable diffserv examination port 1:21
+disable dot1p examination port 1:21
+enable diffserv examination port 1:22
+disable dot1p examination port 1:22
+enable diffserv examination port 1:23
+disable dot1p examination port 1:23
+enable diffserv examination port 1:24
+disable dot1p examination port 1:24
+enable diffserv examination port 1:25
+disable dot1p examination port 1:25
+enable diffserv examination port 1:26
+disable dot1p examination port 1:26
+enable diffserv examination port 1:27
+disable dot1p examination port 1:27
+enable diffserv examination port 1:28
+disable dot1p examination port 1:28
+enable diffserv examination port 1:29
+disable dot1p examination port 1:29
+enable diffserv examination port 1:30
+disable dot1p examination port 1:30
+enable diffserv examination port 1:31
+disable dot1p examination port 1:31
+enable diffserv examination port 1:32
+disable dot1p examination port 1:32
+enable diffserv examination port 1:33
+disable dot1p examination port 1:33
+enable diffserv examination port 1:34
+disable dot1p examination port 1:34
+enable diffserv examination port 1:35
+disable dot1p examination port 1:35
+enable diffserv examination port 1:36
+disable dot1p examination port 1:36
+enable diffserv examination port 1:37
+disable dot1p examination port 1:37
+enable diffserv examination port 1:38
+disable dot1p examination port 1:38
+enable diffserv examination port 1:39
+disable dot1p examination port 1:39
+enable diffserv examination port 1:40
+disable dot1p examination port 1:40
+enable diffserv examination port 1:41
+disable dot1p examination port 1:41
+enable diffserv examination port 1:42
+disable dot1p examination port 1:42
+enable diffserv examination port 1:43
+disable dot1p examination port 1:43
+enable diffserv examination port 1:44
+disable dot1p examination port 1:44
+enable diffserv examination port 1:45
+disable dot1p examination port 1:45
+enable diffserv examination port 1:46
+disable dot1p examination port 1:46
+enable diffserv examination port 1:47
+disable dot1p examination port 1:47
+enable diffserv examination port 1:48
+disable dot1p examination port 1:48
+enable diffserv examination port 1:49
+disable dot1p examination port 1:49
+enable diffserv examination port 1:50
+disable dot1p examination port 1:50
+enable diffserv examination port 1:51
+disable dot1p examination port 1:51
+enable diffserv examination port 1:52
+disable dot1p examination port 1:52
+enable diffserv examination port 1:53
+disable dot1p examination port 1:53
+configure ports 1:53 auto off speed 10000 duplex full 
+enable diffserv examination port 1:54
+disable dot1p examination port 1:54
+configure ports 1:54 auto off speed 1000 duplex full 
+enable diffserv examination port 1:55
+disable dot1p examination port 1:55
+configure ports 1:55 auto off speed 10000 duplex full 
+enable diffserv examination port 1:56
+disable dot1p examination port 1:56
+configure ports 1:56 auto off speed 10000 duplex full 
+enable diffserv examination port 1:57
+disable dot1p examination port 1:57
+configure ports 1:57 auto off speed 10000 duplex full 
+enable diffserv examination port 1:58
+disable dot1p examination port 1:58
+configure ports 1:58 auto off speed 10000 duplex full 
+enable diffserv examination port 2:1
+disable dot1p examination port 2:1
+enable diffserv examination port 2:2
+disable dot1p examination port 2:2
+enable diffserv examination port 2:3
+disable dot1p examination port 2:3
+enable diffserv examination port 2:4
+disable dot1p examination port 2:4
+enable diffserv examination port 2:5
+disable dot1p examination port 2:5
+enable diffserv examination port 2:6
+disable dot1p examination port 2:6
+enable diffserv examination port 2:7
+disable dot1p examination port 2:7
+enable diffserv examination port 2:8
+disable dot1p examination port 2:8
+enable diffserv examination port 2:9
+disable dot1p examination port 2:9
+enable diffserv examination port 2:10
+disable dot1p examination port 2:10
+enable diffserv examination port 2:11
+disable dot1p examination port 2:11
+enable diffserv examination port 2:12
+disable dot1p examination port 2:12
+enable diffserv examination port 2:13
+disable dot1p examination port 2:13
+enable diffserv examination port 2:14
+disable dot1p examination port 2:14
+enable diffserv examination port 2:15
+disable dot1p examination port 2:15
+enable diffserv examination port 2:16
+disable dot1p examination port 2:16
+enable diffserv examination port 2:17
+disable dot1p examination port 2:17
+enable diffserv examination port 2:18
+disable dot1p examination port 2:18
+enable diffserv examination port 2:19
+disable dot1p examination port 2:19
+enable diffserv examination port 2:20
+disable dot1p examination port 2:20
+enable diffserv examination port 2:21
+disable dot1p examination port 2:21
+enable diffserv examination port 2:22
+disable dot1p examination port 2:22
+enable diffserv examination port 2:23
+disable dot1p examination port 2:23
+enable diffserv examination port 2:24
+disable dot1p examination port 2:24
+enable diffserv examination port 2:25
+disable dot1p examination port 2:25
+enable diffserv examination port 2:26
+disable dot1p examination port 2:26
+enable diffserv examination port 2:27
+disable dot1p examination port 2:27
+enable diffserv examination port 2:28
+disable dot1p examination port 2:28
+enable diffserv examination port 2:29
+disable dot1p examination port 2:29
+enable diffserv examination port 2:30
+disable dot1p examination port 2:30
+enable diffserv examination port 2:31
+disable dot1p examination port 2:31
+enable diffserv examination port 2:32
+disable dot1p examination port 2:32
+enable diffserv examination port 2:33
+disable dot1p examination port 2:33
+enable diffserv examination port 2:34
+disable dot1p examination port 2:34
+enable diffserv examination port 2:35
+disable dot1p examination port 2:35
+enable diffserv examination port 2:36
+disable dot1p examination port 2:36
+enable diffserv examination port 2:37
+disable dot1p examination port 2:37
+enable diffserv examination port 2:38
+disable dot1p examination port 2:38
+enable diffserv examination port 2:39
+disable dot1p examination port 2:39
+enable diffserv examination port 2:40
+disable dot1p examination port 2:40
+enable diffserv examination port 2:41
+disable dot1p examination port 2:41
+enable diffserv examination port 2:42
+disable dot1p examination port 2:42
+enable diffserv examination port 2:43
+disable dot1p examination port 2:43
+enable diffserv examination port 2:44
+disable dot1p examination port 2:44
+enable diffserv examination port 2:45
+disable dot1p examination port 2:45
+enable diffserv examination port 2:46
+disable dot1p examination port 2:46
+enable diffserv examination port 2:47
+disable dot1p examination port 2:47
+enable diffserv examination port 2:48
+disable dot1p examination port 2:48
+configure vlan Administration1 add ports 1:54 tagged  
+configure vlan Chromebook add ports 1:54,2:1-3,2:5,2:7,2:9 tagged  
+configure vlan guestwireless add ports 1:54,2:1-3,2:5,2:7,2:9 tagged  
+configure vlan Kronos add ports 1:54 tagged  
+configure vlan Lab1 add ports 1:54 tagged  
+configure vlan Lab2 add ports 1:54 tagged  
+configure vlan MediaCenter1 add ports 1:54 tagged  
+configure vlan NetMgmt add ports 1:54 tagged  
+configure vlan NetMgmt add ports 2:1-3,2:5,2:7,2:9,2:48 untagged  
+configure vlan No_Loop add ports 1:1-48,1:54,2:1-48 tagged  
+configure vlan Security add ports 1:54 tagged  
+configure vlan Security add ports 1:46-47 untagged  
+configure vlan staffwireless add ports 1:54,2:1-3,2:5,2:7,2:9 tagged  
+configure vlan StaffWirelessDPI add ports 1:54,2:1-3,2:5,2:7,2:9 tagged  
+configure vlan Streaming add ports 1:54,2:1-3,2:5,2:7,2:9 tagged  
+configure vlan Students1 add ports 1:54 tagged  
+configure vlan Students1 add ports 1:2-30,1:33,1:35,1:41,1:48,2:4,2:6,2:8,2:10-47 untagged  
+configure vlan Students2 add ports 1:54 tagged  
+configure vlan studentwireless add ports 1:54,2:1-3,2:5,2:7,2:9 tagged  
+configure vlan StudentWirelessDPI add ports 1:54,2:1-3,2:5,2:7,2:9 tagged  
+configure vlan Video1 add ports 1:54 tagged  
+configure vlan Video1 add ports 1:1,1:31-32,1:34,1:36-40,1:42-45 untagged  
+configure vlan Voice2 add ports 1:2-30,1:33,1:35,1:41,1:48,1:54,2:4,2:6,2:8,2:10-47 tagged  
+
+
+device_id	vlan_name	x:y	tagged/untagged
+IOSIOSIS	Video2	1:2	tagged				
+IOSIOSIS	Video2	1:3	tagged
+IOSISOIO	Video2	1:30	tagged
+IOISIOSS	Video2	I:33	tagged
+
+
+configure vlan Mgmt ipaddress 192.168.0.1 255.255.255.0
+configure vlan NetMgmt ipaddress 10.38.254.21 255.255.254.0
+configure qosscheduler weighted-round-robin
+configure qosprofile QP5 maxbuffer 100 weight 10
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:1
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:2
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:3
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:4
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:5
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:6
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:7
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:8
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:9
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:10
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:11
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:12
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:13
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:14
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:15
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:16
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:17
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:18
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:19
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:20
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:21
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:22
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:23
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:24
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:25
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:26
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:27
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:28
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:29
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:30
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:31
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:32
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:33
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:34
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:35
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:36
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:37
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:38
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:39
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:40
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:41
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:42
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:43
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:44
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:45
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:46
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:47
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:48
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:49
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:50
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:51
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:52
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:53
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:54
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:55
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:56
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:57
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:58
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:1
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:2
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:3
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:4
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:5
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:6
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:7
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:8
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:9
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:10
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:11
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:12
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:13
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:14
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:15
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:16
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:17
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:18
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:19
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:20
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:21
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:22
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:23
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:24
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:25
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:26
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:27
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:28
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:29
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:30
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:31
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:32
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:33
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:34
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:35
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:36
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:37
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:38
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:39
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:40
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:41
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:42
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:43
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:44
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:45
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:46
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:47
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:48
+configure diffserv examination code-point 46 qosprofile QP5
+configure diffserv replacement priority 4 code-point 46
+
+#
+# Module fdb configuration.
+#
+
+#
+# Module rtmgr configuration.
+#
+configure iproute add default 10.38.254.1
+disable iproute ipv4 compression 
+disable iproute ipv6 compression 
+
+#
+# Module mcmgr configuration.
+#
+enable igmp snooping forward-mcrouter-only vr VR-Default
+configure igmp snooping filters per-vlan
+configure forwarding ipmc lookup-key group-vlan
+
+#
+# Module policy configuration.
+#
+
+#
+# Module aaa configuration.
+#
+configure radius mgmt-access primary server 10.250.0.41 1812 client-ip 10.38.254.21 vr VR-Default
+configure radius mgmt-access primary shared-secret encrypted "I_OMpw7J`DW{C}7Vg>qZ~S;nDs~61et{Lv_H_St\HBZ`Rt@@2hhjY5qQFovzI@n"
+configure radius mgmt-access secondary server 10.250.0.42 1812 client-ip 10.38.254.21 vr VR-Default
+configure radius mgmt-access secondary shared-secret encrypted "I_OMpw7J`DW{C}7Vg>qZ~S;nDs~61et{Lv_H_St\HBZ`Rt@@2hhjY5qQFovzI@n"
+configure radius netlogin primary server 10.250.0.41 1812 client-ip 10.38.254.21 vr VR-Default
+configure radius netlogin primary shared-secret encrypted "CIjGF225SMk{j=:_KQ"
+configure radius netlogin secondary server 10.250.0.42 1812 client-ip 10.38.254.21 vr VR-Default
+configure radius netlogin secondary shared-secret encrypted "CIjGF225SMk{j=:_KQ"
+enable radius mgmt-access
+configure account admin encrypted "vD.yDp$6U4wHDK2/JlOFLG77d0aS/" 
+
+#
+# Module acl configuration.
+#
+configure access-list block_mc any ingress
+
+
+
+
+#
+# Module bfd configuration.
+#
+
+#
+# Module cfgmgr configuration.
+#
+enable cli-config-logging
+configure idletimeout 30
+
+#
+# Module dosprotect configuration.
+#
+
+#
+# Module dot1ag configuration.
+#
+
+#
+# Module eaps configuration.
+#
+
+#
+# Module edp configuration.
+#
+configure cdp device-id system-mac
+enable cdp ports 1:1
+enable cdp ports 1:2
+enable cdp ports 1:3
+enable cdp ports 1:4
+enable cdp ports 1:5
+enable cdp ports 1:6
+enable cdp ports 1:7
+enable cdp ports 1:8
+enable cdp ports 1:9
+enable cdp ports 1:10
+enable cdp ports 1:11
+enable cdp ports 1:12
+enable cdp ports 1:13
+enable cdp ports 1:14
+enable cdp ports 1:15
+enable cdp ports 1:16
+enable cdp ports 1:17
+enable cdp ports 1:18
+enable cdp ports 1:19
+enable cdp ports 1:20
+enable cdp ports 1:21
+enable cdp ports 1:22
+enable cdp ports 1:23
+enable cdp ports 1:24
+enable cdp ports 1:25
+enable cdp ports 1:26
+enable cdp ports 1:27
+enable cdp ports 1:28
+enable cdp ports 1:29
+enable cdp ports 1:30
+enable cdp ports 1:31
+enable cdp ports 1:32
+enable cdp ports 1:33
+enable cdp ports 1:34
+enable cdp ports 1:35
+enable cdp ports 1:36
+enable cdp ports 1:37
+enable cdp ports 1:38
+enable cdp ports 1:39
+enable cdp ports 1:40
+enable cdp ports 1:41
+enable cdp ports 1:42
+enable cdp ports 1:43
+enable cdp ports 1:44
+enable cdp ports 1:45
+enable cdp ports 1:46
+enable cdp ports 1:47
+enable cdp ports 1:48
+enable cdp ports 1:49
+enable cdp ports 1:50
+enable cdp ports 1:51
+enable cdp ports 1:52
+enable cdp ports 1:53
+enable cdp ports 1:54
+enable cdp ports 1:55
+enable cdp ports 1:56
+enable cdp ports 1:57
+enable cdp ports 1:58
+enable cdp ports 2:1
+enable cdp ports 2:2
+enable cdp ports 2:3
+enable cdp ports 2:4
+enable cdp ports 2:5
+enable cdp ports 2:6
+enable cdp ports 2:7
+enable cdp ports 2:8
+enable cdp ports 2:9
+enable cdp ports 2:10
+enable cdp ports 2:11
+enable cdp ports 2:12
+enable cdp ports 2:13
+enable cdp ports 2:14
+enable cdp ports 2:15
+enable cdp ports 2:16
+enable cdp ports 2:17
+enable cdp ports 2:18
+enable cdp ports 2:19
+enable cdp ports 2:20
+enable cdp ports 2:21
+enable cdp ports 2:22
+enable cdp ports 2:23
+enable cdp ports 2:24
+enable cdp ports 2:25
+enable cdp ports 2:26
+enable cdp ports 2:27
+enable cdp ports 2:28
+enable cdp ports 2:29
+enable cdp ports 2:30
+enable cdp ports 2:31
+enable cdp ports 2:32
+enable cdp ports 2:33
+enable cdp ports 2:34
+enable cdp ports 2:35
+enable cdp ports 2:36
+enable cdp ports 2:37
+enable cdp ports 2:38
+enable cdp ports 2:39
+enable cdp ports 2:40
+enable cdp ports 2:41
+enable cdp ports 2:42
+enable cdp ports 2:43
+enable cdp ports 2:44
+enable cdp ports 2:45
+enable cdp ports 2:46
+enable cdp ports 2:47
+enable cdp ports 2:48
+
+#
+# Module elrp configuration.
+#
+enable elrp-client
+configure elrp-client periodic No_Loop ports all interval 1 log-and-trap disable-port ingress permanent
+configure elrp-client disable-port exclude 1:53
+configure elrp-client disable-port exclude 1:54
+
+#
+# Module ems configuration.
+#
+create log filter DPS_Filter
+configure log filter DPS_Filter add events All 
+configure log filter DPS_Filter add exclude events POE.port_delivering 
+configure log filter DPS_Filter add exclude events vlan.msgs.portLinkStateUp 
+configure log filter DPS_Filter add exclude events vlan.msgs.portLinkStateDown 
+configure log filter DPS_Filter add events vlan.msgs.portLinkStateDown match string "1:53"
+configure log filter DPS_Filter add events vlan.msgs.portLinkStateUp match string "1:53"
+configure log filter DPS_Filter add events vlan.msgs.portLinkStateDown match string "1:54"
+configure log filter DPS_Filter add events vlan.msgs.portLinkStateUp match string "1:54"
+configure log target memory-buffer  filter DPS_Filter severity Info
+configure log target nvram  filter DPS_Filter severity Info
+
+#
+# Module epm configuration.
+#
+
+#
+# Module erps configuration.
+#
+
+#
+# Module esrp configuration.
+#
+
+#
+# Module ethoam configuration.
+#
+
+#
+# Module etmon configuration.
+#
+enable rmon
+
+#
+# Module exsshd configuration.
+#
+
+
+#
+# Module hal configuration.
+#
+configure ports 1:53 debounce time 150
+configure ports 1:54 debounce time 150
+configure stack-ports 1:1 debounce time 150
+configure stack-ports 1:2 debounce time 150
+configure stack-ports 2:1 debounce time 150
+configure stack-ports 2:2 debounce time 150
+debug hal configure disable dual-hash
+
+#
+# Module idMgr configuration.
+#
+
+#
+# Module ipSecurity configuration.
+#
+
+#
+# Module ipfix configuration.
+#
+
+#
+# Module lldp configuration.
+#
+disable lldp ports 1:1
+disable lldp ports 1:2
+disable lldp ports 1:3
+disable lldp ports 1:4
+disable lldp ports 1:5
+disable lldp ports 1:6
+disable lldp ports 1:7
+disable lldp ports 1:8
+disable lldp ports 1:9
+disable lldp ports 1:10
+disable lldp ports 1:11
+disable lldp ports 1:12
+disable lldp ports 1:13
+disable lldp ports 1:14
+disable lldp ports 1:15
+disable lldp ports 1:16
+disable lldp ports 1:17
+disable lldp ports 1:18
+disable lldp ports 1:19
+disable lldp ports 1:20
+disable lldp ports 1:21
+disable lldp ports 1:22
+disable lldp ports 1:23
+disable lldp ports 1:24
+disable lldp ports 1:25
+disable lldp ports 1:26
+disable lldp ports 1:27
+disable lldp ports 1:28
+disable lldp ports 1:29
+disable lldp ports 1:30
+configure lldp port 1:31 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:31 advertise vendor-specific med capabilities
+configure lldp port 1:31 advertise vendor-specific med power-via-mdi
+configure lldp port 1:32 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:32 advertise vendor-specific med capabilities
+configure lldp port 1:32 advertise vendor-specific med power-via-mdi
+disable lldp ports 1:33
+configure lldp port 1:34 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:34 advertise vendor-specific med capabilities
+configure lldp port 1:34 advertise vendor-specific med power-via-mdi
+disable lldp ports 1:35
+configure lldp port 1:36 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:36 advertise vendor-specific med capabilities
+configure lldp port 1:36 advertise vendor-specific med power-via-mdi
+configure lldp port 1:37 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:37 advertise vendor-specific med capabilities
+configure lldp port 1:37 advertise vendor-specific med power-via-mdi
+configure lldp port 1:38 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:38 advertise vendor-specific med capabilities
+configure lldp port 1:38 advertise vendor-specific med power-via-mdi
+configure lldp port 1:39 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:39 advertise vendor-specific med capabilities
+configure lldp port 1:39 advertise vendor-specific med power-via-mdi
+configure lldp port 1:40 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:40 advertise vendor-specific med capabilities
+configure lldp port 1:40 advertise vendor-specific med power-via-mdi
+disable lldp ports 1:41
+configure lldp port 1:42 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:42 advertise vendor-specific med capabilities
+configure lldp port 1:42 advertise vendor-specific med power-via-mdi
+configure lldp port 1:43 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:43 advertise vendor-specific med capabilities
+configure lldp port 1:43 advertise vendor-specific med power-via-mdi
+configure lldp port 1:44 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:44 advertise vendor-specific med capabilities
+configure lldp port 1:44 advertise vendor-specific med power-via-mdi
+configure lldp port 1:45 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:45 advertise vendor-specific med capabilities
+configure lldp port 1:45 advertise vendor-specific med power-via-mdi
+disable lldp ports 1:46
+disable lldp ports 1:47
+disable lldp ports 1:48
+disable lldp ports 1:49
+disable lldp ports 1:50
+disable lldp ports 1:51
+disable lldp ports 1:52
+disable lldp ports 1:53
+disable lldp ports 1:54
+disable lldp ports 1:55
+disable lldp ports 1:56
+disable lldp ports 1:57
+disable lldp ports 1:58
+disable lldp ports 2:1
+disable lldp ports 2:2
+disable lldp ports 2:3
+disable lldp ports 2:4
+disable lldp ports 2:5
+disable lldp ports 2:6
+disable lldp ports 2:7
+disable lldp ports 2:8
+disable lldp ports 2:9
+disable lldp ports 2:10
+disable lldp ports 2:11
+disable lldp ports 2:12
+disable lldp ports 2:13
+disable lldp ports 2:14
+disable lldp ports 2:15
+disable lldp ports 2:16
+disable lldp ports 2:17
+disable lldp ports 2:18
+disable lldp ports 2:19
+disable lldp ports 2:20
+disable lldp ports 2:21
+disable lldp ports 2:22
+disable lldp ports 2:23
+disable lldp ports 2:24
+disable lldp ports 2:25
+disable lldp ports 2:26
+disable lldp ports 2:27
+disable lldp ports 2:28
+disable lldp ports 2:29
+disable lldp ports 2:30
+disable lldp ports 2:31
+disable lldp ports 2:32
+disable lldp ports 2:33
+disable lldp ports 2:34
+disable lldp ports 2:35
+disable lldp ports 2:36
+disable lldp ports 2:37
+disable lldp ports 2:38
+disable lldp ports 2:39
+disable lldp ports 2:40
+disable lldp ports 2:41
+disable lldp ports 2:42
+disable lldp ports 2:43
+disable lldp ports 2:44
+disable lldp ports 2:45
+disable lldp ports 2:46
+disable lldp ports 2:47
+disable lldp ports 2:48
+
+#
+# Module mrp configuration.
+#
+
+#
+# Module msdp configuration.
+#
+
+#
+# Module netLogin configuration.
+#
+
+#
+# Module netTools configuration.
+#
+configure sntp-client primary 10.252.11.1 vr VR-Default
+configure sntp-client secondary 10.252.12.1 vr VR-Default
+configure sntp-client update-interval 16284 
+enable sntp-client
+
+#
+# Module ntp configuration.
+#
+
+#
+# Module poe configuration.
+#
+
+#
+# Module rip configuration.
+#
+
+#
+# Module ripng configuration.
+#
+
+#
+# Module snmpMaster configuration.
+#
+configure snmpv3 add group "v1v2cNotifyGroup" user "v1v2cNotifyUser" sec-model snmpv2c 
+configure snmpv3 add group "v1v2cNotifyGroup" user "v1v2cNotifyUser1" sec-model snmpv2c 
+configure snmpv3 add mib-view "defaultUserView" subtree 1.0/80 type included 
+configure snmpv3 add mib-view "defaultAdminView" subtree 1.0/80 type included 
+configure snmpv3 add mib-view "defaultNotifyView" subtree 1.0/80 type included 
+configure snmpv3 add community "ANYCOM" name "ANYCOM" user "v1v2c_ro" 
+configure snmpv3 add community "db31" name "db31" user "v1v2c_rw" 
+disable snmpv3 community "private"
+disable snmpv3 community "public"
+configure snmpv3 add community "v1v2cNotifyComm" name "NMS" user "v1v2cNotifyUser" 
+configure snmpv3 add community "v1v2cNotifyComm1" name "ST.184160411.10550" user "v1v2cNotifyUser1" 
+configure snmpv3 add target-addr "v1v2cNotifyTAddr1" param "v1v2cNotifyParam" ipaddress 10.250.16.154 transport-port 162 from 10.38.254.21 vr "VR-Default" tag-list "defaultNotify" 
+configure snmpv3 add target-addr "v1v2cNotifyTAddr2" param "v1v2cNotifyParam1" ipaddress 10.250.16.155 transport-port 10550 from 10.38.254.21 tag-list "defaultNotify" 
+configure snmpv3 add target-params "v1v2cNotifyParam" user "v1v2cNotifyUser" mp-model snmpv2c sec-model snmpv2c sec-level noauth 
+configure snmpv3 add target-params "v1v2cNotifyParam1" user "v1v2cNotifyUser1" mp-model snmpv2c sec-model snmpv2c sec-level noauth 
+configure snmpv3 add filter-profile "TrapFilter" param "v1v2cNotifyParam" 
+configure snmpv3 add filter-profile "TrapFilter" param "v1v2cNotifyParam1" 
+configure snmpv3 add filter "TrapFilter" subtree 1.0/80 type included 
+configure snmpv3 add filter "TrapFilter" subtree 1.3.6.1.2.1.105.0.1 type excluded 
+
+#
+# Module stp configuration.
+#
+
+#
+# Module synce configuration.
+#
+
+#
+# Module techSupport configuration.
+#
+configure tech-support collector 12.38.14.200 tcp-port 800 from 192.168.0.1 ssl off
+
+#
+# Module telnetd configuration.
+#
+
+#
+# Module tftpd configuration.
+#
+
+#
+# Module thttpd configuration.
+#
+configure ssl certificate hash-algorithm sha512 
+
+#
+# Module twamp configuration.
+#
+
+#
+# Module vmt configuration.
+#
+
+#
+# Module vsm configuration.
+#
