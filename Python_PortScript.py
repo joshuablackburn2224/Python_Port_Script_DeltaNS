@@ -41,25 +41,17 @@ with open(path, 'r', encoding =None) as file:
       splitLine = line.rsplit(substring1)
       almostDeviceName = splitLine[1].strip()
       deviceName = almostDeviceName.strip('\"')
+    elif substring2 in line:
+      index1 = line.find(substring2)
+      findEnd = re.search(substring3, line)
+      Span1 = findEnd.span()
+      index2 = Span1[0]
+      deviceName = line[index1 + len(substring2) + 1: index2]
   if len(deviceName) > 1:
     print(deviceName)
   else:
-    #substrings to help search for unique identifier for device ID
-    substr1 = "Slot-"
-    substr2 = "\.\d"
-    deviceName = ""
-    #driver loop
-    for line in file:
-    #logic for finding device name
-      if substr1 in line:
-       index1 = line.find(substr1)
-       findEnd = re.search(substr2, line)
-       Span1 = findEnd.span()
-       index2 = Span1[0]
-       deviceName = line[index1 + len(substr1) + 1: index2]
-      else:
-        print(f"Error: Device ID not found. Please check config log.")
-        exit()
+    print(f"Error: Device ID not found. Please check config log.")
+    exit()
 
 #close file after retrieving device ID
 file.close()
