@@ -51,7 +51,7 @@ fileName = deviceName + "_SpecialPorts.csv"
 csvPath = Path(__file__).parent / fileName
 outfile = open(csvPath, "w")
 writer = csv.writer(outfile)
-header = ['device', 'vlan name', 'switch number', 'port number', 'tag']
+header = ['device', 'vlan name', 'switch:port number', 'tag']
 writer.writerow(header)
 
 #open file second time to iterate through and find all vlan names and ports
