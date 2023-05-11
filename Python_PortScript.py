@@ -79,8 +79,7 @@ with open(path, 'r', encoding =None) as file:
       vlanNameLineList = line.rsplit(substring3)
       vlanNameLineList.pop(0)
       vlanNameStringFromList = vlanNameLineList[0]
-      #create portnumbers list and discover tag with regex
-      portNumbersList = re.findall(("\d:\d*-?\d*\d"), vlanNameStringFromList)
+      #isolate tag, save as tagFinal by converting back from list to String
       tagFlag = True
       if "untagged" in vlanNameStringFromList:
         tagFlag = False
@@ -88,44 +87,82 @@ with open(path, 'r', encoding =None) as file:
       #isolate vlan name, save as vlanNameFinal by converting back from list to string
       vlanNameOnlyList = vlanNameStringFromList.rsplit(substring4)
       vlanNameFinal = vlanNameOnlyList[0]
-      #isolate tag, save as tagFinal by converting back from list to String
       #begin iterating through portNumbersList
-      for i in range (len(portNumbersList)):
-        #create flag, set to False initially, True if range of port Numbers present
-        flag = False
-        #convert portNumbersList to String for Modifications
-        portNumberString = portNumbersList[i]
-        if "-" in portNumberString:
-          flag = True
-        #create list of isolated integers from String
-        portNumbersModifiableList = re.findall("\d*",portNumberString)
-        #remove all blank spaces from list
-        while "" in portNumbersModifiableList:
-         portNumbersModifiableList.remove("")
-        #isolate switch number
-        switchNumber = int(portNumbersModifiableList[0])
-        switchNumberString = portNumbersModifiableList[0]
-        #logic for setting tagged or untagged in display
-        if tagFlag == True:
-          tag = "tagged"
-        else:
-          tag = "untagged"
-          #logic for writing switch and port numbers when a range is and is not present
-        if flag != True:
-          portNumber = int(portNumbersModifiableList[1])
-          portNumberString = portNumbersModifiableList[1]
-          writeableSwitchPortNumber = switchNumberString + ":" + portNumberString
-          newRow = []
-          newRow = [deviceName, vlanNameFinal, writeableSwitchPortNumber, tag]
-          writer.writerow(newRow)
-        else:
-          portNumberStart = int(portNumbersModifiableList[1])
-          portNumberEnd = int(portNumbersModifiableList[2])
-          for i in range (portNumberStart, portNumberEnd + 1):
+      if ":" in vlanNameStringFromList:
+        #create portnumbers list and discover tag with regex
+        portNumbersList = re.findall(("\d:\d*-?\d*\d"), vlanNameStringFromList)
+        for i in range (len(portNumbersList)):
+          #create flag, set to False initially, True if range of port Numbers present
+          flag = False
+          #convert portNumbersList to String for Modifications
+          portNumberString = portNumbersList[i]
+          if "-" in portNumberString:
+            flag = True
+          #create list of isolated integers from String
+          portNumbersModifiableList = re.findall("\d*",portNumberString)
+          #remove all blank spaces from list
+          while "" in portNumbersModifiableList:
+            portNumbersModifiableList.remove("")
+          #isolate switch number
+          switchNumber = int(portNumbersModifiableList[0])
+          switchNumberString = portNumbersModifiableList[0]
+          #logic for setting tagged or untagged in display
+          if tagFlag == True:
+            tag = "tagged"
+          else:
+            tag = "untagged"
+            #logic for writing switch and port numbers when a range is and is not present
+          if flag != True:
+            portNumber = int(portNumbersModifiableList[1])
+            portNumberString = portNumbersModifiableList[1]
+            writeableSwitchPortNumber = switchNumberString + ":" + portNumberString
             newRow = []
-            writeableSwitchPortNumber = switchNumberString + ":" + str(i)
             newRow = [deviceName, vlanNameFinal, writeableSwitchPortNumber, tag]
             writer.writerow(newRow)
+          else:
+            portNumberStart = int(portNumbersModifiableList[1])
+            portNumberEnd = int(portNumbersModifiableList[2])
+            for i in range (portNumberStart, portNumberEnd + 1):
+              newRow = []
+              writeableSwitchPortNumber = switchNumberString + ":" + str(i)
+              newRow = [deviceName, vlanNameFinal, writeableSwitchPortNumber, tag]
+              writer.writerow(newRow)
+      else:
+        #create portnumbers list and discover tag with regex
+        portNumbersList = re.findall(("\d\d*-?\d*"), vlanNameStringFromList)
+        for i in range (len(portNumbersList)):
+        #create flag, set to False initially, True if range of port Numbers present
+          flag = False
+        #convert portNumbersList to String for Modifications
+          portNumberString = portNumbersList[i]
+          if "-" in portNumberString:
+            flag = True
+        #create list of isolated integers from String
+          portNumbersModifiableList = re.findall("\d*",portNumberString)
+        #remove all blank spaces from list
+          while "" in portNumbersModifiableList:
+            portNumbersModifiableList.remove("")
+        #logic for setting tagged or untagged in display
+          if tagFlag == True:
+            tag = "tagged"
+          else:
+            tag = "untagged"
+          #logic for writing switch and port numbers when a range is and is not present
+          if flag != True:
+            portNumber = int(portNumbersModifiableList[0])
+            portNumberString = portNumbersModifiableList[0]
+            writeablePortNumber = portNumberString
+            newRow = []
+            newRow = [deviceName, vlanNameFinal, writeablePortNumber, tag]
+            writer.writerow(newRow)
+          else:
+            portNumberStart = int(portNumbersModifiableList[0])
+            portNumberEnd = int(portNumbersModifiableList[1])
+            for i in range (portNumberStart, portNumberEnd + 1):
+              newRow = []
+              writeablePortNumber = str(i)
+              newRow = [deviceName, vlanNameFinal, writeablePortNumber, tag]
+              writer.writerow(newRow)
 
 outfile.close()
   
