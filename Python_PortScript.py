@@ -48,7 +48,7 @@ with open(path, 'r', encoding =None) as file:
       index2 = Span1[0]
       deviceName = line[index1 + len(substring2) + 1: index2]
   if len(deviceName) > 1:
-    print(deviceName)
+    pass
   else:
     print(f"Error: Device ID not found. Please check config log.")
     exit()
