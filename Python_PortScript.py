@@ -42,7 +42,7 @@ with open(path, 'r', encoding =None) as file:
       almostDeviceName = splitLine[1].strip()
       deviceName = almostDeviceName.strip('\"')
   if len(deviceName) > 1:
-    print(deviceName)
+    pass
   else:
     #substrings to help search for unique identifier for device ID
     substr1 = "Slot-"
