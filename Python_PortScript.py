@@ -32,7 +32,7 @@ with open(path, 'r', encoding =None) as file:
   #substrings to help search for unique identifier for device ID
   substring1 = "sysName"
   deviceName = ""
-  substring2 = "Slot-\d"
+  substring2 = "Slot-"
   substring3 = "\.\d"
   #driver loop
   for line in file:
