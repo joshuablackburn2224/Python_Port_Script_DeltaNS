@@ -58,7 +58,7 @@ writer.writerow(header)
 with open(path, 'r', encoding =None) as file:
   for line in file:
      #substrings to help search for unique identifier for vlan names
-    substring3 = "configure vlan"
+    substring3 = "configure vlan "
     substring4 = " add ports"
     #logic for identifying vlan names
     if substring3 in line and substring4 in line:
