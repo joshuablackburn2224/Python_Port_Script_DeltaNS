@@ -32,6 +32,8 @@ with open(path, 'r', encoding =None) as file:
   #substrings to help search for unique identifier for device ID
   substring1 = "sysName"
   deviceName = ""
+  substring2 = "Slot-\d"
+  substring3 = "\.\d"
   #driver loop
   for line in file:
   #logic for finding device name
@@ -49,12 +51,15 @@ with open(path, 'r', encoding =None) as file:
     #driver loop
     for line in file:
     #logic for finding device name
-     if substr1 in line:
+      if substr1 in line:
        index1 = line.find(substr1)
        findEnd = re.search(substr2, line)
        Span1 = findEnd.span()
        index2 = Span1[0]
        deviceName = line[index1 + len(substr1) + 1: index2]
+      else:
+        print(f"Error: Device ID not found. Please check config log.")
+        exit()
 
 #close file after retrieving device ID
 file.close()
