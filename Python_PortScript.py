@@ -3,11 +3,29 @@
 import re
 from pathlib import Path
 import csv
+import sys
 
-#grabs the file name from parent directory of script using path so absolute path is not used. Will probably have to be changed to accept inputs from user, file names will be different in the future.
-path = Path(__file__).parent / "sample.log"
+# logic to get user input
+# pulls file name from command line argument, if available
+args = len(sys.argv)
+
+if (args >= 2):
+  logFile = str(sys.argv[1])
+else:
+  # ask user for a file name within the same directory as the script
+  logFile = str(input("Enter the name of the file in this directory to pass to this script.\n"))
+
+#grabs the file name from parent directory of script using path so absolute path is not used.
+path = Path(__file__).parent / logFile
 # 10.38.254.2Stout_MC_10.38.254.2
 
+file_exists = Path.is_file(path)
+
+if (file_exists):
+  pass
+else:
+  print(f"Error: File '{path}' not found.")
+  exit()
 
 #initial opening of file
 with open(path, 'r', encoding =None) as file:
@@ -29,7 +47,7 @@ with open(path, 'r', encoding =None) as file:
 file.close()
 
 #logic for creating and writing to csv file with unique name
-fileName = deviceName + "SpecialPorts.csv"
+fileName = deviceName + "_SpecialPorts.csv"
 csvPath = Path(__file__).parent / fileName
 outfile = open(csvPath, "w")
 writer = csv.writer(outfile)
