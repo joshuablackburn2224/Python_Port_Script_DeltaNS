@@ -45,7 +45,7 @@ def process_file(path):
   csvPath = Path(__file__).parent / fileName
   outfile = open(csvPath, "w", newline='')
   writer = csv.writer(outfile)
-  header = ['device', 'vlan name', 'switch:port number', 'tag']
+  header = ['device', 'vlan name', 'switch-port number', 'tag']
   writer.writerow(header)
 
   #open file second time to iterate through and find all vlan names and ports
@@ -96,7 +96,7 @@ def process_file(path):
             if flag != True:
               portNumber = int(portNumbersModifiableList[1])
               portNumberString = portNumbersModifiableList[1]
-              writeableSwitchPortNumber = switchNumberString + ":" + portNumberString
+              writeableSwitchPortNumber = switchNumberString + "-" + portNumberString
               newRow = []
               newRow = [deviceName, vlanNameFinal, writeableSwitchPortNumber, tag]
               writer.writerow(newRow)
@@ -105,7 +105,7 @@ def process_file(path):
               portNumberEnd = int(portNumbersModifiableList[2])
               for i in range (portNumberStart, portNumberEnd + 1):
                 newRow = []
-                writeableSwitchPortNumber = switchNumberString + ":" + str(i)
+                writeableSwitchPortNumber = switchNumberString + "-" + str(i)
                 newRow = [deviceName, vlanNameFinal, writeableSwitchPortNumber, tag]
                 writer.writerow(newRow)
         else:
