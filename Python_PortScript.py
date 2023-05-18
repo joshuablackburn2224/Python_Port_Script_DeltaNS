@@ -43,7 +43,7 @@ def process_file(path):
   #logic for creating and writing to csv file with unique name
   fileName = deviceName + "_SpecialPorts.csv"
   csvPath = Path(__file__).parent / fileName
-  outfile = open(csvPath, "w")
+  outfile = open(csvPath, "w", newline='')
   writer = csv.writer(outfile)
   header = ['device', 'vlan name', 'switch:port number', 'tag']
   writer.writerow(header)
