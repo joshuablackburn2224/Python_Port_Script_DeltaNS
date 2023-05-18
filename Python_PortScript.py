@@ -96,7 +96,7 @@ def process_file(path):
             if flag != True:
               portNumber = int(portNumbersModifiableList[1])
               portNumberString = portNumbersModifiableList[1]
-              writeableSwitchPortNumber = switchNumberString + "-" + portNumberString
+              writeableSwitchPortNumber = switchNumberString + ":" + portNumberString
               newRow = []
               newRow = [deviceName, vlanNameFinal, writeableSwitchPortNumber, tag]
               writer.writerow(newRow)
@@ -105,7 +105,7 @@ def process_file(path):
               portNumberEnd = int(portNumbersModifiableList[2])
               for i in range (portNumberStart, portNumberEnd + 1):
                 newRow = []
-                writeableSwitchPortNumber = switchNumberString + "-" + str(i)
+                writeableSwitchPortNumber = switchNumberString + ":" + str(i)
                 newRow = [deviceName, vlanNameFinal, writeableSwitchPortNumber, tag]
                 writer.writerow(newRow)
         else:
@@ -200,14 +200,3 @@ else:
   # exit once processing has finished
   exit()
 
-#grabs the file name from parent directory of script using path so absolute path is not used.
-# path = Path(__file__).parent / logFile
-# 10.38.254.2Stout_MC_10.38.254.2
-
-# def file_exists(fileToTest):
-#   file_found = Path.is_file(fileToTest)
-#   if file_found:
-#     return True
-#   else:
-#     print(f"Error: File '{fileToTest}' not found.")
-#     exit()
