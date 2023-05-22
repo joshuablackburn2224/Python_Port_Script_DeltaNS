@@ -45,7 +45,7 @@ def process_file(path):
   csvPath = Path(__file__).parent / fileName
   outfile = open(csvPath, "w", newline='')
   writer = csv.writer(outfile)
-  header = ['device', 'vlan name', 'switch:port number', 'tag']
+  header = ['device', 'vlan name', 'port number', 'tag']
   writer.writerow(header)
 
   #open file second time to iterate through and find all vlan names and ports
