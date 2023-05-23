@@ -99,7 +99,10 @@ def process_file(path):
               writeableSwitchPortNumber = switchNumberString + ":" + portNumberString
               newRow = []
               newRow = [deviceName, vlanNameFinal, writeableSwitchPortNumber, tag]
-              writer.writerow(newRow)
+              if vlanNameFinal != "NoLoop" or "No_Loop" or "No-Loop" or "noloop" or "Noloop" or "no_loop" or "NO_LOOP":
+                writer.writerow(newRow)
+              else: 
+                pass
             else:
               portNumberStart = int(portNumbersModifiableList[1])
               portNumberEnd = int(portNumbersModifiableList[2])
@@ -107,7 +110,10 @@ def process_file(path):
                 newRow = []
                 writeableSwitchPortNumber = switchNumberString + ":" + str(i)
                 newRow = [deviceName, vlanNameFinal, writeableSwitchPortNumber, tag]
-                writer.writerow(newRow)
+                if vlanNameFinal != "NoLoop" or "No_Loop" or "No-Loop" or "noloop" or "Noloop" or "no_loop" or "NO_LOOP":
+                  writer.writerow(newRow)
+                else: 
+                 pass
         else:
           #create portnumbers list and discover tag with regex
           portNumbersList = re.findall(("\d\d*-?\d*"), vlanNameStringFromList)
@@ -135,7 +141,10 @@ def process_file(path):
               writeablePortNumber = portNumberString
               newRow = []
               newRow = [deviceName, vlanNameFinal, writeablePortNumber, tag]
-              writer.writerow(newRow)
+              if vlanNameFinal != "NoLoop" or "No_Loop" or "No-Loop" or "noloop" or "Noloop" or "no_loop" or "NO_LOOP":
+                writer.writerow(newRow)
+              else: 
+                pass
             else:
               portNumberStart = int(portNumbersModifiableList[0])
               portNumberEnd = int(portNumbersModifiableList[1])
@@ -143,7 +152,10 @@ def process_file(path):
                 newRow = []
                 writeablePortNumber = str(i)
                 newRow = [deviceName, vlanNameFinal, writeablePortNumber, tag]
-                writer.writerow(newRow)
+                if vlanNameFinal != "NoLoop" or "No_Loop" or "No-Loop" or "noloop" or "Noloop" or "no_loop" or "NO_LOOP":
+                  writer.writerow(newRow)
+                else: 
+                  pass
 
   outfile.close()
 
