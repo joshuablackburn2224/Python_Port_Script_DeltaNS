@@ -1,4 +1,4 @@
-# version 2.0
+# version 3.0
 # github https://github.com/joshuablackburn2224/Python_Port_Script_DeltaNS/settings
 # authors Joshua Blackburn , Kevin Shin , Sean Rice
 import re
@@ -99,7 +99,7 @@ def process_file(path):
               writeableSwitchPortNumber = switchNumberString + ":" + portNumberString
               newRow = []
               newRow = [deviceName, vlanNameFinal, writeableSwitchPortNumber, tag]
-              if vlanNameFinal != "NoLoop" or "No_Loop" or "No-Loop" or "noloop" or "Noloop" or "no_loop" or "NO_LOOP":
+              if "Loop" not in vlanNameFinal and "loop" not in vlanNameFinal:
                 writer.writerow(newRow)
               else: 
                 pass
@@ -110,7 +110,7 @@ def process_file(path):
                 newRow = []
                 writeableSwitchPortNumber = switchNumberString + ":" + str(i)
                 newRow = [deviceName, vlanNameFinal, writeableSwitchPortNumber, tag]
-                if vlanNameFinal != "NoLoop" or "No_Loop" or "No-Loop" or "noloop" or "Noloop" or "no_loop" or "NO_LOOP":
+                if "Loop" not in vlanNameFinal and "loop" not in vlanNameFinal:
                   writer.writerow(newRow)
                 else: 
                  pass
@@ -141,7 +141,7 @@ def process_file(path):
               writeablePortNumber = portNumberString
               newRow = []
               newRow = [deviceName, vlanNameFinal, writeablePortNumber, tag]
-              if vlanNameFinal != "NoLoop" or "No_Loop" or "No-Loop" or "noloop" or "Noloop" or "no_loop" or "NO_LOOP":
+              if "Loop" not in vlanNameFinal and "loop" not in vlanNameFinal:
                 writer.writerow(newRow)
               else: 
                 pass
@@ -152,7 +152,7 @@ def process_file(path):
                 newRow = []
                 writeablePortNumber = str(i)
                 newRow = [deviceName, vlanNameFinal, writeablePortNumber, tag]
-                if vlanNameFinal != "NoLoop" or "No_Loop" or "No-Loop" or "noloop" or "Noloop" or "no_loop" or "NO_LOOP":
+                if "Loop" not in vlanNameFinal and "loop" not in vlanNameFinal:
                   writer.writerow(newRow)
                 else: 
                   pass
