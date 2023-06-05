@@ -72,12 +72,10 @@ def process_file(path):
           print("Error: could not set egress/ingress variable")
           direction = 'unknown'
         
-        print("found substrings")
         #split string at set vlan and convert back from list to string
         vlanNumberLineList = line.rsplit(substring5)
         vlanNumberLineList.pop(0)
         vlanNumberStringFromList = vlanNumberLineList[0]
-        print(vlanNumberStringFromList)
         #isolate tag, save as tagFinal by converting back from list to String
         tagFlag = True
         if "untagged" in vlanNumberStringFromList:
@@ -88,9 +86,16 @@ def process_file(path):
         vlanNumberFinal = vlanNumberOnlyList[0]
         #begin iterating through portNumbersList
         #if ":" in vlanNumberStringFromList:
-          #create portnumbers list and discover tag with regex
-        portNumbersList = vlanNumberStringFromList.rsplit(";")
+          #create portnumbers list and isolate all port numbers
+        portNumberListStart = vlanNumberStringFromList.split()
+        portNumberListStart.pop(len(portNumberListStart) - 1)
+        portNumberListStart.pop(0)
+        portNumberOnlyString = portNumberListStart[0]
+        print(portNumberOnlyString)
+        # create list of individual port ranges by splitting at ;
+        portNumbersList = portNumberOnlyString.split(";")
         #re.findall(("(\w){2}\.\d\.(\d){1,2}(-(\d){1,2})?"), vlanNumberStringFromList)
+        print(portNumbersList)
         for i in range (len(portNumbersList)):
             #create flag, set to False initially, True if range of port Numbers present
             flag = False
@@ -99,13 +104,13 @@ def process_file(path):
             if "-" in portNumberString:
               flag = True
             #create list of isolated integers from String
-            portNumbersModifiableList = re.findall("\d*",portNumberString)
-            #remove all blank spaces from list
-            while "" in portNumbersModifiableList:
-              portNumbersModifiableList.remove("")
+            portNumbersModifiableList = portNumberString.split(".")
+            portNumberNoRangeFinal = portNumberString
+            isolatedPortNumberRange = portNumbersModifiableList[2]
+            print(portNumbersModifiableList)
+            print(isolatedPortNumberRange)
             #TODO isolate speed letters
-            switchNumber = int(portNumbersModifiableList[0])
-            switchNumberString = portNumbersModifiableList[0]
+          
             #logic for setting tagged or untagged in display
             if tagFlag == True:
               tag = "tagged"
@@ -113,22 +118,21 @@ def process_file(path):
               tag = "untagged"
               #logic for writing switch and port numbers when a range is and is not present
             if flag != True:
-              portNumber = int(portNumbersModifiableList[1])
-              portNumberString = portNumbersModifiableList[1]
-              writeableSwitchPortNumber = switchNumberString + ":" + portNumberString
+              writeableSwitchPortNumber =  portNumberNoRangeFinal
               newRow = []
-              newRow = [deviceName, vlanNumberFinal, writeableSwitchPortNumber, tag]
+              newRow = [deviceName, vlanNumberFinal, direction, writeableSwitchPortNumber, tag]
               if "Loop" not in vlanNumberFinal and "loop" not in vlanNumberFinal:
                 writer.writerow(newRow)
               else: 
                 pass
             else:
-              portNumberStart = int(portNumbersModifiableList[1])
-              portNumberEnd = int(portNumbersModifiableList[2])
+              isolatedPortNumbers = isolatedPortNumberRange.split("-")
+              portNumberStart = int(isolatedPortNumbers[0])
+              portNumberEnd = int(isolatedPortNumbers[1])
               for i in range (portNumberStart, portNumberEnd + 1):
                 newRow = []
-                writeableSwitchPortNumber = switchNumberString + ":" + str(i)
-                newRow = [deviceName, vlanNumberFinal, writeableSwitchPortNumber, tag]
+                writeableSwitchPortNumber = portNumbersModifiableList[0] + "." + portNumbersModifiableList[1] + "." + str(i)
+                newRow = [deviceName, vlanNumberFinal, direction, writeableSwitchPortNumber, tag]
                 if "Loop" not in vlanNumberFinal and "loop" not in vlanNumberFinal:
                   writer.writerow(newRow)
                 else: 
