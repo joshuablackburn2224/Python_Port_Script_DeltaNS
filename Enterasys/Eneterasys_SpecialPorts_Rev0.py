@@ -62,7 +62,6 @@ def process_file(path):
 
       if (substring11 in line):
 
-        # print(line)
         mappableVlanList = line.rsplit(" ")
         for i in range(3):
           mappableVlanList.pop(0)
@@ -70,7 +69,6 @@ def process_file(path):
         mappableVlanList[1] = mappableVlanList[1].replace("\n", "")
         mappableVlanList[1] = mappableVlanList[1].replace("\"", "")
 
-        # print(mappableVlanList)
 
         vlans.update({mappableVlanList[0]: mappableVlanList[1]})
 
@@ -111,7 +109,7 @@ def process_file(path):
           direction = 'unknown'
         
         #split string at set vlan and convert back from list to string
-        vlanNumberLineList = line.rsplit(substring5)
+        vlanNumberLineList = line.rsplit(direction)
         vlanNumberLineList.pop(0)
         vlanNumberStringFromList = vlanNumberLineList[0]
         #isolate tag, save as tagFinal by converting back from list to String
@@ -129,11 +127,8 @@ def process_file(path):
         portNumberListStart.pop(len(portNumberListStart) - 1)
         portNumberListStart.pop(0)
         portNumberOnlyString = portNumberListStart[0]
-        print(portNumberOnlyString)
         # create list of individual port ranges by splitting at ;
         portNumbersList = portNumberOnlyString.split(";")
-        #re.findall(("(\w){2}\.\d\.(\d){1,2}(-(\d){1,2})?"), vlanNumberStringFromList)
-        print(portNumbersList)
         for i in range (len(portNumbersList)):
             #create flag, set to False initially, True if range of port Numbers present
             flag = False
@@ -145,10 +140,6 @@ def process_file(path):
             portNumbersModifiableList = portNumberString.split(".")
             portNumberNoRangeFinal = portNumberString
             isolatedPortNumberRange = portNumbersModifiableList[2]
-            print(portNumbersModifiableList)
-            print(isolatedPortNumberRange)
-            #TODO isolate speed letters
-          
             #logic for setting tagged or untagged in display
             if tagFlag == True:
               tag = "tagged"
@@ -158,7 +149,7 @@ def process_file(path):
             if flag != True:
               writeableSwitchPortNumber =  portNumberNoRangeFinal
               newRow = []
-              newRow = [deviceName, vlanNumberFinal, direction, writeableSwitchPortNumber, tag]
+              newRow = [deviceName, vlans[vlanNumberFinal], vlanNumberFinal, direction, writeableSwitchPortNumber, tag]
               if "Loop" not in vlanNumberFinal and "loop" not in vlanNumberFinal:
                 writer.writerow(newRow)
               else: 
@@ -170,56 +161,12 @@ def process_file(path):
               for i in range (portNumberStart, portNumberEnd + 1):
                 newRow = []
                 writeableSwitchPortNumber = portNumbersModifiableList[0] + "." + portNumbersModifiableList[1] + "." + str(i)
-                newRow = [deviceName, vlanNumberFinal, direction, writeableSwitchPortNumber, tag]
+                newRow = [deviceName, vlans[vlanNumberFinal], vlanNumberFinal, direction, writeableSwitchPortNumber, tag]
                 if "Loop" not in vlanNumberFinal and "loop" not in vlanNumberFinal:
                   writer.writerow(newRow)
                 else: 
                  pass
 
-        """
-        else:
-          #create portnumbers list and discover tag with regex
-          portNumbersList = re.findall(("\d\d*-?\d*"), vlanNumberStringFromList)
-          for i in range (len(portNumbersList)):
-          #create flag, set to False initially, True if range of port Numbers present
-            flag = False
-          #convert portNumbersList to String for Modifications
-            portNumberString = portNumbersList[i]
-            if "-" in portNumberString:
-              flag = True
-          #create list of isolated integers from String
-            portNumbersModifiableList = re.findall("\d*",portNumberString)
-          #remove all blank spaces from list
-            while "" in portNumbersModifiableList:
-              portNumbersModifiableList.remove("")
-          #logic for setting tagged or untagged in display
-            if tagFlag == True:
-              tag = "tagged"
-            else:
-              tag = "untagged"
-            #logic for writing switch and port numbers when a range is and is not present
-            if flag != True:
-              portNumber = int(portNumbersModifiableList[0])
-              portNumberString = portNumbersModifiableList[0]
-              writeablePortNumber = portNumberString
-              newRow = []
-              newRow = [deviceName, vlanNumberFinal, writeablePortNumber, tag]
-              if "Loop" not in vlanNumberFinal and "loop" not in vlanNumberFinal:
-                writer.writerow(newRow)
-              else: 
-                pass
-            else:
-              portNumberStart = int(portNumbersModifiableList[0])
-              portNumberEnd = int(portNumbersModifiableList[1])
-              for i in range (portNumberStart, portNumberEnd + 1):
-                newRow = []
-                writeablePortNumber = str(i)
-                newRow = [deviceName, vlanNumberFinal, writeablePortNumber, tag]
-                if "Loop" not in vlanNumberFinal and "loop" not in vlanNumberFinal:
-                  writer.writerow(newRow)
-                else: 
-                  pass
-            """
 
   outfile.close()
 
