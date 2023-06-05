@@ -39,7 +39,7 @@ def process_file(path):
       exit()
 
   #close file after retrieving device ID
-  file.close()
+  # file.close()
 
   #logic for creating and writing to csv file with unique name
   fileName = deviceName + "_SpecialPorts.csv"
@@ -49,9 +49,47 @@ def process_file(path):
   header = ['device', 'vlan name', 'vlan number', 'direction', 'port number', 'tag']
   writer.writerow(header)
   
-  # Need to add logic for creating dictionary of Key:Value = Number:Name
 
-  #open file second time to iterate through and find all vlan names and ports
+  #TODO: Need to add logic for creating dictionary of Key:Value = Number:Name
+  # create empty dictionary to store vlan number and name
+  vlans = {}
+
+  # open file SECOND time for populating dictionary of vlan number:name
+  with open(path, 'r', encoding =None) as file:
+    substring11 = "set vlan name"
+
+    for line in file:
+
+      if (substring11 in line):
+
+        # print(line)
+        mappableVlanList = line.rsplit(" ")
+        for i in range(3):
+          mappableVlanList.pop(0)
+        
+        mappableVlanList[1] = mappableVlanList[1].replace("\n", "")
+        mappableVlanList[1] = mappableVlanList[1].replace("\"", "")
+
+        # print(mappableVlanList)
+
+        vlans.update({mappableVlanList[0]: mappableVlanList[1]})
+
+  """
+  # print entire dictionary
+  for key, value in vlans.items():
+    print(key, value)
+
+  print()
+  search with key
+  print(vlans['610'])
+
+  # find key by value
+  for key, value in vlans.items():
+    if value == 'HS':
+      print(key)
+  """
+
+  #open file THIRD time to iterate through and find all vlan names and ports
   with open(path, 'r', encoding =None) as file:
     for line in file:
       #substrings to help search for unique identifier for vlan names
@@ -186,7 +224,6 @@ def process_file(path):
   #    else if()
 
 # logic to get user input
-# TODO: clean up input logic so that it is easier to read
 
 # pulls file name from command line argument, if available
 args = len(sys.argv)
