@@ -60,7 +60,6 @@ def process_file(path):
       substring5 = "ingress "
       #logic for identifying vlan names
       if substring3 in line and (substring4 in line or substring5 in line):
-        print("Entered loop")
         #split string at set vlan and convert back from list to string
         vlanNumberLineList = line.rsplit(substring4)
         vlanNumberLineList.pop(0)
@@ -120,8 +119,8 @@ def process_file(path):
                   writer.writerow(newRow)
                 else: 
                  pass
-print("printing port numbers list")
-"""
+
+        """
         else:
           #create portnumbers list and discover tag with regex
           portNumbersList = re.findall(("\d\d*-?\d*"), vlanNumberStringFromList)
@@ -166,9 +165,9 @@ print("printing port numbers list")
                   pass
             """
 
-outfile.close()
+  outfile.close()
 
-print(f"Completed {path}")
+  print(f"Completed {path}")
     
   #    else if()
 
