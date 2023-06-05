@@ -60,6 +60,18 @@ def process_file(path):
       substring6 = "ingress"
       #logic for identifying vlan names
       if substring4 in line and (substring5 in line or substring6 in line):
+
+        # if string 'egress' exists in the line, save that as a variable.
+        # if string 'ingress' exists instead, do the same.
+        # the else statement should hopefully never run
+        if substring5 in line:
+          direction = substring5
+        elif substring6 in line:
+          direction = substring6
+        else:
+          print("Error: could not set egress/ingress variable")
+          direction = 'unknown'
+        
         print("found substrings")
         #split string at set vlan and convert back from list to string
         vlanNumberLineList = line.rsplit(substring5)
