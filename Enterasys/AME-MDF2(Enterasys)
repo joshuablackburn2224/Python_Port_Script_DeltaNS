@@ -1,0 +1,464 @@
+﻿B5(su)->show conf
+This command shows non-default configurations only.
+Use 'show config all' to show both default and non-default configurations.
+
+begin
+!
+#***** NON-DEFAULT CONFIGURATION *****
+!
+!
+# Firmware Revision:  06.81.04.0001
+!
+#ip
+set ip protocol none
+set ip address 10.222.1.39 mask 255.255.0.0 gateway 10.222.1.1
+!
+
+#security
+!
+
+#system
+set switch member 1 2 
+set switch member 2 6 
+set switch member 3 2 
+set system name "AMMOORE-MDF-2"
+set system location "Amanda Moore"
+set system login admin super-user enable  password :5756556dd95e4acb5f7fa94b68629f31a70e93597d57b059ea50fb0fcc21c1484d719125d328d06dee: 
+!
+
+#vlan
+set vlan create 10
+set vlan create 11
+set vlan create 20
+set vlan create 21
+set vlan create 22
+set vlan create 23
+set vlan create 25
+set vlan create 26
+set vlan create 30
+set vlan create 31
+set vlan create 35
+set vlan create 36
+set vlan create 40
+set vlan create 41
+set vlan create 50
+set vlan create 51
+set vlan create 60
+set vlan create 61
+set vlan create 70
+set vlan create 71
+set vlan create 72
+set vlan create 73
+set vlan create 74
+set vlan create 75
+set vlan create 80
+set vlan create 81
+set vlan create 85
+set vlan create 86
+set vlan create 90
+set vlan create 91
+set vlan create 96
+set vlan create 97
+set vlan create 100
+set vlan create 150
+set vlan create 200
+set vlan create 300
+set vlan create 410
+set vlan create 420
+set vlan create 425
+set vlan create 430
+set vlan create 435
+set vlan create 440
+set vlan create 450
+set vlan create 460
+set vlan create 470
+set vlan create 480
+set vlan create 490
+set vlan create 497
+set vlan create 500
+set vlan create 510
+set vlan create 520
+set vlan create 525
+set vlan create 530
+set vlan create 535
+set vlan create 540
+set vlan create 550
+set vlan create 560
+set vlan create 570
+set vlan create 580
+set vlan create 590
+set vlan create 597
+set vlan create 610
+set vlan name 10 "Amanda Moore VLAN"
+set vlan name 11 "VOICE-AME"
+set vlan name 20 "Croswell VLAN"
+set vlan name 21 "VoiceClients-CES"
+set vlan name 22 "Transportation VLAN"
+set vlan name 23 "VoiceClients-TRANS"
+set vlan name 25 "Hamilton Parsons VLAN"
+set vlan name 26 "VoiceClients-HPE"
+set vlan name 30 "Indian Hills VLAN"
+set vlan name 31 "VoiceClients-IHE"
+set vlan name 35 "Hevel-NEW VLAN"
+set vlan name 36 "VoiceClients-HES"
+set vlan name 40 "Washington VLAN"
+set vlan name 41 "VoiceClients-WES"
+set vlan name 50 "Romeo Middle VLAN"
+set vlan name 51 "VoiceClients-RMS"
+set vlan name 60 "Powell Middle VLAN"
+set vlan name 61 "VoiceClients-PMS"
+set vlan name 70 "HS VLAN"
+set vlan name 71 "SERVER"
+set vlan name 72 "Video Prod- 10.70.6.x"
+set vlan name 73 "VLAN73"
+set vlan name 74 "NO-PROXY"
+set vlan name 75 "VoiceClients-RHS"
+set vlan name 80 "Administration VLAN"
+set vlan name 81 "VoiceClients-ADM"
+set vlan name 85 "Maintenance VLAN"
+set vlan name 86 "VoiceClients-MNT"
+set vlan name 90 "RETC VLAN"
+set vlan name 91 "VoiceClients-RETC"
+set vlan name 96 "Wifi-Calls"
+set vlan name 97 "Maintenance VLAN"
+set vlan name 100 "Wireless_Vlan"
+set vlan name 150 "Security VLAN"
+set vlan name 200 "Hevel-Old VLAN"
+set vlan name 300 "DMZ"
+set vlan name 410 "WAP-AME"
+set vlan name 420 "WAP-CES"
+set vlan name 425 "WAP-HamPar"
+set vlan name 430 "WAP-IHE"
+set vlan name 435 "WAP-Hevel"
+set vlan name 440 "WAP-Wash"
+set vlan name 450 "WAP-RMS"
+set vlan name 460 "WAP-PMS"
+set vlan name 470 "WAP-HS"
+set vlan name 480 "WAP-Admin"
+set vlan name 490 "WAP-RETC"
+set vlan name 497 "WAP-Maint"
+set vlan name 500 "Wireless-Guest Clients"
+set vlan name 510 "WirelessClients-AME"
+set vlan name 520 "WirelessClients-CES"
+set vlan name 525 "WirelessClients-HamPar"
+set vlan name 530 "WirelessClients-IHE"
+set vlan name 535 "WirelessClients-Hevel"
+set vlan name 540 "WirelessClients-Wash"
+set vlan name 550 "WirelessClients-RMS"
+set vlan name 560 "WirelessClients-PMS"
+set vlan name 570 "WirelessClients-HS"
+set vlan name 580 "WirelessClients-Admin"
+set vlan name 590 "WirelessClients-RETC"
+set vlan name 597 "WirelessClients-Maint"
+set vlan name 610 "Meraki-AP-AME"
+clear vlan egress 1 ge.1.1-24;ge.2.1-24;ge.3.1-24
+set vlan egress 10 tg.2.25-26 tagged
+set vlan egress 10 ge.1.1-24;ge.2.1-4;ge.2.6-13;ge.2.16-17;ge.2.19-24;ge.3.13-24 untagged
+set vlan egress 11 ge.1.1-24;ge.2.1-4;ge.2.6-13;ge.2.16-17;ge.2.19-24;tg.2.26;ge.3.1-24 tagged
+set vlan egress 96 ge.1.22;ge.2.5;ge.2.14-15;ge.2.18;tg.2.25-26;ge.3.1-12 tagged
+set vlan egress 500 ge.1.22;ge.2.5;ge.2.14-15;ge.2.18;tg.2.25-26;ge.3.1-12 tagged
+set vlan egress 510 ge.1.22;ge.2.5;ge.2.14-15;ge.2.18;tg.2.25-26;ge.3.1-12 tagged
+set vlan egress 610 tg.2.25-26 tagged
+set vlan egress 610 ge.2.5;ge.2.14-15;ge.2.18;ge.3.1-12 untagged
+!
+
+#Router Configuration
+!
+
+#arp
+!
+
+#arpinspection
+!
+
+#authentication
+!
+
+#banner
+!
+
+#cdp
+!
+
+#cep
+!
+
+#ciscodp
+!
+
+#console
+!
+
+#dhcp
+!
+
+#dhcpsnooping
+!
+
+#dos
+!
+
+#eapol
+!
+
+#flowcontrol
+!
+
+#garp
+!
+
+#gvrp
+!
+
+#history
+!
+
+#igmp
+!
+
+#inlinepower
+!
+
+#ipsec
+!
+
+#ipv6
+!
+
+#lacp
+!
+
+#length
+!
+
+#lldp
+!
+
+#linkflap
+!
+
+#logging
+!
+
+#logout
+!
+
+#mac
+!
+
+#macauthentication
+!
+
+#maclock
+!
+
+#mgmt-auth-notify
+!
+
+#mld
+!
+
+#mtu
+!
+
+#multiauth
+!
+
+#newaddrtrap
+!
+
+#nodealias
+!
+
+#cos state
+!
+
+#cos settings
+!
+
+#cos port-config
+!
+
+#cos port-resource
+!
+
+#cos reference
+!
+
+#policy
+!
+
+#port
+clear port advertise tg.2.26 pause
+set port vlan ge.1.1 10 
+set port vlan ge.1.2 10 
+set port vlan ge.1.3 10 
+set port vlan ge.1.4 10 
+set port vlan ge.1.5 10 
+set port vlan ge.1.6 10 
+set port vlan ge.1.7 10 
+set port vlan ge.1.8 10 
+set port vlan ge.1.9 10 
+set port vlan ge.1.10 10 
+set port vlan ge.1.11 10 
+set port vlan ge.1.12 10 
+set port vlan ge.1.13 10 
+set port vlan ge.1.14 10 
+set port vlan ge.1.15 10 
+set port vlan ge.1.16 10 
+set port vlan ge.1.17 10 
+set port vlan ge.1.18 10 
+set port vlan ge.1.19 10 
+set port vlan ge.1.20 10 
+set port vlan ge.1.21 10 
+set port vlan ge.1.22 10 
+set port vlan ge.1.23 10 
+set port vlan ge.1.24 10 
+set port vlan ge.2.1 10 
+set port vlan ge.2.2 10 
+set port vlan ge.2.3 10 
+set port vlan ge.2.4 10 
+set port vlan ge.2.5 610 
+set port vlan ge.2.6 10 
+set port vlan ge.2.7 10 
+set port vlan ge.2.8 10 
+set port vlan ge.2.9 10 
+set port vlan ge.2.10 10 
+set port vlan ge.2.11 10 
+set port vlan ge.2.12 10 
+set port vlan ge.2.13 10 
+set port vlan ge.2.14 610 
+set port vlan ge.2.15 610 
+set port vlan ge.2.16 10 
+set port vlan ge.2.17 10 
+set port vlan ge.2.18 610 
+set port vlan ge.2.19 10 
+set port vlan ge.2.20 10 
+set port vlan ge.2.21 10 
+set port vlan ge.2.22 10 
+set port vlan ge.2.23 10 
+set port vlan ge.2.24 10 
+set port vlan ge.3.1 610 
+set port vlan ge.3.2 610 
+set port vlan ge.3.3 610 
+set port vlan ge.3.4 610 
+set port vlan ge.3.5 610 
+set port vlan ge.3.6 610 
+set port vlan ge.3.7 610 
+set port vlan ge.3.8 610 
+set port vlan ge.3.9 610 
+set port vlan ge.3.10 610 
+set port vlan ge.3.11 610 
+set port vlan ge.3.12 610 
+set port vlan ge.3.13 10 
+set port vlan ge.3.14 10 
+set port vlan ge.3.15 10 
+set port vlan ge.3.16 10 
+set port vlan ge.3.17 10 
+set port vlan ge.3.18 10 
+set port vlan ge.3.19 10 
+set port vlan ge.3.20 10 
+set port vlan ge.3.21 10 
+set port vlan ge.3.22 10 
+set port vlan ge.3.23 10 
+set port vlan ge.3.24 10 
+!
+
+#prompt
+!
+
+#pwa
+!
+
+#sflow
+!
+
+#txqmonitor
+!
+
+#radius
+!
+
+#rmon stats
+!
+
+#rmon alarm
+!
+
+#rmon capture
+set rmon capture 27113 43544 slice 128 loadsize 128 asksize 50000 owner "NetSight RCS-vCenter01/10.70.10.26"
+!
+
+#rmon channel
+set rmon channel 43544 ge.1.24 control on description "Thu Sep 01 16:14:58 EDT 2016" owner "NetSight RCS-vCenter01/10.70.10.26"
+!
+
+#rmon event
+!
+
+#rmon filter
+!
+
+#rmon history
+!
+
+#snmp 
+clear snmp access ro security-model v1 
+clear snmp access ro security-model v2c 
+clear snmp access public security-model v1 
+clear snmp access public security-model v2c 
+clear snmp access public security-model usm
+set snmp access RGROUP security-model usm privacy exact read All write All notify All nonvolatile 
+set snmp community :3fb03022e4966512343b511c263dcf1240739359ec6cad7d8c6277007e7e0657521e0641967b150156:
+set snmp group ro user ro security-model v1 
+set snmp group public user public security-model v1 
+set snmp group ro user ro security-model v2c 
+set snmp group public user public security-model v2c 
+set snmp group public user public security-model usm 
+set snmp group RGROUP user ROMEOSNMP security-model usm 
+set snmp user public authentication sha :f5647ecb42b89a1bedae6d1bf75318e8858f6a8f: encryption aes privacy :f5647ecb42b89a1bedae6d1bf75318e8:
+set snmp user ROMEOSNMP authentication md5 :6d0a624c461a96e27a74d19cdb0c8459: encryption aes privacy :4645d4567c4c1cf8a3e8d8eb5b27c40e:
+set snmp view viewname All subtree 1
+!
+
+#sntp
+!
+
+#spantree
+!
+
+#ssh
+set ssh enabled
+!
+
+#ssl
+!
+
+#summertime
+!
+
+#tacacs
+!
+
+#telnet
+set telnet disable inbound
+set telnet disable outbound
+!
+
+#tftp
+!
+
+#timezone
+!
+
+#vlanauthorization
+!
+
+#webview
+!
+
+#width
+!
+end
+
+
