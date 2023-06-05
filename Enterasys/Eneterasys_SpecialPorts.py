@@ -55,15 +55,17 @@ def process_file(path):
   with open(path, 'r', encoding =None) as file:
     for line in file:
       #substrings to help search for unique identifier for vlan names
-      substring3 = "set vlan "
-      substring4 = "egresss "
-      substring5 = "ingress "
+      substring4 = "set vlan"
+      substring5 = "egress"
+      substring6 = "ingress"
       #logic for identifying vlan names
-      if substring3 in line and (substring4 in line or substring5 in line):
+      if substring4 in line and (substring5 in line or substring6 in line):
+        print("found substrings")
         #split string at set vlan and convert back from list to string
-        vlanNumberLineList = line.rsplit(substring4)
+        vlanNumberLineList = line.rsplit(substring5)
         vlanNumberLineList.pop(0)
         vlanNumberStringFromList = vlanNumberLineList[0]
+        print(vlanNumberStringFromList)
         #isolate tag, save as tagFinal by converting back from list to String
         tagFlag = True
         if "untagged" in vlanNumberStringFromList:
