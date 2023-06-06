@@ -45,8 +45,14 @@ def process_file(path):
   csvPath = Path(__file__).parent / fileName
   outfile = open(csvPath, "w", newline='')
   writer = csv.writer(outfile)
-  header = ['device', 'vlan name', 'port number', 'tag']
+  
+  #updated header with mac column
+  header = ['device', 'vlan name', 'MAC', 'port number', 'tag']
   writer.writerow(header)
+  
+  #added variable called macDictionary that will allow macS to be added to file
+  
+  macDictionary = macAndPortData(path)
 
   #open file second time to iterate through and find all vlan names and ports
   with open(path, 'r', encoding =None) as file:
@@ -85,7 +91,6 @@ def process_file(path):
             while "" in portNumbersModifiableList:
               portNumbersModifiableList.remove("")
             #isolate switch number
-            switchNumber = int(portNumbersModifiableList[0])
             switchNumberString = portNumbersModifiableList[0]
             #logic for setting tagged or untagged in display
             if tagFlag == True:
@@ -94,11 +99,16 @@ def process_file(path):
               tag = "untagged"
               #logic for writing switch and port numbers when a range is and is not present
             if flag != True:
-              portNumber = int(portNumbersModifiableList[1])
               portNumberString = portNumbersModifiableList[1]
               writeableSwitchPortNumber = switchNumberString + ":" + portNumberString
+              #added logic for retrieving mac address for dictionary and writing to csv
+              if writeableSwitchPortNumber in macDictionary:
+                if vlanNameFinal in macDictionary[writeableSwitchPortNumber]:
+                  macAdress = macDictionary[writeableSwitchPortNumber][vlanNameFinal]
+              else:
+                macAdress = " "
               newRow = []
-              newRow = [deviceName, vlanNameFinal, writeableSwitchPortNumber, tag]
+              newRow = [deviceName, vlanNameFinal, macAdress, writeableSwitchPortNumber, tag]
               if "Loop" not in vlanNameFinal and "loop" not in vlanNameFinal:
                 writer.writerow(newRow)
               else: 
@@ -108,12 +118,19 @@ def process_file(path):
               portNumberEnd = int(portNumbersModifiableList[2])
               for i in range (portNumberStart, portNumberEnd + 1):
                 newRow = []
+                #added logic for mac Adress retrieval
                 writeableSwitchPortNumber = switchNumberString + ":" + str(i)
-                newRow = [deviceName, vlanNameFinal, writeableSwitchPortNumber, tag]
+                if writeableSwitchPortNumber in macDictionary:
+                  if vlanNameFinal in macDictionary[writeableSwitchPortNumber]:
+                    macAdress = macDictionary[writeableSwitchPortNumber][vlanNameFinal]
+                else: 
+                  macAdress = " "
+                newRow = [deviceName, vlanNameFinal, macAdress, writeableSwitchPortNumber, tag]
                 if "Loop" not in vlanNameFinal and "loop" not in vlanNameFinal:
                   writer.writerow(newRow)
                 else: 
                  pass
+        #logic for writing without a switch number present (no #:## format)
         else:
           #create portnumbers list and discover tag with regex
           portNumbersList = re.findall(("\d\d*-?\d*"), vlanNameStringFromList)
@@ -136,11 +153,12 @@ def process_file(path):
               tag = "untagged"
             #logic for writing switch and port numbers when a range is and is not present
             if flag != True:
-              portNumber = int(portNumbersModifiableList[0])
               portNumberString = portNumbersModifiableList[0]
               writeablePortNumber = portNumberString
               newRow = []
-              newRow = [deviceName, vlanNameFinal, writeablePortNumber, tag]
+              #added blank column for mac address since mac retrieval does not function without #:## format
+              macAdress = " "
+              newRow = [deviceName, vlanNameFinal, macAdress, writeablePortNumber, tag]
               if "Loop" not in vlanNameFinal and "loop" not in vlanNameFinal:
                 writer.writerow(newRow)
               else: 
@@ -151,17 +169,71 @@ def process_file(path):
               for i in range (portNumberStart, portNumberEnd + 1):
                 newRow = []
                 writeablePortNumber = str(i)
-                newRow = [deviceName, vlanNameFinal, writeablePortNumber, tag]
+                macAdress = " "
+                newRow = [deviceName, vlanNameFinal, macAdress, writeablePortNumber, tag]
                 if "Loop" not in vlanNameFinal and "loop" not in vlanNameFinal:
                   writer.writerow(newRow)
                 else: 
                   pass
+  
 
   outfile.close()
 
   print(f"Completed {path}")
     
   #    else if()
+
+#UPDATE Create additional function to compile mac addresses and port numbers, then use data to add MACs to appropriate rows
+def macAndPortData(path):
+  with open(path, 'r', encoding =None) as file:
+    #define regex patterns
+    uplink_pattern = "(00:00:\w+:\w+:\w+:\w+:\w+:\w+)"
+    mac_pattern = "(\w+:\w+:\w+:\w+:\w+:\w+)"
+    port_pattern = "\s+\d:\d+\d*"
+    uplinkPort_pattern = "\d:\d+\d?"
+    vlanName_pattern = "[a-zA-Z]+[a-zA-Z]+[a-zA-Z]+\d*"
+    #create lists to hold all unique port numbers, names and uplink ports
+    uplinkPortsUnique = []
+    portListUnique = []
+    nameListUnique = []
+    #Define Outermost Dictionary
+    outerPorts_innerNamesAndMacs = {}
+    #loop through file
+    for line in file:
+    #use regex searches to define logic for dictionary creation
+      logicalMatch = re.search(mac_pattern, line)
+      uplinkMatch = re.search(uplink_pattern, line)
+    #if mac address found in line do...
+      if logicalMatch != None:
+        #if mac address is not an uplink mac do...
+        if uplinkMatch == None:
+          #create lists containing mac address, port, and vlanName
+          macList = re.findall(mac_pattern, line)
+          portList = re.findall(port_pattern, line)
+          vlanNameList = re.findall(vlanName_pattern, line)
+          #convert lists to strings
+          mac = macList[0]
+          port = portList[0].strip()
+          vlanName = vlanNameList[0]
+          #append port and vlan name to unique list if item not already present
+          if vlanName not in nameListUnique:
+            nameListUnique.append(vlanName)
+          #update outer dictionary if port number is not already present
+          if port not in portListUnique:
+            portListUnique.append(port)
+            outerPorts_innerNamesAndMacs.update({port : {vlanName:mac}})
+          #update dictionary related to corresponding port if port already present
+          else:
+            outerPorts_innerNamesAndMacs[port].update({vlanName:mac})
+        #create list of uplink ports using unique 00:00:...mac identifier
+        else:
+          uplinkPort = re.findall(uplinkPort_pattern, line)
+          uplinkPortsUnique.append(uplinkPort[0])
+  #removed all entries from outer dictionary that contain uplink ports
+  for i in range(len(uplinkPortsUnique)):
+    if uplinkPortsUnique[i] in outerPorts_innerNamesAndMacs:
+      outerPorts_innerNamesAndMacs.pop(uplinkPortsUnique[i])
+  return outerPorts_innerNamesAndMacs
 
 # logic to get user input
 # TODO: clean up input logic so that it is easier to read
@@ -173,6 +245,7 @@ if (args >= 2):
 
   # attempt to process the file, and exit if it does not exist
   try:
+    macAndPortData(logFile)
     process_file(logFile)
   except FileNotFoundError:
     print(f"Error: file {logFile} does not exist")
@@ -194,6 +267,7 @@ else:
 
     # attempt to process the file, and exit if it does not exist
     try:
+      macAndPortData(logFile)
       process_file(logFile)
     except FileNotFoundError:
       print(f"Error: file {logFile} does not exist")
@@ -205,6 +279,7 @@ else:
 
       # attempt to process the file, and exit if it does not exist
       try:
+        macAndPortData(file)
         process_file(file)
       except FileNotFoundError:
         print(f"Error: file {file} does not exist")
