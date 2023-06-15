@@ -1,6 +1,17 @@
-# version 3.0
+# version 4.0
 # github https://github.com/joshuablackburn2224/Python_Port_Script_DeltaNS/settings
 # authors Joshua Blackburn , Kevin Shin , Sean Rice
+# 1)Make sure python is installed
+# 2)Place script in folder with log files which must contain the following:
+#   a) sho configuration
+#   b) sho fdb
+#   c) sho edp ports all
+# 3)Drag script to command prompt
+# 
+# Excel treats port numbers (eg. 1:11) as time by default. To change this:
+# Don't double-click the CSV. 
+# Launch Excel, go to "tell me what you want" and type import CSV then select do not detect data type
+
 import re
 from pathlib import Path
 import csv
@@ -9,8 +20,7 @@ import glob
 
 # process each file as a function
 # wrap each call in a try/except block so that the script is safely exited on a FileNotFoundError
-def process_file(path):
-  print(f"Processing {path}")
+def process_file(path, tagOption):
   #initial opening of file
   with open(path, 'r', encoding =None) as file:
     #substrings to help search for unique identifier for device ID
@@ -41,7 +51,17 @@ def process_file(path):
   file.close()
 
   #logic for creating and writing to csv file with unique name
+  deviceName = deviceName.strip()
   fileName = deviceName + "_SpecialPorts.csv"
+  if tagOption == "tagged":
+    fileNameSuffix = "_SpecialPorts_untaggedOnly.csv"
+  elif tagOption == "untagged":
+    fileNameSuffix = "_SpecialPorts_taggedOnly.csv"
+  else:
+    fileNameSuffix = "_SpecialPorts.csv"
+
+  fileName = deviceName + fileNameSuffix
+  
   csvPath = Path(__file__).parent / fileName
   outfile = open(csvPath, "w", newline='')
   writer = csv.writer(outfile)
@@ -97,6 +117,12 @@ def process_file(path):
               tag = "tagged"
             else:
               tag = "untagged"
+            
+            if tag == tagOption:
+              continue
+            else:
+              pass
+
               #logic for writing switch and port numbers when a range is and is not present
             if flag != True:
               portNumberString = portNumbersModifiableList[1]
@@ -104,11 +130,11 @@ def process_file(path):
               #added logic for retrieving mac address for dictionary and writing to csv
               if writeableSwitchPortNumber in macDictionary:
                 if vlanNameFinal in macDictionary[writeableSwitchPortNumber]:
-                  macAdress = macDictionary[writeableSwitchPortNumber][vlanNameFinal]
+                  macAddress = macDictionary[writeableSwitchPortNumber][vlanNameFinal]
               else:
-                macAdress = " "
+                macAddress = " "
               newRow = []
-              newRow = [deviceName, vlanNameFinal, macAdress, writeableSwitchPortNumber, tag]
+              newRow = [deviceName, vlanNameFinal, macAddress, writeableSwitchPortNumber, tag]
               if "Loop" not in vlanNameFinal and "loop" not in vlanNameFinal:
                 writer.writerow(newRow)
               else: 
@@ -122,10 +148,10 @@ def process_file(path):
                 writeableSwitchPortNumber = switchNumberString + ":" + str(i)
                 if writeableSwitchPortNumber in macDictionary:
                   if vlanNameFinal in macDictionary[writeableSwitchPortNumber]:
-                    macAdress = macDictionary[writeableSwitchPortNumber][vlanNameFinal]
+                    macAddress = macDictionary[writeableSwitchPortNumber][vlanNameFinal]
                 else: 
-                  macAdress = " "
-                newRow = [deviceName, vlanNameFinal, macAdress, writeableSwitchPortNumber, tag]
+                  macAddress = " "
+                newRow = [deviceName, vlanNameFinal, macAddress, writeableSwitchPortNumber, tag]
                 if "Loop" not in vlanNameFinal and "loop" not in vlanNameFinal:
                   writer.writerow(newRow)
                 else: 
@@ -157,8 +183,8 @@ def process_file(path):
               writeablePortNumber = portNumberString
               newRow = []
               #added blank column for mac address since mac retrieval does not function without #:## format
-              macAdress = " "
-              newRow = [deviceName, vlanNameFinal, macAdress, writeablePortNumber, tag]
+              macAddress = " "
+              newRow = [deviceName, vlanNameFinal, macAddress, writeablePortNumber, tag]
               if "Loop" not in vlanNameFinal and "loop" not in vlanNameFinal:
                 writer.writerow(newRow)
               else: 
@@ -169,8 +195,8 @@ def process_file(path):
               for i in range (portNumberStart, portNumberEnd + 1):
                 newRow = []
                 writeablePortNumber = str(i)
-                macAdress = " "
-                newRow = [deviceName, vlanNameFinal, macAdress, writeablePortNumber, tag]
+                macAddress = " "
+                newRow = [deviceName, vlanNameFinal, macAddress, writeablePortNumber, tag]
                 if "Loop" not in vlanNameFinal and "loop" not in vlanNameFinal:
                   writer.writerow(newRow)
                 else: 
@@ -213,7 +239,18 @@ def macAndPortData(path):
           vlanNameList = re.findall(vlanName_pattern, line)
           #convert lists to strings
           mac = macList[0]
-          port = portList[0].strip()
+          
+          try:
+            port = portList[0].strip()
+          except Exception as e:
+            # print(f"No ports found on the following line:")
+            # print(line)
+            # print(repr(e))
+            continue
+
+          # if len(portList) > 0:
+          #   print(line)
+
           vlanName = vlanNameList[0]
           #append port and vlan name to unique list if item not already present
           if vlanName not in nameListUnique:
@@ -235,55 +272,91 @@ def macAndPortData(path):
       outerPorts_innerNamesAndMacs.pop(uplinkPortsUnique[i])
   return outerPorts_innerNamesAndMacs
 
-# logic to get user input
-# TODO: clean up input logic so that it is easier to read
 
-# pulls file name from command line argument, if available
-args = len(sys.argv)
-if (args >= 2):
-  logFile = str(sys.argv[1])
+def main():
 
-  # attempt to process the file, and exit if it does not exist
-  try:
-    macAndPortData(logFile)
-    process_file(logFile)
-  except FileNotFoundError:
-    print(f"Error: file {logFile} does not exist")
-    exit()
+  userInput = -1
+  print("Choose an option by entering its respective number")
+  while userInput == -1:
+    userInputString = "1. Process untagged vlans only\n2. Process tagged vlans only\n3. Process all vlans\nAlternatively, press Enter to perform option 1 by default.\n"
+    try:
+      userInput = int(input(userInputString))
+    except Exception as e:
+      userInput = 1
+    if (userInput > 3) or (userInput < 1):
+      userInput = -1
+  
+  # print(userInput)
+  
+  if userInput == 1:
+    userTagOption = "tagged"
+    print("Processing only untagged vlans!")
+  elif userInput == 2:
+    userTagOption = "untagged"
+    print("Processing only tagged vlans!")
+  else:
+    userTagOption = ""
+    print("Processing all vlans!")
 
-  # exit once processing is finished
-  exit()
-else:
 
-  # grab the full path of all files in the current directory ending in .log
-  # these are stored in a list
-  parent = Path(__file__).parent
-  fileList = glob.glob(f"{parent}/*.log")
-  numFiles = len(fileList)
+  # logic to get user input
 
-  # if files cannot be fetched automatically, ask user for a file name within the same directory as the script
-  if numFiles < 1:
-    logFile = str(input("Couldn't fetch log files automatically.\nEnter the name of the file in this directory to pass to this script.\n"))
+  # pulls file name from command line argument, if available
+  args = len(sys.argv)
+  if (args >= 2):
+    logFile = str(sys.argv[1])
 
     # attempt to process the file, and exit if it does not exist
     try:
       macAndPortData(logFile)
-      process_file(logFile)
+      process_file(logFile, userTagOption)
     except FileNotFoundError:
       print(f"Error: file {logFile} does not exist")
       exit()
+
+    # exit once processing is finished
+    exit()
   else:
 
-    # run the process function for each file found in the current directory
-    for file in fileList:
+    # grab the full path of all files in the current directory ending in .log
+    # these are stored in a list
+    parent = Path(__file__).parent
+    fileList = glob.glob(f"{parent}/*.log")
+    numFiles = len(fileList)
+
+    # if files cannot be fetched automatically, ask user for a file name within the same directory as the script
+    if numFiles < 1:
+      logFile = str(input("Couldn't fetch log files automatically.\nEnter the name of the file in this directory to pass to this script.\n"))
 
       # attempt to process the file, and exit if it does not exist
       try:
-        macAndPortData(file)
-        process_file(file)
+        macAndPortData(logFile)
+        process_file(logFile, userTagOption)
       except FileNotFoundError:
-        print(f"Error: file {file} does not exist")
+        print(f"Error: file {logFile} does not exist")
         exit()
-  # exit once processing has finished
-  exit()
+    else:
 
+      # run the process function for each file found in the current directory
+      for file in fileList:
+        print(f"Processing {file}")
+        # attempt to process the file, and exit if it does not exist
+        try:
+          macAndPortData(file)
+          process_file(file, userTagOption)
+        except FileNotFoundError:
+          print(f"Error: file {file} does not exist")
+          exit()
+    # exit once processing has finished
+    exit()
+
+# try/except block to catch any errors and report them
+if (__name__ == "__main__"):
+  try:
+    main()
+  except Exception as e:
+    print("The script has stopped due to the following error:")
+    print(e)
+
+    wait = str(input("Press Enter to exit...\n"))
+    exit()
