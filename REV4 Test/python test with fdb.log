@@ -1,0 +1,902 @@
+﻿sho configSlot-1 Delta_Production_Lab.1 # dis clip
+sho configSlot-1 Delta_Production_Lab.2 # sho configuration 
+sho config#
+sho config# Module devmgr configuration.
+sho config#
+sho configconfigure snmp sysName "Delta_Production_Lab"
+sho configconfigure snmp sysLocation "Delta Lab"
+sho configconfigure snmp sysContact "Help Desk"
+sho configconfigure timezone -300 autodst  begins every second sunday march at 2 0 ends every first sunday november at 2 0
+sho configconfigure slot 1 module X460-48p
+sho configconfigure sys-recovery-level slot 1 reset
+sho configconfigure slot 2 module X440-48p
+sho configconfigure sys-recovery-level slot 2 reset
+sho config
+sho config#
+sho config# Module vlan configuration.
+sho config#
+sho configconfigure vlan default delete ports all
+sho configconfigure vr VR-Default delete ports 1:1-58,2:1-48
+sho configconfigure vr VR-Default add ports 1:1-58,2:1-48
+sho configconfigure vlan default delete ports 1:1-58,2:1-48
+sho configcreate qosprofile "QP5"
+sho configcreate vlan "AH-Mgmt"
+sho configconfigure vlan AH-Mgmt tag 51
+sho configcreate vlan "ANDREW"
+sho configconfigure vlan ANDREW tag 3000
+sho configcreate vlan "Cyber"
+sho configconfigure vlan Cyber tag 1792
+sho configcreate vlan "Data"
+sho configconfigure vlan Data tag 172
+sho configcreate vlan "DMZ"
+sho configconfigure vlan DMZ tag 200
+sho configcreate vlan "FortiTest"
+sho configconfigure vlan FortiTest tag 175
+sho configcreate vlan "Hazel-NetMgmt"
+sho configconfigure vlan Hazel-NetMgmt tag 5
+sho configcreate vlan "MEAA"
+sho configconfigure vlan MEAA tag 4060
+sho configcreate vlan "No_Loop"
+sho configconfigure vlan No_Loop tag 666
+sho configcreate vlan "ping_mgmt"
+sho configconfigure vlan ping_mgmt tag 4000
+sho configcreate vlan "Staging"
+sho configconfigure vlan Staging tag 333
+sho configcreate vlan "Surveillance"
+sho configconfigure vlan Surveillance tag 10
+sho configcreate vlan "Test"
+sho configconfigure vlan Test tag 174
+sho configcreate vlan "Video"
+sho configconfigure vlan Video tag 173
+sho configcreate vlan "vlan226"
+sho configconfigure vlan vlan226 tag 226
+sho configcreate vlan "Voice"
+sho configconfigure vlan Voice tag 2
+sho configcreate vlan "WAN"
+sho configconfigure vlan WAN tag 20
+sho configcreate vlan "WBRC-Cams"
+sho configconfigure vlan WBRC-Cams tag 67
+sho configconfigure ports 1:10 display-string Shortel
+sho configconfigure ports 1:13 display-string Stark_1
+sho configconfigure ports 1:15 display-string Stark_0
+sho configconfigure ports 1:17 display-string Grand_1
+sho configconfigure ports 1:18 display-string Grand_0
+sho configconfigure ports 1:19 display-string Yeager_1
+sho configconfigure ports 1:20 display-string Yeager_0
+sho configconfigure ports 1:49 display-string Delta_Test2_X450E
+sho configconfigure ports 1:50 display-string Delta_Test1_X450e
+sho configconfigure ports 1:52 display-string Summit_Stack
+sho configconfigure ports 1:53 auto off speed 10000 duplex full 
+sho configconfigure ports 1:54 auto off speed 10000 duplex full 
+sho configconfigure ports 1:55 auto off speed 10000 duplex full 
+sho configconfigure ports 1:56 auto off speed 10000 duplex full 
+sho configconfigure ports 1:57 auto off speed 10000 duplex full 
+sho configconfigure ports 1:58 auto off speed 10000 duplex full 
+sho configconfigure ports 2:1 display-string Spare_Cube
+sho configconfigure ports 2:2 display-string DC_Cube
+sho configconfigure ports 2:3 display-string AB_Cube
+sho configconfigure ports 2:4 display-string DS_Cube
+sho configconfigure ports 2:5 display-string SP_Cube
+sho configconfigure ports 2:6 display-string JG_Cube
+sho configconfigure ports 2:7 display-string JZ_Cube
+sho configconfigure ports 2:8 display-string DW_Cube
+sho configconfigure ports 2:19 display-string Mirror_Port
+sho configconfigure ports 2:20 display-string Eaton_UPS
+sho configconfigure ports 2:24 display-string Warehouse_Door
+sho configconfigure ports 2:24 auto off speed 10 duplex full 
+sho configconfigure ports 2:25 display-string Shipping_Door
+sho configconfigure ports 2:25 auto off speed 10 duplex full 
+sho configconfigure ports 2:41 display-string S8
+sho configconfigure ports 2:42 display-string S7
+sho configconfigure ports 2:43 display-string S6
+sho configconfigure ports 2:44 display-string to_Staging-Rack-4
+sho configconfigure ports 2:45 display-string S4
+sho configconfigure ports 2:46 display-string S3
+sho configconfigure ports 2:47 display-string S2
+sho configconfigure ports 2:48 display-string to-Staging-Rack
+sho configcreate mirror "DC-Cube"
+sho configconfigure mirror DC-Cube to port 2:2 remote-tag 4094
+sho configconfigure mirror DefaultMirror to port 2:19 
+sho configconfigure vlan AH-Mgmt add ports 1:53,2:6,2:41,2:48 tagged  
+sho configconfigure vlan ANDREW add ports 1:53,2:3 tagged  
+sho configconfigure vlan Cyber add ports 2:4 tagged  
+sho configconfigure vlan Cyber add ports 1:3-4 untagged  
+sho configconfigure vlan Data add ports 1:2,1:11-12,1:48-53,2:2-4,2:6,2:48 tagged  
+sho configconfigure vlan Data add ports 1:8-10,1:15,1:18-26,1:30,1:32-33,1:43-44,2:1,2:7,2:19 untagged  
+sho configconfigure vlan DMZ add ports 1:12-13,1:48-50,1:52-53,2:48 tagged  
+sho configconfigure vlan DMZ add ports 1:17 untagged  
+sho configconfigure vlan FortiTest add ports 1:48-50,1:52-53,2:1,2:3,2:48 tagged  
+sho configconfigure vlan FortiTest add ports 1:12 untagged  
+sho configconfigure vlan Hazel-NetMgmt add ports 2:2,2:48 tagged  
+sho configconfigure vlan MEAA add ports 2:2,2:48 tagged  
+sho configconfigure vlan No_Loop add ports 1:1-58,2:1-18,2:20-43,2:45-48 tagged  
+sho configconfigure vlan ping_mgmt add ports 1:53 tagged  
+sho configconfigure vlan ping_mgmt add ports 1:1,2:32 untagged  
+sho configconfigure vlan Staging add ports 2:48 tagged  
+sho configconfigure vlan Surveillance add ports 1:12-13,1:48-49,1:52-53,2:2,2:4,2:47-48 tagged  
+sho configconfigure vlan Surveillance add ports 1:6,2:24-25 untagged  
+sho configconfigure vlan Test add ports 1:5,1:12-13,1:16,1:48-53,2:2-3,2:6,2:8,2:41-43,2:48 tagged  
+sho configconfigure vlan Test add ports 1:2,1:7,1:28,2:4-5,2:10,2:20,2:45-47 untagged  
+sho configconfigure vlan Video add ports 1:12,1:48-50,1:52-53,2:48 tagged  
+sho configconfigure vlan vlan226 add ports 1:12,1:48,1:50,1:52,2:48 tagged  
+sho configconfigure vlan Voice add ports 1:3,1:10,1:12,1:15,1:21-26,1:30,1:48-53,2:1-4,2:6,2:45,2:48 tagged  
+sho configconfigure vlan WAN add ports 1:12,1:48-50,1:52-53,2:1-2,2:6,2:48 tagged  
+sho configconfigure vlan WAN add ports 2:41,2:44 untagged  
+sho configconfigure vlan WBRC-Cams add ports 2:2,2:48 tagged  
+sho configconfigure vlan Mgmt ipaddress 192.168.0.1 255.255.255.0
+sho configconfigure vlan Data ipaddress 172.16.1.8 255.255.255.0
+sho configenable ipforwarding vlan Data
+sho configconfigure vlan FortiTest ipaddress 10.199.2.3 255.255.255.0
+sho configconfigure vlan Test ipaddress 10.174.1.2 255.255.255.0
+sho configenable ipforwarding vlan Test
+sho configconfigure vlan Cyber ipaddress 192.168.20.1 255.255.255.0
+sho configconfigure qosprofile QP5 maxbuffer 100 weight 1
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:1
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:2
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:3
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:4
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:5
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:6
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:7
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:8
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:9
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:10
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:11
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:12
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:13
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:14
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:15
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:16
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:17
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:18
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:19
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:20
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:21
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:22
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:23
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:24
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:25
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:26
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:27
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:28
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:29
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:30
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:31
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:32
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:33
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:34
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:35
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:36
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:37
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:38
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:39
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:40
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:41
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:42
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:43
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:44
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:45
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:46
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:47
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:48
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:49
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:50
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:51
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:52
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:53
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:54
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:55
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:56
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:57
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 1:58
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 2:1
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 2:2
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 2:3
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 2:4
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 2:5
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 2:6
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 2:7
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 2:8
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 2:9
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 2:10
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 2:11
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 2:12
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 2:13
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 2:14
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 2:15
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 2:16
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 2:17
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 2:18
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 2:19
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 2:20
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 2:21
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 2:22
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 2:23
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 2:24
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 2:25
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 2:26
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 2:27
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 2:28
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 2:29
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 2:30
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 2:31
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 2:32
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 2:33
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 2:34
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 2:35
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 2:36
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 2:37
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 2:38
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 2:39
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 2:40
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 2:41
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 2:42
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 2:43
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 2:44
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 2:45
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 2:46
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 2:47
+sho configconfigure qosprofile QP5 minbw 0 maxbw 100 ports 2:48
+sho configconfigure mirror DC-Cube add port 2:42 ingress-and-egress
+sho configconfigure mirror DefaultMirror add port 2:20 ingress-and-egress
+sho configconfigure mirror DefaultMirror add vlan Data ingress
+sho config
+sho config#
+sho config# Module fdb configuration.
+sho config#
+sho configconfigure iparp vr VR-Default max_entries 4096
+sho configconfigure neighbor-discovery vr VR-Default timeout 10
+sho configconfigure neighbor-discovery vr VR-Mgmt timeout 10
+sho config
+sho config#
+sho config# Module rtmgr configuration.
+sho config#
+sho configconfigure iproute add 172.16.10.0 255.255.255.0 192.168.0.100 vr VR-Mgmt
+sho configconfigure iproute add 192.168.0.0 255.255.255.0 192.168.0.100 vr VR-Mgmt
+sho configconfigure iproute add default 10.174.1.1
+sho configdisable iproute ipv4 compression 
+sho configdisable iproute ipv6 compression 
+sho config
+sho config#
+sho config# Module mcmgr configuration.
+sho config#
+sho configenable igmp snooping forward-mcrouter-only vr VR-Default
+sho configenable mvr vr VR-Default
+sho configconfigure mvr add vlan Video
+sho configconfigure mvr vlan Video mvr-address none
+sho configconfigure mvr vlan Video static group none
+sho config
+sho config#
+sho config# Module aaa configuration.
+sho config#
+sho configenable radius mgmt-access
+sho configconfigure account admin encrypted "qLv6Az$aabJNIkPGgMyEiLRIPCgl/" 
+sho configcreate netlogin local-user "001422BB221F" encrypted "Wg0xRI$lbeqaZEgBsroZdXy.EXzZ/"
+sho config
+sho config#
+sho config# Module acl configuration.
+sho config#
+sho configcreate flow-redirect FLOW_CVT
+sho configconfigure flow-redirect FLOW_CVT no-active drop
+sho configconfigure flow-redirect FLOW_CVT add nexthop 10.174.1.254 priority 20
+sho configcreate access-list DENY_CVT " destination-address 172.18.0.0/16 ; source-address 172.18.0.0/16 ;" " deny  ;" application "Cli"
+sho configcreate access-list FLOW_CVT " destination-address 0.0.0.0/0.0.0.0 ; source-address 172.18.0.0/16 ;" " count flow_cvt ;" application "Cli"
+sho config
+sho config
+sho config
+sho configconfigure access-list zone DOS application Dos application-priority 1
+sho configconfigure access-list zone SYSTEM application NetLogin application-priority 3
+sho configconfigure access-list zone SYSTEM application FIPSnooping application-priority 4
+sho configconfigure access-list zone SYSTEM application ESVT application-priority 5
+sho configconfigure access-list zone DOS move hal to-zone SYSTEM application-priority 6
+sho configconfigure access-list zone SYSTEM application HealthCheckLAG application-priority 7
+sho configconfigure access-list zone SYSTEM application IdentityManager application-priority 8
+sho configconfigure access-list zone SYSTEM application VMTracking application-priority 9
+sho configconfigure access-list zone SYSTEM application PolicyManager application-priority 10
+sho configconfigure access-list zone SYSTEM application OpenFlow application-priority 11
+sho configconfigure access-list zone SYSTEM application Policy application-priority 12
+sho configconfigure access-list zone SYSTEM application L2PT_PF application-priority 13
+sho configconfigure access-list zone SYSTEM application Snmp application-priority 16
+sho configconfigure access-list zone SYSTEM application Telnet application-priority 17
+sho configconfigure access-list zone SYSTEM application Http application-priority 18
+sho configconfigure access-list zone SYSTEM application Ssh2 application-priority 19
+sho configconfigure access-list zone SYSTEM application VlanManager application-priority 20
+sho config
+sho config#
+sho config# Module bfd configuration.
+sho config#
+sho config
+sho config#
+sho config# Module cfgmgr configuration.
+sho config#
+sho configconfigure banner before-login save-to-configuration
+sho config******************************************************************************
+sho config*                                                                            *
+sho config*                          Delta Production Lab Stack                        *
+sho config*                                                                            *
+sho config******************************************************************************
+sho config
+sho config
+sho config#
+sho config# Module dosprotect configuration.
+sho config#
+sho config
+sho config#
+sho config# Module dot1ag configuration.
+sho config#
+sho config
+sho config#
+sho config# Module eaps configuration.
+sho config#
+sho configconfigure eaps fast-convergence on
+sho configconfigure eaps multicast add-ring-ports on
+sho configconfigure eaps multicast temporary-flooding on
+sho config
+sho config#
+sho config# Module edp configuration.
+sho config#
+sho configenable cdp ports 1:1
+sho configenable cdp ports 1:2
+sho configenable cdp ports 1:3
+sho configenable cdp ports 1:4
+sho configenable cdp ports 1:5
+sho configenable cdp ports 1:6
+sho configenable cdp ports 1:7
+sho configenable cdp ports 1:8
+sho configenable cdp ports 1:9
+sho configenable cdp ports 1:10
+sho configenable cdp ports 1:11
+sho configenable cdp ports 1:12
+sho configenable cdp ports 1:13
+sho configenable cdp ports 1:14
+sho configenable cdp ports 1:15
+sho configenable cdp ports 1:16
+sho configenable cdp ports 1:17
+sho configenable cdp ports 1:18
+sho configenable cdp ports 1:19
+sho configenable cdp ports 1:20
+sho configenable cdp ports 1:21
+sho configenable cdp ports 1:22
+sho configenable cdp ports 1:23
+sho configenable cdp ports 1:24
+sho configenable cdp ports 1:25
+sho configenable cdp ports 1:26
+sho configenable cdp ports 1:27
+sho configenable cdp ports 1:28
+sho configenable cdp ports 1:29
+sho configenable cdp ports 1:30
+sho configenable cdp ports 1:31
+sho configenable cdp ports 1:32
+sho configenable cdp ports 1:33
+sho configenable cdp ports 1:34
+sho configenable cdp ports 1:35
+sho configenable cdp ports 1:36
+sho configenable cdp ports 1:37
+sho configenable cdp ports 1:38
+sho configenable cdp ports 1:39
+sho configenable cdp ports 1:40
+sho configenable cdp ports 1:41
+sho configenable cdp ports 1:42
+sho configenable cdp ports 1:43
+sho configenable cdp ports 1:44
+sho configenable cdp ports 1:45
+sho configenable cdp ports 1:46
+sho configenable cdp ports 1:47
+sho configenable cdp ports 1:48
+sho configenable cdp ports 1:49
+sho configenable cdp ports 1:50
+sho configenable cdp ports 1:51
+sho configenable cdp ports 1:52
+sho configenable cdp ports 1:53
+sho configenable cdp ports 1:54
+sho configenable cdp ports 1:55
+sho configenable cdp ports 1:56
+sho configenable cdp ports 1:57
+sho configenable cdp ports 1:58
+sho configenable cdp ports 2:1
+sho configenable cdp ports 2:2
+sho configenable cdp ports 2:3
+sho configenable cdp ports 2:4
+sho configenable cdp ports 2:5
+sho configenable cdp ports 2:6
+sho configenable cdp ports 2:7
+sho configenable cdp ports 2:8
+sho configenable cdp ports 2:9
+sho configenable cdp ports 2:10
+sho configenable cdp ports 2:11
+sho configenable cdp ports 2:12
+sho configenable cdp ports 2:13
+sho configenable cdp ports 2:14
+sho configenable cdp ports 2:15
+sho configenable cdp ports 2:16
+sho configenable cdp ports 2:17
+sho configenable cdp ports 2:18
+sho configenable cdp ports 2:19
+sho configenable cdp ports 2:20
+sho configenable cdp ports 2:21
+sho configenable cdp ports 2:22
+sho configenable cdp ports 2:23
+sho configenable cdp ports 2:24
+sho configenable cdp ports 2:25
+sho configenable cdp ports 2:26
+sho configenable cdp ports 2:27
+sho configenable cdp ports 2:28
+sho configenable cdp ports 2:29
+sho configenable cdp ports 2:30
+sho configenable cdp ports 2:31
+sho configenable cdp ports 2:32
+sho configenable cdp ports 2:33
+sho configenable cdp ports 2:34
+sho configenable cdp ports 2:35
+sho configenable cdp ports 2:36
+sho configenable cdp ports 2:37
+sho configenable cdp ports 2:38
+sho configenable cdp ports 2:39
+sho configenable cdp ports 2:40
+sho configenable cdp ports 2:41
+sho configenable cdp ports 2:42
+sho configenable cdp ports 2:43
+sho configenable cdp ports 2:44
+sho configenable cdp ports 2:45
+sho configenable cdp ports 2:46
+sho configenable cdp ports 2:47
+sho configenable cdp ports 2:48
+sho config
+sho config#
+sho config# Module elrp configuration.
+sho config#
+sho configenable elrp-client
+sho configconfigure elrp-client periodic Data ports all interval 1 log disable-port ingress permanent
+sho configconfigure elrp-client periodic No_Loop ports all interval 1 log disable-port ingress permanent
+sho configconfigure elrp-client disable-port exclude 1:49
+sho configconfigure elrp-client disable-port exclude 1:50
+sho configconfigure elrp-client disable-port exclude 1:51
+sho configconfigure elrp-client disable-port exclude 1:52
+sho configconfigure elrp-client disable-port exclude 1:53
+sho configconfigure elrp-client disable-port exclude 2:1
+sho config
+sho config#
+sho config# Module ems configuration.
+sho config#
+sho configcreate log filter detectPoE_Failure
+sho configconfigure syslog add 172.16.1.24:514 vr VR-Default local0
+sho configenable log target syslog 172.16.1.24:514 vr VR-Default local0
+sho configconfigure log target syslog 172.16.1.24:514 vr VR-Default local0 filter DefaultFilter severity Debug-Data
+sho configconfigure log target syslog 172.16.1.24:514 vr VR-Default local0 match Any
+sho configconfigure log target syslog 172.16.1.24:514 vr VR-Default local0 format timestamp seconds date Mmm-dd event-name none process-slot priority host-name tag-name 
+sho config
+sho config#
+sho config# Module epm configuration.
+sho config#
+sho config
+sho config#
+sho config# Module erps configuration.
+sho config#
+sho config
+sho config#
+sho config# Module esrp configuration.
+sho config#
+sho config
+sho config#
+sho config# Module ethoam configuration.
+sho config#
+sho config
+sho config#
+sho config# Module etmon configuration.
+sho config#
+sho configenable rmon
+sho config
+sho config#
+sho config# Module hal configuration.
+sho config#
+sho config
+sho config#
+sho config# Module idMgr configuration.
+sho config#
+sho config
+sho config#
+sho config# Module ipSecurity configuration.
+sho config#
+sho config
+sho config#
+sho config# Module ipfix configuration.
+sho config#
+sho configconfigure ip-fix ip-address 172.16.1.24 protocol udp L4-port 2075 vr "VR-Mgmt"
+sho configconfigure ip-fix source ip-address 10.174.1.2 vr "VR-Default"
+sho configenable ip-fix ports 1:1 all_traffic
+sho configenable ip-fix ports 1:2 all_traffic
+sho configenable ip-fix ports 1:3 all_traffic
+sho configenable ip-fix ports 1:4 all_traffic
+sho configenable ip-fix ports 1:5 all_traffic
+sho configenable ip-fix ports 1:6 all_traffic
+sho configenable ip-fix ports 1:7 all_traffic
+sho configenable ip-fix ports 1:8 all_traffic
+sho configenable ip-fix ports 1:9 all_traffic
+sho configenable ip-fix ports 1:10 all_traffic
+sho configenable ip-fix ports 1:11 all_traffic
+sho configenable ip-fix ports 1:12 all_traffic
+sho configenable ip-fix ports 1:13 all_traffic
+sho configenable ip-fix ports 1:14 all_traffic
+sho configenable ip-fix ports 1:15 all_traffic
+sho configenable ip-fix ports 1:16 all_traffic
+sho configenable ip-fix ports 1:17 all_traffic
+sho configenable ip-fix ports 1:18 all_traffic
+sho configenable ip-fix ports 1:19 all_traffic
+sho configenable ip-fix ports 1:20 all_traffic
+sho configenable ip-fix ports 1:21 all_traffic
+sho configenable ip-fix ports 1:22 all_traffic
+sho configenable ip-fix ports 1:23 all_traffic
+sho configenable ip-fix ports 1:24 all_traffic
+sho configenable ip-fix ports 1:25 all_traffic
+sho configenable ip-fix ports 1:26 all_traffic
+sho configenable ip-fix ports 1:27 all_traffic
+sho configenable ip-fix ports 1:28 all_traffic
+sho configenable ip-fix ports 1:29 all_traffic
+sho configenable ip-fix ports 1:30 all_traffic
+sho configenable ip-fix ports 1:31 all_traffic
+sho configenable ip-fix ports 1:32 all_traffic
+sho configenable ip-fix ports 1:33 all_traffic
+sho configenable ip-fix ports 1:34 all_traffic
+sho configenable ip-fix ports 1:35 all_traffic
+sho configenable ip-fix ports 1:36 all_traffic
+sho configenable ip-fix ports 1:37 all_traffic
+sho configenable ip-fix ports 1:38 all_traffic
+sho configenable ip-fix ports 1:39 all_traffic
+sho configenable ip-fix ports 1:40 all_traffic
+sho configenable ip-fix ports 1:41 all_traffic
+sho configenable ip-fix ports 1:42 all_traffic
+sho configenable ip-fix ports 1:43 all_traffic
+sho configenable ip-fix ports 1:44 all_traffic
+sho configenable ip-fix ports 1:45 all_traffic
+sho configenable ip-fix ports 1:46 all_traffic
+sho configenable ip-fix ports 1:47 all_traffic
+sho configenable ip-fix ports 1:48 all_traffic
+sho configenable ip-fix ports 1:49 all_traffic
+sho configenable ip-fix ports 1:50 all_traffic
+sho configenable ip-fix ports 1:51 all_traffic
+sho configenable ip-fix ports 1:52 all_traffic
+sho configenable ip-fix ports 1:53 all_traffic
+sho configenable ip-fix ports 1:54 all_traffic
+sho configenable ip-fix ports 1:55 all_traffic
+sho configenable ip-fix ports 1:56 all_traffic
+sho configenable ip-fix ports 1:57 all_traffic
+sho configenable ip-fix ports 1:58 all_traffic
+sho config
+sho config#
+sho config# Module lldp configuration.
+sho config#
+sho configconfigure lldp port 1:12 advertise vendor-specific dot3 power-via-mdi with-classification
+sho configconfigure lldp port 1:12 advertise vendor-specific med capabilities
+sho configconfigure lldp port 1:12 advertise vendor-specific med power-via-mdi
+sho configconfigure lldp port 1:30 advertise vendor-specific dot3 power-via-mdi with-classification
+sho configconfigure lldp port 1:30 advertise vendor-specific med capabilities
+sho configconfigure lldp port 1:30 advertise vendor-specific med power-via-mdi
+sho config
+sho config#
+sho config# Module mrp configuration.
+sho config#
+sho configenable mvrp
+sho configenable mvrp ports 1:51
+sho configenable mvrp ports 2:47
+sho config
+sho config#
+sho config# Module msdp configuration.
+sho config#
+sho config
+sho config#
+sho config# Module netLogin configuration.
+sho config#
+sho configconfigure netlogin add mac-list 00:14:22:bb:22:1f 48
+sho config
+sho config#
+sho config# Module netTools configuration.
+sho config#
+sho configconfigure dns-client add name-server 172.16.1.40 vr VR-Default
+sho configenable dhcp vlan Default
+sho configconfigure bootprelay add 172.16.2.5 vr VR-Default
+sho configconfigure bootprelay add 10.5.31.240 vr VR-Default
+sho configenable bootprelay ipv4 vlan AH-Mgmt
+sho configenable bootprelay ipv4 vlan ANDREW
+sho configenable bootprelay ipv4 vlan Cyber
+sho configenable bootprelay ipv4 vlan Data
+sho configenable bootprelay ipv4 vlan Default
+sho configenable bootprelay ipv4 vlan DMZ
+sho configenable bootprelay ipv4 vlan FortiTest
+sho configenable bootprelay ipv4 vlan Hazel-NetMgmt
+sho configenable bootprelay ipv4 vlan MEAA
+sho configenable bootprelay ipv4 vlan No_Loop
+sho configenable bootprelay ipv4 vlan ping_mgmt
+sho configenable bootprelay ipv4 vlan Staging
+sho configenable bootprelay ipv4 vlan Surveillance
+sho configenable bootprelay ipv4 vlan Test
+sho configenable bootprelay ipv4 vlan Video
+sho configenable bootprelay ipv4 vlan vlan226
+sho configenable bootprelay ipv4 vlan Voice
+sho configenable bootprelay ipv4 vlan WAN
+sho configenable bootprelay ipv4 vlan WBRC-Cams
+sho config
+sho config#
+sho config# Module ntp configuration.
+sho config#
+sho config
+sho config#
+sho config# Module poe configuration.
+sho config#
+sho configconfigure inline-power detection legacy-and-802.3af ports 1:1
+sho configconfigure inline-power detection bypass ports 1:2
+sho configconfigure inline-power detection legacy-and-802.3af ports 1:3
+sho configconfigure inline-power detection legacy-and-802.3af ports 1:4
+sho configconfigure inline-power detection legacy-and-802.3af ports 1:5
+sho configconfigure inline-power detection legacy-and-802.3af ports 1:6
+sho configconfigure inline-power detection legacy-and-802.3af ports 1:7
+sho configconfigure inline-power detection legacy-and-802.3af ports 1:9
+sho configconfigure inline-power detection legacy-and-802.3af ports 1:10
+sho configconfigure inline-power detection legacy-and-802.3af ports 1:11
+sho configconfigure inline-power detection legacy-and-802.3af ports 1:12
+sho configconfigure inline-power detection legacy-and-802.3af ports 1:13
+sho configconfigure inline-power detection legacy-and-802.3af ports 1:14
+sho configconfigure inline-power detection legacy-and-802.3af ports 1:15
+sho configconfigure inline-power detection legacy-and-802.3af ports 1:16
+sho configconfigure inline-power detection legacy-and-802.3af ports 1:17
+sho configconfigure inline-power detection legacy-and-802.3af ports 1:18
+sho configconfigure inline-power detection legacy-and-802.3af ports 1:19
+sho configconfigure inline-power detection legacy-and-802.3af ports 1:20
+sho configconfigure inline-power detection legacy-and-802.3af ports 1:21
+sho configconfigure inline-power detection legacy-and-802.3af ports 1:22
+sho configconfigure inline-power detection legacy-and-802.3af ports 1:23
+sho configconfigure inline-power detection legacy-and-802.3af ports 1:24
+sho configconfigure inline-power detection legacy-and-802.3af ports 1:25
+sho configconfigure inline-power detection legacy-and-802.3af ports 1:26
+sho configconfigure inline-power detection legacy-and-802.3af ports 1:27
+sho configconfigure inline-power detection legacy-and-802.3af ports 1:28
+sho configconfigure inline-power detection legacy-and-802.3af ports 1:31
+sho configconfigure inline-power detection legacy-and-802.3af ports 1:32
+sho configconfigure inline-power detection legacy-and-802.3af ports 1:33
+sho configconfigure inline-power detection legacy-and-802.3af ports 1:34
+sho configconfigure inline-power detection legacy-and-802.3af ports 1:35
+sho configconfigure inline-power detection legacy-and-802.3af ports 1:36
+sho configconfigure inline-power detection legacy-and-802.3af ports 1:37
+sho configconfigure inline-power detection legacy-and-802.3af ports 1:38
+sho configconfigure inline-power detection legacy-and-802.3af ports 1:39
+sho configconfigure inline-power detection legacy-and-802.3af ports 1:40
+sho configconfigure inline-power detection legacy-and-802.3af ports 1:41
+sho configconfigure inline-power detection legacy-and-802.3af ports 1:42
+sho configconfigure inline-power detection legacy-and-802.3af ports 1:43
+sho configconfigure inline-power detection legacy-and-802.3af ports 1:44
+sho configconfigure inline-power detection legacy-and-802.3af ports 1:45
+sho configconfigure inline-power detection legacy-and-802.3af ports 1:46
+sho configconfigure inline-power detection legacy-and-802.3af ports 1:47
+sho configconfigure inline-power detection legacy-and-802.3af ports 1:48
+sho configconfigure inline-power detection legacy-and-802.3af ports 2:1
+sho configconfigure inline-power detection legacy-and-802.3af ports 2:2
+sho configdisable inline-power ports 2:3
+sho configconfigure inline-power detection legacy-and-802.3af ports 2:3
+sho configconfigure inline-power detection legacy-and-802.3af ports 2:4
+sho configconfigure inline-power detection legacy-and-802.3af ports 2:5
+sho configconfigure inline-power detection legacy-and-802.3af ports 2:6
+sho configconfigure inline-power detection legacy-and-802.3af ports 2:7
+sho configconfigure inline-power detection legacy-and-802.3af ports 2:8
+sho configconfigure inline-power detection legacy-and-802.3af ports 2:9
+sho configconfigure inline-power detection legacy-and-802.3af ports 2:10
+sho configconfigure inline-power detection legacy-and-802.3af ports 2:11
+sho configconfigure inline-power detection legacy-and-802.3af ports 2:12
+sho configconfigure inline-power detection legacy-and-802.3af ports 2:13
+sho configconfigure inline-power detection legacy-and-802.3af ports 2:14
+sho configconfigure inline-power detection legacy-and-802.3af ports 2:15
+sho configconfigure inline-power detection legacy-and-802.3af ports 2:16
+sho configconfigure inline-power detection legacy-and-802.3af ports 2:17
+sho configconfigure inline-power detection legacy-and-802.3af ports 2:18
+sho configconfigure inline-power detection legacy-and-802.3af ports 2:19
+sho configconfigure inline-power detection legacy-and-802.3af ports 2:20
+sho configconfigure inline-power detection legacy-and-802.3af ports 2:21
+sho configconfigure inline-power detection legacy-and-802.3af ports 2:22
+sho configconfigure inline-power detection legacy-and-802.3af ports 2:23
+sho configconfigure inline-power detection legacy-and-802.3af ports 2:24
+sho configconfigure inline-power detection legacy-and-802.3af ports 2:25
+sho configconfigure inline-power detection legacy-and-802.3af ports 2:26
+sho configconfigure inline-power detection legacy-and-802.3af ports 2:27
+sho configconfigure inline-power detection legacy-and-802.3af ports 2:28
+sho configconfigure inline-power detection legacy-and-802.3af ports 2:29
+sho configconfigure inline-power detection legacy-and-802.3af ports 2:30
+sho configconfigure inline-power detection legacy-and-802.3af ports 2:31
+sho configconfigure inline-power detection legacy-and-802.3af ports 2:32
+sho configconfigure inline-power detection legacy-and-802.3af ports 2:33
+sho configconfigure inline-power detection legacy-and-802.3af ports 2:34
+sho configconfigure inline-power detection legacy-and-802.3af ports 2:35
+sho configconfigure inline-power detection legacy-and-802.3af ports 2:36
+sho configconfigure inline-power detection legacy-and-802.3af ports 2:37
+sho configconfigure inline-power detection legacy-and-802.3af ports 2:38
+sho configconfigure inline-power detection legacy-and-802.3af ports 2:39
+sho configconfigure inline-power detection legacy-and-802.3af ports 2:40
+sho configconfigure inline-power detection legacy-and-802.3af ports 2:41
+sho configconfigure inline-power detection legacy-and-802.3af ports 2:42
+sho configconfigure inline-power detection legacy-and-802.3af ports 2:43
+sho configconfigure inline-power detection legacy-and-802.3af ports 2:44
+sho configconfigure inline-power detection legacy-and-802.3af ports 2:45
+sho configconfigure inline-power detection legacy-and-802.3af ports 2:46
+sho configconfigure inline-power detection legacy-and-802.3af ports 2:47
+sho configconfigure inline-power detection legacy-and-802.3af ports 2:48
+sho config
+sho config#
+sho config# Module policy configuration.
+sho config#
+sho config
+sho config#
+sho config# Module rip configuration.
+sho config#
+sho config
+sho config#
+sho config# Module ripng configuration.
+sho config#
+sho config
+sho config#
+sho config# Module snmpMaster configuration.
+sho config#
+sho configconfigure snmpv3 add group "v1v2cNotifyGroup" user "v1v2cNotifyUser1" sec-model snmpv2c 
+sho configconfigure snmpv3 add community "dns1091ro" name "dns1091ro" user "v1v2c_ro" 
+sho configconfigure snmpv3 add community "dns1091rw" name "dns1091rw" user "v1v2c_rw" 
+sho configdisable snmpv3 community "private"
+sho configdisable snmpv3 community "public"
+sho configconfigure snmpv3 add community "v1v2cNotifyComm1" name "ST.179175682.162" user "v1v2cNotifyUser1" 
+sho configconfigure snmpv3 add target-addr "v1v2cNotifyTAddr1" param "v1v2cNotifyParam1" ipaddress 172.16.1.24 transport-port 162 tag-list "defaultNotify" 
+sho configconfigure snmpv3 add target-params "v1v2cNotifyParam1" user "v1v2cNotifyUser1" mp-model snmpv2c sec-model snmpv2c sec-level noauth 
+sho configdisable snmp traps
+sho config
+sho config#
+sho config# Module stp configuration.
+sho config#
+sho configconfigure mstp region 00049627d2db
+sho config
+sho config#
+sho config# Module synce configuration.
+sho config#
+sho config
+sho config#
+sho config# Module techSupport configuration.
+sho config#
+sho config
+sho config#
+sho config# Module telnetd configuration.
+sho config#
+sho config
+sho config#
+sho config# Module tftpd configuration.
+sho config#
+sho config
+sho config#
+sho config# Module thttpd configuration.
+sho config#
+sho configenable web http
+sho configconfigure ssl certificate hash-algorithm sha512 
+sho config
+sho config#
+sho config# Module twamp configuration.
+sho config#
+sho config
+sho config#
+sho config# Module vmt configuration.
+sho config#
+sho config
+sho config#
+sho config# Module vsm configuration.
+sho config#
+sho configSlot-1 Delta_Production_Lab.3 # sho fdb
+sho configMac                     Vlan       Age  Flags           Port / Virtual Port List
+sho config--------------------------------------------------------------------------------
+sho config00:04:96:9a:80:1d       Test(0174) 0000  d mi           2:3
+sho config00:04:96:9a:80:3f       Data(0172) 0000  d mi           2:6
+sho config00:04:96:9a:80:3f       Test(0174) 0000  d mi           2:6
+sho config00:04:96:9a:88:ab       Data(0172) 0000  d mi           2:2
+sho config00:04:96:9a:88:ab Surveillance(0010) 0015  d m            2:2
+sho config00:04:96:9a:88:ab       Test(0174) 0000  d mi           2:2
+sho config00:04:96:9a:88:ab  WBRC-Cams(0067) 0014  d m            2:2
+sho config00:04:96:9a:89:24       Data(0172) 0000  d mi           1:53
+sho config00:04:96:9a:89:25       Test(0174) 0000  d mi           1:53
+sho config00:04:96:af:65:d2       Test(0174) 0000  d mi           2:48
+sho config00:04:96:b0:be:78       Test(0174) 0012  d m            2:48
+sho config00:08:00:72:40:bd       Data(0172) 0000  d mi           1:53
+sho config00:09:0f:9e:3c:0a       Test(0174) 0011  d m            2:48
+sho config00:0b:86:dc:89:80       Data(0172) 0000  d mi           1:53
+sho config00:0b:86:dc:89:80 Surveillance(0010) 0006  d m            1:53
+sho config00:0b:86:dc:89:80       Test(0174) 0185  d m            1:53
+sho config00:0b:86:dc:89:80      Voice(0002) 0015  d m            1:53
+sho config00:0c:1e:03:05:be      Video(0173) 0002  d m            1:53
+sho config00:0c:29:5c:af:21       Data(0172) 0000  d mi           1:53
+sho config00:0c:29:77:25:7b        DMZ(0200) 0015  d m            1:17
+sho config00:0c:29:c2:13:ec       Data(0172) 0000  d mi           1:18
+sho config00:10:49:09:60:ed      Voice(0002) 0003  d m            1:53
+sho config00:10:49:28:67:bc      Voice(0002) 0009  d m            2:6
+sho config00:16:6c:76:a5:d6 Surveillance(0010) 0004  d m            1:53
+sho config00:16:6c:76:b5:ef Surveillance(0010) 0002  d m            1:53
+sho config00:16:6c:77:77:9b Surveillance(0010) 0004  d m            1:53
+sho config00:16:6c:77:77:9c Surveillance(0010) 0004  d m            1:53
+sho config00:16:6c:77:86:c6 Surveillance(0010) 0004  d m            1:53
+sho config00:16:6c:77:9b:b5 Surveillance(0010) 0004  d m            1:53
+sho config00:16:6c:77:c4:cb Surveillance(0010) 0004  d m            1:53
+sho config00:16:6c:78:f6:4d Surveillance(0010) 0004  d m            1:53
+sho config00:16:6c:78:f6:4f Surveillance(0010) 0004  d m            1:53
+sho config00:16:6c:78:f6:50 Surveillance(0010) 0004  d m            1:53
+sho config00:16:6c:79:04:d9 Surveillance(0010) 0003  d m            1:53
+sho config00:16:6c:79:04:e2 Surveillance(0010) 0004  d m            1:53
+sho config00:16:6c:7c:8c:b4 Surveillance(0010) 0002  d m            1:53
+sho config00:16:6c:80:a1:46 Surveillance(0010) 0001  d m            1:53
+sho config00:16:6c:81:20:bc Surveillance(0010) 0011  d m            1:53
+sho config00:16:6c:85:20:85 Surveillance(0010) 0004  d m            1:53
+sho config00:16:6c:a7:d3:12 Surveillance(0010) 0003  d m            1:53
+sho config00:16:6c:b9:2c:b4 Surveillance(0010) 0001  d m            1:53
+sho config00:18:c8:40:09:69 Surveillance(0010) 0015  d m            2:2
+sho config00:18:c8:40:ae:bb Surveillance(0010) 0057  d m            2:24
+sho config00:18:c8:40:ae:bc Surveillance(0010) 0055  d m            2:25
+sho config00:1b:21:26:2d:d1       Data(0172) 0000  d mi           1:53
+sho config00:1d:09:67:56:e8       Data(0172) 0000  d mi           1:18
+sho config00:22:ee:02:03:c6      Voice(0002) 0056  d m            1:53
+sho config00:22:ee:0c:02:e7      Voice(0002) 0041  d m            1:53
+sho config00:40:9d:2d:49:96       Test(0174) 0000  d mi           2:43
+sho config00:40:9d:2d:d9:db       Test(0174) 0000  d mi           2:48
+sho config00:50:56:52:45:6e       Test(0174) 0043  d m            2:46
+sho config00:50:56:b0:34:15       Data(0172) 0010  d m            1:15
+sho config00:50:56:b0:5c:75       Data(0172) 0000  d mi           1:53
+sho config00:50:56:b0:68:af       Data(0172) 0000  d mi           1:53
+sho config00:50:56:b0:6d:08      Voice(0002) 0034  d m            1:53
+sho config00:50:56:b0:9a:49 Surveillance(0010) 0003  d m            1:53
+sho config00:50:56:b0:a4:e2       Data(0172) 0000  d mi           1:15
+sho config00:50:56:b0:a9:b8       Data(0172) 0000  d mi           1:15
+sho config00:50:56:b0:c8:5e       Data(0172) 0000  d mi           1:53
+sho config00:90:f8:03:89:2c       Data(0172) 0000  d mi           1:53
+sho config02:04:96:83:68:fc       Test(0174) 0000  d mi           2:43
+sho config02:04:96:9a:9a:04       Data(0172) 0000  d mi           1:53
+sho config02:04:96:9a:9a:04 Surveillance(0010) 0009  d m            1:53
+sho config02:04:96:9a:9a:04       Test(0174) 0000  d mi           1:53
+sho config02:04:96:9a:9a:04      Video(0173) 0178  d m            1:53
+sho config02:04:96:9a:9a:04      Voice(0002) 0008  d m            1:53
+sho config02:04:96:9a:9a:04    AH-Mgmt(0051) 0076  d m            1:53
+sho config0e:04:96:b0:be:78    No_Loop(0666) 0014  d m            2:48
+sho config10:60:4b:19:d9:60       Data(0172) 0000  d mi           1:53
+sho config14:85:7f:fe:a8:6c       Data(0172) 0000  d mi           1:53
+sho config18:66:da:aa:2c:7b       Test(0174) 0000  d mi           2:46
+sho config2c:41:38:81:b9:dd       Data(0172) 0000  d mi           1:53
+sho config30:05:5c:35:a4:5b       Data(0172) 0000  d mi           1:53
+sho config34:48:ed:8d:cf:71       Data(0172) 0000  d mi           2:2
+sho config34:e6:d7:2a:52:8f       Test(0174) 0000  d mi           2:2
+sho config36:ce:b6:c4:3e:a3       Data(0172) 0009  d m            1:53
+sho config3c:a8:2a:07:1b:7a       Data(0172) 0000  d mi           1:53
+sho config42:79:53:e3:60:d6       Data(0172) 0000  d mi           1:53
+sho config48:1d:70:df:cb:a3        WAN(0020) 0011  d m            1:53
+sho config70:3a:0e:cc:88:7a       Data(0172) 0000  d mi           1:53
+sho config70:3a:0e:cc:8a:b2       Data(0172) 0000  d mi           1:53
+sho config70:3a:0e:cc:8a:ee       Data(0172) 0000  d mi           1:53
+sho config7c:6d:62:b4:2f:89       Data(0172) 0000  d mi           1:53
+sho config7e:28:9f:85:d6:8c       Data(0172) 0081  d m            1:53
+sho config90:6c:ac:33:3e:48       Data(0172) 0000  d mi           1:53
+sho config90:6c:ac:33:3e:4b  FortiTest(0175) 0038  d m            1:53
+sho config90:b1:1c:38:d1:28       Data(0172) 0000  d mi           1:53
+sho configa0:8c:fd:61:7f:92       Data(0172) 0000  d mi           1:53
+sho configae:11:0f:eb:57:a1       Data(0172) 0000  d mi           1:53
+sho configb8:78:2e:3f:db:a6       Data(0172) 0000  d mi           1:53
+sho configc8:1f:66:be:b8:96       Data(0172) 0013  d m            1:15
+sho configd4:85:64:1d:73:27       Data(0172) 0000  d mi           1:53
+sho confige0:23:ff:47:98:7c       Data(0172) 0000  d mi           2:2
+sho configf0:1f:af:5a:9d:5e       Test(0174) 0000  d mi           2:3
+sho configf8:b4:6a:6c:cb:08       Data(0172) 0039  d m            1:53
+sho config
+sho configFlags : d - Dynamic, s - Static, p - Permanent, n - NetLogin, m - MAC, i - IP,
+sho config        x - IPX, l - lockdown MAC, L - lockdown-timeout MAC, M- Mirror, B - Egress Blackhole,
+sho config        b - Ingress Blackhole, v - MAC-Based VLAN, P - Private VLAN, T - VLAN translation,
+sho config        D - drop packet, h - Hardware Aging, o - IEEE 802.1ah Backbone MAC,
+sho config        S - Software Controlled Deletion, r - MSRP,
+sho config        R - TRILL Rbridge, Z - OpenFlow
+sho config
+sho configTotal: 95 Static: 0  Perm: 0  Dyn: 95  Dropped: 0  Locked: 0  Locked with Timeout: 0
+sho configFDB Aging time: 300
+sho configSlot-1 Delta_Production_Lab.4 # sho edp ports all
+sho config
+sho configPort   Neighbor                       Neighbor-ID         Remote  Age    Num
+sho config                                                           Port         Vlans
+sho config=============================================================================
+sho config1:53   Delta Summit Stack        00:00:02:04:96:9a:9a:04   1:49   54     9    
+sho config2:2    DC-Cube                   00:00:00:04:96:9a:88:ab   1:8    57     10   
+sho config2:3    Andrew-x430               00:00:00:04:96:9a:80:1d   1:8    30     4    
+sho config2:6    RyanB                     00:00:00:04:96:9a:80:3f   1:8    4      5    
+sho config2:43   Staging-Rack-3            00:00:02:04:96:83:68:fc   1:48   17     1    
+sho config2:48   Staging-Rack-1            00:00:00:04:96:b0:be:78   1:48   26     11   
+sho config=============================================================================
