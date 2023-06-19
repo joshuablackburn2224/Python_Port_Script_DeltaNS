@@ -1,4 +1,4 @@
-# version 4.0
+# version 6.1
 # github https://github.com/joshuablackburn2224/Python_Port_Script_DeltaNS/settings
 # authors Joshua Blackburn , Kevin Shin , Sean Rice
 # 1)Make sure python is installed
@@ -361,14 +361,14 @@ def stop():
   wait = str(input("Press Enter to exit...\n"))
   exit()
 
-main()
+#main()
 # try/except block to catch any errors and report them
-# if (__name__ == "__main__"):
-#   try:
-#     main()
-#   except Exception as e:
-#     print("The script has stopped due to the following error:")
-#     print(e)
-#   else:
-#     print("Processing complete.")
-#   stop()
+if (__name__ == "__main__"):
+  try:
+    main()
+  except Exception as e:
+    print("The script has stopped due to the following error:")
+    print(e)
+  else:
+    print("Processing complete.")
+    stop()
