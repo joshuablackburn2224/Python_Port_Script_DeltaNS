@@ -1,4 +1,4 @@
-# version 4.0
+# version 6.1
 # github https://github.com/joshuablackburn2224/Python_Port_Script_DeltaNS/settings
 # authors Joshua Blackburn , Kevin Shin , Sean Rice
 # 1)Make sure python is installed
