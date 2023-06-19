@@ -361,14 +361,14 @@ def stop():
   wait = str(input("Press Enter to exit...\n"))
   exit()
 
-main()
+#main()
 # try/except block to catch any errors and report them
-# if (__name__ == "__main__"):
-#   try:
-#     main()
-#   except Exception as e:
-#     print("The script has stopped due to the following error:")
-#     print(e)
-#   else:
-#     print("Processing complete.")
-#   stop()
+if (__name__ == "__main__"):
+  try:
+    main()
+  except Exception as e:
+    print("The script has stopped due to the following error:")
+    print(e)
+  else:
+    print("Processing complete.")
+    stop()
