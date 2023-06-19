@@ -45,7 +45,7 @@ def process_file(path, tagOption):
       pass
     else:
       print(f"Error: Device ID not found. Please check config log.")
-      exit()
+      stop()
 
   #close file after retrieving device ID
   file.close()
@@ -73,6 +73,7 @@ def process_file(path, tagOption):
   #added variable called macDictionary that will allow macS to be added to file
   
   macDictionary = macAndPortData(path)
+  
 
   #open file second time to iterate through and find all vlan names and ports
   with open(path, 'r', encoding =None) as file:
@@ -123,6 +124,12 @@ def process_file(path, tagOption):
               continue
             else:
               pass
+
+  #           print("Value of macDictionary:")
+  # print(len(macDictionary) + " items")
+  # for key, value in macDictionary.items():
+  #   print(key, value)
+  # wait = str(input("Press enter to continue..."))
 
               #logic for writing switch and port numbers when a range is and is not present
             if flag != True:
@@ -215,7 +222,7 @@ def macAndPortData(path):
   with open(path, 'r', encoding =None) as file:
     #define regex patterns
     uplink_pattern = "(00:00:\w+:\w+:\w+:\w+:\w+:\w+)"
-    mac_pattern = "(\w+:\w+:\w+:\w+:\w+:\w+)"
+    mac_pattern = "(\d{2}:\w+:\w+:\w+:\w+:\w+)"
     port_pattern = "\s+\d:\d+\d*"
     uplinkPort_pattern = "\d:\d+\d?"
     vlanName_pattern = "[a-zA-Z]+[a-zA-Z]+[a-zA-Z]+\d*"
@@ -241,12 +248,10 @@ def macAndPortData(path):
           #convert lists to strings
           mac = macList[0]
           
+          # port = portList[0].strip()
           try:
             port = portList[0].strip()
           except Exception as e:
-            # print(f"No ports found on the following line:")
-            # print(line)
-            # print(repr(e))
             continue
 
           # if len(portList) > 0:
@@ -313,10 +318,10 @@ def main():
       process_file(logFile, userTagOption)
     except FileNotFoundError:
       print(f"Error: file {logFile} does not exist")
-      exit()
+      stop()
 
     # exit once processing is finished
-    exit()
+    stop()
   else:
 
     # grab the full path of all files in the current directory ending in .log
@@ -335,7 +340,7 @@ def main():
         process_file(logFile, userTagOption)
       except FileNotFoundError:
         print(f"Error: file {logFile} does not exist")
-        exit()
+        stop()
     else:
 
       # run the process function for each file found in the current directory
@@ -347,9 +352,14 @@ def main():
           process_file(file, userTagOption)
         except FileNotFoundError:
           print(f"Error: file {file} does not exist")
-          exit()
+          stop()
     # exit once processing has finished
-    exit()
+    stop()
+
+
+def stop():
+  wait = str(input("Press Enter to exit...\n"))
+  exit()
 
 main()
 # try/except block to catch any errors and report them
@@ -359,6 +369,6 @@ main()
 #   except Exception as e:
 #     print("The script has stopped due to the following error:")
 #     print(e)
-
-#     wait = str(input("Press Enter to exit...\n"))
-#     exit()
+#   else:
+#     print("Processing complete.")
+#   stop()

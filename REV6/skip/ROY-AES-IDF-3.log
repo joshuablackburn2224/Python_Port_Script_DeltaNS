@@ -1,0 +1,1647 @@
+﻿Slot-1 ROY-AES-IDF-3.1 # dis clip
+Slot-1 ROY-AES-IDF-3.2 # sh conf
+#
+# Module devmgr configuration.
+#
+configure snmp sysName "ROY-AES-IDF-3"
+configure snmp sysLocation "ROY Addams ES"
+configure snmp sysContact "OISD Help Desk"
+configure timezone name EST -300 autodst name EDT 60 begins every second sunday march at 2 0 ends every first sunday november at 2 0
+configure slot 1 module X460-48p
+configure sys-recovery-level slot 1 reset
+configure slot 2 module X440-48p
+configure sys-recovery-level slot 2 reset
+
+#
+# Module vlan configuration.
+#
+configure vlan default delete ports all
+configure vr VR-Default delete ports 1:1-58,2:1-48
+configure vr VR-Default add ports 1:1-58,2:1-48
+configure vlan default delete ports 1:1-58,2:1-48
+create qosprofile "QP5"
+create vlan "AES_CAM"
+configure vlan AES_CAM tag 1324
+create vlan "AES_DATA"
+configure vlan AES_DATA tag 1316
+create vlan "AES_PA"
+configure vlan AES_PA tag 2012
+create vlan "AES_SVR"
+configure vlan AES_SVR tag 1300
+create vlan "AES_VC"
+configure vlan AES_VC tag 1304
+create vlan "AES_WIFI_GST"
+configure vlan AES_WIFI_GST tag 1373
+create vlan "AES_WIFI_MGT"
+configure vlan AES_WIFI_MGT tag 1370
+create vlan "AES_WIFI_STF"
+configure vlan AES_WIFI_STF tag 1371
+create vlan "AES_WIFI_STU"
+configure vlan AES_WIFI_STU tag 1372
+create vlan "NOLOOP"
+configure vlan NOLOOP tag 666
+create vlan "ROY_NET_MGT"
+configure vlan ROY_NET_MGT tag 900
+enable loopback-mode vlan ROY_NET_MGT
+disable snmp traps port-up-down port 1:1
+enable diffserv examination port 1:1
+disable dot1p examination port 1:1
+disable snmp traps port-up-down port 1:2
+enable diffserv examination port 1:2
+disable dot1p examination port 1:2
+disable snmp traps port-up-down port 1:3
+enable diffserv examination port 1:3
+disable dot1p examination port 1:3
+disable snmp traps port-up-down port 1:4
+enable diffserv examination port 1:4
+disable dot1p examination port 1:4
+disable snmp traps port-up-down port 1:5
+enable diffserv examination port 1:5
+disable dot1p examination port 1:5
+disable snmp traps port-up-down port 1:6
+enable diffserv examination port 1:6
+disable dot1p examination port 1:6
+disable snmp traps port-up-down port 1:7
+enable diffserv examination port 1:7
+disable dot1p examination port 1:7
+disable snmp traps port-up-down port 1:8
+enable diffserv examination port 1:8
+disable dot1p examination port 1:8
+disable snmp traps port-up-down port 1:9
+enable diffserv examination port 1:9
+disable dot1p examination port 1:9
+disable snmp traps port-up-down port 1:10
+enable diffserv examination port 1:10
+disable dot1p examination port 1:10
+disable snmp traps port-up-down port 1:11
+enable diffserv examination port 1:11
+disable dot1p examination port 1:11
+disable snmp traps port-up-down port 1:12
+enable diffserv examination port 1:12
+disable dot1p examination port 1:12
+disable snmp traps port-up-down port 1:13
+enable diffserv examination port 1:13
+disable dot1p examination port 1:13
+disable snmp traps port-up-down port 1:14
+enable diffserv examination port 1:14
+disable dot1p examination port 1:14
+disable snmp traps port-up-down port 1:15
+enable diffserv examination port 1:15
+disable dot1p examination port 1:15
+disable snmp traps port-up-down port 1:16
+enable diffserv examination port 1:16
+disable dot1p examination port 1:16
+disable snmp traps port-up-down port 1:17
+enable diffserv examination port 1:17
+disable dot1p examination port 1:17
+disable snmp traps port-up-down port 1:18
+enable diffserv examination port 1:18
+disable dot1p examination port 1:18
+configure ports 1:18 display-string RO-AES-AP-RM123
+disable snmp traps port-up-down port 1:19
+enable diffserv examination port 1:19
+disable dot1p examination port 1:19
+disable snmp traps port-up-down port 1:20
+enable diffserv examination port 1:20
+disable dot1p examination port 1:20
+disable snmp traps port-up-down port 1:21
+enable diffserv examination port 1:21
+disable dot1p examination port 1:21
+disable snmp traps port-up-down port 1:22
+enable diffserv examination port 1:22
+disable dot1p examination port 1:22
+disable snmp traps port-up-down port 1:23
+enable diffserv examination port 1:23
+disable dot1p examination port 1:23
+disable snmp traps port-up-down port 1:24
+enable diffserv examination port 1:24
+disable dot1p examination port 1:24
+disable snmp traps port-up-down port 1:25
+enable diffserv examination port 1:25
+disable dot1p examination port 1:25
+disable snmp traps port-up-down port 1:26
+enable diffserv examination port 1:26
+disable dot1p examination port 1:26
+disable snmp traps port-up-down port 1:27
+enable diffserv examination port 1:27
+disable dot1p examination port 1:27
+disable snmp traps port-up-down port 1:28
+enable diffserv examination port 1:28
+disable dot1p examination port 1:28
+disable snmp traps port-up-down port 1:29
+enable diffserv examination port 1:29
+disable dot1p examination port 1:29
+disable snmp traps port-up-down port 1:30
+enable diffserv examination port 1:30
+disable dot1p examination port 1:30
+disable snmp traps port-up-down port 1:31
+enable diffserv examination port 1:31
+disable dot1p examination port 1:31
+disable snmp traps port-up-down port 1:32
+enable diffserv examination port 1:32
+disable dot1p examination port 1:32
+disable snmp traps port-up-down port 1:33
+enable diffserv examination port 1:33
+disable dot1p examination port 1:33
+disable snmp traps port-up-down port 1:34
+enable diffserv examination port 1:34
+disable dot1p examination port 1:34
+disable snmp traps port-up-down port 1:35
+enable diffserv examination port 1:35
+disable dot1p examination port 1:35
+disable snmp traps port-up-down port 1:36
+enable diffserv examination port 1:36
+disable dot1p examination port 1:36
+disable snmp traps port-up-down port 1:37
+enable diffserv examination port 1:37
+disable dot1p examination port 1:37
+disable snmp traps port-up-down port 1:38
+enable diffserv examination port 1:38
+disable dot1p examination port 1:38
+disable port 1:38
+disable snmp traps port-up-down port 1:39
+enable diffserv examination port 1:39
+disable dot1p examination port 1:39
+disable snmp traps port-up-down port 1:40
+enable diffserv examination port 1:40
+disable dot1p examination port 1:40
+disable snmp traps port-up-down port 1:41
+enable diffserv examination port 1:41
+disable dot1p examination port 1:41
+disable snmp traps port-up-down port 1:42
+enable diffserv examination port 1:42
+disable dot1p examination port 1:42
+disable snmp traps port-up-down port 1:43
+enable diffserv examination port 1:43
+disable dot1p examination port 1:43
+disable snmp traps port-up-down port 1:44
+enable diffserv examination port 1:44
+disable dot1p examination port 1:44
+configure ports 1:44 display-string RO-AES-AP-RM110
+disable snmp traps port-up-down port 1:45
+enable diffserv examination port 1:45
+disable dot1p examination port 1:45
+disable snmp traps port-up-down port 1:46
+enable diffserv examination port 1:46
+disable dot1p examination port 1:46
+disable snmp traps port-up-down port 1:47
+enable diffserv examination port 1:47
+disable dot1p examination port 1:47
+disable snmp traps port-up-down port 1:48
+enable diffserv examination port 1:48
+disable dot1p examination port 1:48
+enable diffserv examination port 1:49
+disable dot1p examination port 1:49
+enable diffserv examination port 1:50
+disable dot1p examination port 1:50
+enable diffserv examination port 1:51
+disable dot1p examination port 1:51
+enable diffserv examination port 1:52
+disable dot1p examination port 1:52
+enable diffserv examination port 1:53
+disable dot1p examination port 1:53
+configure ports 1:53 display-string Link-AES-MDF-Sec
+configure ports 1:53 description-string "Link-AES-MDF-Sec"
+configure ports 1:53 auto off speed 10000 duplex full 
+enable diffserv examination port 1:54
+disable dot1p examination port 1:54
+configure ports 1:54 display-string Link-AES-MDF-Pri
+configure ports 1:54 description-string "Link-AES-MDF-Pri"
+configure ports 1:54 auto off speed 10000 duplex full 
+enable diffserv examination port 1:55
+disable dot1p examination port 1:55
+configure ports 1:55 auto off speed 10000 duplex full 
+enable diffserv examination port 1:56
+disable dot1p examination port 1:56
+configure ports 1:56 auto off speed 10000 duplex full 
+enable diffserv examination port 1:57
+disable dot1p examination port 1:57
+configure ports 1:57 auto off speed 10000 duplex full 
+enable diffserv examination port 1:58
+disable dot1p examination port 1:58
+configure ports 1:58 auto off speed 10000 duplex full 
+disable snmp traps port-up-down port 2:1
+enable diffserv examination port 2:1
+disable dot1p examination port 2:1
+disable snmp traps port-up-down port 2:2
+enable diffserv examination port 2:2
+disable dot1p examination port 2:2
+disable snmp traps port-up-down port 2:3
+enable diffserv examination port 2:3
+disable dot1p examination port 2:3
+disable snmp traps port-up-down port 2:4
+enable diffserv examination port 2:4
+disable dot1p examination port 2:4
+disable snmp traps port-up-down port 2:5
+enable diffserv examination port 2:5
+disable dot1p examination port 2:5
+configure ports 2:5 display-string RO-AES-AP-ECC-Gym
+disable snmp traps port-up-down port 2:6
+enable diffserv examination port 2:6
+disable dot1p examination port 2:6
+disable snmp traps port-up-down port 2:7
+enable diffserv examination port 2:7
+disable dot1p examination port 2:7
+disable snmp traps port-up-down port 2:8
+enable diffserv examination port 2:8
+disable dot1p examination port 2:8
+disable snmp traps port-up-down port 2:9
+enable diffserv examination port 2:9
+disable dot1p examination port 2:9
+disable snmp traps port-up-down port 2:10
+enable diffserv examination port 2:10
+disable dot1p examination port 2:10
+disable snmp traps port-up-down port 2:11
+enable diffserv examination port 2:11
+disable dot1p examination port 2:11
+disable snmp traps port-up-down port 2:12
+enable diffserv examination port 2:12
+disable dot1p examination port 2:12
+disable snmp traps port-up-down port 2:13
+enable diffserv examination port 2:13
+disable dot1p examination port 2:13
+disable snmp traps port-up-down port 2:14
+enable diffserv examination port 2:14
+disable dot1p examination port 2:14
+disable snmp traps port-up-down port 2:15
+enable diffserv examination port 2:15
+disable dot1p examination port 2:15
+disable snmp traps port-up-down port 2:16
+enable diffserv examination port 2:16
+disable dot1p examination port 2:16
+disable snmp traps port-up-down port 2:17
+enable diffserv examination port 2:17
+disable dot1p examination port 2:17
+disable snmp traps port-up-down port 2:18
+enable diffserv examination port 2:18
+disable dot1p examination port 2:18
+disable snmp traps port-up-down port 2:19
+enable diffserv examination port 2:19
+disable dot1p examination port 2:19
+configure ports 2:19 display-string RO-AES-AP-RM103
+disable snmp traps port-up-down port 2:20
+enable diffserv examination port 2:20
+disable dot1p examination port 2:20
+disable snmp traps port-up-down port 2:21
+enable diffserv examination port 2:21
+disable dot1p examination port 2:21
+disable snmp traps port-up-down port 2:22
+enable diffserv examination port 2:22
+disable dot1p examination port 2:22
+configure ports 2:22 display-string AES-AP-HallNear137
+disable snmp traps port-up-down port 2:23
+enable diffserv examination port 2:23
+disable dot1p examination port 2:23
+disable snmp traps port-up-down port 2:24
+enable diffserv examination port 2:24
+disable dot1p examination port 2:24
+configure ports 2:24 display-string AES-AP-RM108-East
+disable snmp traps port-up-down port 2:25
+enable diffserv examination port 2:25
+disable dot1p examination port 2:25
+disable snmp traps port-up-down port 2:26
+enable diffserv examination port 2:26
+disable dot1p examination port 2:26
+configure ports 2:26 display-string AES-AP-RM159-Stage
+disable snmp traps port-up-down port 2:27
+enable diffserv examination port 2:27
+disable dot1p examination port 2:27
+disable snmp traps port-up-down port 2:28
+enable diffserv examination port 2:28
+disable dot1p examination port 2:28
+configure ports 2:28 display-string RO-AES-AP-RM106
+disable snmp traps port-up-down port 2:29
+enable diffserv examination port 2:29
+disable dot1p examination port 2:29
+disable snmp traps port-up-down port 2:30
+enable diffserv examination port 2:30
+disable dot1p examination port 2:30
+configure ports 2:30 display-string RO-AES-AP-RM101
+disable snmp traps port-up-down port 2:31
+enable diffserv examination port 2:31
+disable dot1p examination port 2:31
+disable snmp traps port-up-down port 2:32
+enable diffserv examination port 2:32
+disable dot1p examination port 2:32
+configure ports 2:32 display-string RO-AES-AP-RM102
+disable snmp traps port-up-down port 2:33
+enable diffserv examination port 2:33
+disable dot1p examination port 2:33
+disable snmp traps port-up-down port 2:34
+enable diffserv examination port 2:34
+disable dot1p examination port 2:34
+disable snmp traps port-up-down port 2:35
+enable diffserv examination port 2:35
+disable dot1p examination port 2:35
+disable snmp traps port-up-down port 2:36
+enable diffserv examination port 2:36
+disable dot1p examination port 2:36
+disable snmp traps port-up-down port 2:37
+enable diffserv examination port 2:37
+disable dot1p examination port 2:37
+disable snmp traps port-up-down port 2:38
+enable diffserv examination port 2:38
+disable dot1p examination port 2:38
+disable snmp traps port-up-down port 2:39
+enable diffserv examination port 2:39
+disable dot1p examination port 2:39
+disable snmp traps port-up-down port 2:40
+enable diffserv examination port 2:40
+disable dot1p examination port 2:40
+configure ports 2:40 display-string RO-AES-AP-RM108-West
+disable snmp traps port-up-down port 2:41
+enable diffserv examination port 2:41
+disable dot1p examination port 2:41
+disable snmp traps port-up-down port 2:42
+enable diffserv examination port 2:42
+disable dot1p examination port 2:42
+disable snmp traps port-up-down port 2:43
+enable diffserv examination port 2:43
+disable dot1p examination port 2:43
+disable snmp traps port-up-down port 2:44
+enable diffserv examination port 2:44
+disable dot1p examination port 2:44
+disable snmp traps port-up-down port 2:45
+enable diffserv examination port 2:45
+disable dot1p examination port 2:45
+disable snmp traps port-up-down port 2:46
+enable diffserv examination port 2:46
+disable dot1p examination port 2:46
+disable snmp traps port-up-down port 2:47
+enable diffserv examination port 2:47
+disable dot1p examination port 2:47
+configure ports 2:47 display-string RO-AES-AP-RM104
+disable snmp traps port-up-down port 2:48
+enable diffserv examination port 2:48
+disable dot1p examination port 2:48
+enable sharing 1:54 grouping 1:53-54 algorithm address-based L2
+configure vlan AES_CAM add ports 1:54 tagged  
+configure vlan AES_CAM add ports 2:10-11,2:13-14,2:18 untagged  
+configure vlan AES_DATA add ports 1:54 tagged  
+configure vlan AES_DATA add ports 1:1-16,1:19-30,1:33-34,1:36,1:38,1:40,1:42,1:45,1:47-48,2:1-2,2:4,2:6,2:8-9,2:12,2:19-21,2:29,2:33,2:35,2:39,2:41 untagged  
+configure vlan AES_PA add ports 1:54 tagged  
+configure vlan AES_PA add ports 1:35,1:37,1:39,1:41,1:43,2:3,2:7,2:15,2:17,2:31,2:38,2:42,2:44-45 untagged  
+configure vlan AES_SVR add ports 1:54 tagged  
+configure vlan AES_SVR add ports 1:31-32,2:16,2:46,2:48 untagged  
+configure vlan AES_VC add ports 1:1-16,1:19-30,1:33-34,1:36,1:38,1:40,1:42,1:45-52,1:54-58,2:1-2,2:4,2:6,2:8-9,2:12,2:19-21,2:29,2:33,2:35,2:39,2:41 tagged  
+configure vlan AES_WIFI_GST add ports 1:17-18,1:44,1:54,2:5,2:22-28,2:30,2:32,2:34,2:36-37,2:40,2:43,2:47 tagged  
+configure vlan AES_WIFI_MGT add ports 1:54 tagged  
+configure vlan AES_WIFI_MGT add ports 1:17-18,1:44,2:5,2:22-28,2:30,2:32,2:34,2:36-37,2:40,2:43,2:47 untagged  
+configure vlan AES_WIFI_STF add ports 1:17-18,1:44,1:54,2:5,2:22-28,2:30,2:32,2:34,2:36-37,2:40,2:43,2:47 tagged  
+configure vlan AES_WIFI_STU add ports 1:17-18,1:44,1:54,2:5,2:22-28,2:30,2:32,2:34,2:36-37,2:40,2:43,2:47 tagged  
+configure vlan NOLOOP add ports 1:1-2,1:4-5,1:7,1:9-16,1:18-33,1:35-43,1:45-52,1:54-58,2:1-48 tagged  
+configure vlan ROY_NET_MGT add ports 1:54 tagged  
+configure vlan Mgmt ipaddress 192.168.0.1 255.255.255.0
+configure vlan ROY_NET_MGT ipaddress 10.168.201.30 255.255.252.0
+enable ipforwarding vlan ROY_NET_MGT
+configure qosscheduler weighted-round-robin
+configure qosprofile QP5 maxbuffer 100 weight 1
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:1
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:2
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:3
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:4
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:5
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:6
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:7
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:8
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:9
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:10
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:11
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:12
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:13
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:14
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:15
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:16
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:17
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:18
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:19
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:20
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:21
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:22
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:23
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:24
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:25
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:26
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:27
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:28
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:29
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:30
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:31
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:32
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:33
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:34
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:35
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:36
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:37
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:38
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:39
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:40
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:41
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:42
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:43
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:44
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:45
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:46
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:47
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:48
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:49
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:50
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:51
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:52
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:54
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:55
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:56
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:57
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:58
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:1
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:2
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:3
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:4
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:5
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:6
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:7
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:8
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:9
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:10
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:11
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:12
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:13
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:14
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:15
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:16
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:17
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:18
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:19
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:20
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:21
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:22
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:23
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:24
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:25
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:26
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:27
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:28
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:29
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:30
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:31
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:32
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:33
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:34
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:35
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:36
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:37
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:38
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:39
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:40
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:41
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:42
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:43
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:44
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:45
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:46
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:47
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:48
+configure diffserv examination code-point 46 qosprofile QP5
+configure diffserv replacement priority 4 code-point 46
+
+#
+# Module fdb configuration.
+#
+configure iparp vr VR-Default max_entries 4096
+
+#
+# Module rtmgr configuration.
+#
+configure iproute add default 10.168.200.1
+disable iproute ipv4 compression 
+disable iproute ipv6 compression 
+
+#
+# Module mcmgr configuration.
+#
+enable igmp snooping forward-mcrouter-only vr VR-Default
+configure forwarding ipmc lookup-key group-vlan
+
+#
+# Module policy configuration.
+#
+
+#
+# Module aaa configuration.
+#
+configure radius mgmt-access 1 server 172.16.92.75 1812 client-ip 10.168.201.30 vr VR-Default
+configure radius 1 shared-secret encrypted "#$82/8Dv/2/le1S94QbrgmR2uNpl4eJYvgSf5F6dHgxFOfgnu591rgvICsutJvcw=="
+configure radius 1 timeout 10
+configure radius 1 retries 1
+enable radius
+enable radius mgmt-access
+enable radius netlogin
+configure radius timeout 10
+configure radius mgmt-access timeout 10
+configure radius netlogin timeout 10
+configure radius retries 1
+configure account admin encrypted "V1Njwy$paESGV1lwluK6U0BSc9La0" 
+disable account user 
+create account admin delta encrypted "Delta100%" 
+create account admin NetSight encrypted "lN/KI5$w1rRrArcEcDx2RytZSAK30" 
+
+#
+# Module acl configuration.
+#
+
+
+
+
+#
+# Module bfd configuration.
+#
+
+#
+# Module cfgmgr configuration.
+#
+
+#
+# Module dosprotect configuration.
+#
+
+#
+# Module dot1ag configuration.
+#
+
+#
+# Module eaps configuration.
+#
+
+#
+# Module edp configuration.
+#
+configure cdp device-id system-mac
+enable cdp ports 1:1
+enable cdp ports 1:2
+enable cdp ports 1:3
+enable cdp ports 1:4
+enable cdp ports 1:5
+enable cdp ports 1:6
+enable cdp ports 1:7
+enable cdp ports 1:8
+enable cdp ports 1:9
+enable cdp ports 1:10
+enable cdp ports 1:11
+enable cdp ports 1:12
+enable cdp ports 1:13
+enable cdp ports 1:14
+enable cdp ports 1:15
+enable cdp ports 1:16
+enable cdp ports 1:17
+enable cdp ports 1:18
+enable cdp ports 1:19
+enable cdp ports 1:20
+enable cdp ports 1:21
+enable cdp ports 1:22
+enable cdp ports 1:23
+enable cdp ports 1:24
+enable cdp ports 1:25
+enable cdp ports 1:26
+enable cdp ports 1:27
+enable cdp ports 1:28
+enable cdp ports 1:29
+enable cdp ports 1:30
+enable cdp ports 1:31
+enable cdp ports 1:32
+enable cdp ports 1:33
+enable cdp ports 1:34
+enable cdp ports 1:35
+enable cdp ports 1:36
+enable cdp ports 1:37
+enable cdp ports 1:38
+enable cdp ports 1:39
+enable cdp ports 1:40
+enable cdp ports 1:41
+enable cdp ports 1:42
+enable cdp ports 1:43
+enable cdp ports 1:44
+enable cdp ports 1:45
+enable cdp ports 1:46
+enable cdp ports 1:47
+enable cdp ports 1:48
+enable cdp ports 2:1
+enable cdp ports 2:2
+enable cdp ports 2:3
+enable cdp ports 2:4
+enable cdp ports 2:5
+enable cdp ports 2:6
+enable cdp ports 2:7
+enable cdp ports 2:8
+enable cdp ports 2:9
+enable cdp ports 2:10
+enable cdp ports 2:11
+enable cdp ports 2:12
+enable cdp ports 2:13
+enable cdp ports 2:14
+enable cdp ports 2:15
+enable cdp ports 2:16
+enable cdp ports 2:17
+enable cdp ports 2:18
+enable cdp ports 2:19
+enable cdp ports 2:20
+enable cdp ports 2:21
+enable cdp ports 2:22
+enable cdp ports 2:23
+enable cdp ports 2:24
+enable cdp ports 2:25
+enable cdp ports 2:26
+enable cdp ports 2:27
+enable cdp ports 2:28
+enable cdp ports 2:29
+enable cdp ports 2:30
+enable cdp ports 2:31
+enable cdp ports 2:32
+enable cdp ports 2:33
+enable cdp ports 2:34
+enable cdp ports 2:35
+enable cdp ports 2:36
+enable cdp ports 2:37
+enable cdp ports 2:38
+enable cdp ports 2:39
+enable cdp ports 2:40
+enable cdp ports 2:41
+enable cdp ports 2:42
+enable cdp ports 2:43
+enable cdp ports 2:44
+enable cdp ports 2:45
+enable cdp ports 2:46
+enable cdp ports 2:47
+enable cdp ports 2:48
+
+#
+# Module elrp configuration.
+#
+enable elrp-client
+configure elrp-client periodic NOLOOP ports all interval 1 log-and-trap disable-port ingress duration 60
+configure elrp-client disable-port exclude 1:54
+
+#
+# Module ems configuration.
+#
+configure syslog add 172.16.84.176:514 vr VR-Default local0
+enable log target syslog 172.16.84.176:514 vr VR-Default local0
+configure log target syslog 172.16.84.176:514 vr VR-Default local0 from 10.168.201.30
+configure log target syslog 172.16.84.176:514 vr VR-Default local0 filter DefaultFilter severity Debug-Data
+configure log target syslog 172.16.84.176:514 vr VR-Default local0 match Any
+configure log target syslog 172.16.84.176:514 vr VR-Default local0 format timestamp seconds date Mmm-dd event-name none process-slot priority tag-name 
+
+#
+# Module epm configuration.
+#
+
+#
+# Module erps configuration.
+#
+
+#
+# Module esrp configuration.
+#
+
+#
+# Module ethoam configuration.
+#
+
+#
+# Module etmon configuration.
+#
+
+#
+# Module exsshd configuration.
+#
+enable ssh2
+
+
+#
+# Module hal configuration.
+#
+configure ports 1:53 debounce time 150
+configure ports 1:54 debounce time 150
+configure stack-ports 1:1 debounce time 150
+configure stack-ports 1:2 debounce time 150
+configure stack-ports 2:1 debounce time 150
+configure stack-ports 2:2 debounce time 150
+
+#
+# Module idMgr configuration.
+#
+
+#
+# Module ipSecurity configuration.
+#
+
+#
+# Module ipfix configuration.
+#
+
+#
+# Module lldp configuration.
+#
+configure lldp port 1:1 advertise port-description
+configure lldp port 1:1 advertise system-capabilities
+configure lldp port 1:1 advertise management-address
+configure lldp port 1:1 advertise vendor-specific med capabilities
+configure lldp port 1:1 advertise vendor-specific med power-via-mdi
+configure lldp port 1:2 advertise port-description
+configure lldp port 1:2 advertise system-capabilities
+configure lldp port 1:2 advertise management-address
+configure lldp port 1:2 advertise vendor-specific med capabilities
+configure lldp port 1:2 advertise vendor-specific med power-via-mdi
+configure lldp port 1:3 advertise port-description
+configure lldp port 1:3 advertise system-capabilities
+configure lldp port 1:3 advertise management-address
+configure lldp port 1:3 advertise vendor-specific med capabilities
+configure lldp port 1:3 advertise vendor-specific med power-via-mdi
+configure lldp port 1:4 advertise port-description
+configure lldp port 1:4 advertise system-capabilities
+configure lldp port 1:4 advertise management-address
+configure lldp port 1:4 advertise vendor-specific med capabilities
+configure lldp port 1:4 advertise vendor-specific med power-via-mdi
+configure lldp port 1:5 advertise port-description
+configure lldp port 1:5 advertise system-capabilities
+configure lldp port 1:5 advertise management-address
+configure lldp port 1:5 advertise vendor-specific med capabilities
+configure lldp port 1:5 advertise vendor-specific med power-via-mdi
+configure lldp port 1:6 advertise port-description
+configure lldp port 1:6 advertise system-capabilities
+configure lldp port 1:6 advertise management-address
+configure lldp port 1:6 advertise vendor-specific med capabilities
+configure lldp port 1:6 advertise vendor-specific med power-via-mdi
+configure lldp port 1:7 advertise port-description
+configure lldp port 1:7 advertise system-capabilities
+configure lldp port 1:7 advertise management-address
+configure lldp port 1:7 advertise vendor-specific med capabilities
+configure lldp port 1:7 advertise vendor-specific med power-via-mdi
+configure lldp port 1:8 advertise port-description
+configure lldp port 1:8 advertise system-capabilities
+configure lldp port 1:8 advertise management-address
+configure lldp port 1:8 advertise vendor-specific med capabilities
+configure lldp port 1:8 advertise vendor-specific med power-via-mdi
+configure lldp port 1:9 advertise port-description
+configure lldp port 1:9 advertise system-capabilities
+configure lldp port 1:9 advertise management-address
+configure lldp port 1:9 advertise vendor-specific med capabilities
+configure lldp port 1:9 advertise vendor-specific med power-via-mdi
+configure lldp port 1:10 advertise port-description
+configure lldp port 1:10 advertise system-capabilities
+configure lldp port 1:10 advertise management-address
+configure lldp port 1:10 advertise vendor-specific med capabilities
+configure lldp port 1:10 advertise vendor-specific med power-via-mdi
+configure lldp port 1:11 advertise port-description
+configure lldp port 1:11 advertise system-capabilities
+configure lldp port 1:11 advertise management-address
+configure lldp port 1:11 advertise vendor-specific med capabilities
+configure lldp port 1:11 advertise vendor-specific med power-via-mdi
+configure lldp port 1:12 advertise port-description
+configure lldp port 1:12 advertise system-capabilities
+configure lldp port 1:12 advertise management-address
+configure lldp port 1:12 advertise vendor-specific med capabilities
+configure lldp port 1:12 advertise vendor-specific med power-via-mdi
+configure lldp port 1:13 advertise port-description
+configure lldp port 1:13 advertise system-capabilities
+configure lldp port 1:13 advertise management-address
+configure lldp port 1:13 advertise vendor-specific med capabilities
+configure lldp port 1:13 advertise vendor-specific med power-via-mdi
+configure lldp port 1:14 advertise port-description
+configure lldp port 1:14 advertise system-capabilities
+configure lldp port 1:14 advertise management-address
+configure lldp port 1:14 advertise vendor-specific med capabilities
+configure lldp port 1:14 advertise vendor-specific med power-via-mdi
+configure lldp port 1:15 advertise port-description
+configure lldp port 1:15 advertise system-capabilities
+configure lldp port 1:15 advertise management-address
+configure lldp port 1:15 advertise vendor-specific med capabilities
+configure lldp port 1:15 advertise vendor-specific med power-via-mdi
+configure lldp port 1:16 advertise port-description
+configure lldp port 1:16 advertise system-capabilities
+configure lldp port 1:16 advertise management-address
+configure lldp port 1:16 advertise vendor-specific med capabilities
+configure lldp port 1:16 advertise vendor-specific med power-via-mdi
+configure lldp port 1:17 advertise port-description
+configure lldp port 1:17 advertise system-capabilities
+configure lldp port 1:17 advertise management-address
+configure lldp port 1:17 advertise vendor-specific med capabilities
+configure lldp port 1:17 advertise vendor-specific med power-via-mdi
+configure lldp port 1:18 advertise port-description
+configure lldp port 1:18 advertise system-capabilities
+configure lldp port 1:18 advertise management-address
+configure lldp port 1:18 advertise vendor-specific med capabilities
+configure lldp port 1:18 advertise vendor-specific med power-via-mdi
+configure lldp port 1:19 advertise port-description
+configure lldp port 1:19 advertise system-capabilities
+configure lldp port 1:19 advertise management-address
+configure lldp port 1:19 advertise vendor-specific med capabilities
+configure lldp port 1:19 advertise vendor-specific med power-via-mdi
+configure lldp port 1:20 advertise port-description
+configure lldp port 1:20 advertise system-capabilities
+configure lldp port 1:20 advertise management-address
+configure lldp port 1:20 advertise vendor-specific med capabilities
+configure lldp port 1:20 advertise vendor-specific med power-via-mdi
+configure lldp port 1:21 advertise port-description
+configure lldp port 1:21 advertise system-capabilities
+configure lldp port 1:21 advertise management-address
+configure lldp port 1:21 advertise vendor-specific med capabilities
+configure lldp port 1:21 advertise vendor-specific med power-via-mdi
+configure lldp port 1:22 advertise port-description
+configure lldp port 1:22 advertise system-capabilities
+configure lldp port 1:22 advertise management-address
+configure lldp port 1:22 advertise vendor-specific med capabilities
+configure lldp port 1:22 advertise vendor-specific med power-via-mdi
+configure lldp port 1:23 advertise port-description
+configure lldp port 1:23 advertise system-capabilities
+configure lldp port 1:23 advertise management-address
+configure lldp port 1:23 advertise vendor-specific med capabilities
+configure lldp port 1:23 advertise vendor-specific med power-via-mdi
+configure lldp port 1:24 advertise port-description
+configure lldp port 1:24 advertise system-capabilities
+configure lldp port 1:24 advertise management-address
+configure lldp port 1:24 advertise vendor-specific med capabilities
+configure lldp port 1:24 advertise vendor-specific med power-via-mdi
+configure lldp port 1:25 advertise port-description
+configure lldp port 1:25 advertise system-capabilities
+configure lldp port 1:25 advertise management-address
+configure lldp port 1:25 advertise vendor-specific med capabilities
+configure lldp port 1:25 advertise vendor-specific med power-via-mdi
+configure lldp port 1:26 advertise port-description
+configure lldp port 1:26 advertise system-capabilities
+configure lldp port 1:26 advertise management-address
+configure lldp port 1:26 advertise vendor-specific med capabilities
+configure lldp port 1:26 advertise vendor-specific med power-via-mdi
+configure lldp port 1:27 advertise port-description
+configure lldp port 1:27 advertise system-capabilities
+configure lldp port 1:27 advertise management-address
+configure lldp port 1:27 advertise vendor-specific med capabilities
+configure lldp port 1:27 advertise vendor-specific med power-via-mdi
+configure lldp port 1:28 advertise port-description
+configure lldp port 1:28 advertise system-capabilities
+configure lldp port 1:28 advertise management-address
+configure lldp port 1:28 advertise vendor-specific med capabilities
+configure lldp port 1:28 advertise vendor-specific med power-via-mdi
+configure lldp port 1:29 advertise port-description
+configure lldp port 1:29 advertise system-capabilities
+configure lldp port 1:29 advertise management-address
+configure lldp port 1:29 advertise vendor-specific med capabilities
+configure lldp port 1:29 advertise vendor-specific med power-via-mdi
+configure lldp port 1:30 advertise port-description
+configure lldp port 1:30 advertise system-capabilities
+configure lldp port 1:30 advertise management-address
+configure lldp port 1:30 advertise vendor-specific med capabilities
+configure lldp port 1:30 advertise vendor-specific med power-via-mdi
+configure lldp port 1:31 advertise port-description
+configure lldp port 1:31 advertise system-capabilities
+configure lldp port 1:31 advertise management-address
+configure lldp port 1:31 advertise vendor-specific med capabilities
+configure lldp port 1:31 advertise vendor-specific med power-via-mdi
+configure lldp port 1:32 advertise port-description
+configure lldp port 1:32 advertise system-capabilities
+configure lldp port 1:32 advertise management-address
+configure lldp port 1:32 advertise vendor-specific med capabilities
+configure lldp port 1:32 advertise vendor-specific med power-via-mdi
+configure lldp port 1:33 advertise port-description
+configure lldp port 1:33 advertise system-capabilities
+configure lldp port 1:33 advertise management-address
+configure lldp port 1:33 advertise vendor-specific med capabilities
+configure lldp port 1:33 advertise vendor-specific med power-via-mdi
+configure lldp port 1:34 advertise port-description
+configure lldp port 1:34 advertise system-capabilities
+configure lldp port 1:34 advertise management-address
+configure lldp port 1:34 advertise vendor-specific med capabilities
+configure lldp port 1:34 advertise vendor-specific med power-via-mdi
+configure lldp port 1:35 advertise port-description
+configure lldp port 1:35 advertise system-capabilities
+configure lldp port 1:35 advertise management-address
+configure lldp port 1:35 advertise vendor-specific med capabilities
+configure lldp port 1:35 advertise vendor-specific med power-via-mdi
+configure lldp port 1:36 advertise port-description
+configure lldp port 1:36 advertise system-capabilities
+configure lldp port 1:36 advertise management-address
+configure lldp port 1:36 advertise vendor-specific med capabilities
+configure lldp port 1:36 advertise vendor-specific med power-via-mdi
+configure lldp port 1:37 advertise port-description
+configure lldp port 1:37 advertise system-capabilities
+configure lldp port 1:37 advertise management-address
+configure lldp port 1:37 advertise vendor-specific med capabilities
+configure lldp port 1:37 advertise vendor-specific med power-via-mdi
+configure lldp port 1:38 advertise port-description
+configure lldp port 1:38 advertise system-capabilities
+configure lldp port 1:38 advertise management-address
+configure lldp port 1:38 advertise vendor-specific med capabilities
+configure lldp port 1:38 advertise vendor-specific med power-via-mdi
+configure lldp port 1:39 advertise port-description
+configure lldp port 1:39 advertise system-capabilities
+configure lldp port 1:39 advertise management-address
+configure lldp port 1:39 advertise vendor-specific med capabilities
+configure lldp port 1:39 advertise vendor-specific med power-via-mdi
+configure lldp port 1:40 advertise port-description
+configure lldp port 1:40 advertise system-capabilities
+configure lldp port 1:40 advertise management-address
+configure lldp port 1:40 advertise vendor-specific med capabilities
+configure lldp port 1:40 advertise vendor-specific med power-via-mdi
+configure lldp port 1:41 advertise port-description
+configure lldp port 1:41 advertise system-capabilities
+configure lldp port 1:41 advertise management-address
+configure lldp port 1:41 advertise vendor-specific med capabilities
+configure lldp port 1:41 advertise vendor-specific med power-via-mdi
+configure lldp port 1:42 advertise port-description
+configure lldp port 1:42 advertise system-capabilities
+configure lldp port 1:42 advertise management-address
+configure lldp port 1:42 advertise vendor-specific med capabilities
+configure lldp port 1:42 advertise vendor-specific med power-via-mdi
+configure lldp port 1:43 advertise port-description
+configure lldp port 1:43 advertise system-capabilities
+configure lldp port 1:43 advertise management-address
+configure lldp port 1:43 advertise vendor-specific med capabilities
+configure lldp port 1:43 advertise vendor-specific med power-via-mdi
+configure lldp port 1:44 advertise port-description
+configure lldp port 1:44 advertise system-capabilities
+configure lldp port 1:44 advertise management-address
+configure lldp port 1:44 advertise vendor-specific med capabilities
+configure lldp port 1:44 advertise vendor-specific med power-via-mdi
+configure lldp port 1:45 advertise port-description
+configure lldp port 1:45 advertise system-capabilities
+configure lldp port 1:45 advertise management-address
+configure lldp port 1:45 advertise vendor-specific med capabilities
+configure lldp port 1:45 advertise vendor-specific med power-via-mdi
+configure lldp port 1:46 advertise port-description
+configure lldp port 1:46 advertise system-capabilities
+configure lldp port 1:46 advertise management-address
+configure lldp port 1:46 advertise vendor-specific med capabilities
+configure lldp port 1:46 advertise vendor-specific med power-via-mdi
+configure lldp port 1:47 advertise port-description
+configure lldp port 1:47 advertise system-capabilities
+configure lldp port 1:47 advertise management-address
+configure lldp port 1:47 advertise vendor-specific med capabilities
+configure lldp port 1:47 advertise vendor-specific med power-via-mdi
+configure lldp port 1:48 advertise port-description
+configure lldp port 1:48 advertise system-capabilities
+configure lldp port 1:48 advertise management-address
+configure lldp port 1:48 advertise vendor-specific med capabilities
+configure lldp port 1:48 advertise vendor-specific med power-via-mdi
+disable lldp ports 1:49
+disable lldp ports 1:50
+disable lldp ports 1:51
+disable lldp ports 1:52
+disable lldp ports 1:53
+disable lldp ports 1:54
+disable lldp ports 1:55
+disable lldp ports 1:56
+disable lldp ports 1:57
+disable lldp ports 1:58
+configure lldp port 2:1 advertise port-description
+configure lldp port 2:1 advertise system-capabilities
+configure lldp port 2:1 advertise management-address
+configure lldp port 2:1 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:1 advertise vendor-specific med capabilities
+configure lldp port 2:1 advertise vendor-specific med power-via-mdi
+configure lldp port 2:2 advertise port-description
+configure lldp port 2:2 advertise system-capabilities
+configure lldp port 2:2 advertise management-address
+configure lldp port 2:2 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:2 advertise vendor-specific med capabilities
+configure lldp port 2:2 advertise vendor-specific med power-via-mdi
+configure lldp port 2:3 advertise port-description
+configure lldp port 2:3 advertise system-capabilities
+configure lldp port 2:3 advertise management-address
+configure lldp port 2:3 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:3 advertise vendor-specific med capabilities
+configure lldp port 2:3 advertise vendor-specific med power-via-mdi
+configure lldp port 2:4 advertise port-description
+configure lldp port 2:4 advertise system-capabilities
+configure lldp port 2:4 advertise management-address
+configure lldp port 2:4 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:4 advertise vendor-specific med capabilities
+configure lldp port 2:4 advertise vendor-specific med power-via-mdi
+configure lldp port 2:5 advertise port-description
+configure lldp port 2:5 advertise system-capabilities
+configure lldp port 2:5 advertise management-address
+configure lldp port 2:5 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:5 advertise vendor-specific med capabilities
+configure lldp port 2:5 advertise vendor-specific med power-via-mdi
+configure lldp port 2:6 advertise port-description
+configure lldp port 2:6 advertise system-capabilities
+configure lldp port 2:6 advertise management-address
+configure lldp port 2:6 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:6 advertise vendor-specific med capabilities
+configure lldp port 2:6 advertise vendor-specific med power-via-mdi
+configure lldp port 2:7 advertise port-description
+configure lldp port 2:7 advertise system-capabilities
+configure lldp port 2:7 advertise management-address
+configure lldp port 2:7 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:7 advertise vendor-specific med capabilities
+configure lldp port 2:7 advertise vendor-specific med power-via-mdi
+configure lldp port 2:8 advertise port-description
+configure lldp port 2:8 advertise system-capabilities
+configure lldp port 2:8 advertise management-address
+configure lldp port 2:8 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:8 advertise vendor-specific med capabilities
+configure lldp port 2:8 advertise vendor-specific med power-via-mdi
+configure lldp port 2:9 advertise port-description
+configure lldp port 2:9 advertise system-capabilities
+configure lldp port 2:9 advertise management-address
+configure lldp port 2:9 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:9 advertise vendor-specific med capabilities
+configure lldp port 2:9 advertise vendor-specific med power-via-mdi
+configure lldp port 2:10 advertise port-description
+configure lldp port 2:10 advertise system-capabilities
+configure lldp port 2:10 advertise management-address
+configure lldp port 2:10 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:10 advertise vendor-specific med capabilities
+configure lldp port 2:10 advertise vendor-specific med power-via-mdi
+configure lldp port 2:11 advertise port-description
+configure lldp port 2:11 advertise system-capabilities
+configure lldp port 2:11 advertise management-address
+configure lldp port 2:11 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:11 advertise vendor-specific med capabilities
+configure lldp port 2:11 advertise vendor-specific med power-via-mdi
+configure lldp port 2:12 advertise port-description
+configure lldp port 2:12 advertise system-capabilities
+configure lldp port 2:12 advertise management-address
+configure lldp port 2:12 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:12 advertise vendor-specific med capabilities
+configure lldp port 2:12 advertise vendor-specific med power-via-mdi
+configure lldp port 2:13 advertise port-description
+configure lldp port 2:13 advertise system-capabilities
+configure lldp port 2:13 advertise management-address
+configure lldp port 2:13 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:13 advertise vendor-specific med capabilities
+configure lldp port 2:13 advertise vendor-specific med power-via-mdi
+configure lldp port 2:14 advertise port-description
+configure lldp port 2:14 advertise system-capabilities
+configure lldp port 2:14 advertise management-address
+configure lldp port 2:14 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:14 advertise vendor-specific med capabilities
+configure lldp port 2:14 advertise vendor-specific med power-via-mdi
+configure lldp port 2:15 advertise port-description
+configure lldp port 2:15 advertise system-capabilities
+configure lldp port 2:15 advertise management-address
+configure lldp port 2:15 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:15 advertise vendor-specific med capabilities
+configure lldp port 2:15 advertise vendor-specific med power-via-mdi
+configure lldp port 2:16 advertise port-description
+configure lldp port 2:16 advertise system-capabilities
+configure lldp port 2:16 advertise management-address
+configure lldp port 2:16 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:16 advertise vendor-specific med capabilities
+configure lldp port 2:16 advertise vendor-specific med power-via-mdi
+configure lldp port 2:17 advertise port-description
+configure lldp port 2:17 advertise system-capabilities
+configure lldp port 2:17 advertise management-address
+configure lldp port 2:17 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:17 advertise vendor-specific med capabilities
+configure lldp port 2:17 advertise vendor-specific med power-via-mdi
+configure lldp port 2:18 advertise port-description
+configure lldp port 2:18 advertise system-capabilities
+configure lldp port 2:18 advertise management-address
+configure lldp port 2:18 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:18 advertise vendor-specific med capabilities
+configure lldp port 2:18 advertise vendor-specific med power-via-mdi
+configure lldp port 2:19 advertise port-description
+configure lldp port 2:19 advertise system-capabilities
+configure lldp port 2:19 advertise management-address
+configure lldp port 2:19 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:19 advertise vendor-specific med capabilities
+configure lldp port 2:19 advertise vendor-specific med power-via-mdi
+configure lldp port 2:20 advertise port-description
+configure lldp port 2:20 advertise system-capabilities
+configure lldp port 2:20 advertise management-address
+configure lldp port 2:20 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:20 advertise vendor-specific med capabilities
+configure lldp port 2:20 advertise vendor-specific med power-via-mdi
+configure lldp port 2:21 advertise port-description
+configure lldp port 2:21 advertise system-capabilities
+configure lldp port 2:21 advertise management-address
+configure lldp port 2:21 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:21 advertise vendor-specific med capabilities
+configure lldp port 2:21 advertise vendor-specific med power-via-mdi
+configure lldp port 2:22 advertise port-description
+configure lldp port 2:22 advertise system-capabilities
+configure lldp port 2:22 advertise management-address
+configure lldp port 2:22 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:22 advertise vendor-specific med capabilities
+configure lldp port 2:22 advertise vendor-specific med power-via-mdi
+configure lldp port 2:23 advertise port-description
+configure lldp port 2:23 advertise system-capabilities
+configure lldp port 2:23 advertise management-address
+configure lldp port 2:23 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:23 advertise vendor-specific med capabilities
+configure lldp port 2:23 advertise vendor-specific med power-via-mdi
+configure lldp port 2:24 advertise port-description
+configure lldp port 2:24 advertise system-capabilities
+configure lldp port 2:24 advertise management-address
+configure lldp port 2:24 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:24 advertise vendor-specific med capabilities
+configure lldp port 2:24 advertise vendor-specific med power-via-mdi
+configure lldp port 2:25 advertise port-description
+configure lldp port 2:25 advertise system-capabilities
+configure lldp port 2:25 advertise management-address
+configure lldp port 2:25 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:25 advertise vendor-specific med capabilities
+configure lldp port 2:25 advertise vendor-specific med power-via-mdi
+configure lldp port 2:26 advertise port-description
+configure lldp port 2:26 advertise system-capabilities
+configure lldp port 2:26 advertise management-address
+configure lldp port 2:26 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:26 advertise vendor-specific med capabilities
+configure lldp port 2:26 advertise vendor-specific med power-via-mdi
+configure lldp port 2:27 advertise port-description
+configure lldp port 2:27 advertise system-capabilities
+configure lldp port 2:27 advertise management-address
+configure lldp port 2:27 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:27 advertise vendor-specific med capabilities
+configure lldp port 2:27 advertise vendor-specific med power-via-mdi
+configure lldp port 2:28 advertise port-description
+configure lldp port 2:28 advertise system-capabilities
+configure lldp port 2:28 advertise management-address
+configure lldp port 2:28 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:28 advertise vendor-specific med capabilities
+configure lldp port 2:28 advertise vendor-specific med power-via-mdi
+configure lldp port 2:29 advertise port-description
+configure lldp port 2:29 advertise system-capabilities
+configure lldp port 2:29 advertise management-address
+configure lldp port 2:29 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:29 advertise vendor-specific med capabilities
+configure lldp port 2:29 advertise vendor-specific med power-via-mdi
+configure lldp port 2:30 advertise port-description
+configure lldp port 2:30 advertise system-capabilities
+configure lldp port 2:30 advertise management-address
+configure lldp port 2:30 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:30 advertise vendor-specific med capabilities
+configure lldp port 2:30 advertise vendor-specific med power-via-mdi
+configure lldp port 2:31 advertise port-description
+configure lldp port 2:31 advertise system-capabilities
+configure lldp port 2:31 advertise management-address
+configure lldp port 2:31 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:31 advertise vendor-specific med capabilities
+configure lldp port 2:31 advertise vendor-specific med power-via-mdi
+configure lldp port 2:32 advertise port-description
+configure lldp port 2:32 advertise system-capabilities
+configure lldp port 2:32 advertise management-address
+configure lldp port 2:32 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:32 advertise vendor-specific med capabilities
+configure lldp port 2:32 advertise vendor-specific med power-via-mdi
+configure lldp port 2:33 advertise port-description
+configure lldp port 2:33 advertise system-capabilities
+configure lldp port 2:33 advertise management-address
+configure lldp port 2:33 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:33 advertise vendor-specific med capabilities
+configure lldp port 2:33 advertise vendor-specific med power-via-mdi
+configure lldp port 2:34 advertise port-description
+configure lldp port 2:34 advertise system-capabilities
+configure lldp port 2:34 advertise management-address
+configure lldp port 2:34 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:34 advertise vendor-specific med capabilities
+configure lldp port 2:34 advertise vendor-specific med power-via-mdi
+configure lldp port 2:35 advertise port-description
+configure lldp port 2:35 advertise system-capabilities
+configure lldp port 2:35 advertise management-address
+configure lldp port 2:35 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:35 advertise vendor-specific med capabilities
+configure lldp port 2:35 advertise vendor-specific med power-via-mdi
+configure lldp port 2:36 advertise port-description
+configure lldp port 2:36 advertise system-capabilities
+configure lldp port 2:36 advertise management-address
+configure lldp port 2:36 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:36 advertise vendor-specific med capabilities
+configure lldp port 2:36 advertise vendor-specific med power-via-mdi
+configure lldp port 2:37 advertise port-description
+configure lldp port 2:37 advertise system-capabilities
+configure lldp port 2:37 advertise management-address
+configure lldp port 2:37 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:37 advertise vendor-specific med capabilities
+configure lldp port 2:37 advertise vendor-specific med power-via-mdi
+configure lldp port 2:38 advertise port-description
+configure lldp port 2:38 advertise system-capabilities
+configure lldp port 2:38 advertise management-address
+configure lldp port 2:38 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:38 advertise vendor-specific med capabilities
+configure lldp port 2:38 advertise vendor-specific med power-via-mdi
+configure lldp port 2:39 advertise port-description
+configure lldp port 2:39 advertise system-capabilities
+configure lldp port 2:39 advertise management-address
+configure lldp port 2:39 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:39 advertise vendor-specific med capabilities
+configure lldp port 2:39 advertise vendor-specific med power-via-mdi
+configure lldp port 2:40 advertise port-description
+configure lldp port 2:40 advertise system-capabilities
+configure lldp port 2:40 advertise management-address
+configure lldp port 2:40 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:40 advertise vendor-specific med capabilities
+configure lldp port 2:40 advertise vendor-specific med power-via-mdi
+configure lldp port 2:41 advertise port-description
+configure lldp port 2:41 advertise system-capabilities
+configure lldp port 2:41 advertise management-address
+configure lldp port 2:41 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:41 advertise vendor-specific med capabilities
+configure lldp port 2:41 advertise vendor-specific med power-via-mdi
+configure lldp port 2:42 advertise port-description
+configure lldp port 2:42 advertise system-capabilities
+configure lldp port 2:42 advertise management-address
+configure lldp port 2:42 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:42 advertise vendor-specific med capabilities
+configure lldp port 2:42 advertise vendor-specific med power-via-mdi
+configure lldp port 2:43 advertise port-description
+configure lldp port 2:43 advertise system-capabilities
+configure lldp port 2:43 advertise management-address
+configure lldp port 2:43 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:43 advertise vendor-specific med capabilities
+configure lldp port 2:43 advertise vendor-specific med power-via-mdi
+configure lldp port 2:44 advertise port-description
+configure lldp port 2:44 advertise system-capabilities
+configure lldp port 2:44 advertise management-address
+configure lldp port 2:44 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:44 advertise vendor-specific med capabilities
+configure lldp port 2:44 advertise vendor-specific med power-via-mdi
+configure lldp port 2:45 advertise port-description
+configure lldp port 2:45 advertise system-capabilities
+configure lldp port 2:45 advertise management-address
+configure lldp port 2:45 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:45 advertise vendor-specific med capabilities
+configure lldp port 2:45 advertise vendor-specific med power-via-mdi
+configure lldp port 2:46 advertise port-description
+configure lldp port 2:46 advertise system-capabilities
+configure lldp port 2:46 advertise management-address
+configure lldp port 2:46 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:46 advertise vendor-specific med capabilities
+configure lldp port 2:46 advertise vendor-specific med power-via-mdi
+configure lldp port 2:47 advertise port-description
+configure lldp port 2:47 advertise system-capabilities
+configure lldp port 2:47 advertise management-address
+configure lldp port 2:47 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:47 advertise vendor-specific med capabilities
+configure lldp port 2:47 advertise vendor-specific med power-via-mdi
+configure lldp port 2:48 advertise port-description
+configure lldp port 2:48 advertise system-capabilities
+configure lldp port 2:48 advertise management-address
+configure lldp port 2:48 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:48 advertise vendor-specific med capabilities
+configure lldp port 2:48 advertise vendor-specific med power-via-mdi
+
+#
+# Module mrp configuration.
+#
+
+#
+# Module msdp configuration.
+#
+
+#
+# Module netLogin configuration.
+#
+
+#
+# Module netTools configuration.
+#
+configure dns-client add name-server 10.168.100.100 vr VR-Default
+configure dns-client add name-server 172.16.92.101 vr VR-Default
+configure sntp-client primary 172.16.92.75 vr VR-Default
+enable sntp-client
+
+#
+# Module ntp configuration.
+#
+
+#
+# Module poe configuration.
+#
+disable inline-power ports 1:38
+
+#
+# Module rip configuration.
+#
+
+#
+# Module ripng configuration.
+#
+
+#
+# Module snmpMaster configuration.
+#
+configure snmpv3 delete community "private"
+configure snmpv3 delete community "public"
+configure snmpv3 add group "v1v2cNotifyGroup" user "v1v2cNotifyUser1" sec-model snmpv2c 
+configure snmpv3 add community "ROY-RO-bsHaq455sb7b8Jc3" name "ROY-RO-bsHaq455sb7b8Jc3" user "v1v2c_ro" 
+configure snmpv3 add community "ROY-RW-57KGw22z7h4pQkMj" name "ROY-RW-57KGw22z7h4pQkMj" user "v1v2c_rw" 
+configure snmpv3 add community "v1v2cNotifyComm1" name "ST.178913310.162" user "v1v2cNotifyUser1" 
+configure snmpv3 add target-addr "v1v2cNotifyTAddr1" param "v1v2cNotifyParam1" ipaddress 172.16.84.176 transport-port 162 from 10.168.201.30 vr "VR-Default" tag-list "defaultNotify" 
+configure snmpv3 add target-params "v1v2cNotifyParam1" user "v1v2cNotifyUser1" mp-model snmpv2c sec-model snmpv2c sec-level noauth 
+disable snmp access snmpv3
+
+#
+# Module stp configuration.
+#
+
+#
+# Module synce configuration.
+#
+
+#
+# Module techSupport configuration.
+#
+configure tech-support collector 12.38.14.200 tcp-port 800 from 192.168.0.1 ssl off
+
+#
+# Module telnetd configuration.
+#
+
+#
+# Module tftpd configuration.
+#
+
+#
+# Module thttpd configuration.
+#
+configure ssl certificate hash-algorithm sha512 
+
+#
+# Module twamp configuration.
+#
+
+#
+# Module vmt configuration.
+#
+
+#
+# Module vsm configuration.
+#
+Slot-1 ROY-AES-IDF-3.3 # show fdb
+Mac                     Vlan       Age  Flags           Port / Virtual Port List
+--------------------------------------------------------------------------------
+00:02:75:f1:03:69 AES_WIFI_STF(1371) 0048  d m            1:54
+00:02:75:f1:15:b0 AES_WIFI_STF(1371) 0156  d m            1:54
+00:02:75:f4:80:97 AES_WIFI_GST(1373) 0236  d m            1:54
+00:04:96:28:27:4c ROY_NET_MGT(0900) 0000  d mi           1:54
+00:04:96:7e:34:33 ROY_NET_MGT(0900) 0000  d mi           1:54
+00:04:96:82:0a:4c ROY_NET_MGT(0900) 0000  d mi           1:54
+00:04:96:83:99:a4 ROY_NET_MGT(0900) 0000  d mi           1:54
+00:04:96:98:c4:54 ROY_NET_MGT(0900) 0000  d mi           1:54
+00:04:96:a3:64:97 ROY_NET_MGT(0900) 0000  d mi           1:54
+00:04:96:a3:65:fe ROY_NET_MGT(0900) 0000  d mi           1:54
+00:04:96:a3:66:01 ROY_NET_MGT(0900) 0000  d mi           1:54
+00:04:96:a3:99:91 ROY_NET_MGT(0900) 0000  d mi           1:54
+00:08:e1:08:cd:ae     AES_PA(2012) 0167  d m            1:54
+00:08:e1:08:fc:27     AES_PA(2012) 0162  d m            1:54
+00:08:e1:09:03:09     AES_PA(2012) 0164  d m            1:54
+00:08:e1:09:03:4a     AES_PA(2012) 0167  d m            1:54
+00:08:e1:09:03:50     AES_PA(2012) 0167  d m            1:54
+00:08:e1:09:03:5b     AES_PA(2012) 0028  d m            1:37
+00:08:e1:09:03:5f     AES_PA(2012) 0035  d m            1:39
+00:08:e1:09:05:ce     AES_PA(2012) 0036  d m            1:41
+00:08:e1:09:06:64     AES_PA(2012) 0033  d m            1:43
+00:08:e1:09:09:e8     AES_PA(2012) 0165  d m            1:54
+00:08:e1:09:2d:5f     AES_PA(2012) 0167  d m            1:54
+00:08:e1:09:2e:ac     AES_PA(2012) 0167  d m            1:54
+00:08:e1:09:2f:40     AES_PA(2012) 0167  d m            1:54
+00:08:e1:09:2f:97     AES_PA(2012) 0167  d m            1:54
+00:08:e1:09:2f:bd     AES_PA(2012) 0164  d m            1:54
+00:08:e1:09:2f:c2     AES_PA(2012) 0162  d m            1:54
+00:08:e1:09:30:92     AES_PA(2012) 0167  d m            1:54
+00:08:e1:09:32:49     AES_PA(2012) 0008  d m            2:44
+00:08:e1:09:33:0e     AES_PA(2012) 0172  d m            1:54
+00:08:e1:09:33:0f     AES_PA(2012) 0011  d m            2:42
+00:08:e1:09:33:34     AES_PA(2012) 0164  d m            1:54
+00:08:e1:09:34:ec     AES_PA(2012) 0160  d m            1:54
+00:08:e1:09:3a:42     AES_PA(2012) 0167  d m            1:54
+00:08:e1:09:3a:52     AES_PA(2012) 0162  d m            1:54
+00:08:e1:09:3a:5c     AES_PA(2012) 0166  d m            1:54
+00:08:e1:09:3a:8b     AES_PA(2012) 0165  d m            1:54
+00:08:e1:09:3c:34     AES_PA(2012) 0169  d m            1:54
+00:08:e1:09:3c:6c     AES_PA(2012) 0165  d m            1:54
+00:08:e1:09:3c:aa     AES_PA(2012) 0161  d m            1:54
+00:08:e1:09:3c:b0     AES_PA(2012) 0161  d m            1:54
+00:08:e1:09:3c:f1     AES_PA(2012) 0165  d m            1:54
+00:08:e1:09:3d:16     AES_PA(2012) 0015  d m            2:31
+00:08:e1:09:3d:4d     AES_PA(2012) 0162  d m            1:54
+00:08:e1:09:3f:4a     AES_PA(2012) 0166  d m            1:54
+00:08:e1:09:3f:a2     AES_PA(2012) 0167  d m            1:54
+00:08:e1:09:3f:ee     AES_PA(2012) 0167  d m            1:54
+00:08:e1:09:3f:ff     AES_PA(2012) 0045  d m            2:7
+00:08:e1:09:40:04     AES_PA(2012) 0113  d m            1:54
+00:08:e1:09:40:26     AES_PA(2012) 0163  d m            1:54
+00:08:e1:09:40:7c     AES_PA(2012) 0013  d m            2:38
+00:08:e1:09:40:d9     AES_PA(2012) 0167  d m            1:54
+00:08:e1:09:41:b8     AES_PA(2012) 0022  d m            2:15
+00:08:e1:09:41:c7     AES_PA(2012) 0012  d m            2:45
+00:08:e1:09:41:e3     AES_PA(2012) 0163  d m            1:54
+00:08:e1:09:41:e5     AES_PA(2012) 0165  d m            1:54
+00:08:e1:09:42:f4     AES_PA(2012) 0016  d m            2:17
+00:0c:15:04:24:fe    AES_SVR(1300) 0039  d m            2:48
+00:0c:29:e5:1d:74     AES_PA(2012) 0026  d m            1:54
+00:10:49:06:3d:7a     AES_VC(1304) 0024  d m            1:47
+00:10:49:06:52:4b     AES_VC(1304) 0017  d m            2:19
+00:10:49:06:53:6f     AES_VC(1304) 0054  d m            1:5
+00:10:49:06:53:71     AES_VC(1304) 0015  d m            1:6
+00:10:49:06:55:67     AES_VC(1304) 0012  d m            1:8
+00:10:49:06:55:68     AES_VC(1304) 0054  d m            1:34
+00:10:49:06:55:6b     AES_VC(1304) 0054  d m            1:20
+00:10:49:06:55:78     AES_VC(1304) 0025  d m            2:1
+00:10:49:06:ae:b4     AES_VC(1304) 0004  d m            1:36
+00:10:49:06:ae:b5     AES_VC(1304) 0037  d m            1:46
+00:10:49:06:af:1f     AES_VC(1304) 0012  d m            1:7
+00:10:49:06:af:20     AES_VC(1304) 0005  d m            1:1
+00:10:49:06:af:21     AES_VC(1304) 0004  d m            1:33
+00:10:49:07:13:8e     AES_VC(1304) 0014  d m            2:29
+00:10:49:07:2e:11     AES_VC(1304) 0052  d m            1:54
+00:10:49:07:30:1b     AES_VC(1304) 0050  d m            1:54
+00:10:49:07:d1:f5     AES_VC(1304) 0054  d m            1:10
+00:10:49:07:d4:96     AES_VC(1304) 0052  d m            1:21
+00:10:49:0c:3a:81     AES_VC(1304) 0003  d m            2:39
+00:10:49:12:e5:cb     AES_VC(1304) 0002  d m            2:41
+00:10:49:1d:b7:5f     AES_VC(1304) 0027  d m            2:12
+00:10:49:1f:3b:f0     AES_VC(1304) 0056  d m            1:9
+00:40:8c:f6:13:e1    AES_CAM(1324) 0036  d m            2:18
+00:40:8c:f6:15:29    AES_CAM(1324) 0036  d m            2:10
+02:04:96:27:98:f2 ROY_NET_MGT(0900) 0000  d mi           1:54
+02:04:96:52:a0:cb ROY_NET_MGT(0900) 0000  d mi           1:54
+02:04:96:7e:07:cf ROY_NET_MGT(0900) 0000  d mi           1:54
+02:04:96:7e:2d:2c ROY_NET_MGT(0900) 0000  d mi           1:54
+02:04:96:83:54:bd ROY_NET_MGT(0900) 0000  d mi           1:54
+02:04:96:83:54:e0 ROY_NET_MGT(0900) 0000  d mi           1:54
+02:04:96:83:54:e1 ROY_NET_MGT(0900) 0000  d mi           1:54
+02:04:96:83:78:5c ROY_NET_MGT(0900) 0000  d mi           1:54
+02:04:96:8f:95:df ROY_NET_MGT(0900) 0000  d mi           1:54
+02:04:96:98:91:95 ROY_NET_MGT(0900) 0000  d mi           1:54
+02:04:96:99:28:14 ROY_NET_MGT(0900) 0000  d mi           1:54
+02:04:96:99:2c:47 ROY_NET_MGT(0900) 0000  d mi           1:54
+02:04:96:99:2c:ef ROY_NET_MGT(0900) 0000  d mi           1:54
+02:04:96:99:2c:f8 ROY_NET_MGT(0900) 0000  d mi           1:54
+02:04:96:99:2d:12 ROY_NET_MGT(0900) 0000  d mi           1:54
+02:04:96:99:2d:40 ROY_NET_MGT(0900) 0000  d mi           1:54
+02:04:96:99:2d:75 ROY_NET_MGT(0900) 0000  d mi           1:54
+02:04:96:99:2f:98 ROY_NET_MGT(0900) 0000  d mi           1:54
+02:04:96:99:2f:99 ROY_NET_MGT(0900) 0000  d mi           1:54
+02:04:96:99:2f:a6 ROY_NET_MGT(0900) 0000  d mi           1:54
+02:04:96:99:2f:ab ROY_NET_MGT(0900) 0000  d mi           1:54
+02:04:96:99:2f:ce ROY_NET_MGT(0900) 0000  d mi           1:54
+02:04:96:99:2f:d1 ROY_NET_MGT(0900) 0000  d mi           1:54
+02:04:96:99:2f:e4 ROY_NET_MGT(0900) 0000  d mi           1:54
+02:04:96:99:2f:f3 ROY_NET_MGT(0900) 0000  d mi           1:54
+02:04:96:99:30:22    AES_CAM(1324) 0027  d m            1:54
+02:04:96:99:30:22     AES_PA(2012) 0027  d m            1:54
+02:04:96:99:30:22    AES_SVR(1300) 0054  d m            1:54
+02:04:96:99:30:22   AES_DATA(1316) 0050  d m            1:54
+02:04:96:99:30:22     AES_VC(1304) 0046  d m            1:54
+02:04:96:99:30:22 AES_WIFI_GST(1373) 0008  d m            1:54
+02:04:96:99:30:22 AES_WIFI_MGT(1370) 0025  d m            1:54
+02:04:96:99:30:22 AES_WIFI_STF(1371) 0025  d m            1:54
+02:04:96:99:30:22 ROY_NET_MGT(0900) 0000  d mi           1:54
+02:04:96:99:30:22 AES_WIFI_STU(1372) 0054  d m            1:54
+02:04:96:99:4d:29 ROY_NET_MGT(0900) 0000  d mi           1:54
+02:04:96:99:4e:eb ROY_NET_MGT(0900) 0000  d mi           1:54
+02:04:96:99:7e:92 ROY_NET_MGT(0900) 0000  d mi           1:54
+02:04:96:99:bc:2d ROY_NET_MGT(0900) 0000  d mi           1:54
+02:04:96:99:cc:16 ROY_NET_MGT(0900) 0000  d mi           1:54
+02:04:96:99:cc:64 ROY_NET_MGT(0900) 0000  d mi           1:54
+02:04:96:99:cc:66 ROY_NET_MGT(0900) 0000  d mi           1:54
+02:04:96:b3:cb:a5 ROY_NET_MGT(0900) 0000  d mi           1:54
+02:04:96:b3:d0:f8 ROY_NET_MGT(0900) 0000  d mi           1:54
+02:04:96:b3:d1:b5 ROY_NET_MGT(0900) 0000  d mi           1:54
+02:04:96:b3:d7:c5 ROY_NET_MGT(0900) 0000  d mi           1:54
+02:04:96:b3:d8:f7 ROY_NET_MGT(0900) 0000  d mi           1:54
+02:04:96:b4:00:97 ROY_NET_MGT(0900) 0000  d mi           1:54
+02:0f:b5:9a:68:0e AES_WIFI_GST(1373) 0054  d m            2:47
+02:0f:b5:c7:60:cf AES_WIFI_GST(1373) 0017  d m            2:47
+04:e5:36:00:4b:17 AES_WIFI_GST(1373) 0004  d m            1:54
+0a:39:a3:7a:f2:59 AES_WIFI_GST(1373) 0008  d m            1:54
+10:1c:0c:55:db:22 AES_WIFI_GST(1373) 0001  d m            1:54
+14:75:5b:2d:f9:24 AES_WIFI_STF(1371) 0044  d m            1:54
+14:75:5b:2f:99:7d AES_WIFI_STF(1371) 0026  d m            1:17
+16:19:a0:3c:42:c6 AES_WIFI_STF(1371) 0049  d m            1:54
+1a:8d:cb:75:10:13 AES_WIFI_GST(1373) 0283  d m            1:54
+1e:9b:c7:b5:32:d3 AES_WIFI_GST(1373) 0080  d m            1:54
+22:9d:3a:40:42:41 AES_WIFI_GST(1373) 0009  d m            2:47
+22:ce:1a:b8:7e:64 AES_WIFI_STF(1371) 0163  d m            1:54
+24:4b:fe:b9:5a:52     AES_PA(2012) 0088  d m            1:54
+28:29:86:49:92:0f     AES_PA(2012) 0164  d m            1:54
+2a:c3:74:48:92:4a AES_WIFI_GST(1373) 0042  d m            1:17
+30:12:5b:0a:11:ba     AES_PA(2012) 0033  d m            1:35
+4e:a0:30:59:bb:98 AES_WIFI_GST(1373) 0113  d m            2:25
+58:38:79:37:96:c1   AES_DATA(1316) 0013  d m            1:54
+58:38:79:57:05:bf   AES_DATA(1316) 0001  d m            1:54
+58:38:79:59:be:20   AES_DATA(1316) 0050  d m            2:4
+58:38:79:59:bf:60   AES_DATA(1316) 0045  d m            2:9
+58:38:79:75:24:f7   AES_DATA(1316) 0015  d m            2:20
+60:5b:30:34:a8:4e   AES_DATA(1316) 0075  d m            1:54
+60:fe:c5:72:6c:57 AES_WIFI_GST(1373) 0223  d m            1:54
+64:03:7f:78:24:83 AES_WIFI_GST(1373) 0022  d m            1:54
+66:20:25:8c:6b:18 AES_WIFI_GST(1373) 0059  d m            1:44
+78:3a:84:c4:04:11 AES_WIFI_GST(1373) 0036  d m            1:54
+78:3a:84:ca:11:2d AES_WIFI_GST(1373) 0020  d m            1:54
+78:3a:84:ca:f3:28 AES_WIFI_GST(1373) 0241  d m            1:54
+78:3a:84:cb:89:c4 AES_WIFI_GST(1373) 0041  d m            1:54
+78:3a:84:ce:3b:02 AES_WIFI_GST(1373) 0023  d m            1:54
+78:3a:84:ce:ee:46 AES_WIFI_GST(1373) 0017  d m            1:54
+78:3a:84:d1:02:4a AES_WIFI_GST(1373) 0168  d m            1:54
+78:3a:84:d4:8b:54 AES_WIFI_GST(1373) 0048  d m            1:54
+78:3a:84:d9:4a:d5 AES_WIFI_GST(1373) 0054  d m            1:54
+78:3a:84:d9:80:08 AES_WIFI_GST(1373) 0001  d m            1:54
+84:eb:18:dc:4c:c1    AES_SVR(1300) 0043  d m            2:46
+86:f8:4a:68:6a:ef AES_WIFI_GST(1373) 0021  d m            1:17
+90:32:4b:59:db:39 AES_WIFI_STF(1371) 0017  d m            1:54
+90:32:4b:5a:2a:75 AES_WIFI_GST(1373) 0076  d m            1:54
+90:32:4b:5a:58:d5 AES_WIFI_STF(1371) 0012  d m            1:54
+90:32:4b:5a:a9:71 AES_WIFI_STF(1371) 0022  d m            1:54
+96:59:91:f4:06:44 AES_WIFI_STF(1371) 0010  d m            1:44
+98:18:88:fd:1a:b0 AES_WIFI_MGT(1370) 0031  d m            1:54
+98:18:88:fd:1e:62 AES_WIFI_MGT(1370) 0029  d m            1:54
+98:18:88:fd:1e:65 AES_WIFI_MGT(1370) 0013  d m            2:26
+98:18:88:fd:1e:6a AES_WIFI_MGT(1370) 0049  d m            2:24
+98:18:88:fd:1e:74 AES_WIFI_MGT(1370) 0029  d m            1:54
+98:18:88:fd:1e:8b AES_WIFI_MGT(1370) 0032  d m            1:54
+98:18:88:fd:1e:ab AES_WIFI_MGT(1370) 0011  d m            2:36
+98:18:88:fd:1e:ca AES_WIFI_MGT(1370) 0028  d m            1:54
+98:18:88:fd:1f:3d AES_WIFI_MGT(1370) 0028  d m            1:54
+98:18:88:fd:1f:9e AES_WIFI_MGT(1370) 0016  d m            2:22
+98:18:88:fd:1f:ad AES_WIFI_MGT(1370) 0030  d m            1:54
+98:18:88:fd:1f:dc AES_WIFI_MGT(1370) 0011  d m            2:34
+98:18:88:fd:1f:eb AES_WIFI_MGT(1370) 0009  d m            2:27
+98:18:88:fd:20:08 AES_WIFI_MGT(1370) 0040  d m            1:44
+98:18:88:fd:23:1f AES_WIFI_MGT(1370) 0033  d m            1:54
+98:18:88:fd:23:24 AES_WIFI_MGT(1370) 0044  d m            1:54
+98:18:88:fd:23:2c AES_WIFI_MGT(1370) 0033  d m            1:54
+98:18:88:fd:23:33 AES_WIFI_MGT(1370) 0010  d m            2:43
+98:18:88:fd:23:34 AES_WIFI_MGT(1370) 0014  d m            2:25
+98:18:88:fd:23:35 AES_WIFI_MGT(1370) 0028  d m            1:54
+98:18:88:fd:23:37 AES_WIFI_MGT(1370) 0031  d m            1:54
+98:18:88:fd:23:39 AES_WIFI_MGT(1370) 0031  d m            1:54
+98:18:88:fd:23:3a AES_WIFI_MGT(1370) 0029  d m            1:54
+98:18:88:fd:23:3e AES_WIFI_MGT(1370) 0031  d m            1:54
+98:18:88:fd:23:3f AES_WIFI_MGT(1370) 0033  d m            1:54
+98:18:88:fd:23:42 AES_WIFI_MGT(1370) 0031  d m            1:54
+98:18:88:fd:23:43 AES_WIFI_MGT(1370) 0013  d m            2:23
+98:18:88:fd:23:44 AES_WIFI_MGT(1370) 0028  d m            1:54
+98:18:88:fd:23:46 AES_WIFI_MGT(1370) 0029  d m            1:54
+98:18:88:fd:23:47 AES_WIFI_MGT(1370) 0030  d m            1:54
+98:18:88:fd:23:48 AES_WIFI_MGT(1370) 0028  d m            1:17
+98:18:88:fd:23:4b AES_WIFI_MGT(1370) 0030  d m            1:54
+98:18:88:fd:23:4d AES_WIFI_MGT(1370) 0030  d m            1:54
+98:18:88:fd:23:4f AES_WIFI_MGT(1370) 0033  d m            1:54
+98:18:88:fd:23:51 AES_WIFI_MGT(1370) 0030  d m            1:54
+98:18:88:fd:23:52 AES_WIFI_MGT(1370) 0028  d m            1:54
+98:18:88:fd:23:53 AES_WIFI_MGT(1370) 0029  d m            1:54
+98:18:88:fd:23:54 AES_WIFI_MGT(1370) 0031  d m            1:54
+98:18:88:fd:23:58 AES_WIFI_MGT(1370) 0034  d m            1:54
+98:18:88:fd:23:59 AES_WIFI_MGT(1370) 0029  d m            1:54
+98:18:88:fd:23:5a AES_WIFI_MGT(1370) 0031  d m            1:54
+98:18:88:fd:23:5c AES_WIFI_MGT(1370) 0028  d m            1:54
+98:18:88:fd:23:5e AES_WIFI_MGT(1370) 0033  d m            1:54
+98:18:88:fd:23:5f AES_WIFI_MGT(1370) 0030  d m            1:54
+98:18:88:fd:23:60 AES_WIFI_MGT(1370) 0031  d m            1:54
+98:18:88:fd:23:62 AES_WIFI_MGT(1370) 0028  d m            1:54
+98:18:88:fd:23:63 AES_WIFI_MGT(1370) 0033  d m            1:54
+98:18:88:fd:23:64 AES_WIFI_MGT(1370) 0029  d m            1:54
+98:18:88:fd:23:68 AES_WIFI_MGT(1370) 0030  d m            1:54
+98:18:88:fd:23:69 AES_WIFI_MGT(1370) 0027  d m            1:54
+98:18:88:fd:23:6a AES_WIFI_MGT(1370) 0029  d m            1:54
+98:18:88:fd:23:6c AES_WIFI_MGT(1370) 0028  d m            1:54
+98:18:88:fd:23:6d AES_WIFI_MGT(1370) 0029  d m            1:54
+98:18:88:fd:23:6f AES_WIFI_MGT(1370) 0005  d m            2:47
+98:18:88:fd:23:71 AES_WIFI_MGT(1370) 0031  d m            1:54
+98:18:88:fd:23:73 AES_WIFI_MGT(1370) 0032  d m            1:54
+98:18:88:fd:23:74 AES_WIFI_MGT(1370) 0029  d m            1:54
+98:18:88:fd:23:76 AES_WIFI_MGT(1370) 0028  d m            1:54
+98:18:88:fd:23:7f AES_WIFI_MGT(1370) 0032  d m            1:54
+98:18:88:fd:23:82 AES_WIFI_MGT(1370) 0028  d m            1:54
+9e:89:92:21:1e:e1 AES_WIFI_STF(1371) 0015  d m            1:54
+a0:d3:c1:23:3d:a0   AES_DATA(1316) 0060  d m            1:54
+aa:a1:ce:57:bd:95 AES_WIFI_GST(1373) 0057  d m            1:54
+ac:cc:8e:28:16:bb    AES_CAM(1324) 0039  d m            2:13
+ac:cc:8e:28:16:be    AES_CAM(1324) 0038  d m            2:14
+ac:cc:8e:28:17:5e    AES_CAM(1324) 0040  d m            2:11
+ac:cc:8e:32:24:da    AES_CAM(1324) 0188  d m            1:54
+ac:cc:8e:32:53:f1    AES_CAM(1324) 0194  d m            1:54
+ac:cc:8e:32:54:0f    AES_CAM(1324) 0172  d m            1:54
+b8:2c:a0:ea:5c:2a   AES_DATA(1316) 0065  d m            1:54
+c2:9b:56:77:35:84 AES_WIFI_GST(1373) 0027  d m            1:54
+c6:02:82:9f:a7:3b AES_WIFI_GST(1373) 0033  d m            1:54
+ca:06:a7:13:b8:8c AES_WIFI_GST(1373) 0105  d m            1:17
+ca:95:bb:46:6b:b7 AES_WIFI_GST(1373) 0243  d m            1:54
+ca:cb:02:b7:92:66 AES_WIFI_STF(1371) 0237  d m            2:25
+d0:94:66:f2:cc:0a   AES_DATA(1316) 0289  d m            1:47
+d6:45:e3:e3:9b:55 AES_WIFI_GST(1373) 0279  d m            1:54
+d8:9c:67:65:79:dd AES_WIFI_STF(1371) 0059  d m            1:17
+d8:9e:f3:37:f8:c3   AES_DATA(1316) 0019  d m            1:8
+d8:d4:3c:78:86:7d    AES_CAM(1324) 0028  d m            1:54
+dc:a6:32:f6:0d:c6     AES_PA(2012) 0045  d m            1:54
+e0:48:af:4c:eb:f2 AES_WIFI_GST(1373) 0070  d m            2:47
+
+Flags : d - Dynamic, s - Static, p - Permanent, n - NetLogin, m - MAC, i - IP,
+        x - IPX, l - lockdown MAC, L - lockdown-timeout MAC, M- Mirror, B - Egress Blackhole,
+        b - Ingress Blackhole, v - MAC-Based VLAN, P - Private VLAN, T - VLAN translation,
+        D - drop packet, h - Hardware Aging, o - IEEE 802.1ah Backbone MAC,
+        S - Software Controlled Deletion, r - MSRP,
+        R - TRILL Rbridge, Z - OpenFlow
+
+Total: 257 Static: 0  Perm: 0  Dyn: 257  Dropped: 0  Locked: 0  Locked with Timeout: 0
+FDB Aging time: 300
+Slot-1 ROY-AES-IDF-3.4 # sh edp port all
+
+Port   Neighbor                       Neighbor-ID         Remote  Age    Num
+                                                           Port         Vlans
+=============================================================================
+1:53   ROY-AES-MDF               00:00:02:04:96:99:30:22   3:54   46     11   
+1:54   ROY-AES-MDF               00:00:02:04:96:99:30:22   4:54   46     11   
+=============================================================================
