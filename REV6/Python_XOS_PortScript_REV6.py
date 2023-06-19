@@ -143,7 +143,7 @@ def process_file(path, tagOption):
                 macAddress = " "
               newRow = []
               newRow = [deviceName, vlanNameFinal, macAddress, writeableSwitchPortNumber, tag]
-              if "Loop" not in vlanNameFinal and "loop" not in vlanNameFinal:
+              if "Loop" not in vlanNameFinal and "loop" not in vlanNameFinal and "LOOP" not in vlanNameFinal:
                 writer.writerow(newRow)
               else: 
                 pass
@@ -160,7 +160,7 @@ def process_file(path, tagOption):
                 else: 
                   macAddress = " "
                 newRow = [deviceName, vlanNameFinal, macAddress, writeableSwitchPortNumber, tag]
-                if "Loop" not in vlanNameFinal and "loop" not in vlanNameFinal:
+                if "Loop" not in vlanNameFinal and "loop" not in vlanNameFinal and "LOOP" not in vlanNameFinal:
                   writer.writerow(newRow)
                 else: 
                  pass
@@ -193,7 +193,7 @@ def process_file(path, tagOption):
               #added blank column for mac address since mac retrieval does not function without #:## format
               macAddress = " "
               newRow = [deviceName, vlanNameFinal, macAddress, writeablePortNumber, tag]
-              if "Loop" not in vlanNameFinal and "loop" not in vlanNameFinal:
+              if "Loop" not in vlanNameFinal and "loop" not in vlanNameFinal and "LOOP" not in vlanNameFinal:
                 writer.writerow(newRow)
               else: 
                 pass
@@ -205,7 +205,7 @@ def process_file(path, tagOption):
                 writeablePortNumber = str(i)
                 macAddress = " "
                 newRow = [deviceName, vlanNameFinal, macAddress, writeablePortNumber, tag]
-                if "Loop" not in vlanNameFinal and "loop" not in vlanNameFinal:
+                if "Loop" not in vlanNameFinal and "loop" not in vlanNameFinal and "LOOP" not in vlanNameFinal:
                   writer.writerow(newRow)
                 else: 
                   pass
@@ -225,7 +225,7 @@ def macAndPortData(path):
     mac_pattern = "(\d{2}:\w+:\w+:\w+:\w+:\w+)"
     port_pattern = "\s+\d:\d+\d*"
     uplinkPort_pattern = "\d:\d+\d?"
-    vlanName_pattern = "[a-zA-Z]+[a-zA-Z]+[a-zA-Z]+\d*"
+    vlanName_pattern = "[a-zA-Z]+_*+[a-zA-Z]+_*+[a-zA-Z]+_*+\d*"
     #create lists to hold all unique port numbers, names and uplink ports
     uplinkPortsUnique = []
     portListUnique = []
