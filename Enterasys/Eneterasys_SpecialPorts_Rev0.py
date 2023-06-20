@@ -7,6 +7,69 @@ import csv
 import sys
 import glob
 
+#UPDATE Create additional function to compile mac addresses and port numbers, then use data to add MACs to appropriate rows
+
+#TODO USE Enterasys log to verify patterns are valid
+def macAndPortData(path):
+  with open(path, 'r', encoding =None) as file:
+    #define regex patterns
+    uplink_pattern = "(00:00:\w+:\w+:\w+:\w+:\w+:\w+)"
+    mac_pattern = "(\w?\w?:\w?\w?:\w?\w?:\w?\w?:\w?\w?:\w+)"
+    port_pattern = "\s+\w{2}.\d.\d+\d*"
+    uplinkPort_pattern = "\w{2}.\d.\d+\d?"
+    vlanName_pattern = "[a-zA-Z]+_*+[a-zA-Z]+_*+[a-zA-Z]+_*+\d*"
+    #create lists to hold all unique port numbers, names and uplink ports
+    uplinkPortsUnique = []
+    portListUnique = []
+    nameListUnique = []
+    #Define Outermost Dictionary
+    outerPorts_innerNamesAndMacs = {}
+    #loop through file
+    for line in file:
+    #use regex searches to define logic for dictionary creation
+      logicalMatch = re.search(mac_pattern, line)
+      uplinkMatch = re.search(uplink_pattern, line)
+    #if mac address found in line do...
+      if logicalMatch != None:
+        #if mac address is not an uplink mac do...
+        if uplinkMatch == None:
+          #create lists containing mac address, port, and vlanName
+          macList = re.findall(mac_pattern, line)
+          portList = re.findall(port_pattern, line)
+          vlanNameList = re.findall(vlanName_pattern, line)
+          #convert lists to strings
+          mac = macList[0]
+          
+          # port = portList[0].strip()
+          try:
+            port = portList[0].strip()
+          except Exception as e:
+            continue
+
+          # if len(portList) > 0:
+          #   print(line)
+
+          vlanName = vlanNameList[0]
+          #append port and vlan name to unique list if item not already present
+          if vlanName not in nameListUnique:
+            nameListUnique.append(vlanName)
+          #update outer dictionary if port number is not already present
+          if port not in portListUnique:
+            portListUnique.append(port)
+            outerPorts_innerNamesAndMacs.update({port : {vlanName:mac}})
+          #update dictionary related to corresponding port if port already present
+          else:
+            outerPorts_innerNamesAndMacs[port].update({vlanName:mac})
+        #create list of uplink ports using unique 00:00:...mac identifier
+        else:
+          uplinkPort = re.findall(uplinkPort_pattern, line)
+          uplinkPortsUnique.append(uplinkPort[0])
+  #removed all entries from outer dictionary that contain uplink ports
+  for i in range(len(uplinkPortsUnique)):
+    if uplinkPortsUnique[i] in outerPorts_innerNamesAndMacs:
+      outerPorts_innerNamesAndMacs.pop(uplinkPortsUnique[i])
+  return outerPorts_innerNamesAndMacs
+
 # process each file as a function
 # wrap each call in a try/except block so that the script is safely exited on a FileNotFoundError
 def process_file(path):
@@ -46,8 +109,13 @@ def process_file(path):
   csvPath = Path(__file__).parent / fileName
   outfile = open(csvPath, "w", newline='')
   writer = csv.writer(outfile)
-  header = ['device', 'vlan name', 'vlan number', 'direction', 'port number', 'tag']
+  #added mac address column
+  header = ['device', 'vlan name', 'vlan number', 'direction', 'MAC', 'port number', 'tag']
   writer.writerow(header)
+
+    #added variable called macDictionary that will allow macS to be added to file
+  
+  macDictionary = macAndPortData(path)
   
 
   #TODO: Need to add logic for creating dictionary of Key:Value = Number:Name
@@ -149,7 +217,12 @@ def process_file(path):
             if flag != True:
               writeableSwitchPortNumber =  portNumberNoRangeFinal
               newRow = []
-              newRow = [deviceName, vlans[vlanNumberFinal], vlanNumberFinal, direction, writeableSwitchPortNumber, tag]
+              if writeableSwitchPortNumber in macDictionary:
+                if vlans[vlanNumberFinal] in macDictionary[writeableSwitchPortNumber]:
+                  macAddress = macDictionary[writeableSwitchPortNumber][vlans[vlanNumberFinal]]
+              else:
+                macAddress = " "
+              newRow = [deviceName, vlans[vlanNumberFinal], vlanNumberFinal, direction, macAddress, writeableSwitchPortNumber, tag]
               if "Loop" not in vlanNumberFinal and "loop" not in vlanNumberFinal:
                 writer.writerow(newRow)
               else: 
@@ -161,7 +234,12 @@ def process_file(path):
               for i in range (portNumberStart, portNumberEnd + 1):
                 newRow = []
                 writeableSwitchPortNumber = portNumbersModifiableList[0] + "." + portNumbersModifiableList[1] + "." + str(i)
-                newRow = [deviceName, vlans[vlanNumberFinal], vlanNumberFinal, direction, writeableSwitchPortNumber, tag]
+                if writeableSwitchPortNumber in macDictionary:
+                if vlans[vlanNumberFinal] in macDictionary[writeableSwitchPortNumber]:
+                  macAddress = macDictionary[writeableSwitchPortNumber][vlans[vlanNumberFinal]]
+              else:
+                macAddress = " "
+                newRow = [deviceName, vlans[vlanNumberFinal], vlanNumberFinal, direction, macAddress, writeableSwitchPortNumber, tag]
                 if "Loop" not in vlanNumberFinal and "loop" not in vlanNumberFinal:
                   writer.writerow(newRow)
                 else: 
