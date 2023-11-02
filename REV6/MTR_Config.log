@@ -1,0 +1,2976 @@
+﻿Slot-1 Powers_MTR.1 # disable cli paging
+                                   ^
+%% Invalid input detected at '^' marker.
+Slot-1 Powers_MTR.2 # disable clip
+Slot-1 Powers_MTR.3 # sho config
+#
+# Module devmgr configuration.
+#
+configure snmp sysName "Powers_MTR"
+configure snmp sysLocation "Powers Catholic High School"
+configure snmp sysContact "Help Desk"
+configure timezone name EST -300 autodst name EDT 60 begins every second sunday march at 2 0 ends every first sunday november at 2 0
+configure slot 1 module X460-48p
+configure sys-recovery-level slot 1 reset
+configure slot 2 module X460-48p
+configure sys-recovery-level slot 2 reset
+configure slot 3 module X460-24p
+configure sys-recovery-level slot 3 reset
+
+#
+# Module vlan configuration.
+#
+configure vlan default delete ports all
+configure vr VR-Default delete ports 1:1-58, 2:1-58, 3:1-34
+configure vr VR-Default add ports 1:1-58, 2:1-58, 3:1-34
+configure vlan default delete ports 1:1-58, 2:1-58, 3:1-34
+create qosprofile "QP5"
+create vlan "VLAN16_Video"
+configure vlan VLAN16_Video tag 16
+create vlan "VLAN2_Security"
+configure vlan VLAN2_Security tag 2
+create vlan "VLAN30_WiFi_Mgmt"
+configure vlan VLAN30_WiFi_Mgmt tag 30
+create vlan "VLAN32_WiFi_Guest"
+configure vlan VLAN32_WiFi_Guest tag 32
+create vlan "VLAN36_WiFi_Staff"
+configure vlan VLAN36_WiFi_Staff tag 36
+create vlan "VLAN40_WiFi_Student"
+configure vlan VLAN40_WiFi_Student tag 40
+create vlan "VLAN4_VoIP"
+configure vlan VLAN4_VoIP tag 4
+create vlan "VLAN66_NoLoop"
+configure vlan VLAN66_NoLoop tag 66
+create vlan "VLAN8_Data"
+configure vlan VLAN8_Data tag 8
+create vlan "VLAN99_NetMgmt"
+configure vlan VLAN99_NetMgmt tag 99
+enable diffserv examination port 1:1
+disable dot1p examination port 1:1
+enable diffserv examination port 1:2
+disable dot1p examination port 1:2
+enable diffserv examination port 1:3
+disable dot1p examination port 1:3
+enable diffserv examination port 1:4
+disable dot1p examination port 1:4
+enable diffserv examination port 1:5
+disable dot1p examination port 1:5
+enable diffserv examination port 1:6
+disable dot1p examination port 1:6
+enable diffserv examination port 1:7
+disable dot1p examination port 1:7
+enable diffserv examination port 1:8
+disable dot1p examination port 1:8
+enable diffserv examination port 1:9
+disable dot1p examination port 1:9
+enable diffserv examination port 1:10
+disable dot1p examination port 1:10
+enable diffserv examination port 1:11
+disable dot1p examination port 1:11
+enable diffserv examination port 1:12
+disable dot1p examination port 1:12
+enable diffserv examination port 1:13
+disable dot1p examination port 1:13
+enable diffserv examination port 1:14
+disable dot1p examination port 1:14
+enable diffserv examination port 1:15
+disable dot1p examination port 1:15
+enable diffserv examination port 1:16
+disable dot1p examination port 1:16
+enable diffserv examination port 1:17
+disable dot1p examination port 1:17
+enable diffserv examination port 1:18
+disable dot1p examination port 1:18
+enable diffserv examination port 1:19
+disable dot1p examination port 1:19
+enable diffserv examination port 1:20
+disable dot1p examination port 1:20
+enable diffserv examination port 1:21
+disable dot1p examination port 1:21
+enable diffserv examination port 1:22
+disable dot1p examination port 1:22
+enable diffserv examination port 1:23
+disable dot1p examination port 1:23
+enable diffserv examination port 1:24
+disable dot1p examination port 1:24
+enable diffserv examination port 1:25
+disable dot1p examination port 1:25
+enable diffserv examination port 1:26
+disable dot1p examination port 1:26
+enable diffserv examination port 1:27
+disable dot1p examination port 1:27
+enable diffserv examination port 1:28
+disable dot1p examination port 1:28
+enable diffserv examination port 1:29
+disable dot1p examination port 1:29
+enable diffserv examination port 1:30
+disable dot1p examination port 1:30
+enable diffserv examination port 1:31
+disable dot1p examination port 1:31
+enable diffserv examination port 1:32
+disable dot1p examination port 1:32
+enable diffserv examination port 1:33
+disable dot1p examination port 1:33
+enable diffserv examination port 1:34
+disable dot1p examination port 1:34
+enable diffserv examination port 1:35
+disable dot1p examination port 1:35
+enable diffserv examination port 1:36
+disable dot1p examination port 1:36
+enable diffserv examination port 1:37
+disable dot1p examination port 1:37
+enable diffserv examination port 1:38
+disable dot1p examination port 1:38
+enable diffserv examination port 1:39
+disable dot1p examination port 1:39
+enable diffserv examination port 1:40
+disable dot1p examination port 1:40
+enable diffserv examination port 1:41
+disable dot1p examination port 1:41
+enable diffserv examination port 1:42
+disable dot1p examination port 1:42
+enable diffserv examination port 1:43
+disable dot1p examination port 1:43
+enable diffserv examination port 1:44
+disable dot1p examination port 1:44
+enable diffserv examination port 1:45
+disable dot1p examination port 1:45
+enable diffserv examination port 1:46
+disable dot1p examination port 1:46
+enable diffserv examination port 1:47
+disable dot1p examination port 1:47
+enable diffserv examination port 1:48
+disable dot1p examination port 1:48
+enable diffserv examination port 1:49
+disable dot1p examination port 1:49
+enable diffserv examination port 1:50
+disable dot1p examination port 1:50
+enable diffserv examination port 1:51
+disable dot1p examination port 1:51
+enable diffserv examination port 1:52
+disable dot1p examination port 1:52
+enable diffserv examination port 1:53
+disable dot1p examination port 1:53
+enable diffserv examination port 1:54
+disable dot1p examination port 1:54
+enable diffserv examination port 1:55
+disable dot1p examination port 1:55
+enable diffserv examination port 1:56
+disable dot1p examination port 1:56
+enable diffserv examination port 1:57
+disable dot1p examination port 1:57
+enable diffserv examination port 1:58
+disable dot1p examination port 1:58
+enable diffserv examination port 2:1
+disable dot1p examination port 2:1
+enable diffserv examination port 2:2
+disable dot1p examination port 2:2
+enable diffserv examination port 2:3
+disable dot1p examination port 2:3
+enable diffserv examination port 2:4
+disable dot1p examination port 2:4
+enable diffserv examination port 2:5
+disable dot1p examination port 2:5
+enable diffserv examination port 2:6
+disable dot1p examination port 2:6
+enable diffserv examination port 2:7
+disable dot1p examination port 2:7
+enable diffserv examination port 2:8
+disable dot1p examination port 2:8
+enable diffserv examination port 2:9
+disable dot1p examination port 2:9
+enable diffserv examination port 2:10
+disable dot1p examination port 2:10
+enable diffserv examination port 2:11
+disable dot1p examination port 2:11
+enable diffserv examination port 2:12
+disable dot1p examination port 2:12
+enable diffserv examination port 2:13
+disable dot1p examination port 2:13
+enable diffserv examination port 2:14
+disable dot1p examination port 2:14
+enable diffserv examination port 2:15
+disable dot1p examination port 2:15
+enable diffserv examination port 2:16
+disable dot1p examination port 2:16
+enable diffserv examination port 2:17
+disable dot1p examination port 2:17
+enable diffserv examination port 2:18
+disable dot1p examination port 2:18
+enable diffserv examination port 2:19
+disable dot1p examination port 2:19
+enable diffserv examination port 2:20
+disable dot1p examination port 2:20
+enable diffserv examination port 2:21
+disable dot1p examination port 2:21
+enable diffserv examination port 2:22
+disable dot1p examination port 2:22
+enable diffserv examination port 2:23
+disable dot1p examination port 2:23
+enable diffserv examination port 2:24
+disable dot1p examination port 2:24
+enable diffserv examination port 2:25
+disable dot1p examination port 2:25
+enable diffserv examination port 2:26
+disable dot1p examination port 2:26
+enable diffserv examination port 2:27
+disable dot1p examination port 2:27
+enable diffserv examination port 2:28
+disable dot1p examination port 2:28
+enable diffserv examination port 2:29
+disable dot1p examination port 2:29
+enable diffserv examination port 2:30
+disable dot1p examination port 2:30
+enable diffserv examination port 2:31
+disable dot1p examination port 2:31
+enable diffserv examination port 2:32
+disable dot1p examination port 2:32
+enable diffserv examination port 2:33
+disable dot1p examination port 2:33
+enable diffserv examination port 2:34
+disable dot1p examination port 2:34
+enable diffserv examination port 2:35
+disable dot1p examination port 2:35
+enable diffserv examination port 2:36
+disable dot1p examination port 2:36
+enable diffserv examination port 2:37
+disable dot1p examination port 2:37
+enable diffserv examination port 2:38
+disable dot1p examination port 2:38
+enable diffserv examination port 2:39
+disable dot1p examination port 2:39
+enable diffserv examination port 2:40
+disable dot1p examination port 2:40
+enable diffserv examination port 2:41
+disable dot1p examination port 2:41
+enable diffserv examination port 2:42
+disable dot1p examination port 2:42
+enable diffserv examination port 2:43
+disable dot1p examination port 2:43
+enable diffserv examination port 2:44
+disable dot1p examination port 2:44
+enable diffserv examination port 2:45
+disable dot1p examination port 2:45
+enable diffserv examination port 2:46
+disable dot1p examination port 2:46
+enable diffserv examination port 2:47
+disable dot1p examination port 2:47
+enable diffserv examination port 2:48
+disable dot1p examination port 2:48
+enable diffserv examination port 2:49
+disable dot1p examination port 2:49
+enable diffserv examination port 2:50
+disable dot1p examination port 2:50
+enable diffserv examination port 2:51
+disable dot1p examination port 2:51
+enable diffserv examination port 2:52
+disable dot1p examination port 2:52
+enable diffserv examination port 2:53
+disable dot1p examination port 2:53
+enable diffserv examination port 2:54
+disable dot1p examination port 2:54
+enable diffserv examination port 2:55
+disable dot1p examination port 2:55
+enable diffserv examination port 2:56
+disable dot1p examination port 2:56
+enable diffserv examination port 2:57
+disable dot1p examination port 2:57
+enable diffserv examination port 2:58
+disable dot1p examination port 2:58
+enable diffserv examination port 3:1
+disable dot1p examination port 3:1
+enable diffserv examination port 3:2
+disable dot1p examination port 3:2
+enable diffserv examination port 3:3
+disable dot1p examination port 3:3
+enable diffserv examination port 3:4
+disable dot1p examination port 3:4
+enable diffserv examination port 3:5
+disable dot1p examination port 3:5
+enable diffserv examination port 3:6
+disable dot1p examination port 3:6
+enable diffserv examination port 3:7
+disable dot1p examination port 3:7
+enable diffserv examination port 3:8
+disable dot1p examination port 3:8
+enable diffserv examination port 3:9
+disable dot1p examination port 3:9
+enable diffserv examination port 3:10
+disable dot1p examination port 3:10
+enable diffserv examination port 3:11
+disable dot1p examination port 3:11
+enable diffserv examination port 3:12
+disable dot1p examination port 3:12
+enable diffserv examination port 3:13
+disable dot1p examination port 3:13
+enable diffserv examination port 3:14
+disable dot1p examination port 3:14
+enable diffserv examination port 3:15
+disable dot1p examination port 3:15
+enable diffserv examination port 3:16
+disable dot1p examination port 3:16
+enable diffserv examination port 3:17
+disable dot1p examination port 3:17
+enable diffserv examination port 3:18
+disable dot1p examination port 3:18
+enable diffserv examination port 3:19
+disable dot1p examination port 3:19
+enable diffserv examination port 3:20
+disable dot1p examination port 3:20
+enable diffserv examination port 3:21
+disable dot1p examination port 3:21
+enable diffserv examination port 3:22
+disable dot1p examination port 3:22
+enable diffserv examination port 3:23
+disable dot1p examination port 3:23
+enable diffserv examination port 3:24
+disable dot1p examination port 3:24
+enable diffserv examination port 3:25
+disable dot1p examination port 3:25
+enable diffserv examination port 3:26
+disable dot1p examination port 3:26
+enable diffserv examination port 3:27
+disable dot1p examination port 3:27
+enable diffserv examination port 3:28
+disable dot1p examination port 3:28
+enable diffserv examination port 3:29
+disable dot1p examination port 3:29
+enable diffserv examination port 3:30
+disable dot1p examination port 3:30
+enable diffserv examination port 3:31
+disable dot1p examination port 3:31
+enable diffserv examination port 3:32
+disable dot1p examination port 3:32
+enable diffserv examination port 3:33
+disable dot1p examination port 3:33
+enable diffserv examination port 3:34
+disable dot1p examination port 3:34
+configure vlan VLAN16_Video add ports 1:49-54, 2:53-54, 3:3 tagged  
+configure vlan VLAN2_Security add ports 1:49-54, 2:53-54, 3:3, 3:6 tagged  
+configure vlan VLAN2_Security add ports 2:30, 2:32, 2:34, 2:36, 2:38, 3:2, 3:8-18, 3:24 untagged  
+configure vlan VLAN30_WiFi_Mgmt add ports 1:49-54, 2:53-54, 3:1, 3:3, 3:7 tagged  
+configure vlan VLAN30_WiFi_Mgmt add ports 1:3, 1:7, 1:9, 1:17, 1:23, 1:27, 2:13, 2:19, 2:23, 2:29, 2:35, 2:39, 2:41, 2:43, 2:45 untagged  
+configure vlan VLAN32_WiFi_Guest add ports 1:3, 1:7, 1:9, 1:17, 1:23, 1:27, 1:49-54, 2:13, 2:19, 2:23, 2:29, 2:35, 2:39, 2:41, 2:43, 2:45, 2:53-54, 3:3 tagged  
+configure vlan VLAN36_WiFi_Staff add ports 1:3, 1:7, 1:9, 1:17, 1:23, 1:27, 1:49-54, 2:13, 2:19, 2:23, 2:29, 2:35-36, 2:39, 2:41, 2:43, 2:45, 2:53-54, 3:3, 3:15 tagged  
+configure vlan VLAN40_WiFi_Student add ports 1:3, 1:7, 1:9, 1:17, 1:23, 1:27, 1:49-54, 2:13, 2:19, 2:23, 2:29, 2:35, 2:39, 2:41, 2:43, 2:45, 2:53-54, 3:3 tagged  
+configure vlan VLAN4_VoIP add ports 1:1-2, 1:4-6, 1:8, 1:10-16, 1:18-22, 1:24-26, 1:28-54, 2:1-12, 2:14-18, 2:20-22, 2:24-28, 2:31, 2:33, 2:37, 2:40, 2:42, 2:44, 2:46-48, 2:53-54, 3:3, 3:6, 3:19 tagged  
+configure vlan VLAN4_VoIP add ports 3:21-23 untagged  
+configure vlan VLAN66_NoLoop add ports 1:1-58, 2:1-29, 2:31, 2:33, 2:35-58, 3:1-34 tagged  
+configure vlan VLAN8_Data add ports 1:49-54, 2:36, 2:38, 2:53-54 tagged  
+configure vlan VLAN8_Data add ports 1:1-2, 1:4-6, 1:8, 1:10-16, 1:18-22, 1:24-26, 1:28-48, 2:1-12, 2:14-18, 2:20-22, 2:24-28, 2:31, 2:33, 2:37, 2:40, 2:42, 2:44, 2:46-48, 3:1, 3:3-7, 3:19-20, 3:25 untagged  
+configure vlan VLAN99_NetMgmt add ports 1:49-54, 2:53-54, 3:3 tagged  
+configure vlan Mgmt ipaddress 192.168.0.1 255.255.255.0
+configure vlan VLAN2_Security ipaddress 10.1.2.1 255.255.255.0
+enable ipforwarding vlan VLAN2_Security
+configure vlan VLAN4_VoIP ipaddress 10.1.4.1 255.255.255.0
+enable ipforwarding vlan VLAN4_VoIP
+configure vlan VLAN8_Data ipaddress 10.1.8.1 255.255.252.0
+enable ipforwarding vlan VLAN8_Data
+configure vlan VLAN16_Video ipaddress 10.1.16.1 255.255.255.0
+enable ipforwarding vlan VLAN16_Video
+configure vlan VLAN30_WiFi_Mgmt ipaddress 10.1.30.1 255.255.255.0
+enable ipforwarding vlan VLAN30_WiFi_Mgmt
+configure vlan VLAN32_WiFi_Guest ipaddress 10.1.32.1 255.255.252.0
+enable ipforwarding vlan VLAN32_WiFi_Guest
+configure vlan VLAN36_WiFi_Staff ipaddress 10.1.36.1 255.255.252.0
+enable ipforwarding vlan VLAN36_WiFi_Staff
+configure vlan VLAN40_WiFi_Student ipaddress 10.1.40.1 255.255.248.0
+enable ipforwarding vlan VLAN40_WiFi_Student
+configure vlan VLAN99_NetMgmt ipaddress 10.1.99.1 255.255.255.0
+enable ipforwarding vlan VLAN99_NetMgmt
+configure qosscheduler weighted-round-robin
+configure qosprofile QP5 maxbuffer 100 weight 10
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:1
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:2
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:3
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:4
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:5
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:6
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:7
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:8
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:9
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:10
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:11
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:12
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:13
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:14
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:15
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:16
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:17
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:18
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:19
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:20
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:21
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:22
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:23
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:24
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:25
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:26
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:27
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:28
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:29
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:30
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:31
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:32
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:33
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:34
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:35
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:36
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:37
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:38
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:39
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:40
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:41
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:42
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:43
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:44
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:45
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:46
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:47
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:48
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:49
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:50
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:51
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:52
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:53
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:54
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:55
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:56
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:57
+configure qosprofile QP5 minbw 0 maxbw 100 ports 1:58
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:1
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:2
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:3
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:4
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:5
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:6
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:7
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:8
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:9
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:10
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:11
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:12
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:13
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:14
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:15
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:16
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:17
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:18
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:19
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:20
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:21
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:22
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:23
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:24
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:25
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:26
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:27
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:28
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:29
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:30
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:31
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:32
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:33
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:34
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:35
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:36
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:37
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:38
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:39
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:40
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:41
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:42
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:43
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:44
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:45
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:46
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:47
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:48
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:49
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:50
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:51
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:52
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:53
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:54
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:55
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:56
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:57
+configure qosprofile QP5 minbw 0 maxbw 100 ports 2:58
+configure qosprofile QP5 minbw 0 maxbw 100 ports 3:1
+configure qosprofile QP5 minbw 0 maxbw 100 ports 3:2
+configure qosprofile QP5 minbw 0 maxbw 100 ports 3:3
+configure qosprofile QP5 minbw 0 maxbw 100 ports 3:4
+configure qosprofile QP5 minbw 0 maxbw 100 ports 3:5
+configure qosprofile QP5 minbw 0 maxbw 100 ports 3:6
+configure qosprofile QP5 minbw 0 maxbw 100 ports 3:7
+configure qosprofile QP5 minbw 0 maxbw 100 ports 3:8
+configure qosprofile QP5 minbw 0 maxbw 100 ports 3:9
+configure qosprofile QP5 minbw 0 maxbw 100 ports 3:10
+configure qosprofile QP5 minbw 0 maxbw 100 ports 3:11
+configure qosprofile QP5 minbw 0 maxbw 100 ports 3:12
+configure qosprofile QP5 minbw 0 maxbw 100 ports 3:13
+configure qosprofile QP5 minbw 0 maxbw 100 ports 3:14
+configure qosprofile QP5 minbw 0 maxbw 100 ports 3:15
+configure qosprofile QP5 minbw 0 maxbw 100 ports 3:16
+configure qosprofile QP5 minbw 0 maxbw 100 ports 3:17
+configure qosprofile QP5 minbw 0 maxbw 100 ports 3:18
+configure qosprofile QP5 minbw 0 maxbw 100 ports 3:19
+configure qosprofile QP5 minbw 0 maxbw 100 ports 3:20
+configure qosprofile QP5 minbw 0 maxbw 100 ports 3:21
+configure qosprofile QP5 minbw 0 maxbw 100 ports 3:22
+configure qosprofile QP5 minbw 0 maxbw 100 ports 3:23
+configure qosprofile QP5 minbw 0 maxbw 100 ports 3:24
+configure qosprofile QP5 minbw 0 maxbw 100 ports 3:25
+configure qosprofile QP5 minbw 0 maxbw 100 ports 3:26
+configure qosprofile QP5 minbw 0 maxbw 100 ports 3:27
+configure qosprofile QP5 minbw 0 maxbw 100 ports 3:28
+configure qosprofile QP5 minbw 0 maxbw 100 ports 3:29
+configure qosprofile QP5 minbw 0 maxbw 100 ports 3:30
+configure qosprofile QP5 minbw 0 maxbw 100 ports 3:31
+configure qosprofile QP5 minbw 0 maxbw 100 ports 3:32
+configure qosprofile QP5 minbw 0 maxbw 100 ports 3:33
+configure qosprofile QP5 minbw 0 maxbw 100 ports 3:34
+configure diffserv examination code-point 46 qosprofile QP5
+configure diffserv replacement priority 4 code-point 46
+
+#
+# Module fdb configuration.
+#
+
+#
+# Module rtmgr configuration.
+#
+configure iproute add 10.250.0.0 255.255.255.0 10.1.4.5
+configure iproute add default 10.1.10.3
+
+#
+# Module mcmgr configuration.
+#
+enable igmp snooping forward-mcrouter-only vr VR-Default
+
+#
+# Module aaa configuration.
+#
+configure account admin encrypted "Vy77wf$p3kdvTN/7gBFl3eSdYHaT0" 
+
+#
+# Module acl configuration.
+#
+
+
+
+
+#
+# Module bfd configuration.
+#
+
+#
+# Module bgp configuration.
+#
+
+#
+# Module cfgmgr configuration.
+#
+enable cli-config-logging
+
+#
+# Module dosprotect configuration.
+#
+
+#
+# Module dot1ag configuration.
+#
+
+#
+# Module eaps configuration.
+#
+
+#
+# Module edp configuration.
+#
+
+#
+# Module elrp configuration.
+#
+enable elrp-client
+configure elrp-client periodic VLAN4_VoIP ports all interval 1 log disable-port duration 15
+configure elrp-client periodic VLAN8_Data ports all interval 1 log disable-port duration 15
+configure elrp-client periodic VLAN16_Video ports all interval 1 log disable-port duration 15
+configure elrp-client periodic VLAN66_NoLoop ports all interval 1 log-and-trap disable-port duration 600
+configure elrp-client disable-port exclude 1:49
+configure elrp-client disable-port exclude 1:50
+configure elrp-client disable-port exclude 1:51
+configure elrp-client disable-port exclude 1:52
+configure elrp-client disable-port exclude 1:53
+configure elrp-client disable-port exclude 1:54
+configure elrp-client disable-port exclude 2:53
+configure elrp-client disable-port exclude 2:54
+
+#
+# Module ems configuration.
+#
+
+#
+# Module epm configuration.
+#
+
+#
+# Module erps configuration.
+#
+
+#
+# Module esrp configuration.
+#
+
+#
+# Module ethoam configuration.
+#
+
+#
+# Module etmon configuration.
+#
+enable rmon
+
+#
+# Module exsshd configuration.
+#
+
+#
+# Module hal configuration.
+#
+
+#
+# Module idMgr configuration.
+#
+
+#
+# Module ipSecurity configuration.
+#
+
+#
+# Module ipfix configuration.
+#
+
+#
+# Module isis configuration.
+#
+
+#
+# Module lldp configuration.
+#
+enable lldp ports 1:1
+configure lldp port 1:1 advertise system-name
+configure lldp port 1:1 advertise system-capabilities
+configure lldp port 1:1 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:1 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:1 advertise vendor-specific med capabilities
+configure lldp port 1:1 advertise vendor-specific med power-via-mdi
+enable lldp ports 1:2
+configure lldp port 1:2 advertise system-name
+configure lldp port 1:2 advertise system-capabilities
+configure lldp port 1:2 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:2 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:2 advertise vendor-specific med capabilities
+configure lldp port 1:2 advertise vendor-specific med power-via-mdi
+enable lldp ports 1:3
+configure lldp port 1:3 advertise system-name
+configure lldp port 1:3 advertise system-capabilities
+configure lldp port 1:3 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:3 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:3 advertise vendor-specific med capabilities
+configure lldp port 1:3 advertise vendor-specific med power-via-mdi
+enable lldp ports 1:4
+configure lldp port 1:4 advertise system-name
+configure lldp port 1:4 advertise system-capabilities
+configure lldp port 1:4 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:4 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:4 advertise vendor-specific med capabilities
+configure lldp port 1:4 advertise vendor-specific med power-via-mdi
+enable lldp ports 1:5
+configure lldp port 1:5 advertise system-name
+configure lldp port 1:5 advertise system-capabilities
+configure lldp port 1:5 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:5 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:5 advertise vendor-specific med capabilities
+configure lldp port 1:5 advertise vendor-specific med power-via-mdi
+enable lldp ports 1:6
+configure lldp port 1:6 advertise system-name
+configure lldp port 1:6 advertise system-capabilities
+configure lldp port 1:6 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:6 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:6 advertise vendor-specific med capabilities
+configure lldp port 1:6 advertise vendor-specific med power-via-mdi
+enable lldp ports 1:7
+configure lldp port 1:7 advertise system-name
+configure lldp port 1:7 advertise system-capabilities
+configure lldp port 1:7 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:7 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:7 advertise vendor-specific med capabilities
+configure lldp port 1:7 advertise vendor-specific med power-via-mdi
+enable lldp ports 1:8
+configure lldp port 1:8 advertise system-name
+configure lldp port 1:8 advertise system-capabilities
+configure lldp port 1:8 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:8 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:8 advertise vendor-specific med capabilities
+configure lldp port 1:8 advertise vendor-specific med power-via-mdi
+enable lldp ports 1:9
+configure lldp port 1:9 advertise system-name
+configure lldp port 1:9 advertise system-capabilities
+configure lldp port 1:9 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:9 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:9 advertise vendor-specific med capabilities
+configure lldp port 1:9 advertise vendor-specific med power-via-mdi
+enable lldp ports 1:10
+configure lldp port 1:10 advertise system-name
+configure lldp port 1:10 advertise system-capabilities
+configure lldp port 1:10 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:10 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:10 advertise vendor-specific med capabilities
+configure lldp port 1:10 advertise vendor-specific med power-via-mdi
+enable lldp ports 1:11
+configure lldp port 1:11 advertise system-name
+configure lldp port 1:11 advertise system-capabilities
+configure lldp port 1:11 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:11 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:11 advertise vendor-specific med capabilities
+configure lldp port 1:11 advertise vendor-specific med power-via-mdi
+enable lldp ports 1:12
+configure lldp port 1:12 advertise system-name
+configure lldp port 1:12 advertise system-capabilities
+configure lldp port 1:12 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:12 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:12 advertise vendor-specific med capabilities
+configure lldp port 1:12 advertise vendor-specific med power-via-mdi
+enable lldp ports 1:13
+configure lldp port 1:13 advertise system-name
+configure lldp port 1:13 advertise system-capabilities
+configure lldp port 1:13 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:13 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:13 advertise vendor-specific med capabilities
+configure lldp port 1:13 advertise vendor-specific med power-via-mdi
+enable lldp ports 1:14
+configure lldp port 1:14 advertise system-name
+configure lldp port 1:14 advertise system-capabilities
+configure lldp port 1:14 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:14 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:14 advertise vendor-specific med capabilities
+configure lldp port 1:14 advertise vendor-specific med power-via-mdi
+enable lldp ports 1:15
+configure lldp port 1:15 advertise system-name
+configure lldp port 1:15 advertise system-capabilities
+configure lldp port 1:15 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:15 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:15 advertise vendor-specific med capabilities
+configure lldp port 1:15 advertise vendor-specific med power-via-mdi
+enable lldp ports 1:16
+configure lldp port 1:16 advertise system-name
+configure lldp port 1:16 advertise system-capabilities
+configure lldp port 1:16 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:16 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:16 advertise vendor-specific med capabilities
+configure lldp port 1:16 advertise vendor-specific med power-via-mdi
+enable lldp ports 1:17
+configure lldp port 1:17 advertise system-name
+configure lldp port 1:17 advertise system-capabilities
+configure lldp port 1:17 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:17 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:17 advertise vendor-specific med capabilities
+configure lldp port 1:17 advertise vendor-specific med power-via-mdi
+enable lldp ports 1:18
+configure lldp port 1:18 advertise system-name
+configure lldp port 1:18 advertise system-capabilities
+configure lldp port 1:18 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:18 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:18 advertise vendor-specific med capabilities
+configure lldp port 1:18 advertise vendor-specific med power-via-mdi
+enable lldp ports 1:19
+configure lldp port 1:19 advertise system-name
+configure lldp port 1:19 advertise system-capabilities
+configure lldp port 1:19 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:19 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:19 advertise vendor-specific med capabilities
+configure lldp port 1:19 advertise vendor-specific med power-via-mdi
+enable lldp ports 1:20
+configure lldp port 1:20 advertise system-name
+configure lldp port 1:20 advertise system-capabilities
+configure lldp port 1:20 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:20 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:20 advertise vendor-specific med capabilities
+configure lldp port 1:20 advertise vendor-specific med power-via-mdi
+enable lldp ports 1:21
+configure lldp port 1:21 advertise system-name
+configure lldp port 1:21 advertise system-capabilities
+configure lldp port 1:21 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:21 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:21 advertise vendor-specific med capabilities
+configure lldp port 1:21 advertise vendor-specific med power-via-mdi
+enable lldp ports 1:22
+configure lldp port 1:22 advertise system-name
+configure lldp port 1:22 advertise system-capabilities
+configure lldp port 1:22 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:22 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:22 advertise vendor-specific med capabilities
+configure lldp port 1:22 advertise vendor-specific med power-via-mdi
+enable lldp ports 1:23
+configure lldp port 1:23 advertise system-name
+configure lldp port 1:23 advertise system-capabilities
+configure lldp port 1:23 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:23 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:23 advertise vendor-specific med capabilities
+configure lldp port 1:23 advertise vendor-specific med power-via-mdi
+enable lldp ports 1:24
+configure lldp port 1:24 advertise system-name
+configure lldp port 1:24 advertise system-capabilities
+configure lldp port 1:24 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:24 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:24 advertise vendor-specific med capabilities
+configure lldp port 1:24 advertise vendor-specific med power-via-mdi
+enable lldp ports 1:25
+configure lldp port 1:25 advertise system-name
+configure lldp port 1:25 advertise system-capabilities
+configure lldp port 1:25 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:25 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:25 advertise vendor-specific med capabilities
+configure lldp port 1:25 advertise vendor-specific med power-via-mdi
+enable lldp ports 1:26
+configure lldp port 1:26 advertise system-name
+configure lldp port 1:26 advertise system-capabilities
+configure lldp port 1:26 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:26 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:26 advertise vendor-specific med capabilities
+configure lldp port 1:26 advertise vendor-specific med power-via-mdi
+enable lldp ports 1:27
+configure lldp port 1:27 advertise system-name
+configure lldp port 1:27 advertise system-capabilities
+configure lldp port 1:27 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:27 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:27 advertise vendor-specific med capabilities
+configure lldp port 1:27 advertise vendor-specific med power-via-mdi
+enable lldp ports 1:28
+configure lldp port 1:28 advertise system-name
+configure lldp port 1:28 advertise system-capabilities
+configure lldp port 1:28 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:28 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:28 advertise vendor-specific med capabilities
+configure lldp port 1:28 advertise vendor-specific med power-via-mdi
+enable lldp ports 1:29
+configure lldp port 1:29 advertise system-name
+configure lldp port 1:29 advertise system-capabilities
+configure lldp port 1:29 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:29 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:29 advertise vendor-specific med capabilities
+configure lldp port 1:29 advertise vendor-specific med power-via-mdi
+enable lldp ports 1:30
+configure lldp port 1:30 advertise system-name
+configure lldp port 1:30 advertise system-capabilities
+configure lldp port 1:30 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:30 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:30 advertise vendor-specific med capabilities
+configure lldp port 1:30 advertise vendor-specific med power-via-mdi
+enable lldp ports 1:31
+configure lldp port 1:31 advertise system-name
+configure lldp port 1:31 advertise system-capabilities
+configure lldp port 1:31 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:31 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:31 advertise vendor-specific med capabilities
+configure lldp port 1:31 advertise vendor-specific med power-via-mdi
+enable lldp ports 1:32
+configure lldp port 1:32 advertise system-name
+configure lldp port 1:32 advertise system-capabilities
+configure lldp port 1:32 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:32 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:32 advertise vendor-specific med capabilities
+configure lldp port 1:32 advertise vendor-specific med power-via-mdi
+enable lldp ports 1:33
+configure lldp port 1:33 advertise system-name
+configure lldp port 1:33 advertise system-capabilities
+configure lldp port 1:33 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:33 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:33 advertise vendor-specific med capabilities
+configure lldp port 1:33 advertise vendor-specific med power-via-mdi
+enable lldp ports 1:34
+configure lldp port 1:34 advertise system-name
+configure lldp port 1:34 advertise system-capabilities
+configure lldp port 1:34 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:34 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:34 advertise vendor-specific med capabilities
+configure lldp port 1:34 advertise vendor-specific med power-via-mdi
+enable lldp ports 1:35
+configure lldp port 1:35 advertise system-name
+configure lldp port 1:35 advertise system-capabilities
+configure lldp port 1:35 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:35 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:35 advertise vendor-specific med capabilities
+configure lldp port 1:35 advertise vendor-specific med power-via-mdi
+enable lldp ports 1:36
+configure lldp port 1:36 advertise system-name
+configure lldp port 1:36 advertise system-capabilities
+configure lldp port 1:36 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:36 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:36 advertise vendor-specific med capabilities
+configure lldp port 1:36 advertise vendor-specific med power-via-mdi
+enable lldp ports 1:37
+configure lldp port 1:37 advertise system-name
+configure lldp port 1:37 advertise system-capabilities
+configure lldp port 1:37 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:37 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:37 advertise vendor-specific med capabilities
+configure lldp port 1:37 advertise vendor-specific med power-via-mdi
+enable lldp ports 1:38
+configure lldp port 1:38 advertise system-name
+configure lldp port 1:38 advertise system-capabilities
+configure lldp port 1:38 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:38 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:38 advertise vendor-specific med capabilities
+configure lldp port 1:38 advertise vendor-specific med power-via-mdi
+enable lldp ports 1:39
+configure lldp port 1:39 advertise system-name
+configure lldp port 1:39 advertise system-capabilities
+configure lldp port 1:39 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:39 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:39 advertise vendor-specific med capabilities
+configure lldp port 1:39 advertise vendor-specific med power-via-mdi
+enable lldp ports 1:40
+configure lldp port 1:40 advertise system-name
+configure lldp port 1:40 advertise system-capabilities
+configure lldp port 1:40 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:40 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:40 advertise vendor-specific med capabilities
+configure lldp port 1:40 advertise vendor-specific med power-via-mdi
+enable lldp ports 1:41
+configure lldp port 1:41 advertise system-name
+configure lldp port 1:41 advertise system-capabilities
+configure lldp port 1:41 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:41 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:41 advertise vendor-specific med capabilities
+configure lldp port 1:41 advertise vendor-specific med power-via-mdi
+enable lldp ports 1:42
+configure lldp port 1:42 advertise system-name
+configure lldp port 1:42 advertise system-capabilities
+configure lldp port 1:42 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:42 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:42 advertise vendor-specific med capabilities
+configure lldp port 1:42 advertise vendor-specific med power-via-mdi
+enable lldp ports 1:43
+configure lldp port 1:43 advertise system-name
+configure lldp port 1:43 advertise system-capabilities
+configure lldp port 1:43 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:43 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:43 advertise vendor-specific med capabilities
+configure lldp port 1:43 advertise vendor-specific med power-via-mdi
+enable lldp ports 1:44
+configure lldp port 1:44 advertise system-name
+configure lldp port 1:44 advertise system-capabilities
+configure lldp port 1:44 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:44 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:44 advertise vendor-specific med capabilities
+configure lldp port 1:44 advertise vendor-specific med power-via-mdi
+enable lldp ports 1:45
+configure lldp port 1:45 advertise system-name
+configure lldp port 1:45 advertise system-capabilities
+configure lldp port 1:45 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:45 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:45 advertise vendor-specific med capabilities
+configure lldp port 1:45 advertise vendor-specific med power-via-mdi
+enable lldp ports 1:46
+configure lldp port 1:46 advertise system-name
+configure lldp port 1:46 advertise system-capabilities
+configure lldp port 1:46 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:46 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:46 advertise vendor-specific med capabilities
+configure lldp port 1:46 advertise vendor-specific med power-via-mdi
+enable lldp ports 1:47
+configure lldp port 1:47 advertise system-name
+configure lldp port 1:47 advertise system-capabilities
+configure lldp port 1:47 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:47 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:47 advertise vendor-specific med capabilities
+configure lldp port 1:47 advertise vendor-specific med power-via-mdi
+enable lldp ports 1:48
+configure lldp port 1:48 advertise system-name
+configure lldp port 1:48 advertise system-capabilities
+configure lldp port 1:48 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:48 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 1:48 advertise vendor-specific med capabilities
+configure lldp port 1:48 advertise vendor-specific med power-via-mdi
+enable lldp ports 1:49
+configure lldp port 1:49 advertise system-name
+configure lldp port 1:49 advertise system-capabilities
+configure lldp port 1:49 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:49 advertise vendor-specific med capabilities
+enable lldp ports 1:50
+configure lldp port 1:50 advertise system-name
+configure lldp port 1:50 advertise system-capabilities
+configure lldp port 1:50 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:50 advertise vendor-specific med capabilities
+enable lldp ports 1:51
+configure lldp port 1:51 advertise system-name
+configure lldp port 1:51 advertise system-capabilities
+configure lldp port 1:51 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:51 advertise vendor-specific med capabilities
+enable lldp ports 1:52
+configure lldp port 1:52 advertise system-name
+configure lldp port 1:52 advertise system-capabilities
+configure lldp port 1:52 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:52 advertise vendor-specific med capabilities
+enable lldp ports 1:53
+configure lldp port 1:53 advertise system-name
+configure lldp port 1:53 advertise system-capabilities
+configure lldp port 1:53 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:53 advertise vendor-specific med capabilities
+enable lldp ports 1:54
+configure lldp port 1:54 advertise system-name
+configure lldp port 1:54 advertise system-capabilities
+configure lldp port 1:54 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:54 advertise vendor-specific med capabilities
+enable lldp ports 1:55
+configure lldp port 1:55 advertise system-name
+configure lldp port 1:55 advertise system-capabilities
+configure lldp port 1:55 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:55 advertise vendor-specific med capabilities
+enable lldp ports 1:56
+configure lldp port 1:56 advertise system-name
+configure lldp port 1:56 advertise system-capabilities
+configure lldp port 1:56 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:56 advertise vendor-specific med capabilities
+enable lldp ports 1:57
+configure lldp port 1:57 advertise system-name
+configure lldp port 1:57 advertise system-capabilities
+configure lldp port 1:57 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:57 advertise vendor-specific med capabilities
+enable lldp ports 1:58
+configure lldp port 1:58 advertise system-name
+configure lldp port 1:58 advertise system-capabilities
+configure lldp port 1:58 advertise vendor-specific dot3 mac-phy
+configure lldp port 1:58 advertise vendor-specific med capabilities
+enable lldp ports 2:1
+configure lldp port 2:1 advertise system-name
+configure lldp port 2:1 advertise system-capabilities
+configure lldp port 2:1 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:1 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 2:1 advertise vendor-specific med capabilities
+configure lldp port 2:1 advertise vendor-specific med power-via-mdi
+enable lldp ports 2:2
+configure lldp port 2:2 advertise system-name
+configure lldp port 2:2 advertise system-capabilities
+configure lldp port 2:2 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:2 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 2:2 advertise vendor-specific med capabilities
+configure lldp port 2:2 advertise vendor-specific med power-via-mdi
+enable lldp ports 2:3
+configure lldp port 2:3 advertise system-name
+configure lldp port 2:3 advertise system-capabilities
+configure lldp port 2:3 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:3 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 2:3 advertise vendor-specific med capabilities
+configure lldp port 2:3 advertise vendor-specific med power-via-mdi
+enable lldp ports 2:4
+configure lldp port 2:4 advertise system-name
+configure lldp port 2:4 advertise system-capabilities
+configure lldp port 2:4 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:4 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 2:4 advertise vendor-specific med capabilities
+configure lldp port 2:4 advertise vendor-specific med power-via-mdi
+enable lldp ports 2:5
+configure lldp port 2:5 advertise system-name
+configure lldp port 2:5 advertise system-capabilities
+configure lldp port 2:5 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:5 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 2:5 advertise vendor-specific med capabilities
+configure lldp port 2:5 advertise vendor-specific med power-via-mdi
+enable lldp ports 2:6
+configure lldp port 2:6 advertise system-name
+configure lldp port 2:6 advertise system-capabilities
+configure lldp port 2:6 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:6 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 2:6 advertise vendor-specific med capabilities
+configure lldp port 2:6 advertise vendor-specific med power-via-mdi
+enable lldp ports 2:7
+configure lldp port 2:7 advertise system-name
+configure lldp port 2:7 advertise system-capabilities
+configure lldp port 2:7 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:7 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 2:7 advertise vendor-specific med capabilities
+configure lldp port 2:7 advertise vendor-specific med power-via-mdi
+enable lldp ports 2:8
+configure lldp port 2:8 advertise system-name
+configure lldp port 2:8 advertise system-capabilities
+configure lldp port 2:8 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:8 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 2:8 advertise vendor-specific med capabilities
+configure lldp port 2:8 advertise vendor-specific med power-via-mdi
+enable lldp ports 2:9
+configure lldp port 2:9 advertise system-name
+configure lldp port 2:9 advertise system-capabilities
+configure lldp port 2:9 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:9 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 2:9 advertise vendor-specific med capabilities
+configure lldp port 2:9 advertise vendor-specific med power-via-mdi
+enable lldp ports 2:10
+configure lldp port 2:10 advertise system-name
+configure lldp port 2:10 advertise system-capabilities
+configure lldp port 2:10 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:10 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 2:10 advertise vendor-specific med capabilities
+configure lldp port 2:10 advertise vendor-specific med power-via-mdi
+enable lldp ports 2:11
+configure lldp port 2:11 advertise system-name
+configure lldp port 2:11 advertise system-capabilities
+configure lldp port 2:11 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:11 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 2:11 advertise vendor-specific med capabilities
+configure lldp port 2:11 advertise vendor-specific med power-via-mdi
+enable lldp ports 2:12
+configure lldp port 2:12 advertise system-name
+configure lldp port 2:12 advertise system-capabilities
+configure lldp port 2:12 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:12 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 2:12 advertise vendor-specific med capabilities
+configure lldp port 2:12 advertise vendor-specific med power-via-mdi
+enable lldp ports 2:13
+configure lldp port 2:13 advertise system-name
+configure lldp port 2:13 advertise system-capabilities
+configure lldp port 2:13 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:13 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 2:13 advertise vendor-specific med capabilities
+configure lldp port 2:13 advertise vendor-specific med power-via-mdi
+enable lldp ports 2:14
+configure lldp port 2:14 advertise system-name
+configure lldp port 2:14 advertise system-capabilities
+configure lldp port 2:14 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:14 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 2:14 advertise vendor-specific med capabilities
+configure lldp port 2:14 advertise vendor-specific med power-via-mdi
+enable lldp ports 2:15
+configure lldp port 2:15 advertise system-name
+configure lldp port 2:15 advertise system-capabilities
+configure lldp port 2:15 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:15 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 2:15 advertise vendor-specific med capabilities
+configure lldp port 2:15 advertise vendor-specific med power-via-mdi
+enable lldp ports 2:16
+configure lldp port 2:16 advertise system-name
+configure lldp port 2:16 advertise system-capabilities
+configure lldp port 2:16 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:16 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 2:16 advertise vendor-specific med capabilities
+configure lldp port 2:16 advertise vendor-specific med power-via-mdi
+enable lldp ports 2:17
+configure lldp port 2:17 advertise system-name
+configure lldp port 2:17 advertise system-capabilities
+configure lldp port 2:17 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:17 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 2:17 advertise vendor-specific med capabilities
+configure lldp port 2:17 advertise vendor-specific med power-via-mdi
+enable lldp ports 2:18
+configure lldp port 2:18 advertise system-name
+configure lldp port 2:18 advertise system-capabilities
+configure lldp port 2:18 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:18 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 2:18 advertise vendor-specific med capabilities
+configure lldp port 2:18 advertise vendor-specific med power-via-mdi
+enable lldp ports 2:19
+configure lldp port 2:19 advertise system-name
+configure lldp port 2:19 advertise system-capabilities
+configure lldp port 2:19 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:19 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 2:19 advertise vendor-specific med capabilities
+configure lldp port 2:19 advertise vendor-specific med power-via-mdi
+enable lldp ports 2:20
+configure lldp port 2:20 advertise system-name
+configure lldp port 2:20 advertise system-capabilities
+configure lldp port 2:20 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:20 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 2:20 advertise vendor-specific med capabilities
+configure lldp port 2:20 advertise vendor-specific med power-via-mdi
+enable lldp ports 2:21
+configure lldp port 2:21 advertise system-name
+configure lldp port 2:21 advertise system-capabilities
+configure lldp port 2:21 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:21 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 2:21 advertise vendor-specific med capabilities
+configure lldp port 2:21 advertise vendor-specific med power-via-mdi
+enable lldp ports 2:22
+configure lldp port 2:22 advertise system-name
+configure lldp port 2:22 advertise system-capabilities
+configure lldp port 2:22 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:22 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 2:22 advertise vendor-specific med capabilities
+configure lldp port 2:22 advertise vendor-specific med power-via-mdi
+enable lldp ports 2:23
+configure lldp port 2:23 advertise system-name
+configure lldp port 2:23 advertise system-capabilities
+configure lldp port 2:23 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:23 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 2:23 advertise vendor-specific med capabilities
+configure lldp port 2:23 advertise vendor-specific med power-via-mdi
+enable lldp ports 2:24
+configure lldp port 2:24 advertise system-name
+configure lldp port 2:24 advertise system-capabilities
+configure lldp port 2:24 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:24 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 2:24 advertise vendor-specific med capabilities
+configure lldp port 2:24 advertise vendor-specific med power-via-mdi
+enable lldp ports 2:25
+configure lldp port 2:25 advertise system-name
+configure lldp port 2:25 advertise system-capabilities
+configure lldp port 2:25 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:25 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 2:25 advertise vendor-specific med capabilities
+configure lldp port 2:25 advertise vendor-specific med power-via-mdi
+enable lldp ports 2:26
+configure lldp port 2:26 advertise system-name
+configure lldp port 2:26 advertise system-capabilities
+configure lldp port 2:26 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:26 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 2:26 advertise vendor-specific med capabilities
+configure lldp port 2:26 advertise vendor-specific med power-via-mdi
+enable lldp ports 2:27
+configure lldp port 2:27 advertise system-name
+configure lldp port 2:27 advertise system-capabilities
+configure lldp port 2:27 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:27 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 2:27 advertise vendor-specific med capabilities
+configure lldp port 2:27 advertise vendor-specific med power-via-mdi
+enable lldp ports 2:28
+configure lldp port 2:28 advertise system-name
+configure lldp port 2:28 advertise system-capabilities
+configure lldp port 2:28 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:28 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 2:28 advertise vendor-specific med capabilities
+configure lldp port 2:28 advertise vendor-specific med power-via-mdi
+enable lldp ports 2:29
+configure lldp port 2:29 advertise system-name
+configure lldp port 2:29 advertise system-capabilities
+configure lldp port 2:29 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:29 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 2:29 advertise vendor-specific med capabilities
+configure lldp port 2:29 advertise vendor-specific med power-via-mdi
+enable lldp ports 2:30
+configure lldp port 2:30 advertise system-name
+configure lldp port 2:30 advertise system-capabilities
+configure lldp port 2:30 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:30 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 2:30 advertise vendor-specific med capabilities
+configure lldp port 2:30 advertise vendor-specific med power-via-mdi
+enable lldp ports 2:31
+configure lldp port 2:31 advertise system-name
+configure lldp port 2:31 advertise system-capabilities
+configure lldp port 2:31 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:31 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 2:31 advertise vendor-specific med capabilities
+configure lldp port 2:31 advertise vendor-specific med power-via-mdi
+enable lldp ports 2:32
+configure lldp port 2:32 advertise system-name
+configure lldp port 2:32 advertise system-capabilities
+configure lldp port 2:32 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:32 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 2:32 advertise vendor-specific med capabilities
+configure lldp port 2:32 advertise vendor-specific med power-via-mdi
+enable lldp ports 2:33
+configure lldp port 2:33 advertise system-name
+configure lldp port 2:33 advertise system-capabilities
+configure lldp port 2:33 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:33 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 2:33 advertise vendor-specific med capabilities
+configure lldp port 2:33 advertise vendor-specific med power-via-mdi
+enable lldp ports 2:34
+configure lldp port 2:34 advertise system-name
+configure lldp port 2:34 advertise system-capabilities
+configure lldp port 2:34 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:34 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 2:34 advertise vendor-specific med capabilities
+configure lldp port 2:34 advertise vendor-specific med power-via-mdi
+enable lldp ports 2:35
+configure lldp port 2:35 advertise system-name
+configure lldp port 2:35 advertise system-capabilities
+configure lldp port 2:35 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:35 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 2:35 advertise vendor-specific med capabilities
+configure lldp port 2:35 advertise vendor-specific med power-via-mdi
+enable lldp ports 2:36
+configure lldp port 2:36 advertise system-name
+configure lldp port 2:36 advertise system-capabilities
+configure lldp port 2:36 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:36 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 2:36 advertise vendor-specific med capabilities
+configure lldp port 2:36 advertise vendor-specific med power-via-mdi
+enable lldp ports 2:37
+configure lldp port 2:37 advertise system-name
+configure lldp port 2:37 advertise system-capabilities
+configure lldp port 2:37 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:37 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 2:37 advertise vendor-specific med capabilities
+configure lldp port 2:37 advertise vendor-specific med power-via-mdi
+enable lldp ports 2:38
+configure lldp port 2:38 advertise system-name
+configure lldp port 2:38 advertise system-capabilities
+configure lldp port 2:38 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:38 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 2:38 advertise vendor-specific med capabilities
+configure lldp port 2:38 advertise vendor-specific med power-via-mdi
+enable lldp ports 2:39
+configure lldp port 2:39 advertise system-name
+configure lldp port 2:39 advertise system-capabilities
+configure lldp port 2:39 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:39 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 2:39 advertise vendor-specific med capabilities
+configure lldp port 2:39 advertise vendor-specific med power-via-mdi
+enable lldp ports 2:40
+configure lldp port 2:40 advertise system-name
+configure lldp port 2:40 advertise system-capabilities
+configure lldp port 2:40 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:40 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 2:40 advertise vendor-specific med capabilities
+configure lldp port 2:40 advertise vendor-specific med power-via-mdi
+enable lldp ports 2:41
+configure lldp port 2:41 advertise system-name
+configure lldp port 2:41 advertise system-capabilities
+configure lldp port 2:41 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:41 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 2:41 advertise vendor-specific med capabilities
+configure lldp port 2:41 advertise vendor-specific med power-via-mdi
+enable lldp ports 2:42
+configure lldp port 2:42 advertise system-name
+configure lldp port 2:42 advertise system-capabilities
+configure lldp port 2:42 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:42 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 2:42 advertise vendor-specific med capabilities
+configure lldp port 2:42 advertise vendor-specific med power-via-mdi
+enable lldp ports 2:43
+configure lldp port 2:43 advertise system-name
+configure lldp port 2:43 advertise system-capabilities
+configure lldp port 2:43 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:43 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 2:43 advertise vendor-specific med capabilities
+configure lldp port 2:43 advertise vendor-specific med power-via-mdi
+enable lldp ports 2:44
+configure lldp port 2:44 advertise system-name
+configure lldp port 2:44 advertise system-capabilities
+configure lldp port 2:44 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:44 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 2:44 advertise vendor-specific med capabilities
+configure lldp port 2:44 advertise vendor-specific med power-via-mdi
+enable lldp ports 2:45
+configure lldp port 2:45 advertise system-name
+configure lldp port 2:45 advertise system-capabilities
+configure lldp port 2:45 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:45 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 2:45 advertise vendor-specific med capabilities
+configure lldp port 2:45 advertise vendor-specific med power-via-mdi
+enable lldp ports 2:46
+configure lldp port 2:46 advertise system-name
+configure lldp port 2:46 advertise system-capabilities
+configure lldp port 2:46 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:46 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 2:46 advertise vendor-specific med capabilities
+configure lldp port 2:46 advertise vendor-specific med power-via-mdi
+enable lldp ports 2:47
+configure lldp port 2:47 advertise system-name
+configure lldp port 2:47 advertise system-capabilities
+configure lldp port 2:47 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:47 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 2:47 advertise vendor-specific med capabilities
+configure lldp port 2:47 advertise vendor-specific med power-via-mdi
+enable lldp ports 2:48
+configure lldp port 2:48 advertise system-name
+configure lldp port 2:48 advertise system-capabilities
+configure lldp port 2:48 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:48 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 2:48 advertise vendor-specific med capabilities
+configure lldp port 2:48 advertise vendor-specific med power-via-mdi
+enable lldp ports 2:49
+configure lldp port 2:49 advertise system-name
+configure lldp port 2:49 advertise system-capabilities
+configure lldp port 2:49 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:49 advertise vendor-specific med capabilities
+enable lldp ports 2:50
+configure lldp port 2:50 advertise system-name
+configure lldp port 2:50 advertise system-capabilities
+configure lldp port 2:50 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:50 advertise vendor-specific med capabilities
+enable lldp ports 2:51
+configure lldp port 2:51 advertise system-name
+configure lldp port 2:51 advertise system-capabilities
+configure lldp port 2:51 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:51 advertise vendor-specific med capabilities
+enable lldp ports 2:52
+configure lldp port 2:52 advertise system-name
+configure lldp port 2:52 advertise system-capabilities
+configure lldp port 2:52 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:52 advertise vendor-specific med capabilities
+enable lldp ports 2:53
+configure lldp port 2:53 advertise system-name
+configure lldp port 2:53 advertise system-capabilities
+configure lldp port 2:53 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:53 advertise vendor-specific med capabilities
+enable lldp ports 2:54
+configure lldp port 2:54 advertise system-name
+configure lldp port 2:54 advertise system-capabilities
+configure lldp port 2:54 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:54 advertise vendor-specific med capabilities
+enable lldp ports 2:55
+configure lldp port 2:55 advertise system-name
+configure lldp port 2:55 advertise system-capabilities
+configure lldp port 2:55 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:55 advertise vendor-specific med capabilities
+enable lldp ports 2:56
+configure lldp port 2:56 advertise system-name
+configure lldp port 2:56 advertise system-capabilities
+configure lldp port 2:56 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:56 advertise vendor-specific med capabilities
+enable lldp ports 2:57
+configure lldp port 2:57 advertise system-name
+configure lldp port 2:57 advertise system-capabilities
+configure lldp port 2:57 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:57 advertise vendor-specific med capabilities
+enable lldp ports 2:58
+configure lldp port 2:58 advertise system-name
+configure lldp port 2:58 advertise system-capabilities
+configure lldp port 2:58 advertise vendor-specific dot3 mac-phy
+configure lldp port 2:58 advertise vendor-specific med capabilities
+enable lldp ports 3:1
+configure lldp port 3:1 advertise system-name
+configure lldp port 3:1 advertise system-capabilities
+configure lldp port 3:1 advertise vendor-specific dot3 mac-phy
+configure lldp port 3:1 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 3:1 advertise vendor-specific med capabilities
+configure lldp port 3:1 advertise vendor-specific med power-via-mdi
+enable lldp ports 3:2
+configure lldp port 3:2 advertise system-name
+configure lldp port 3:2 advertise system-capabilities
+configure lldp port 3:2 advertise vendor-specific dot3 mac-phy
+configure lldp port 3:2 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 3:2 advertise vendor-specific med capabilities
+configure lldp port 3:2 advertise vendor-specific med power-via-mdi
+enable lldp ports 3:3
+configure lldp port 3:3 advertise system-name
+configure lldp port 3:3 advertise system-capabilities
+configure lldp port 3:3 advertise vendor-specific dot3 mac-phy
+configure lldp port 3:3 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 3:3 advertise vendor-specific med capabilities
+configure lldp port 3:3 advertise vendor-specific med power-via-mdi
+enable lldp ports 3:4
+configure lldp port 3:4 advertise system-name
+configure lldp port 3:4 advertise system-capabilities
+configure lldp port 3:4 advertise vendor-specific dot3 mac-phy
+configure lldp port 3:4 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 3:4 advertise vendor-specific med capabilities
+configure lldp port 3:4 advertise vendor-specific med power-via-mdi
+enable lldp ports 3:5
+configure lldp port 3:5 advertise system-name
+configure lldp port 3:5 advertise system-capabilities
+configure lldp port 3:5 advertise vendor-specific dot3 mac-phy
+configure lldp port 3:5 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 3:5 advertise vendor-specific med capabilities
+configure lldp port 3:5 advertise vendor-specific med power-via-mdi
+enable lldp ports 3:6
+configure lldp port 3:6 advertise system-name
+configure lldp port 3:6 advertise system-capabilities
+configure lldp port 3:6 advertise vendor-specific dot3 mac-phy
+configure lldp port 3:6 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 3:6 advertise vendor-specific med capabilities
+configure lldp port 3:6 advertise vendor-specific med power-via-mdi
+enable lldp ports 3:7
+configure lldp port 3:7 advertise system-name
+configure lldp port 3:7 advertise system-capabilities
+configure lldp port 3:7 advertise vendor-specific dot3 mac-phy
+configure lldp port 3:7 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 3:7 advertise vendor-specific med capabilities
+configure lldp port 3:7 advertise vendor-specific med power-via-mdi
+enable lldp ports 3:8
+configure lldp port 3:8 advertise system-name
+configure lldp port 3:8 advertise system-capabilities
+configure lldp port 3:8 advertise vendor-specific dot3 mac-phy
+configure lldp port 3:8 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 3:8 advertise vendor-specific med capabilities
+configure lldp port 3:8 advertise vendor-specific med power-via-mdi
+enable lldp ports 3:9
+configure lldp port 3:9 advertise system-name
+configure lldp port 3:9 advertise system-capabilities
+configure lldp port 3:9 advertise vendor-specific dot3 mac-phy
+configure lldp port 3:9 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 3:9 advertise vendor-specific med capabilities
+configure lldp port 3:9 advertise vendor-specific med power-via-mdi
+enable lldp ports 3:10
+configure lldp port 3:10 advertise system-name
+configure lldp port 3:10 advertise system-capabilities
+configure lldp port 3:10 advertise vendor-specific dot3 mac-phy
+configure lldp port 3:10 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 3:10 advertise vendor-specific med capabilities
+configure lldp port 3:10 advertise vendor-specific med power-via-mdi
+enable lldp ports 3:11
+configure lldp port 3:11 advertise system-name
+configure lldp port 3:11 advertise system-capabilities
+configure lldp port 3:11 advertise vendor-specific dot3 mac-phy
+configure lldp port 3:11 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 3:11 advertise vendor-specific med capabilities
+configure lldp port 3:11 advertise vendor-specific med power-via-mdi
+enable lldp ports 3:12
+configure lldp port 3:12 advertise system-name
+configure lldp port 3:12 advertise system-capabilities
+configure lldp port 3:12 advertise vendor-specific dot3 mac-phy
+configure lldp port 3:12 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 3:12 advertise vendor-specific med capabilities
+configure lldp port 3:12 advertise vendor-specific med power-via-mdi
+enable lldp ports 3:13
+configure lldp port 3:13 advertise system-name
+configure lldp port 3:13 advertise system-capabilities
+configure lldp port 3:13 advertise vendor-specific dot3 mac-phy
+configure lldp port 3:13 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 3:13 advertise vendor-specific med capabilities
+configure lldp port 3:13 advertise vendor-specific med power-via-mdi
+enable lldp ports 3:14
+configure lldp port 3:14 advertise system-name
+configure lldp port 3:14 advertise system-capabilities
+configure lldp port 3:14 advertise vendor-specific dot3 mac-phy
+configure lldp port 3:14 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 3:14 advertise vendor-specific med capabilities
+configure lldp port 3:14 advertise vendor-specific med power-via-mdi
+enable lldp ports 3:15
+configure lldp port 3:15 advertise system-name
+configure lldp port 3:15 advertise system-capabilities
+configure lldp port 3:15 advertise vendor-specific dot3 mac-phy
+configure lldp port 3:15 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 3:15 advertise vendor-specific med capabilities
+configure lldp port 3:15 advertise vendor-specific med power-via-mdi
+enable lldp ports 3:16
+configure lldp port 3:16 advertise system-name
+configure lldp port 3:16 advertise system-capabilities
+configure lldp port 3:16 advertise vendor-specific dot3 mac-phy
+configure lldp port 3:16 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 3:16 advertise vendor-specific med capabilities
+configure lldp port 3:16 advertise vendor-specific med power-via-mdi
+enable lldp ports 3:17
+configure lldp port 3:17 advertise system-name
+configure lldp port 3:17 advertise system-capabilities
+configure lldp port 3:17 advertise vendor-specific dot3 mac-phy
+configure lldp port 3:17 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 3:17 advertise vendor-specific med capabilities
+configure lldp port 3:17 advertise vendor-specific med power-via-mdi
+enable lldp ports 3:18
+configure lldp port 3:18 advertise system-name
+configure lldp port 3:18 advertise system-capabilities
+configure lldp port 3:18 advertise vendor-specific dot3 mac-phy
+configure lldp port 3:18 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 3:18 advertise vendor-specific med capabilities
+configure lldp port 3:18 advertise vendor-specific med power-via-mdi
+enable lldp ports 3:19
+configure lldp port 3:19 advertise system-name
+configure lldp port 3:19 advertise system-capabilities
+configure lldp port 3:19 advertise vendor-specific dot3 mac-phy
+configure lldp port 3:19 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 3:19 advertise vendor-specific med capabilities
+configure lldp port 3:19 advertise vendor-specific med power-via-mdi
+enable lldp ports 3:20
+configure lldp port 3:20 advertise system-name
+configure lldp port 3:20 advertise system-capabilities
+configure lldp port 3:20 advertise vendor-specific dot3 mac-phy
+configure lldp port 3:20 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 3:20 advertise vendor-specific med capabilities
+configure lldp port 3:20 advertise vendor-specific med power-via-mdi
+enable lldp ports 3:21
+configure lldp port 3:21 advertise system-name
+configure lldp port 3:21 advertise system-capabilities
+configure lldp port 3:21 advertise vendor-specific dot3 mac-phy
+configure lldp port 3:21 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 3:21 advertise vendor-specific med capabilities
+configure lldp port 3:21 advertise vendor-specific med power-via-mdi
+enable lldp ports 3:22
+configure lldp port 3:22 advertise system-name
+configure lldp port 3:22 advertise system-capabilities
+configure lldp port 3:22 advertise vendor-specific dot3 mac-phy
+configure lldp port 3:22 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 3:22 advertise vendor-specific med capabilities
+configure lldp port 3:22 advertise vendor-specific med power-via-mdi
+enable lldp ports 3:23
+configure lldp port 3:23 advertise system-name
+configure lldp port 3:23 advertise system-capabilities
+configure lldp port 3:23 advertise vendor-specific dot3 mac-phy
+configure lldp port 3:23 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 3:23 advertise vendor-specific med capabilities
+configure lldp port 3:23 advertise vendor-specific med power-via-mdi
+enable lldp ports 3:24
+configure lldp port 3:24 advertise system-name
+configure lldp port 3:24 advertise system-capabilities
+configure lldp port 3:24 advertise vendor-specific dot3 mac-phy
+configure lldp port 3:24 advertise vendor-specific dot3 power-via-mdi with-classification
+configure lldp port 3:24 advertise vendor-specific med capabilities
+configure lldp port 3:24 advertise vendor-specific med power-via-mdi
+enable lldp ports 3:25
+configure lldp port 3:25 advertise system-name
+configure lldp port 3:25 advertise system-capabilities
+configure lldp port 3:25 advertise vendor-specific dot3 mac-phy
+configure lldp port 3:25 advertise vendor-specific med capabilities
+enable lldp ports 3:26
+configure lldp port 3:26 advertise system-name
+configure lldp port 3:26 advertise system-capabilities
+configure lldp port 3:26 advertise vendor-specific dot3 mac-phy
+configure lldp port 3:26 advertise vendor-specific med capabilities
+enable lldp ports 3:27
+configure lldp port 3:27 advertise system-name
+configure lldp port 3:27 advertise system-capabilities
+configure lldp port 3:27 advertise vendor-specific dot3 mac-phy
+configure lldp port 3:27 advertise vendor-specific med capabilities
+enable lldp ports 3:28
+configure lldp port 3:28 advertise system-name
+configure lldp port 3:28 advertise system-capabilities
+configure lldp port 3:28 advertise vendor-specific dot3 mac-phy
+configure lldp port 3:28 advertise vendor-specific med capabilities
+enable lldp ports 3:29
+configure lldp port 3:29 advertise system-name
+configure lldp port 3:29 advertise system-capabilities
+configure lldp port 3:29 advertise vendor-specific dot3 mac-phy
+configure lldp port 3:29 advertise vendor-specific med capabilities
+enable lldp ports 3:30
+configure lldp port 3:30 advertise system-name
+configure lldp port 3:30 advertise system-capabilities
+configure lldp port 3:30 advertise vendor-specific dot3 mac-phy
+configure lldp port 3:30 advertise vendor-specific med capabilities
+enable lldp ports 3:31
+configure lldp port 3:31 advertise system-name
+configure lldp port 3:31 advertise system-capabilities
+configure lldp port 3:31 advertise vendor-specific dot3 mac-phy
+configure lldp port 3:31 advertise vendor-specific med capabilities
+enable lldp ports 3:32
+configure lldp port 3:32 advertise system-name
+configure lldp port 3:32 advertise system-capabilities
+configure lldp port 3:32 advertise vendor-specific dot3 mac-phy
+configure lldp port 3:32 advertise vendor-specific med capabilities
+enable lldp ports 3:33
+configure lldp port 3:33 advertise system-name
+configure lldp port 3:33 advertise system-capabilities
+configure lldp port 3:33 advertise vendor-specific dot3 mac-phy
+configure lldp port 3:33 advertise vendor-specific med capabilities
+enable lldp ports 3:34
+configure lldp port 3:34 advertise system-name
+configure lldp port 3:34 advertise system-capabilities
+configure lldp port 3:34 advertise vendor-specific dot3 mac-phy
+configure lldp port 3:34 advertise vendor-specific med capabilities
+
+#
+# Module msdp configuration.
+#
+
+#
+# Module netLogin configuration.
+#
+
+#
+# Module netTools configuration.
+#
+configure sntp-client primary 10.1.10.163 vr VR-Default
+configure sntp-client update-interval 16284 
+enable sntp-client
+configure bootprelay add 10.1.10.11 vr VR-Default
+configure bootprelay add 10.1.10.250 vr VR-Default
+enable bootprelay vlan Default
+enable bootprelay vlan VLAN16_Video
+enable bootprelay vlan VLAN2_Security
+enable bootprelay vlan VLAN30_WiFi_Mgmt
+enable bootprelay vlan VLAN32_WiFi_Guest
+enable bootprelay vlan VLAN36_WiFi_Staff
+enable bootprelay vlan VLAN40_WiFi_Student
+enable bootprelay vlan VLAN4_VoIP
+enable bootprelay vlan VLAN66_NoLoop
+enable bootprelay vlan VLAN8_Data
+enable bootprelay vlan VLAN99_NetMgmt
+
+#
+# Module ospf configuration.
+#
+
+#
+# Module ospfv3 configuration.
+#
+
+
+#
+# Module pim configuration.
+#
+
+#
+# Module poe configuration.
+#
+
+#
+# Module rip configuration.
+#
+
+#
+# Module ripng configuration.
+#
+
+#
+# Module snmpMaster configuration.
+#
+configure snmpv3 add community pchs0nlyro name pchs0nlyro user v1v2c_ro 
+configure snmpv3 add community pchs0nlyrw name pchs0nlyrw user v1v2c_rw 
+disable snmp community private
+disable snmp community public
+configure snmpv3 add target-addr v1v2cNotifyTAddr1 param v1v2cNotifyParam1 ipaddress 10.1.10.162 transport-port 10550 from 10.1.99.1 tag-list defaultNotify 
+configure snmpv3 add target-params v1v2cNotifyParam1 user v1v2cNotifyUser1 mp-model snmpv2c sec-model snmpv2c sec-level noauth 
+
+#
+# Module stp configuration.
+#
+configure mstp region 02049683572a
+configure stpd s0 delete vlan default ports all
+disable stpd s0 auto-bind vlan default
+enable stpd s0 auto-bind vlan Default
+
+#
+# Module synce configuration.
+#
+
+#
+# Module telnetd configuration.
+#
+
+#
+# Module tftpd configuration.
+#
+
+#
+# Module thttpd configuration.
+#
+
+#
+# Module vmt configuration.
+#
+
+#
+# Module vrrp configuration.
+#
+
+#
+# Module vsm configuration.
+#
+Slot-1 Powers_MTR.4 # sho edp port all
+
+Port   Neighbor                       Neighbor-ID         Remote  Age    Num
+                                                           Port         Vlans
+=============================================================================
+1:53   Powers_TR2                00:00:02:04:96:83:56:d7   2:54   49     10   
+1:54   Powers_TR3                00:00:02:04:96:83:55:fb   1:54   56     10   
+2:53   Powers_TR4                00:00:02:04:96:83:56:0c   1:54   45     10   
+2:54   Powers_TR5                00:00:02:04:96:83:56:8e   1:54   47     10   
+=============================================================================
+Slot-1 Powers_MTR.5 # sho fdb
+Mac                     Vlan       Age  Flags         Port / Virtual Port List
+------------------------------------------------------------------------------
+00:01:f0:8e:a0:06 VLAN8_Data(0008) 0000 d mi          1:53
+00:01:f0:8e:ba:80 VLAN8_Data(0008) 0000 d mi          1:53
+00:01:f0:8e:ba:82 VLAN8_Data(0008) 0000 d mi          1:53
+00:01:f0:8e:ba:8a VLAN8_Data(0008) 0000 d mi          1:53
+00:01:f0:8e:ba:8c VLAN8_Data(0008) 0000 d mi          1:53
+00:04:5f:b7:dc:46 VLAN8_Data(0008) 0000 d mi          2:42
+00:06:67:25:ad:5c VLAN8_Data(0008) 0000 d mi          1:54
+00:08:e1:06:a2:af VLAN2_Security(0002) 0000 d mi          3:17
+00:0b:94:83:23:18 VLAN2_Security(0002) 0000 d mi          3:8
+00:0b:aa:16:89:21 VLAN2_Security(0002) 0000 d mi          3:15
+00:0b:aa:17:61:55 VLAN2_Security(0002) 0000 d mi          3:9
+00:0b:aa:31:06:aa VLAN2_Security(0002) 0000 d mi          3:11
+00:0b:aa:31:0c:0a VLAN2_Security(0002) 0000 d mi          3:13
+00:0c:29:1e:57:17 VLAN8_Data(0008) 0000 d mi          3:7
+00:0c:29:27:c4:0e VLAN8_Data(0008) 0000 d mi          3:7
+00:0c:29:44:26:09 VLAN8_Data(0008) 0000 d mi          3:7
+00:0c:29:aa:1e:c5 VLAN8_Data(0008) 0000 d mi          3:7
+00:0c:29:d0:bc:32 VLAN8_Data(0008) 0000 d mi          3:7
+00:0f:a6:21:a1:15 VLAN8_Data(0008) 0000 d mi          2:44
+00:17:c8:58:7f:14 VLAN8_Data(0008) 0000 d mi          1:53
+00:17:c8:5e:f8:7b VLAN40_WiFi_Student(0040) 0000 d mi          2:13
+00:17:c8:b0:ec:1b VLAN8_Data(0008) 0000 d mi          1:54
+00:17:c8:b1:42:ca VLAN8_Data(0008) 0000 d mi          1:54
+00:17:c8:b2:ac:98 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+00:17:c8:b3:f6:c7 VLAN36_WiFi_Staff(0036) 0000 d mi          2:53
+00:17:c8:b5:65:92 VLAN8_Data(0008) 0000 d mi          1:53
+00:17:c8:b5:65:f3 VLAN8_Data(0008) 0000 d mi          1:53
+00:17:c8:b8:a5:f4 VLAN8_Data(0008) 0000 d mi          1:53
+00:17:c8:b9:cf:0a VLAN8_Data(0008) 0000 d mi          2:10
+00:17:c8:b9:cf:1a VLAN8_Data(0008) 0000 d mi          2:54
+00:17:c8:b9:cf:8a VLAN8_Data(0008) 0000 d mi          1:54
+00:17:c8:b9:d1:42 VLAN8_Data(0008) 0000 d mi          1:53
+00:17:c8:c1:87:f5 VLAN8_Data(0008) 0000 d mi          1:54
+00:17:c8:c2:f8:91 VLAN8_Data(0008) 0000 d mi          1:53
+00:17:c8:c2:f8:fd VLAN8_Data(0008) 0000 d mi          2:53
+00:17:c8:c3:46:f9 VLAN8_Data(0008) 0000 d mi          2:54
+00:19:89:93:9d:c0 VLAN2_Security(0002) 0000 d mi          3:8
+00:80:f0:37:9d:b2 VLAN8_Data(0008) 0000 d mi          1:54
+00:80:f0:3b:8a:93 VLAN8_Data(0008) 0000 d mi          1:53
+00:80:f0:3f:35:59 VLAN8_Data(0008) 0000 d mi          2:54
+00:80:f0:3f:36:05 VLAN8_Data(0008) 0000 d mi          2:54
+00:80:f0:3f:38:9b VLAN8_Data(0008) 0000 d mi          2:54
+00:80:f0:3f:38:a5 VLAN8_Data(0008) 0000 d mi          1:53
+00:80:f0:3f:38:b6 VLAN8_Data(0008) 0000 d mi          1:53
+00:80:f0:3f:38:c5 VLAN8_Data(0008) 0000 d mi          1:53
+00:80:f0:3f:4c:05 VLAN8_Data(0008) 0000 d mi          1:53
+00:80:f0:3f:4c:11 VLAN30_WiFi_Mgmt(0030) 0000 d mi          1:53
+00:80:f0:3f:7a:4c VLAN30_WiFi_Mgmt(0030) 0000 d mi          1:53
+00:80:f0:3f:7a:4d VLAN2_Security(0002) 0000 d mi          1:53
+00:80:f0:3f:7c:25 VLAN8_Data(0008) 0000 d mi          2:54
+00:80:f0:3f:7c:2a VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:54
+00:80:f0:3f:7c:2f VLAN8_Data(0008) 0000 d mi          2:54
+00:80:f0:3f:7c:30 VLAN8_Data(0008) 0000 d mi          2:54
+00:80:f0:3f:7c:31 VLAN8_Data(0008) 0000 d mi          2:54
+00:80:f0:3f:7c:3d VLAN8_Data(0008) 0000 d mi          2:54
+00:80:f0:3f:7c:3e VLAN8_Data(0008) 0000 d mi          2:54
+00:80:f0:3f:7c:3f VLAN8_Data(0008) 0000 d mi          1:54
+00:80:f0:3f:7c:43 VLAN8_Data(0008) 0000 d mi          1:53
+00:80:f0:3f:7c:44 VLAN8_Data(0008) 0000 d mi          2:54
+00:80:f0:3f:7c:48 VLAN8_Data(0008) 0000 d mi          1:53
+00:80:f0:3f:7c:4c VLAN8_Data(0008) 0000 d mi          1:53
+00:80:f0:3f:7c:50 VLAN8_Data(0008) 0000 d mi          2:54
+00:80:f0:3f:7c:53 VLAN8_Data(0008) 0000 d mi          1:53
+00:80:f0:3f:7c:57 VLAN8_Data(0008) 0000 d mi          1:53
+00:80:f0:3f:7c:5b VLAN8_Data(0008) 0000 d mi          1:54
+00:80:f0:3f:7c:5c VLAN8_Data(0008) 0000 d mi          1:54
+00:80:f0:3f:7c:5d VLAN8_Data(0008) 0000 d mi          1:54
+00:80:f0:3f:7c:5f VLAN8_Data(0008) 0000 d mi          1:54
+00:80:f0:3f:7c:61 VLAN8_Data(0008) 0000 d mi          1:53
+00:80:f0:3f:7c:74 VLAN2_Security(0002) 0000 d mi          1:53
+00:80:f0:3f:80:c0 VLAN8_Data(0008) 0000 d mi          2:37
+00:80:f0:3f:80:c1 VLAN8_Data(0008) 0000 d mi          3:6
+00:80:f0:3f:80:c2 VLAN8_Data(0008) 0000 d mi          1:53
+00:80:f0:3f:80:e7 VLAN8_Data(0008) 0000 d mi          1:53
+00:80:f0:3f:80:ec VLAN8_Data(0008) 0000 d mi          1:53
+00:80:f0:3f:80:ed VLAN8_Data(0008) 0000 d mi          1:53
+00:80:f0:a9:47:86 VLAN4_VoIP(0004) 0000 d mi          3:21
+00:80:f0:a9:47:87 VLAN4_VoIP(0004) 0000 d mi          3:21
+00:80:f0:b9:04:93 VLAN4_VoIP(0004) 0000 d mi          3:22
+00:80:f0:cc:ce:16 VLAN8_Data(0008) 0000 d mi          1:54
+00:80:f0:cc:ce:17 VLAN8_Data(0008) 0000 d mi          1:54
+00:80:f0:cc:ce:18 VLAN8_Data(0008) 0000 d mi          1:54
+00:80:f0:cc:ce:20 VLAN8_Data(0008) 0000 d mi          2:53
+00:80:f0:cc:ce:21 VLAN8_Data(0008) 0000 d mi          2:53
+00:80:f0:cc:ce:26 VLAN8_Data(0008) 0000 d mi          1:54
+00:80:f0:cc:ce:27 VLAN8_Data(0008) 0000 d mi          1:53
+00:80:f0:cc:ce:28 VLAN2_Security(0002) 0000 d mi          1:54
+00:80:f0:cc:ce:4c VLAN8_Data(0008) 0000 d mi          1:53
+00:80:f0:cc:ce:4d VLAN8_Data(0008) 0000 d mi          1:53
+00:80:f0:cc:ce:4e VLAN8_Data(0008) 0000 d mi          1:54
+00:80:f0:cc:ce:5c VLAN8_Data(0008) 0000 d mi          1:53
+00:80:f0:cc:ce:5d VLAN8_Data(0008) 0000 d mi          1:5
+00:80:f0:cc:ce:5e VLAN8_Data(0008) 0000 d mi          1:54
+00:80:f0:cc:ce:60 VLAN8_Data(0008) 0000 d mi          2:5
+00:80:f0:cc:ce:61 VLAN8_Data(0008) 0000 d mi          1:53
+00:80:f0:cc:ce:62 VLAN8_Data(0008) 0000 d mi          2:21
+00:80:f0:cc:ce:63 VLAN8_Data(0008) 0000 d mi          2:15
+00:80:f0:cc:ce:64 VLAN8_Data(0008) 0000 d mi          2:53
+00:80:f0:cc:ce:65 VLAN8_Data(0008) 0000 d mi          2:53
+00:80:f0:cc:ce:66 VLAN8_Data(0008) 0000 d mi          2:53
+00:80:f0:cc:ce:71 VLAN8_Data(0008) 0000 d mi          2:53
+00:80:f0:cc:ce:72 VLAN8_Data(0008) 0000 d mi          1:54
+00:80:f0:cc:ce:73 VLAN30_WiFi_Mgmt(0030) 0000 d mi          1:53
+00:80:f0:cc:ce:7f VLAN8_Data(0008) 0000 d mi          1:53
+00:80:f0:cc:ce:84 VLAN8_Data(0008) 0000 d mi          2:53
+00:80:f0:cc:ce:85 VLAN8_Data(0008) 0000 d mi          2:53
+00:80:f0:cc:ce:86 VLAN8_Data(0008) 0000 d mi          1:54
+00:80:f0:cc:ce:88 VLAN8_Data(0008) 0000 d mi          1:15
+00:80:f0:cc:ce:89 VLAN8_Data(0008) 0000 d mi          2:31
+00:80:f0:cc:ce:8a VLAN8_Data(0008) 0000 d mi          1:21
+00:90:7f:d7:9a:fd VLAN8_Data(0008) 0000 d mi          2:48
+00:a0:c8:a0:7e:33 VLAN4_VoIP(0004) 0000 d mi          3:23
+00:d8:61:78:3e:0f VLAN8_Data(0008) 0000 d mi          1:54
+00:ff:e5:f9:79:10 VLAN8_Data(0008) 0000 d mi          2:48
+02:04:96:83:55:fb VLAN66_NoLoop(0066) 0042 d m           1:54
+02:04:96:83:55:fb VLAN99_NetMgmt(0099) 0000 d mi          1:54
+02:04:96:83:56:0c VLAN40_WiFi_Student(0040) 0174 d m           2:53
+02:04:96:83:56:0c VLAN66_NoLoop(0066) 0057 d m           2:53
+02:04:96:83:56:0c VLAN99_NetMgmt(0099) 0000 d mi          2:53
+02:04:96:83:56:8e VLAN66_NoLoop(0066) 0054 d m           2:54
+02:04:96:83:56:8e VLAN99_NetMgmt(0099) 0000 d mi          2:54
+02:04:96:83:56:d7 VLAN99_NetMgmt(0099) 0000 d mi          1:53
+02:04:96:83:62:50 VLAN66_NoLoop(0066) 0057 d m           2:54
+02:04:96:83:62:50 VLAN99_NetMgmt(0099) 0000 d mi          2:54
+02:06:7b:43:f9:b4 VLAN30_WiFi_Mgmt(0030) 0180 d m           1:17
+02:06:7b:43:f9:b4 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+02:34:c5:56:a4:b9 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+02:49:1c:4e:8a:54 VLAN30_WiFi_Mgmt(0030) 0213 d m           2:54
+02:49:1c:4e:8a:54 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+02:6c:fd:a7:66:ae VLAN40_WiFi_Student(0040) 0141 d m           2:54
+02:73:20:d2:55:5c VLAN40_WiFi_Student(0040) 0000 d mi          2:53
+02:8d:4d:b8:da:4c VLAN36_WiFi_Staff(0036) 0000 d mi          1:53
+02:9c:c0:73:02:58 VLAN36_WiFi_Staff(0036) 0000 d mi          1:54
+02:a6:a6:01:9c:86 VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+02:a6:d0:9d:3f:11 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+02:aa:74:ac:4c:d6 VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+02:ab:bf:c6:95:67 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+02:dd:2e:ba:dc:82 VLAN36_WiFi_Staff(0036) 0000 d mi          1:53
+02:ee:5f:73:ad:80 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+02:fd:72:40:c7:ef VLAN40_WiFi_Student(0040) 0000 d mi          2:53
+04:d3:95:5b:7c:60 VLAN36_WiFi_Staff(0036) 0000 d mi          1:54
+06:2a:c8:66:65:6f VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+06:35:43:cc:a6:35 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+06:68:87:7e:cc:f3 VLAN40_WiFi_Student(0040) 0072 d m           2:54
+06:7d:74:c3:33:c9 VLAN40_WiFi_Student(0040) 0000 d mi          2:35
+06:87:5d:86:3c:e7 VLAN40_WiFi_Student(0040) 0000 d mi          2:35
+06:89:ff:e0:c4:f2 VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+06:a8:c7:69:f3:ab VLAN40_WiFi_Student(0040) 0000 d mi          2:53
+06:b3:76:83:78:eb VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+06:df:81:2b:0d:31 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+06:f7:94:62:d3:38 VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+08:d4:6a:a7:e7:72 VLAN36_WiFi_Staff(0036) 0000 d mi          2:45
+0a:18:7c:20:47:fb VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+0a:2a:28:a3:47:40 VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+0a:43:9e:22:29:0f VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+0a:74:85:db:79:f3 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+0a:b5:94:10:a3:cd VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+0a:dd:25:51:cf:8d VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+0a:e3:d8:ae:c2:bc VLAN30_WiFi_Mgmt(0030) 0167 d m           1:23
+0a:e3:d8:ae:c2:bc VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+0c:8b:7d:0a:2a:ae VLAN36_WiFi_Staff(0036) 0000 d mi          2:54
+0e:01:3e:b4:0e:52 VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+0e:04:4b:d2:e6:10 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+0e:0e:b2:ef:f2:c8 VLAN40_WiFi_Student(0040) 0000 d mi          2:53
+0e:1a:3c:2f:ea:53 VLAN30_WiFi_Mgmt(0030) 0004 d m           2:54
+0e:1a:3c:2f:ea:53 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+0e:9e:62:10:58:68 VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+0e:b0:25:46:0e:0d VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+0e:d6:a7:dd:01:2f VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+0e:db:1b:33:46:8f VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+0e:f9:fa:67:c4:10 VLAN40_WiFi_Student(0040) 0140 d m           2:54
+12:0f:0c:91:a9:56 VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+12:25:45:26:57:4d VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+12:85:55:87:f4:02 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+12:89:75:0d:cb:eb VLAN40_WiFi_Student(0040) 0000 d mi          2:53
+12:8f:31:25:07:34 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+12:97:ce:34:76:f8 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+12:99:87:a7:aa:25 VLAN40_WiFi_Student(0040) 0000 d mi          2:35
+12:b0:47:44:f9:ee VLAN40_WiFi_Student(0040) 0000 d mi          2:53
+12:cb:fa:c2:82:b9 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+12:d1:b8:d2:13:a4 VLAN40_WiFi_Student(0040) 0000 d mi          2:53
+12:f7:cf:07:d1:db VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+14:4f:8a:b3:05:65 VLAN36_WiFi_Staff(0036) 0000 d mi          2:54
+16:1b:46:6d:75:2b VLAN30_WiFi_Mgmt(0030) 0222 d m           2:54
+16:1b:46:6d:75:2b VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+16:22:79:21:58:52 VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+16:25:8d:01:05:ca VLAN30_WiFi_Mgmt(0030) 0222 d m           1:53
+16:25:8d:01:05:ca VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+16:3f:7a:c0:a4:4e VLAN40_WiFi_Student(0040) 0000 d mi          2:53
+16:43:a5:b1:1f:27 VLAN36_WiFi_Staff(0036) 0000 d mi          1:54
+16:5f:cc:b4:13:bc VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+16:87:e4:e6:88:0c VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+16:90:59:cd:cb:ed VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+16:92:84:83:ed:bf VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+16:aa:0a:9c:cd:d9 VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+16:ab:3f:3c:36:b9 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+16:ac:52:88:f9:bf VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+16:b6:17:97:80:40 VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+16:b6:68:91:c5:83 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+16:ba:64:73:c0:4c VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+16:dc:df:f4:6b:26 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+18:3e:ef:eb:af:58 VLAN36_WiFi_Staff(0036) 0000 d mi          1:53
+18:60:24:86:7b:cd VLAN8_Data(0008) 0000 d mi          2:54
+18:c0:4d:8f:81:67 VLAN2_Security(0002) 0000 d mi          2:38
+1a:29:15:5a:49:aa VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+1a:4b:82:a6:84:63 VLAN40_WiFi_Student(0040) 0000 d mi          2:19
+1a:74:55:da:31:ff VLAN40_WiFi_Student(0040) 0000 d mi          2:35
+1a:ab:29:6e:f6:31 VLAN30_WiFi_Mgmt(0030) 0195 d m           2:54
+1a:ab:29:6e:f6:31 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+1a:db:08:ba:f5:39 VLAN36_WiFi_Staff(0036) 0000 d mi          1:53
+1a:fa:a9:87:27:32 VLAN40_WiFi_Student(0040) 0000 d mi          2:19
+1c:34:77:04:00:51 VLAN8_Data(0008) 0000 d mi          1:53
+1c:69:7a:02:42:4b VLAN8_Data(0008) 0000 d mi          3:6
+1c:69:7a:02:44:37 VLAN8_Data(0008) 0000 d mi          1:53
+1c:82:59:10:02:a4 VLAN36_WiFi_Staff(0036) 0000 d mi          2:54
+1c:82:59:10:49:13 VLAN2_Security(0002) 0000 d mi          3:8
+1c:82:59:1a:bc:2e VLAN2_Security(0002) 0000 d mi          2:54
+1c:82:59:1a:c7:a5 VLAN2_Security(0002) 0000 d mi          1:53
+1c:82:59:1a:c7:e0 VLAN2_Security(0002) 0000 d mi          3:12
+1e:07:8d:36:73:37 VLAN40_WiFi_Student(0040) 0000 d mi          2:35
+1e:0d:de:bc:e5:a2 VLAN36_WiFi_Staff(0036) 0000 d mi          1:3
+1e:27:76:4f:db:2d VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+1e:3e:d0:45:c3:55 VLAN40_WiFi_Student(0040) 0000 d mi          2:19
+1e:54:53:8c:59:ca VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+1e:6a:10:96:96:cf VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+1e:6b:32:93:b0:b1 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+1e:81:15:57:77:cb VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+1e:99:42:b2:a5:a9 VLAN30_WiFi_Mgmt(0030) 0202 d m           2:54
+1e:99:42:b2:a5:a9 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+1e:9c:6f:f6:bb:c7 VLAN36_WiFi_Staff(0036) 0000 d mi          2:53
+1e:a3:d9:a8:e1:0e VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+1e:a6:7d:33:98:72 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+1e:b8:b8:b4:36:75 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+1e:c5:96:ff:96:74 VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+1e:d9:05:c9:b3:1c VLAN36_WiFi_Staff(0036) 0000 d mi          1:53
+1e:e2:f9:48:4b:70 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+1e:f8:1f:ec:1a:af VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+1e:fb:db:f1:80:9b VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+20:72:0d:af:01:5a VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+22:08:de:01:43:f3 VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+22:1e:a4:36:c0:23 VLAN36_WiFi_Staff(0036) 0000 d mi          1:53
+22:3d:c9:4e:46:38 VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+22:3e:4e:47:f0:c2 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+22:5f:11:15:bc:96 VLAN36_WiFi_Staff(0036) 0000 d mi          1:53
+22:84:18:44:c0:82 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+22:96:c7:c0:e7:81 VLAN30_WiFi_Mgmt(0030) 0188 d m           1:53
+22:96:c7:c0:e7:81 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+22:c3:8a:0d:be:24 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+22:da:58:5c:f3:2f VLAN30_WiFi_Mgmt(0030) 0030 d m           2:54
+22:da:58:5c:f3:2f VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+22:ec:de:fb:5c:2f VLAN40_WiFi_Student(0040) 0000 d mi          2:53
+22:fc:30:dc:1d:b9 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+26:11:60:dd:1f:ca VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+26:2e:cc:61:e4:7c VLAN40_WiFi_Student(0040) 0014 d m           2:54
+26:3c:18:2a:21:16 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+26:3e:eb:d2:9f:50 VLAN40_WiFi_Student(0040) 0000 d mi          2:53
+26:41:f0:e7:ac:8a VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+26:55:ff:4c:84:83 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+26:83:2c:83:93:b3 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+26:b8:b3:f8:f9:0e VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+26:bf:c4:f3:11:ee VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+26:cd:55:54:c6:d4 VLAN40_WiFi_Student(0040) 0000 d mi          2:53
+26:e5:95:2a:86:5b VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+26:e8:35:ce:1e:21 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+28:57:be:1f:4e:72 VLAN2_Security(0002) 0000 d mi          2:34
+28:57:be:1f:4e:75 VLAN2_Security(0002) 0000 d mi          1:54
+28:57:be:1f:4e:83 VLAN2_Security(0002) 0000 d mi          3:10
+28:57:be:1f:4e:a8 VLAN2_Security(0002) 0000 d mi          2:54
+28:57:be:1f:4e:d0 VLAN2_Security(0002) 0000 d mi          2:32
+2a:10:b3:f4:37:4c VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+2a:35:3f:ae:fb:6e VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+2a:4b:2d:b9:b9:b3 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+2a:7f:7d:a3:f4:43 VLAN40_WiFi_Student(0040) 0000 d mi          2:53
+2e:12:75:46:0c:73 VLAN40_WiFi_Student(0040) 0137 d m           2:54
+2e:27:99:73:3f:21 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+2e:38:b2:44:76:1c VLAN40_WiFi_Student(0040) 0075 d m           2:54
+2e:49:e1:3f:3a:9f VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+2e:53:65:04:65:d5 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+2e:58:a4:2b:f0:56 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+2e:74:82:b0:19:d8 VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+2e:a9:88:4f:a1:38 VLAN36_WiFi_Staff(0036) 0000 d mi          2:54
+2e:ad:86:cf:a3:1f VLAN30_WiFi_Mgmt(0030) 0216 d m           2:41
+2e:ad:86:cf:a3:1f VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+30:24:32:c6:4a:d5 VLAN36_WiFi_Staff(0036) 0000 d mi          1:53
+30:fc:eb:81:c3:c3 VLAN36_WiFi_Staff(0036) 0000 d mi          1:53
+30:fd:38:a1:fd:67 VLAN36_WiFi_Staff(0036) 0000 d mi          1:53
+32:22:9b:da:35:68 VLAN40_WiFi_Student(0040) 0000 d mi          2:19
+32:43:85:6d:92:e5 VLAN36_WiFi_Staff(0036) 0000 d mi          1:53
+32:9a:9a:46:f6:75 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+32:a4:84:1f:62:76 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+32:a8:ae:21:1f:ca VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+32:c3:fd:ce:27:c1 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+32:d0:b0:58:ef:6c VLAN40_WiFi_Student(0040) 0000 d mi          2:35
+32:d3:5a:5d:42:1d VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+32:d6:22:3d:f5:61 VLAN40_WiFi_Student(0040) 0000 d mi          2:53
+32:d7:bb:31:bb:99 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+32:fd:8e:9f:44:bd VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+34:fd:6a:25:e6:b2 VLAN36_WiFi_Staff(0036) 0000 d mi          1:54
+34:fd:6a:2b:7c:08 VLAN36_WiFi_Staff(0036) 0000 d mi          1:53
+36:05:4c:fa:f4:41 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+36:12:60:26:bb:de VLAN40_WiFi_Student(0040) 0000 d mi          2:53
+36:1d:04:57:69:59 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+36:20:46:d8:4f:2f VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+36:3f:95:48:6c:98 VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+36:45:1f:81:75:ae VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+36:55:77:cc:63:06 VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+36:84:fb:75:1b:78 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+36:8d:b0:7c:3e:09 VLAN36_WiFi_Staff(0036) 0000 d mi          1:53
+36:a8:cb:79:16:73 VLAN36_WiFi_Staff(0036) 0000 d mi          2:54
+36:a9:c7:7a:01:cb VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+36:ac:02:2f:b3:c4 VLAN36_WiFi_Staff(0036) 0000 d mi          2:54
+36:cc:bd:25:7a:d8 VLAN40_WiFi_Student(0040) 0000 d mi          2:35
+36:d6:01:d3:11:95 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+36:d6:2b:b5:b2:b7 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+36:e8:f4:16:5b:61 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+36:f1:04:44:24:bb VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+38:22:e2:15:38:53 VLAN8_Data(0008) 0000 d mi          2:54
+38:22:e2:15:39:36 VLAN8_Data(0008) 0000 d mi          2:53
+38:22:e2:1e:46:bf VLAN30_WiFi_Mgmt(0030) 0000 d mi          1:53
+38:22:e2:1e:47:49 VLAN8_Data(0008) 0000 d mi          2:54
+38:22:e2:1e:49:b9 VLAN8_Data(0008) 0000 d mi          2:54
+38:22:e2:1f:57:bf VLAN8_Data(0008) 0000 d mi          2:54
+38:22:e2:1f:57:f8 VLAN8_Data(0008) 0000 d mi          2:53
+38:22:e2:1f:58:fb VLAN8_Data(0008) 0000 d mi          2:54
+38:22:e2:1f:5e:a9 VLAN8_Data(0008) 0000 d mi          2:53
+38:22:e2:1f:5f:d9 VLAN8_Data(0008) 0000 d mi          2:54
+38:22:e2:1f:60:c1 VLAN8_Data(0008) 0000 d mi          2:54
+38:22:e2:1f:61:fc VLAN8_Data(0008) 0000 d mi          2:54
+38:22:e2:1f:63:c4 VLAN8_Data(0008) 0000 d mi          2:54
+38:22:e2:1f:65:f7 VLAN8_Data(0008) 0000 d mi          2:54
+38:22:e2:1f:66:72 VLAN8_Data(0008) 0000 d mi          2:54
+38:22:e2:1f:66:8f VLAN8_Data(0008) 0000 d mi          2:54
+38:22:e2:1f:66:af VLAN8_Data(0008) 0000 d mi          2:53
+38:22:e2:1f:67:3a VLAN8_Data(0008) 0000 d mi          2:53
+38:22:e2:1f:6a:88 VLAN8_Data(0008) 0000 d mi          2:54
+38:9d:92:cc:fd:0f VLAN8_Data(0008) 0000 d mi          1:54
+3a:08:f9:33:72:21 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+3a:0a:b1:70:4e:99 VLAN40_WiFi_Student(0040) 0012 d m           2:54
+3a:2a:42:9e:71:e2 VLAN40_WiFi_Student(0040) 0046 d m           2:54
+3a:2d:97:1f:cf:55 VLAN40_WiFi_Student(0040) 0000 d mi          2:53
+3a:58:7b:cb:4b:64 VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+3a:61:6a:7a:e4:53 VLAN30_WiFi_Mgmt(0030) 0201 d m           2:54
+3a:61:6a:7a:e4:53 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+3a:7f:2c:96:42:fd VLAN30_WiFi_Mgmt(0030) 0181 d m           2:54
+3a:7f:2c:96:42:fd VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+3a:80:d5:73:75:cc VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+3a:9b:1b:8d:7a:74 VLAN40_WiFi_Student(0040) 0000 d mi          2:53
+3a:bd:b4:c6:d2:aa VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+3c:55:76:9b:4b:2d VLAN36_WiFi_Staff(0036) 0000 d mi          2:54
+3c:55:76:9b:96:79 VLAN36_WiFi_Staff(0036) 0000 d mi          1:54
+3c:55:76:9b:96:7d VLAN36_WiFi_Staff(0036) 0000 d mi          2:53
+3c:9c:0f:24:44:7e VLAN30_WiFi_Mgmt(0030) 0016 d m           1:54
+3c:9c:0f:24:44:7e VLAN36_WiFi_Staff(0036) 0000 d mi          1:54
+3c:9c:0f:24:44:8d VLAN36_WiFi_Staff(0036) 0000 d mi          1:23
+3c:9c:0f:24:70:98 VLAN36_WiFi_Staff(0036) 0000 d mi          2:54
+3c:9c:0f:24:71:1f VLAN36_WiFi_Staff(0036) 0000 d mi          2:53
+3c:9c:0f:24:7f:39 VLAN36_WiFi_Staff(0036) 0000 d mi          1:53
+3c:9c:0f:24:7f:4d VLAN36_WiFi_Staff(0036) 0000 d mi          2:35
+3c:9c:0f:24:7f:61 VLAN36_WiFi_Staff(0036) 0000 d mi          1:53
+3c:9c:0f:24:7f:93 VLAN36_WiFi_Staff(0036) 0000 d mi          1:7
+3c:9c:0f:24:7f:98 VLAN36_WiFi_Staff(0036) 0000 d mi          2:54
+3c:9c:0f:24:7f:bb VLAN36_WiFi_Staff(0036) 0000 d mi          2:23
+3c:9c:0f:24:7f:c5 VLAN36_WiFi_Staff(0036) 0000 d mi          2:53
+3c:9c:0f:24:8d:5d VLAN36_WiFi_Staff(0036) 0000 d mi          1:53
+3c:9c:0f:24:8d:67 VLAN36_WiFi_Staff(0036) 0000 d mi          2:54
+3c:9c:0f:24:8d:8a VLAN36_WiFi_Staff(0036) 0000 d mi          2:19
+3c:9c:0f:24:8d:99 VLAN36_WiFi_Staff(0036) 0000 d mi          1:53
+3c:9c:0f:24:8d:b2 VLAN36_WiFi_Staff(0036) 0000 d mi          2:54
+3c:9c:0f:24:8d:bc VLAN36_WiFi_Staff(0036) 0000 d mi          1:53
+3c:9c:0f:24:8d:c1 VLAN36_WiFi_Staff(0036) 0000 d mi          2:54
+3c:9c:0f:24:8d:c6 VLAN36_WiFi_Staff(0036) 0000 d mi          2:54
+3c:9c:0f:24:8d:d0 VLAN36_WiFi_Staff(0036) 0000 d mi          1:9
+3c:9c:0f:24:8d:da VLAN36_WiFi_Staff(0036) 0000 d mi          2:54
+3c:9c:0f:26:3e:b9 VLAN36_WiFi_Staff(0036) 0000 d mi          1:54
+3c:9c:0f:26:3e:c8 VLAN36_WiFi_Staff(0036) 0000 d mi          1:54
+3c:9c:0f:26:3e:cd VLAN36_WiFi_Staff(0036) 0000 d mi          1:54
+3c:9c:0f:26:3e:d2 VLAN36_WiFi_Staff(0036) 0000 d mi          1:53
+3c:9c:0f:26:3e:e1 VLAN36_WiFi_Staff(0036) 0000 d mi          2:53
+3c:9c:0f:26:3e:eb VLAN36_WiFi_Staff(0036) 0000 d mi          1:54
+3c:9c:0f:26:3f:04 VLAN36_WiFi_Staff(0036) 0000 d mi          2:53
+3c:9c:0f:26:3f:09 VLAN36_WiFi_Staff(0036) 0000 d mi          2:54
+3c:9c:0f:26:3f:1d VLAN36_WiFi_Staff(0036) 0000 d mi          2:53
+3c:9c:0f:26:3f:2c VLAN36_WiFi_Staff(0036) 0000 d mi          1:53
+3c:9c:0f:26:3f:4f VLAN36_WiFi_Staff(0036) 0000 d mi          2:54
+3c:9c:0f:26:4d:5f VLAN36_WiFi_Staff(0036) 0000 d mi          2:54
+3c:9c:0f:26:4d:87 VLAN36_WiFi_Staff(0036) 0000 d mi          1:54
+3c:9c:0f:26:4d:a5 VLAN36_WiFi_Staff(0036) 0000 d mi          1:53
+3c:9c:0f:26:4d:f0 VLAN36_WiFi_Staff(0036) 0000 d mi          1:53
+3c:9c:0f:26:4d:f5 VLAN36_WiFi_Staff(0036) 0000 d mi          1:54
+3c:9c:0f:29:43:93 VLAN36_WiFi_Staff(0036) 0000 d mi          1:54
+3c:9c:0f:29:44:01 VLAN36_WiFi_Staff(0036) 0000 d mi          2:13
+3e:11:66:1c:e4:81 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+3e:12:ed:a6:1e:ed VLAN40_WiFi_Student(0040) 0000 d mi          2:19
+3e:1d:fc:ae:84:4c VLAN36_WiFi_Staff(0036) 0000 d mi          2:53
+3e:25:61:eb:a3:58 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+3e:3c:1a:02:9b:49 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+3e:bc:4a:f6:a2:41 VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+3e:bc:9a:12:0b:3a VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+3e:c5:2e:ff:d2:6f VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+3e:d4:a3:78:75:85 VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+40:18:b1:3d:5a:00 VLAN30_WiFi_Mgmt(0030) 0000 d mi          1:54
+40:a8:f0:49:bb:10 VLAN30_WiFi_Mgmt(0030) 0000 d mi          1:53
+42:0a:7f:26:dc:c5 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+42:0e:4a:e3:7c:aa VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+42:17:48:cb:d4:ae VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+42:2a:75:f6:a6:52 VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+42:39:48:be:e8:57 VLAN40_WiFi_Student(0040) 0000 d mi          2:35
+42:44:35:d8:d9:fc VLAN40_WiFi_Student(0040) 0000 d mi          2:19
+42:54:d9:d0:1b:fb VLAN36_WiFi_Staff(0036) 0000 d mi          1:27
+42:7a:d5:14:14:b5 VLAN36_WiFi_Staff(0036) 0000 d mi          1:7
+42:93:1a:01:30:9c VLAN36_WiFi_Staff(0036) 0000 d mi          1:53
+42:9c:6b:81:64:58 VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+42:d6:cb:e4:62:af VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+42:e2:13:eb:2c:b5 VLAN40_WiFi_Student(0040) 0189 d m           2:54
+42:e8:51:2c:c6:ae VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+42:fc:32:5a:7e:a6 VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+44:47:cc:aa:f0:df VLAN2_Security(0002) 0000 d mi          2:54
+44:47:cc:aa:f1:00 VLAN2_Security(0002) 0000 d mi          2:53
+44:47:cc:aa:f1:01 VLAN2_Security(0002) 0000 d mi          1:54
+44:d2:44:ef:0e:6b VLAN8_Data(0008) 0000 d mi          1:54
+44:d2:44:f5:27:5f VLAN8_Data(0008) 0000 d mi          2:53
+44:d2:44:f5:27:60 VLAN8_Data(0008) 0000 d mi          1:54
+44:d2:44:f5:27:61 VLAN8_Data(0008) 0000 d mi          2:25
+44:d2:44:f5:27:65 VLAN8_Data(0008) 0000 d mi          1:13
+44:d2:44:f5:27:67 VLAN8_Data(0008) 0000 d mi          2:11
+44:d2:44:f5:27:6a VLAN8_Data(0008) 0000 d mi          2:53
+44:d2:44:f5:27:6e VLAN8_Data(0008) 0000 d mi          2:53
+44:d2:44:f5:27:6f VLAN8_Data(0008) 0000 d mi          1:25
+44:d2:44:f5:27:8f VLAN8_Data(0008) 0046 d m           2:53
+44:d2:44:f5:27:95 VLAN8_Data(0008) 0000 d mi          1:54
+44:d2:44:f6:6a:56 VLAN8_Data(0008) 0000 d mi          1:53
+44:d2:44:f6:6a:58 VLAN8_Data(0008) 0000 d mi          2:53
+44:d2:44:f6:6a:87 VLAN8_Data(0008) 0000 d mi          1:53
+44:d2:44:f6:6a:88 VLAN8_Data(0008) 0000 d mi          2:53
+44:d2:44:f6:6a:8b VLAN8_Data(0008) 0000 d mi          2:54
+44:d2:44:f6:6a:8c VLAN8_Data(0008) 0000 d mi          2:17
+44:d2:44:f6:6a:8d VLAN8_Data(0008) 0000 d mi          1:54
+44:d2:44:f6:6a:8e VLAN8_Data(0008) 0000 d mi          2:33
+44:d2:44:f6:6a:90 VLAN8_Data(0008) 0000 d mi          1:19
+44:d2:44:f6:6a:eb VLAN8_Data(0008) 0000 d mi          1:54
+44:d2:44:f6:6a:ec VLAN8_Data(0008) 0000 d mi          1:53
+44:d2:44:f6:6a:ed VLAN8_Data(0008) 0000 d mi          1:53
+44:d2:44:f6:6a:ef VLAN8_Data(0008) 0000 d mi          1:53
+46:0a:f9:73:02:3f VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+46:1a:9d:82:84:0d VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+46:44:0e:b0:ee:f3 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+46:7e:eb:09:00:3a VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+46:84:e9:ac:90:b1 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+46:91:2b:e4:59:0a VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+4a:00:e3:be:60:ff VLAN30_WiFi_Mgmt(0030) 0207 d m           1:53
+4a:00:e3:be:60:ff VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+4a:01:aa:ab:ec:19 VLAN30_WiFi_Mgmt(0030) 0173 d m           1:3
+4a:01:aa:ab:ec:19 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+4a:04:a6:55:4c:bc VLAN40_WiFi_Student(0040) 0000 d mi          2:53
+4a:12:8a:3e:ac:ac VLAN40_WiFi_Student(0040) 0000 d mi          2:53
+4a:13:3a:60:cf:7e VLAN40_WiFi_Student(0040) 0000 d mi          2:35
+4a:3c:97:d6:f9:94 VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+4a:41:b0:33:e9:2d VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+4a:42:4c:a9:57:d1 VLAN30_WiFi_Mgmt(0030) 0193 d m           2:41
+4a:42:4c:a9:57:d1 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+4a:44:c7:c3:43:3a VLAN30_WiFi_Mgmt(0030) 0229 d m           2:45
+4a:44:c7:c3:43:3a VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+4a:71:6e:d1:82:9e VLAN40_WiFi_Student(0040) 0000 d mi          2:19
+4a:81:1f:ae:de:1e VLAN40_WiFi_Student(0040) 0000 d mi          2:19
+4a:9e:84:3c:15:6c VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+4a:c8:f3:1e:40:98 VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+4a:cd:f3:d8:cc:b7 VLAN40_WiFi_Student(0040) 0000 d mi          2:19
+4a:d1:7b:ad:03:61 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+4a:e2:7b:f7:ba:49 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+4c:bd:8f:5d:69:b3 VLAN2_Security(0002) 0000 d mi          1:53
+4c:bd:8f:5d:69:c9 VLAN2_Security(0002) 0000 d mi          2:54
+4c:bd:8f:5d:69:ee VLAN2_Security(0002) 0000 d mi          2:54
+4c:bd:8f:5d:69:f8 VLAN2_Security(0002) 0000 d mi          2:54
+4e:12:df:f0:9c:f2 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+4e:21:b0:ef:30:db VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+4e:3a:a9:2f:ea:99 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+4e:6a:76:79:64:01 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+4e:a6:0f:e9:ad:38 VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+4e:a8:d9:2b:9e:97 VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+4e:bb:22:82:ce:d6 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+4e:bd:09:03:f9:f4 VLAN30_WiFi_Mgmt(0030) 0155 d m           2:54
+4e:bd:09:03:f9:f4 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+4e:c7:f8:4a:47:22 VLAN40_WiFi_Student(0040) 0000 d mi          2:19
+4e:c8:2a:4f:39:dc VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+4e:d9:f4:6e:01:90 VLAN30_WiFi_Mgmt(0030) 0225 d m           2:41
+4e:d9:f4:6e:01:90 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+4e:e7:3f:10:3f:63 VLAN30_WiFi_Mgmt(0030) 0049 d m           2:54
+4e:e7:3f:10:3f:63 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+4e:f7:2b:89:7d:3d VLAN30_WiFi_Mgmt(0030) 0209 d m           2:43
+4e:f7:2b:89:7d:3d VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+50:32:37:cf:f8:47 VLAN36_WiFi_Staff(0036) 0000 d mi          2:54
+50:57:9c:c4:c8:e4 VLAN8_Data(0008) 0000 d mi          1:54
+50:57:9c:c5:4c:d9 VLAN8_Data(0008) 0000 d mi          1:54
+52:16:ad:e2:9e:a4 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+52:31:eb:03:2d:28 VLAN30_WiFi_Mgmt(0030) 0139 d m           2:19
+52:31:eb:03:2d:28 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+52:33:8e:4c:7c:91 VLAN40_WiFi_Student(0040) 0000 d mi          2:35
+52:5e:b5:bb:8c:2e VLAN36_WiFi_Staff(0036) 0000 d mi          2:53
+52:80:4b:c0:39:d0 VLAN40_WiFi_Student(0040) 0000 d mi          2:53
+52:8a:75:3f:0b:03 VLAN36_WiFi_Staff(0036) 0000 d mi          2:54
+52:98:26:94:ea:63 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+52:d8:87:d0:21:8b VLAN30_WiFi_Mgmt(0030) 0057 d m           1:53
+52:d8:87:d0:21:8b VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+52:ed:4c:99:9d:6c VLAN40_WiFi_Student(0040) 0201 d m           2:54
+56:24:7f:b1:5b:84 VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+56:6f:2b:13:08:9e VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+56:72:d8:2b:25:a8 VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+56:73:ae:59:a4:5c VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+56:82:c9:1a:be:18 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+56:89:d5:d8:63:eb VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+56:96:8d:39:a3:68 VLAN40_WiFi_Student(0040) 0000 d mi          2:53
+56:9c:fb:91:b6:fa VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+56:9d:24:c9:89:5e VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+56:bf:1f:49:62:b0 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+56:e4:c2:06:41:94 VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+56:e6:a3:f0:74:11 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+56:f7:20:0e:39:14 VLAN40_WiFi_Student(0040) 0000 d mi          2:19
+56:fc:8e:0e:c6:2a VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+58:59:c2:cf:ef:40 VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:54
+58:59:c2:d0:a1:00 VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:54
+58:59:c2:d0:a8:80 VLAN30_WiFi_Mgmt(0030) 0000 d mi          1:53
+58:59:c2:d0:b7:00 VLAN30_WiFi_Mgmt(0030) 0000 d mi          1:53
+58:59:c2:d0:b9:c0 VLAN30_WiFi_Mgmt(0030) 0000 d mi          1:53
+58:cb:52:79:d5:2f VLAN36_WiFi_Staff(0036) 0000 d mi          2:53
+5a:16:88:d7:1c:31 VLAN40_WiFi_Student(0040) 0000 d mi          2:19
+5a:1a:cc:f4:93:84 VLAN30_WiFi_Mgmt(0030) 0211 d m           1:3
+5a:1a:cc:f4:93:84 VLAN40_WiFi_Student(0040) 0022 d m           2:54
+5a:32:cb:6b:75:3c VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+5a:74:d1:96:1c:af VLAN40_WiFi_Student(0040) 0015 d m           2:54
+5a:83:be:5a:4f:38 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+5a:86:b0:27:7f:d1 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+5a:92:1a:e8:d8:63 VLAN40_WiFi_Student(0040) 0000 d mi          2:53
+5a:94:84:a7:f7:c2 VLAN36_WiFi_Staff(0036) 0000 d mi          1:54
+5a:9a:74:a0:7a:73 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+5a:aa:d4:e7:b8:68 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+5a:d1:9a:9b:5f:6c VLAN40_WiFi_Student(0040) 0000 d mi          2:35
+5a:e6:8c:d0:c9:a9 VLAN40_WiFi_Student(0040) 0000 d mi          2:53
+5a:fc:fd:37:3d:13 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+5a:fe:0a:96:57:31 VLAN40_WiFi_Student(0040) 0000 d mi          2:53
+5e:03:e6:c5:27:7a VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+5e:40:a2:61:15:07 VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+5e:7a:42:98:d0:b1 VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+5e:7e:ed:4f:54:23 VLAN40_WiFi_Student(0040) 0000 d mi          2:45
+5e:a6:02:10:ac:26 VLAN40_WiFi_Student(0040) 0184 d m           2:54
+5e:a7:a1:34:6d:d5 VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+5e:e4:fc:48:62:5d VLAN40_WiFi_Student(0040) 0209 d m           2:54
+5e:eb:8d:d6:73:ca VLAN40_WiFi_Student(0040) 0014 d m           1:53
+5e:ee:8b:84:41:90 VLAN40_WiFi_Student(0040) 0000 d mi          2:35
+5e:f2:5f:b9:f8:a8 VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+5e:f7:4b:0e:4c:e7 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+60:c7:98:1c:7f:ba VLAN8_Data(0008) 0000 d mi          1:53
+60:e8:5b:de:61:90 VLAN8_Data(0008) 0000 d mi          1:53
+62:6b:b9:97:dc:dd VLAN30_WiFi_Mgmt(0030) 0172 d m           2:54
+62:6b:b9:97:dc:dd VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+62:71:ff:c5:cf:48 VLAN30_WiFi_Mgmt(0030) 0084 d m           2:54
+62:71:ff:c5:cf:48 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+62:75:96:28:0e:6e VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+62:a4:7a:cd:c4:6f VLAN36_WiFi_Staff(0036) 0000 d mi          2:54
+62:ab:0b:a9:8b:82 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+62:b6:b3:7c:5d:2f VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+62:da:4d:01:98:f9 VLAN36_WiFi_Staff(0036) 0000 d mi          2:53
+62:fd:29:1f:cd:27 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+64:db:8b:61:c1:a8 VLAN2_Security(0002) 0000 d mi          2:54
+64:db:8b:61:c1:bf VLAN2_Security(0002) 0000 d mi          2:53
+64:db:8b:61:c1:c3 VLAN2_Security(0002) 0000 d mi          2:54
+64:db:8b:61:c1:d7 VLAN2_Security(0002) 0000 d mi          1:53
+66:82:6b:67:93:4c VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+66:8e:d6:97:63:27 VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+66:9d:84:32:99:57 VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+66:b8:74:be:e8:6c VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+66:b9:15:a0:fd:0d VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+66:d7:81:b7:f6:b9 VLAN36_WiFi_Staff(0036) 0000 d mi          1:53
+6a:04:3f:f4:ce:4d VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+6a:30:07:85:ab:a8 VLAN40_WiFi_Student(0040) 0000 d mi          2:53
+6a:45:43:24:d3:4b VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+6a:46:55:7f:f6:eb VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+6a:67:4f:12:01:fc VLAN40_WiFi_Student(0040) 0000 d mi          2:45
+6a:6f:41:2f:e5:49 VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+6a:73:77:e6:26:b7 VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+6a:7d:bd:30:73:af VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+6a:96:16:8c:c2:bf VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+6a:97:df:59:b8:27 VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+6a:c1:c5:75:2e:55 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+6a:da:6e:ff:cd:80 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+6a:e8:ee:9f:5c:d3 VLAN36_WiFi_Staff(0036) 0000 d mi          1:54
+6a:ed:22:d2:80:62 VLAN30_WiFi_Mgmt(0030) 0263 d m           2:54
+6a:ed:22:d2:80:62 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+6e:00:4d:3e:d2:e0 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+6e:0a:82:52:2c:d0 VLAN40_WiFi_Student(0040) 0000 d mi          2:53
+6e:24:64:1c:25:f5 VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+6e:36:4f:2b:c5:3f VLAN40_WiFi_Student(0040) 0098 d m           2:54
+6e:3c:44:4e:e9:5f VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+6e:72:bc:79:63:42 VLAN40_WiFi_Student(0040) 0000 d mi          2:19
+6e:79:29:b7:83:ee VLAN36_WiFi_Staff(0036) 0000 d mi          1:53
+6e:b0:b8:39:ee:da VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+6e:b8:b7:46:13:f2 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+6e:c1:21:fb:8c:e0 VLAN36_WiFi_Staff(0036) 0000 d mi          2:53
+6e:c3:4d:5d:c4:68 VLAN40_WiFi_Student(0040) 0153 d m           2:54
+6e:d8:fd:92:08:55 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+6e:da:aa:b7:b5:6e VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+6e:fb:ca:70:61:14 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+70:b5:e8:13:80:8a VLAN8_Data(0008) 0000 d mi          1:53
+70:b5:e8:13:89:fa VLAN8_Data(0008) 0000 d mi          1:53
+72:3c:4c:04:fb:95 VLAN40_WiFi_Student(0040) 0000 d mi          2:53
+72:3f:29:fb:be:c7 VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+72:49:cd:a9:b8:08 VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+72:58:fc:3f:1c:03 VLAN30_WiFi_Mgmt(0030) 0180 d m           2:54
+72:58:fc:3f:1c:03 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+72:5c:ad:73:a9:e4 VLAN40_WiFi_Student(0040) 0000 d mi          2:53
+72:6b:31:93:3f:9d VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+72:7a:26:cf:21:79 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+72:ac:14:1a:92:e3 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+72:d7:bc:37:dd:97 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+72:d8:0c:5a:64:76 VLAN40_WiFi_Student(0040) 0000 d mi          2:53
+72:e2:ae:28:d4:62 VLAN30_WiFi_Mgmt(0030) 0162 d m           1:53
+72:e2:ae:28:d4:62 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+72:fe:99:91:95:00 VLAN30_WiFi_Mgmt(0030) 0234 d m           1:53
+72:fe:99:91:95:00 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+76:20:c8:94:f6:38 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+76:33:c8:5d:e0:1c VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+76:3e:07:ae:6d:48 VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+76:42:59:d0:8f:92 VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+76:5e:ba:28:17:4c VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+76:63:24:c2:47:0d VLAN40_WiFi_Student(0040) 0000 d mi          2:19
+76:66:cb:6e:63:f9 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+76:68:c3:5c:f1:b5 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+76:68:d0:e7:bb:4a VLAN30_WiFi_Mgmt(0030) 0161 d m           2:54
+76:68:d0:e7:bb:4a VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+76:6e:58:b7:78:5b VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+76:a6:e8:81:7d:c6 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+76:a7:1b:f9:3a:02 VLAN40_WiFi_Student(0040) 0154 d m           1:54
+76:b4:1e:59:93:2e VLAN30_WiFi_Mgmt(0030) 0180 d m           2:54
+76:b4:1e:59:93:2e VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+76:ca:e0:21:d1:5f VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+76:dc:59:57:d5:13 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+78:ac:44:aa:8e:e4 VLAN2_Security(0002) 0000 d mi          3:14
+78:ac:44:aa:8e:e5 VLAN2_Security(0002) 0000 d mi          3:16
+7a:10:9e:a3:26:47 VLAN30_WiFi_Mgmt(0030) 0003 d m           2:54
+7a:10:9e:a3:26:47 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+7a:26:36:5d:8c:ab VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+7a:31:49:ea:16:ec VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+7a:40:c8:d0:ed:4d VLAN40_WiFi_Student(0040) 0000 d mi          2:19
+7a:55:18:6e:e9:db VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+7a:96:a9:eb:4d:38 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+7a:bd:39:01:43:05 VLAN40_WiFi_Student(0040) 0000 d mi          2:35
+7a:c5:20:b0:4f:09 VLAN40_WiFi_Student(0040) 0000 d mi          2:19
+7a:c9:28:7f:41:af VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+7a:cc:86:a8:00:29 VLAN40_WiFi_Student(0040) 0000 d mi          2:35
+7a:d6:dd:38:85:b5 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+7a:f0:31:9e:46:fd VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+7c:2a:31:c1:50:25 VLAN36_WiFi_Staff(0036) 0000 d mi          2:54
+7c:2a:31:c1:b4:25 VLAN36_WiFi_Staff(0036) 0000 d mi          2:54
+7e:7a:81:62:bf:c5 VLAN30_WiFi_Mgmt(0030) 0232 d m           2:23
+7e:7a:81:62:bf:c5 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+7e:81:4e:78:c5:b7 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+7e:8d:8e:e5:d4:c9 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+7e:9b:23:14:f5:cd VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+7e:a5:5e:47:6f:0b VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+7e:d9:d0:db:0f:77 VLAN40_WiFi_Student(0040) 0000 d mi          2:19
+7e:e2:39:2d:22:7a VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+80:30:e0:2f:79:e0 VLAN8_Data(0008) 0000 d mi          3:7
+82:01:f2:0e:af:94 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+82:0a:cf:9a:aa:48 VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+82:13:39:f9:f3:a8 VLAN36_WiFi_Staff(0036) 0000 d mi          1:54
+82:26:e1:1f:59:cc VLAN30_WiFi_Mgmt(0030) 0180 d m           2:54
+82:26:e1:1f:59:cc VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+82:43:78:3b:3e:fe VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+82:93:02:13:b0:c2 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+82:aa:63:de:17:98 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+82:db:27:c4:11:77 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+82:e9:58:e3:07:95 VLAN36_WiFi_Staff(0036) 0000 d mi          2:54
+86:03:34:a3:19:a9 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+86:37:be:2d:94:4a VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+86:41:98:5e:92:d0 VLAN40_WiFi_Student(0040) 0000 d mi          2:53
+86:48:a2:a6:06:14 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+86:6e:c3:c1:1a:0f VLAN30_WiFi_Mgmt(0030) 0232 d m           1:17
+86:6e:c3:c1:1a:0f VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+86:77:c1:c4:13:8b VLAN36_WiFi_Staff(0036) 0000 d mi          2:53
+86:a2:95:54:bf:73 VLAN40_WiFi_Student(0040) 0000 d mi          1:17
+86:a5:39:16:90:11 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+86:dc:38:ce:64:c6 VLAN40_WiFi_Student(0040) 0045 d m           2:54
+86:f7:ee:60:e2:c0 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+8a:14:a7:f2:87:ba VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+8a:2a:32:af:25:5d VLAN40_WiFi_Student(0040) 0204 d m           2:54
+8a:3e:05:bd:9f:81 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+8a:60:10:b5:66:d8 VLAN36_WiFi_Staff(0036) 0000 d mi          1:53
+8a:61:b6:54:4b:89 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+8a:72:f8:ef:de:58 VLAN30_WiFi_Mgmt(0030) 0185 d m           2:54
+8a:72:f8:ef:de:58 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+8a:74:7e:1a:a3:ca VLAN40_WiFi_Student(0040) 0000 d mi          2:35
+8a:81:f9:b5:34:11 VLAN30_WiFi_Mgmt(0030) 0242 d m           2:54
+8a:81:f9:b5:34:11 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+8a:89:d4:32:6b:e2 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+8a:b3:92:e6:8a:cf VLAN36_WiFi_Staff(0036) 0000 d mi          2:54
+8a:ca:aa:04:7d:36 VLAN40_WiFi_Student(0040) 0000 d mi          1:23
+8a:cb:35:08:80:73 VLAN40_WiFi_Student(0040) 0000 d mi          2:53
+8a:d2:b4:8e:45:b5 VLAN40_WiFi_Student(0040) 0000 d mi          2:19
+8a:f7:34:67:73:12 VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+8a:ff:44:65:88:db VLAN40_WiFi_Student(0040) 0000 d mi          2:45
+8e:09:e5:03:60:a2 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+8e:27:98:03:60:fd VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+8e:2b:7f:eb:05:51 VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+8e:49:c9:ea:09:24 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+8e:79:76:da:61:57 VLAN30_WiFi_Mgmt(0030) 0225 d m           2:54
+8e:79:76:da:61:57 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+8e:89:7b:bb:25:f3 VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+8e:a2:d2:60:90:33 VLAN36_WiFi_Staff(0036) 0000 d mi          2:53
+8e:a7:11:b2:03:51 VLAN36_WiFi_Staff(0036) 0000 d mi          1:54
+8e:b4:63:d1:06:8f VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+8e:dd:00:06:0c:0c VLAN30_WiFi_Mgmt(0030) 0217 d m           2:41
+8e:dd:00:06:0c:0c VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+8e:df:ad:b1:eb:d1 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+8e:f8:f7:3e:f3:c2 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+90:b8:32:9d:5b:40 VLAN30_WiFi_Mgmt(0030) 0000 d mi          1:53
+90:b8:32:9d:5c:c0 VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:54
+90:b8:32:9d:5d:c0 VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:54
+90:b8:32:9d:5f:40 VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:54
+90:b8:32:9d:65:40 VLAN30_WiFi_Mgmt(0030) 0000 d mi          1:53
+90:b8:32:9d:65:40 VLAN36_WiFi_Staff(0036) 0021 d m           1:53
+90:b8:32:9d:65:40 VLAN40_WiFi_Student(0040) 0021 d m           1:53
+90:b8:32:9d:66:00 VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:54
+90:b8:32:9d:66:80 VLAN30_WiFi_Mgmt(0030) 0000 d mi          1:54
+90:b8:32:9d:66:c0 VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:54
+90:b8:32:9d:67:80 VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:54
+90:b8:32:9d:67:c0 VLAN30_WiFi_Mgmt(0030) 0000 d mi          1:54
+90:b8:32:9d:68:c0 VLAN30_WiFi_Mgmt(0030) 0000 d mi          1:54
+90:b8:32:9d:69:c0 VLAN30_WiFi_Mgmt(0030) 0000 d mi          1:54
+90:b8:32:9d:6a:80 VLAN30_WiFi_Mgmt(0030) 0000 d mi          1:54
+90:b8:32:9d:6b:40 VLAN30_WiFi_Mgmt(0030) 0000 d mi          1:54
+90:b8:32:9d:6c:40 VLAN30_WiFi_Mgmt(0030) 0000 d mi          1:54
+90:b8:32:9d:6d:00 VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:54
+90:b8:32:9d:6e:00 VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:54
+90:b8:32:9d:6e:80 VLAN30_WiFi_Mgmt(0030) 0000 d mi          1:54
+90:b8:32:9d:70:c0 VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:54
+90:b8:32:9d:82:00 VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:54
+90:b8:32:9d:89:00 VLAN30_WiFi_Mgmt(0030) 0000 d mi          1:54
+90:b8:32:9d:89:40 VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:54
+90:b8:32:9d:a6:80 VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:54
+90:b8:32:9d:dd:c0 VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:54
+90:b8:32:9d:de:c0 VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:54
+90:b8:32:9d:e0:40 VLAN30_WiFi_Mgmt(0030) 0000 d mi          1:54
+90:b8:32:9d:e3:c0 VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:54
+90:b8:32:9d:e5:c0 VLAN30_WiFi_Mgmt(0030) 0000 d mi          1:54
+90:b8:32:9d:e9:c0 VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:54
+90:b8:32:9d:ec:80 VLAN30_WiFi_Mgmt(0030) 0000 d mi          1:54
+90:b8:32:9f:54:40 VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:54
+90:b8:32:9f:55:40 VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:54
+90:b8:32:9f:57:40 VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:53
+90:b8:32:9f:57:80 VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:53
+90:b8:32:9f:58:40 VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:53
+90:b8:32:9f:58:80 VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:54
+90:b8:32:9f:59:00 VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:54
+90:b8:32:9f:59:80 VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:53
+90:b8:32:9f:5a:40 VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:54
+90:b8:32:9f:5a:80 VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:53
+90:b8:32:9f:5c:80 VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:53
+90:b8:32:9f:5d:00 VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:53
+90:b8:32:9f:5e:00 VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:53
+90:b8:32:9f:70:80 VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:53
+90:b8:32:9f:a2:40 VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:54
+90:b8:32:9f:a2:80 VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:53
+90:b8:32:9f:a3:00 VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:53
+90:b8:32:9f:be:c0 VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:53
+90:b8:32:a9:05:80 VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:54
+90:b8:32:a9:18:40 VLAN30_WiFi_Mgmt(0030) 0000 d mi          1:53
+90:b8:32:a9:18:80 VLAN30_WiFi_Mgmt(0030) 0000 d mi          1:53
+90:b8:32:a9:19:c0 VLAN30_WiFi_Mgmt(0030) 0000 d mi          1:53
+90:b8:32:a9:1a:00 VLAN30_WiFi_Mgmt(0030) 0000 d mi          1:54
+90:b8:32:a9:1b:40 VLAN30_WiFi_Mgmt(0030) 0000 d mi          1:54
+90:b8:32:a9:1b:c0 VLAN30_WiFi_Mgmt(0030) 0000 d mi          1:54
+90:b8:32:a9:1c:00 VLAN30_WiFi_Mgmt(0030) 0000 d mi          1:53
+90:b8:32:a9:1c:40 VLAN30_WiFi_Mgmt(0030) 0000 d mi          1:53
+90:b8:32:a9:1d:00 VLAN30_WiFi_Mgmt(0030) 0000 d mi          1:53
+90:b8:32:a9:1f:00 VLAN30_WiFi_Mgmt(0030) 0000 d mi          1:53
+90:b8:32:a9:25:40 VLAN30_WiFi_Mgmt(0030) 0000 d mi          1:54
+90:b8:32:a9:29:00 VLAN30_WiFi_Mgmt(0030) 0000 d mi          1:23
+90:b8:32:a9:29:40 VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:41
+90:b8:32:a9:29:c0 VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:29
+90:b8:32:a9:2a:00 VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:23
+90:b8:32:a9:2a:40 VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:45
+90:b8:32:a9:2a:c0 VLAN30_WiFi_Mgmt(0030) 0000 d mi          1:7
+90:b8:32:a9:2b:00 VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:19
+90:b8:32:a9:2b:40 VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:13
+90:b8:32:a9:2b:c0 VLAN30_WiFi_Mgmt(0030) 0000 d mi          1:27
+90:b8:32:a9:30:00 VLAN30_WiFi_Mgmt(0030) 0000 d mi          1:17
+90:b8:32:a9:31:00 VLAN30_WiFi_Mgmt(0030) 0000 d mi          1:9
+90:b8:32:a9:31:40 VLAN30_WiFi_Mgmt(0030) 0000 d mi          1:53
+90:b8:32:a9:32:00 VLAN30_WiFi_Mgmt(0030) 0000 d mi          1:3
+90:b8:32:a9:32:40 VLAN30_WiFi_Mgmt(0030) 0000 d mi          1:53
+90:b8:32:a9:32:80 VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:43
+90:b8:32:a9:33:40 VLAN30_WiFi_Mgmt(0030) 0000 d mi          1:53
+90:b8:32:a9:35:c0 VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:39
+90:b8:32:a9:36:00 VLAN30_WiFi_Mgmt(0030) 0000 d mi          1:53
+90:b8:32:a9:36:c0 VLAN30_WiFi_Mgmt(0030) 0000 d mi          1:53
+90:b8:32:a9:3a:00 VLAN30_WiFi_Mgmt(0030) 0000 d mi          1:53
+90:b8:32:a9:44:40 VLAN30_WiFi_Mgmt(0030) 0000 d mi          1:53
+90:b8:32:a9:4c:00 VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:35
+90:b8:32:a9:71:00 VLAN30_WiFi_Mgmt(0030) 0000 d mi          1:53
+90:b8:32:a9:87:40 VLAN30_WiFi_Mgmt(0030) 0000 d mi          1:53
+92:22:a0:21:90:0e VLAN40_WiFi_Student(0040) 0000 d mi          2:53
+92:3d:42:0a:b5:4a VLAN36_WiFi_Staff(0036) 0000 d mi          1:23
+92:4f:28:70:2c:69 VLAN40_WiFi_Student(0040) 0188 d m           2:53
+92:97:04:f7:91:03 VLAN40_WiFi_Student(0040) 0000 d mi          2:45
+92:ae:b8:05:ce:bf VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+92:b2:8b:c3:ef:c2 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+92:b4:fd:d6:8a:43 VLAN40_WiFi_Student(0040) 0013 d m           2:54
+92:d3:c7:d0:37:24 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+92:e0:3a:70:de:d7 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+92:e0:a8:4a:d3:d4 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+92:f6:89:8f:90:1e VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+96:31:85:5a:1d:de VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+96:48:fc:97:0e:3b VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+96:59:f4:a0:d4:92 VLAN40_WiFi_Student(0040) 0000 d mi          2:19
+96:65:14:27:d1:a2 VLAN30_WiFi_Mgmt(0030) 0216 d m           2:54
+96:65:14:27:d1:a2 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+96:85:71:9b:39:a6 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+96:92:69:f9:2f:ff VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+96:df:01:c5:78:bd VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+96:f6:ba:c8:72:61 VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+96:f9:4b:95:c5:0e VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+9a:13:b8:7a:b9:b9 VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+9a:3a:bb:0d:66:3f VLAN30_WiFi_Mgmt(0030) 0022 d m           2:54
+9a:3a:bb:0d:66:3f VLAN36_WiFi_Staff(0036) 0000 d mi          2:54
+9a:46:05:3d:33:8c VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+9a:46:77:34:e6:fa VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+9a:6a:94:d1:df:cb VLAN36_WiFi_Staff(0036) 0000 d mi          2:54
+9a:79:b8:72:8a:09 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+9a:8b:07:47:e8:8f VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+9a:a2:35:72:f0:92 VLAN30_WiFi_Mgmt(0030) 0111 d m           2:54
+9a:a2:35:72:f0:92 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+9a:ce:96:07:a1:1b VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+9a:dd:8d:b6:18:8e VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+9a:e7:86:20:b1:88 VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+9a:ee:84:81:14:ce VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+9a:f7:5e:66:57:8f VLAN30_WiFi_Mgmt(0030) 0208 d m           1:53
+9a:f7:5e:66:57:8f VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+9c:20:7b:7c:94:b9 VLAN36_WiFi_Staff(0036) 0000 d mi          1:53
+9c:20:7b:86:0e:5c VLAN36_WiFi_Staff(0036) 0000 d mi          1:54
+9c:20:7b:c2:fa:d8 VLAN36_WiFi_Staff(0036) 0000 d mi          2:53
+9c:20:7b:c5:82:56 VLAN40_WiFi_Student(0040) 0000 d mi          2:53
+9c:20:7b:c6:38:3d VLAN36_WiFi_Staff(0036) 0000 d mi          1:9
+9c:20:7b:c8:86:2a VLAN36_WiFi_Staff(0036) 0000 d mi          2:13
+9c:20:7b:c8:97:df VLAN36_WiFi_Staff(0036) 0000 d mi          1:53
+9c:20:7b:ca:4c:2e VLAN40_WiFi_Student(0040) 0000 d mi          2:53
+9c:20:7b:d0:29:b4 VLAN36_WiFi_Staff(0036) 0000 d mi          1:54
+9c:3e:53:00:43:2e VLAN36_WiFi_Staff(0036) 0000 d mi          1:54
+9c:3e:53:02:49:6c VLAN36_WiFi_Staff(0036) 0000 d mi          1:54
+9c:3e:53:75:d9:e4 VLAN36_WiFi_Staff(0036) 0000 d mi          1:54
+9e:08:9e:39:80:e0 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+9e:2c:ce:a9:49:76 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+9e:52:87:db:ac:1b VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+9e:61:d5:63:e3:9f VLAN40_WiFi_Student(0040) 0000 d mi          2:45
+9e:86:dc:b5:ba:07 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+9e:93:7d:13:70:3e VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+9e:bf:70:ee:06:fb VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+9e:c6:62:05:d4:a7 VLAN40_WiFi_Student(0040) 0000 d mi          2:19
+9e:e8:28:d0:3b:f0 VLAN40_WiFi_Student(0040) 0000 d mi          2:19
+a0:d0:dc:f4:59:68 VLAN30_WiFi_Mgmt(0030) 0205 d m           1:54
+a0:d0:dc:f4:59:68 VLAN36_WiFi_Staff(0036) 0000 d mi          1:54
+a0:d3:c1:23:7a:84 VLAN8_Data(0008) 0000 d mi          2:16
+a0:d3:c1:d9:3e:34 VLAN36_WiFi_Staff(0036) 0000 d mi          1:54
+a2:08:5e:aa:37:e5 VLAN30_WiFi_Mgmt(0030) 0214 d m           1:53
+a2:08:5e:aa:37:e5 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+a2:26:18:83:28:4b VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+a2:56:46:f7:50:eb VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+a2:5a:59:2a:f3:f2 VLAN40_WiFi_Student(0040) 0000 d mi          2:53
+a2:5d:12:83:7f:85 VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+a2:5f:69:f7:74:14 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+a2:62:ad:a2:a8:b5 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+a2:7a:a8:1f:a2:5b VLAN40_WiFi_Student(0040) 0000 d mi          2:45
+a2:86:34:db:27:4e VLAN30_WiFi_Mgmt(0030) 0158 d m           2:54
+a2:86:34:db:27:4e VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+a2:a2:fc:4b:77:44 VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+a2:b5:07:9d:76:5a VLAN30_WiFi_Mgmt(0030) 0215 d m           1:53
+a2:b5:07:9d:76:5a VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+a2:bd:d8:a1:64:f2 VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+a2:c5:c0:e0:e5:d2 VLAN40_WiFi_Student(0040) 0146 d m           2:54
+a2:c6:2f:32:3c:62 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+a2:fd:f6:e4:c8:21 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+a4:31:35:09:76:77 VLAN36_WiFi_Staff(0036) 0000 d mi          2:54
+a4:31:35:18:c5:48 VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+a4:e9:75:75:d7:30 VLAN30_WiFi_Mgmt(0030) 0102 d m           2:54
+a4:e9:75:75:d7:30 VLAN36_WiFi_Staff(0036) 0000 d mi          1:53
+a6:03:91:bb:8b:ba VLAN40_WiFi_Student(0040) 0000 d mi          2:19
+a6:44:5d:46:7a:0e VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+a6:49:6d:1b:8f:90 VLAN40_WiFi_Student(0040) 0000 d mi          2:19
+a6:55:55:67:96:3f VLAN36_WiFi_Staff(0036) 0000 d mi          2:54
+a6:63:1b:b8:1a:2c VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+a6:a5:b3:2f:4d:d1 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+a6:c3:6b:87:b2:e2 VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+a6:d3:59:57:64:cd VLAN36_WiFi_Staff(0036) 0000 d mi          2:53
+a6:e4:c2:0b:61:f9 VLAN30_WiFi_Mgmt(0030) 0224 d m           2:54
+a6:e4:c2:0b:61:f9 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+a8:51:ab:9f:93:ca VLAN36_WiFi_Staff(0036) 0000 d mi          2:53
+a8:51:ab:a6:2e:32 VLAN36_WiFi_Staff(0036) 0000 d mi          1:23
+a8:51:ab:ab:9f:47 VLAN36_WiFi_Staff(0036) 0000 d mi          2:53
+a8:51:ab:c6:57:a5 VLAN36_WiFi_Staff(0036) 0000 d mi          1:54
+a8:7e:ea:df:8f:6d VLAN36_WiFi_Staff(0036) 0000 d mi          2:54
+aa:13:09:57:73:be VLAN40_WiFi_Student(0040) 0000 d mi          2:53
+aa:27:85:6b:61:7e VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+aa:45:d4:74:a5:d6 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+aa:47:0d:9c:38:2e VLAN40_WiFi_Student(0040) 0000 d mi          1:3
+aa:52:ce:55:18:8a VLAN36_WiFi_Staff(0036) 0000 d mi          2:13
+aa:5f:9f:c7:0a:c1 VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+aa:61:ea:42:8c:1f VLAN30_WiFi_Mgmt(0030) 0018 d m           1:53
+aa:61:ea:42:8c:1f VLAN36_WiFi_Staff(0036) 0000 d mi          2:54
+aa:69:2f:d1:ed:f5 VLAN40_WiFi_Student(0040) 0000 d mi          2:35
+aa:91:67:fd:49:92 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+aa:96:bc:9e:c5:62 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+aa:ea:9f:d9:37:43 VLAN40_WiFi_Student(0040) 0000 d mi          2:53
+aa:fc:96:86:23:d1 VLAN40_WiFi_Student(0040) 0000 d mi          2:35
+ac:91:a1:ef:44:cd VLAN8_Data(0008) 0000 d mi          1:53
+ae:21:48:45:e2:5d VLAN36_WiFi_Staff(0036) 0000 d mi          1:53
+ae:29:48:ae:84:6d VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+ae:35:4f:92:e8:64 VLAN30_WiFi_Mgmt(0030) 0239 d m           2:54
+ae:35:4f:92:e8:64 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+ae:49:51:6c:ef:38 VLAN30_WiFi_Mgmt(0030) 0228 d m           1:54
+ae:49:51:6c:ef:38 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+ae:69:f3:ed:7e:fd VLAN40_WiFi_Student(0040) 0039 d m           2:54
+ae:75:6f:47:ef:65 VLAN40_WiFi_Student(0040) 0000 d mi          2:53
+ae:9d:d1:4b:2c:d6 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+ae:aa:4a:45:7b:99 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+ae:b9:55:b0:d8:f2 VLAN30_WiFi_Mgmt(0030) 0232 d m           1:53
+ae:b9:55:b0:d8:f2 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+ae:de:d8:4c:21:e4 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+ae:ed:72:5a:3f:f2 VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+ae:f4:c2:cf:51:de VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+ae:fa:79:2e:47:c0 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+b2:0c:6e:22:fd:83 VLAN30_WiFi_Mgmt(0030) 0219 d m           2:54
+b2:0c:6e:22:fd:83 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+b2:0d:0c:66:1a:84 VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+b2:35:41:5c:14:89 VLAN40_WiFi_Student(0040) 0000 d mi          2:53
+b2:3d:1a:27:33:e2 VLAN40_WiFi_Student(0040) 0000 d mi          2:19
+b2:7d:54:0a:15:e2 VLAN40_WiFi_Student(0040) 0000 d mi          2:53
+b2:a6:95:da:5a:23 VLAN36_WiFi_Staff(0036) 0000 d mi          2:35
+b2:ac:6f:8a:f1:71 VLAN40_WiFi_Student(0040) 0000 d mi          2:19
+b2:c5:ed:50:cd:5d VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+b2:c8:21:03:ad:dd VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+b2:c8:3d:39:8d:29 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+b2:cc:a1:b7:44:e6 VLAN30_WiFi_Mgmt(0030) 0176 d m           2:54
+b2:cc:a1:b7:44:e6 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+b2:cd:2b:ab:34:c3 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+b2:f0:ed:ac:12:43 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+b2:f9:d3:d7:d9:a8 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+b4:a3:82:7b:ee:52 VLAN2_Security(0002) 0000 d mi          2:54
+b6:33:8e:28:be:f0 VLAN36_WiFi_Staff(0036) 0000 d mi          2:54
+b6:53:96:8c:7f:bc VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+b6:7f:c2:b5:b8:7d VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+b6:9c:fe:08:c2:a4 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+b6:a4:0e:4d:fe:23 VLAN40_WiFi_Student(0040) 0000 d mi          2:35
+b6:a9:fc:23:b1:36 VLAN40_WiFi_Student(0040) 0000 d mi          2:53
+b6:cf:18:f5:b0:e4 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+b6:f6:f8:d8:61:41 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+b6:fc:09:70:f4:47 VLAN40_WiFi_Student(0040) 0000 d mi          2:53
+ba:05:65:d6:a9:4b VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+ba:40:ca:89:a5:b5 VLAN30_WiFi_Mgmt(0030) 0130 d m           1:3
+ba:40:ca:89:a5:b5 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+ba:8a:31:fe:e6:f6 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+ba:a6:1d:35:97:9f VLAN40_WiFi_Student(0040) 0000 d mi          2:53
+ba:d8:b2:b6:0d:fe VLAN30_WiFi_Mgmt(0030) 0194 d m           1:53
+ba:d8:b2:b6:0d:fe VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+bc:ad:28:51:3b:30 VLAN2_Security(0002) 0000 d mi          2:54
+bc:ad:28:5b:78:a1 VLAN2_Security(0002) 0000 d mi          2:54
+bc:ad:28:5b:78:fc VLAN2_Security(0002) 0000 d mi          2:54
+bc:ad:28:74:14:f3 VLAN2_Security(0002) 0000 d mi          2:54
+bc:ad:28:75:dc:27 VLAN2_Security(0002) 0000 d mi          2:54
+be:2a:01:60:9d:98 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+be:33:b6:30:03:c1 VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+be:38:3a:42:92:24 VLAN40_WiFi_Student(0040) 0004 d m           2:43
+be:40:a2:a7:0f:1e VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+be:77:4d:a9:ce:4b VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+be:79:4d:3d:c6:d5 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+be:82:60:a2:f1:c4 VLAN40_WiFi_Student(0040) 0000 d mi          2:19
+be:c2:eb:a1:74:ae VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+be:c7:75:0d:a7:ab VLAN40_WiFi_Student(0040) 0000 d mi          2:53
+be:cb:b4:29:97:2f VLAN30_WiFi_Mgmt(0030) 0023 d m           1:53
+be:cb:b4:29:97:2f VLAN36_WiFi_Staff(0036) 0000 d mi          2:54
+be:df:83:24:8d:f7 VLAN36_WiFi_Staff(0036) 0097 d m           2:54
+be:f9:85:d6:19:3d VLAN36_WiFi_Staff(0036) 0000 d mi          2:54
+c2:0d:02:ee:21:84 VLAN30_WiFi_Mgmt(0030) 0231 d m           1:53
+c2:12:6b:ac:ad:7e VLAN40_WiFi_Student(0040) 0214 d m           2:54
+c2:1b:7e:45:ad:ae VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+c2:26:45:83:fb:3c VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+c2:3a:a7:b1:b2:21 VLAN40_WiFi_Student(0040) 0218 d m           2:54
+c2:5f:be:74:99:c4 VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+c2:77:55:85:87:73 VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+c2:8b:cf:bc:ea:02 VLAN30_WiFi_Mgmt(0030) 0147 d m           1:53
+c2:8b:cf:bc:ea:02 VLAN40_WiFi_Student(0040) 0022 d m           2:54
+c2:93:7e:6a:fe:b4 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+c2:b1:12:9f:50:ac VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+c2:ca:c3:aa:ba:6d VLAN36_WiFi_Staff(0036) 0000 d mi          2:35
+c2:cc:3f:69:b8:e0 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+c2:cf:8f:59:0a:7e VLAN36_WiFi_Staff(0036) 0000 d mi          1:54
+c2:dd:a4:e5:1e:0f VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+c2:f1:06:50:2c:27 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+c4:1c:ff:b2:13:ce VLAN40_WiFi_Student(0040) 0013 d m           2:54
+c4:2f:90:42:b3:ad VLAN2_Security(0002) 0000 d mi          2:54
+c4:2f:90:42:b3:b0 VLAN2_Security(0002) 0000 d mi          2:54
+c4:2f:90:42:b3:c7 VLAN2_Security(0002) 0000 d mi          2:36
+c4:2f:90:42:b3:ef VLAN2_Security(0002) 0000 d mi          2:54
+c6:14:b3:f5:11:b8 VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+c6:22:75:71:31:06 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+c6:42:68:71:fb:6a VLAN30_WiFi_Mgmt(0030) 0191 d m           2:41
+c6:42:68:71:fb:6a VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+c6:4b:fc:37:bd:b7 VLAN36_WiFi_Staff(0036) 0000 d mi          1:54
+c6:53:69:c7:9a:59 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+c6:6a:ce:f7:4c:2a VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+c6:79:90:c8:2e:61 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+c6:a1:5f:6e:51:f3 VLAN36_WiFi_Staff(0036) 0000 d mi          1:53
+c6:b9:d9:81:2c:00 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+c6:db:b3:b9:5e:e4 VLAN40_WiFi_Student(0040) 0000 d mi          2:19
+ca:0c:c8:1b:74:25 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+ca:16:74:e2:63:5d VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+ca:35:68:6b:ee:81 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+ca:3c:d3:f5:22:7b VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+ca:4f:b5:b1:3b:49 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+ca:50:6f:7b:fc:da VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+ca:57:69:f6:02:52 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+ca:78:1c:e4:b3:d3 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+ca:a1:76:4a:20:d7 VLAN40_WiFi_Student(0040) 0002 d m           2:54
+ca:ae:bc:db:42:a7 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+ca:cc:5d:e0:3a:6b VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+ca:d0:0a:15:50:d9 VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+ca:e2:23:30:63:60 VLAN40_WiFi_Student(0040) 0000 d mi          2:35
+ca:e2:ba:5d:8c:f3 VLAN36_WiFi_Staff(0036) 0000 d mi          1:54
+ca:e5:e5:70:45:9a VLAN40_WiFi_Student(0040) 0000 d mi          2:53
+ce:19:3b:bf:7a:1f VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+ce:65:27:82:20:cb VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+ce:95:a2:8d:90:e5 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+ce:ac:97:ce:db:de VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+ce:ad:4e:9a:aa:4b VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+ce:b2:bc:95:bd:3f VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+ce:bf:45:79:65:1a VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+ce:cd:25:46:e4:fe VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+ce:f7:39:c1:36:5c VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+ce:fc:10:40:32:c6 VLAN36_WiFi_Staff(0036) 0000 d mi          1:53
+d0:c6:37:5d:c3:3e VLAN36_WiFi_Staff(0036) 0000 d mi          1:53
+d0:c6:37:b4:d3:e5 VLAN36_WiFi_Staff(0036) 0000 d mi          2:54
+d2:21:d5:76:3a:b4 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+d2:42:4a:02:35:cc VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+d2:54:f7:e8:b9:05 VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+d2:61:01:40:e1:fb VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+d2:83:d2:fc:36:85 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+d2:8d:76:45:7a:b9 VLAN30_WiFi_Mgmt(0030) 0029 d m           2:54
+d2:8d:76:45:7a:b9 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+d2:a8:93:82:9c:7f VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+d2:a9:0b:f8:3b:65 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+d2:ea:bd:96:a5:41 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+d2:ef:56:d9:f5:b4 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+d2:f6:61:6b:35:4f VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+d6:0d:81:35:46:eb VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+d6:53:0c:db:48:9b VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+d6:68:3e:b1:f6:79 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+d6:73:ee:9e:bb:9b VLAN36_WiFi_Staff(0036) 0000 d mi          1:3
+d6:7a:24:ec:10:76 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+d6:a2:4d:30:49:3d VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+d6:df:b1:a2:88:ed VLAN40_WiFi_Student(0040) 0000 d mi          2:19
+d6:ee:22:41:fe:ca VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+da:0e:05:0e:aa:e9 VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+da:2a:e7:d0:e5:2c VLAN40_WiFi_Student(0040) 0000 d mi          2:19
+da:37:b8:c0:cd:8d VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+da:48:8e:b4:79:50 VLAN36_WiFi_Staff(0036) 0000 d mi          1:53
+da:4f:dd:f4:56:27 VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+da:54:ff:f8:a4:c7 VLAN36_WiFi_Staff(0036) 0000 d mi          2:13
+da:5c:4f:fd:af:8e VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+da:7b:a0:06:70:74 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+da:96:a7:e5:c0:1f VLAN30_WiFi_Mgmt(0030) 0190 d m           2:41
+da:9a:01:90:d2:42 VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+da:bd:ef:30:38:45 VLAN40_WiFi_Student(0040) 0286 d m           2:54
+da:bf:7d:d9:fb:b4 VLAN36_WiFi_Staff(0036) 0000 d mi          1:53
+da:c4:89:c9:5e:5d VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+da:cd:49:52:21:5a VLAN36_WiFi_Staff(0036) 0000 d mi          1:53
+da:d7:94:9e:fc:d6 VLAN40_WiFi_Student(0040) 0000 d mi          2:19
+da:ed:73:3e:98:60 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+da:f0:54:ac:2c:b8 VLAN40_WiFi_Student(0040) 0000 d mi          2:53
+dc:1b:a1:8f:97:3d VLAN36_WiFi_Staff(0036) 0000 d mi          1:53
+dc:e5:5b:17:9c:55 VLAN36_WiFi_Staff(0036) 0000 d mi          2:54
+de:09:33:95:da:f9 VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+de:17:a6:65:83:6f VLAN36_WiFi_Staff(0036) 0000 d mi          1:54
+de:19:8f:53:f4:b7 VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+de:1f:e3:96:03:35 VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+de:2b:b0:96:f7:a5 VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+de:87:ae:1c:2e:01 VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+de:b9:99:25:31:dd VLAN40_WiFi_Student(0040) 0000 d mi          2:35
+de:c9:45:41:22:09 VLAN36_WiFi_Staff(0036) 0000 d mi          2:54
+de:d1:dc:0b:94:66 VLAN30_WiFi_Mgmt(0030) 0211 d m           2:43
+de:d1:dc:0b:94:66 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+de:f5:df:54:0f:10 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+de:f9:86:11:c4:28 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+e0:1c:41:0a:32:c0 VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:54
+e0:1c:41:0a:33:00 VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:54
+e0:1c:41:0a:33:80 VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:54
+e0:1c:41:0a:33:c0 VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:54
+e0:1c:41:0a:34:c0 VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:54
+e0:1c:41:0a:35:00 VLAN30_WiFi_Mgmt(0030) 0000 d mi          2:54
+e2:70:3b:24:b0:97 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+e2:79:aa:71:b6:06 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+e2:8c:04:91:59:c7 VLAN30_WiFi_Mgmt(0030) 0222 d m           2:54
+e2:8c:04:91:59:c7 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+e2:9f:08:5a:f8:31 VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+e2:a6:2d:bb:54:02 VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+e2:db:c8:49:0d:bd VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+e2:f1:de:75:cb:ec VLAN36_WiFi_Staff(0036) 0000 d mi          1:53
+e2:fc:84:13:0a:24 VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+e2:fd:b4:12:b2:50 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+e6:0b:71:45:b9:a9 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+e6:0f:17:a4:a8:87 VLAN30_WiFi_Mgmt(0030) 0141 d m           2:54
+e6:0f:17:a4:a8:87 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+e6:48:26:54:46:e6 VLAN40_WiFi_Student(0040) 0016 d m           2:54
+e6:5f:86:73:a3:39 VLAN40_WiFi_Student(0040) 0000 d mi          2:35
+e6:83:65:1b:55:13 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+e6:b2:0a:64:da:40 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+e6:da:14:a2:bf:73 VLAN36_WiFi_Staff(0036) 0000 d mi          1:53
+e6:ee:07:35:4c:b0 VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+e6:fd:9d:80:40:26 VLAN30_WiFi_Mgmt(0030) 0176 d m           1:17
+e6:fd:9d:80:40:26 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+e8:b5:d0:ec:df:d1 VLAN8_Data(0008) 0000 d mi          1:53
+ea:01:7d:f6:37:f5 VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+ea:01:d7:c9:8f:57 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+ea:0a:77:24:d5:4f VLAN40_WiFi_Student(0040) 0000 d mi          2:19
+ea:35:4d:d8:2f:3a VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+ea:66:a7:12:7f:23 VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+ea:7e:78:9b:fc:e3 VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+ea:c5:b2:23:9e:43 VLAN40_WiFi_Student(0040) 0000 d mi          2:19
+ea:dd:41:71:d5:6b VLAN30_WiFi_Mgmt(0030) 0223 d m           1:53
+ea:dd:41:71:d5:6b VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+ea:e8:e2:fc:1a:df VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+ea:f3:b8:fc:2e:d5 VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+ec:2a:72:4b:18:b4 VLAN2_Security(0002) 0000 d mi          3:18
+ee:07:68:39:c6:94 VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+ee:38:20:3b:2d:a1 VLAN30_WiFi_Mgmt(0030) 0294 d m           1:53
+ee:38:20:3b:2d:a1 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+ee:48:e8:28:69:df VLAN30_WiFi_Mgmt(0030) 0278 d m           2:43
+ee:48:e8:28:69:df VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+ee:68:77:3e:68:46 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+ee:a5:fb:96:cc:14 VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+ee:aa:06:a2:a3:7f VLAN36_WiFi_Staff(0036) 0000 d mi          1:54
+ee:ba:c4:41:ab:e5 VLAN36_WiFi_Staff(0036) 0000 d mi          2:53
+ee:e4:a4:56:27:5b VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+ee:e8:c8:90:b1:4b VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+f0:18:98:ef:80:c9 VLAN8_Data(0008) 0000 d mi          3:20
+f2:14:4c:c2:49:a0 VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+f2:17:76:fe:90:c9 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+f2:1a:63:b6:55:9d VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+f2:27:a5:0d:62:ae VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+f2:5b:1d:ef:74:ed VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+f2:61:10:b6:86:5d VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+f2:66:da:24:b8:5c VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+f2:68:8b:31:87:1f VLAN36_WiFi_Staff(0036) 0000 d mi          1:53
+f2:94:16:b5:36:cf VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+f2:ac:02:ac:a4:09 VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+f2:b6:4a:b4:d6:28 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+f2:e2:c6:4b:79:5d VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+f2:ea:32:76:dc:89 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+f2:fa:96:9a:da:34 VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+f2:fd:1c:ba:db:e2 VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+f6:0e:29:32:7c:1a VLAN30_WiFi_Mgmt(0030) 0224 d m           1:53
+f6:0e:29:32:7c:1a VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+f6:43:9f:2a:3a:88 VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+f6:50:49:c2:36:60 VLAN40_WiFi_Student(0040) 0000 d mi          2:53
+f6:51:cc:1f:2a:d0 VLAN40_WiFi_Student(0040) 0000 d mi          2:19
+f6:56:a5:6d:27:4c VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+f6:66:68:c5:35:2b VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+f6:68:cd:99:f3:b5 VLAN40_WiFi_Student(0040) 0000 d mi          2:53
+f6:76:7e:91:c2:67 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+f6:9d:f0:bd:a8:e2 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+f6:a4:c8:bb:9c:e2 VLAN30_WiFi_Mgmt(0030) 0190 d m           2:41
+f6:a4:c8:bb:9c:e2 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+f6:a5:b7:52:2a:e4 VLAN40_WiFi_Student(0040) 0208 d m           2:54
+f6:cf:a6:d5:bf:78 VLAN40_WiFi_Student(0040) 0000 d mi          2:53
+f6:d5:89:89:28:4e VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+f6:ea:e1:c9:0e:66 VLAN36_WiFi_Staff(0036) 0000 d mi          1:54
+f8:4d:89:84:ae:35 VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+f8:4d:fc:22:2a:0b VLAN2_Security(0002) 0000 d mi          2:54
+f8:9e:94:0f:a2:f3 VLAN36_WiFi_Staff(0036) 0000 d mi          1:53
+f8:9e:94:10:d9:84 VLAN36_WiFi_Staff(0036) 0000 d mi          1:53
+f8:9e:94:16:c7:0e VLAN36_WiFi_Staff(0036) 0000 d mi          2:53
+fa:10:ba:6c:6e:03 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+fa:30:eb:b6:7c:cf VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+fa:6d:3b:a4:b4:d7 VLAN40_WiFi_Student(0040) 0000 d mi          2:53
+fa:70:de:1b:ca:04 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+fa:86:c7:6e:17:67 VLAN30_WiFi_Mgmt(0030) 0042 d m           1:17
+fa:86:c7:6e:17:67 VLAN36_WiFi_Staff(0036) 0000 d mi          2:41
+fa:87:1b:af:d1:8b VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+fa:8b:0d:88:89:6f VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+fa:8b:0e:7d:65:d7 VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+fa:a3:fb:16:56:5b VLAN36_WiFi_Staff(0036) 0000 d mi          1:53
+fa:ac:d0:e5:f5:ce VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+fa:ad:73:14:90:6a VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+fa:c2:69:45:c4:1c VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+fa:d2:59:10:91:e4 VLAN36_WiFi_Staff(0036) 0000 d mi          1:53
+fa:d9:cd:62:95:9c VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+fa:e6:ff:3d:aa:5d VLAN30_WiFi_Mgmt(0030) 0243 d m           2:54
+fa:e6:ff:3d:aa:5d VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+fa:ff:42:53:9e:26 VLAN36_WiFi_Staff(0036) 0000 d mi          1:53
+fe:56:c1:50:7b:f8 VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+fe:72:28:6a:28:ee VLAN36_WiFi_Staff(0036) 0000 d mi          2:54
+fe:7a:4b:37:04:25 VLAN30_WiFi_Mgmt(0030) 0224 d m           1:54
+fe:7a:4b:37:04:25 VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+fe:7c:a8:92:bf:ca VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+fe:84:88:30:98:c2 VLAN40_WiFi_Student(0040) 0278 d m           1:53
+fe:de:c6:b5:b4:fb VLAN40_WiFi_Student(0040) 0000 d mi          2:54
+fe:e6:37:ce:05:67 VLAN40_WiFi_Student(0040) 0000 d mi          1:54
+fe:f6:0d:94:42:b8 VLAN40_WiFi_Student(0040) 0000 d mi          1:53
+fe:fc:f9:6c:be:d1 VLAN40_WiFi_Student(0040) 0000 d mi          2:19
+
+Flags : d - Dynamic, s - Static, p - Permanent, n - NetLogin, m - MAC, i - IP,
+        x - IPX, l - lockdown MAC, L - lockdown-timeout MAC, M- Mirror, B - Egress Blackhole,
+        b - Ingress Blackhole, v - MAC-Based VLAN, P - Private VLAN, T - VLAN translation,
+        D - drop packet, h - Hardware Aging, o - IEEE 802.1ah Backbone MAC,
+        S - Software Controlled Deletion, r - MSRP
+
+Total: 1206 Static: 0  Perm: 0  Dyn: 1206  Dropped: 0  Locked: 0  Locked with Timeout: 0
+FDB Aging time: 300
