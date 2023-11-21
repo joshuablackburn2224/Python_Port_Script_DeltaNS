@@ -1,0 +1,58 @@
+﻿
+telnet session telnet0 on /dev/ptyb0
+
+*****************************************************************************
+**                              Warning Notice                             **
+** This system is restricted solely to Dearborn Public Schools authorized  **
+** users for legitimate school purposes only as defined in the Dearborn    **
+** Public Schools Acceptable Use Policy.  The actual or attempted          **
+** unauthorized access, use, or modification of this system is strictly    **
+** prohibited by Dearborn Public Schools.  Unauthorized users are subject  **
+** to school disciplinary proceedings and/or criminal and civil penalties  **
+** under state, federal, or other applicable domestic and foreign laws.    **
+** The use of this system may be monitored and recorded for administrative **
+** and security reasons.  Anyone accessing this system expressly consents  **
+** to such monitoring and is advised that if monitoring reveals possible   **
+** evidence of criminal activity, Dearborn Public Schools may provide the  **
+** evidence of such activity to law enforcement officials.  All users must **
+** comply with Dearborn Public Schools Acceptable Use Policy regarding the **
+** protection of Dearborn Public Schools Information assets.               **
+** Contact Information:                                                    **
+**                      Dearborn Public School HelpDesk,                   **
+**                  18700 Audette Dearborn, MI  48124-4295                 **
+**                              (313) 730-0319                             **
+**      ITDesk@dearborn.k12.mi.us      http://www.dearbornschools.org      **
+**                                                                         **
+*****************************************************************************
+
+login: delta
+password: 
+
+Login incorrect
+*****************************************************************************
+**                              Warning Notice                             **
+** This system is restricted solely to Dearborn Public Schools authorized  **
+** users for legitimate school purposes only as defined in the Dearborn    **
+** Public Schools Acceptable Use Policy.  The actual or attempted          **
+** unauthorized access, use, or modification of this system is strictly    **
+** prohibited by Dearborn Public Schools.  Unauthorized users are subject  **
+** to school disciplinary proceedings and/or criminal and civil penalties  **
+** under state, federal, or other applicable domestic and foreign laws.    **
+** The use of this system may be monitored and recorded for administrative **
+** and security reasons.  Anyone accessing this system expressly consents  **
+** to such monitoring and is advised that if monitoring reveals possible   **
+** evidence of criminal activity, Dearborn Public Schools may provide the  **
+** evidence of such activity to law enforcement officials.  All users must **
+** comply with Dearborn Public Schools Acceptable Use Policy regarding the **
+** protection of Dearborn Public Schools Information assets.               **
+** Contact Information:                                                    **
+**                      Dearborn Public School HelpDesk,                   **
+**                  18700 Audette Dearborn, MI  48124-4295                 **
+**                              (313) 730-0319                             **
+**      ITDesk@dearborn.k12.mi.us      http://www.dearbornschools.org      **
+**                                                                         **
+*****************************************************************************
+
+login: show power detail | inc
+lude 600W
+password: Login timed out!
