@@ -1,0 +1,130 @@
+﻿
+telnet session telnet0 on /dev/ptyb0
+
+**************************************************************************
+**                            Warning Notice                            **
+**  This system is restricted solely to Forest Hills Public Schools     **
+**  authorized users for legitimate school purposes. The actual or      **
+**  attempted unauthorized access, use, or modification of this system  **
+**  is strictly prohibited by Forest Hills Public Schools.              **
+**  Unauthorized users are subject to school disciplinary proceedings   **
+**  and/or criminal and civil penalties under state, federal, or other  **
+**  applicable domestic and foreign laws.  The use of this system may   **
+**  be monitored and recorded for security and administrative reasons.  **
+**  Anyone accessing this system expressly consents to such monitoring  **
+**  and is advised that if monitoring reveals possible evidence of      **
+**  criminal activity, Forest Hills Public Schools may provide the      **
+**  evidence of such activity to law enforcement officials.             **
+**************************************************************************
+
+login: admin
+password: 
+
+ExtremeXOS
+Copyright (C) 1996-2020 Extreme Networks. All rights reserved.
+This product is protected by one or more US patents listed at https://www.extremenetworks.com/company/legal/patents/ along with their foreign counterparts.
+==============================================================================
+
+
+Press the <tab> or '?' key at any time for completions.
+Remember to save your configuration changes.
+
+There have been 3157 successful logins since last reboot and 0 failed logins since last successful login
+Last Successful Login was on: Mon Dec 18 09:30:08 2023
+
+
+
+Slot-1 1041-Ada-B-Book.1 # show vlan
+Untagged ports auto-move: Inform
+-----------------------------------------------------------------------------------------------
+Name            VID  Protocol Addr       Flags                         Proto  Ports  Virtual   
+                                                                              Active router
+                                                                              /Total
+-----------------------------------------------------------------------------------------------
+Default         1    ----------------------------------------------    ANY    0 /0   VR-Default 
+Mgmt            4095 192.168.0.1    /24  --------------------------    ANY    0 /1   VR-Mgmt    
+NoLoop          666  ----------------------------------------------    ANY    39/80  VR-Default 
+VLAN10-Ada-Data 10   ----------------------------------------------    ANY    33/66  VR-Default 
+VLAN110-Ada-Chrome 110  ----------------------------------------------    ANY    18/38  VR-Default 
+VLAN210-Ada-Camera 210  ----------------------------------------------    ANY    6 /6   VR-Default 
+VLAN3-Mgmt      3    10.3.10.41     /16  --------------------------    ANY    18/38  VR-Default 
+VLAN322-Ada-Media 322  ----------------------------------------------    ANY    19/40  VR-Default 
+VLAN4-WIRELESS-CONTROL 4    ----------------------------------------------    ANY    1 /1   VR-Default 
+VLAN410-Ada-BYOD 410  ----------------------------------------------    ANY    18/39  VR-Default 
+VLAN450-AD-Staff 450  ----------------------------------------------    ANY    18/18  VR-Default 
+VLAN501-IOT     501  ----------------------------------------------    ANY    18/39  VR-Default 
+VLAN510-Ada-Phone 510  ----------------------------------------------    ANY    34/47  VR-Default 
+VLAN531-NHS-Phone 531  ----------------------------------------------    ANY    1 /1   VR-Default 
+VLAN631-NHS-Voice-Sys 631  ----------------------------------------------    ANY    1 /1   VR-Default 
+VLAN7-PUBLIC-Wireless 7    ----------------------------------------------    ANY    18/39  VR-Default 
+VLAN70-SCLC_Restricted 70   ----------------------------------------------    ANY    18/18  VR-Default 
+VLAN710-Ada-FH-GUEST 710  ----------------------------------------------    ANY    18/39  VR-Default 
+VLAN72-Chrome-Wireless 72   ----------------------------------------------    ANY    18/39  VR-Default 
+-----------------------------------------------------------------------------------------------
+Flags : (B) BFD Enabled, (c) 802.1ad customer VLAN, (C) EAPS Control VLAN,
+        (d) Dynamically created VLAN, (D) VLAN Admin Disabled,
+        (E) ESRP Enabled, (f) IP Forwarding Enabled,
+        (F) Learning Disabled, (i) ISIS Enabled,
+        (I) Inter-Switch Connection VLAN for MLAG, (k) PTP Configured,
+        (l) MPLS Enabled, (L) Loopback Enabled, (m) IPmc Forwarding Enabled,
+        (M) Translation Member VLAN or Subscriber VLAN, (n) IP Multinetting Enabled,
+        (N) Network Login VLAN, (o) OSPF Enabled, (O) Virtual Network Overlay,
+        (p) PIM Enabled, (P) EAPS protected VLAN, (r) RIP Enabled,
+        (R) Sub-VLAN IP Range Configured, (s) Sub-VLAN, (S) Super-VLAN,
+        (t) Translation VLAN or Network VLAN, (T) Member of STP Domain,
+        (v) VRRP Enabled, (V) VPLS Enabled, (W) VPWS Enabled,
+        (Y) Policy Enabled
+
+Total number of VLAN(s) : 19 
+Slot-1 1041-Ada-B-Book.2 #  
+Slot-1 1041-Ada-B-Book.2 # disable cli pa
+Slot-1 1041-Ada-B-Book.3 # show vlan VLAN10
+VLAN Interface with name VLAN10-Ada-Data created by user
+    Admin State:         Enabled     Tagging:   802.1Q Tag 10 
+    Description:         None
+    Virtual router:      VR-Default
+    IP Anycast:          Disabled
+    IPv4 Forwarding:     Disabled
+    IPv4 MC Forwarding:  Disabled
+    IPv6 Forwarding:     Disabled
+    IPv6 MC Forwarding:  Disabled
+    IPv6:                None
+    STPD:                None
+    Protocol:            Match all unfiltered protocols
+    Loopback:            Disabled
+    NetLogin:            Disabled
+    QosProfile:          None configured
+    Egress Rate Limit Designated Port: None configured
+    Flood Rate Limit QosProfile:       None configured
+    Suppress ARP:        Disabled
+    Suppress ND:         Disabled
+    Proxy ARP:           Entry required
+    Ports:   66.          (Number of active ports=33)
+       Untag:    1:39,   1:40,  *1:41,   1:42,   1:43,   *2:1,    2:2,
+                  2:3,    2:4,   *2:5,   *2:6,    2:7,    2:8,   *2:9,
+                *2:10,  *2:11,  *2:12,   2:13,  *2:14,  *2:15,   2:16,
+                *2:17,  *2:18,  *2:19,   2:21,   2:22,  *2:23,  *2:24
+       Tag:       1:1,    1:2,    1:3,    1:4,    1:5,    1:6,    1:7,
+                  1:8,    1:9,   1:10,   1:11,   1:12,   1:13,   1:14,
+                 1:16,   1:17,   1:18,   1:19,   1:20,   1:21,  *1:22,
+                *1:23,  *1:24,  *1:25,  *1:26,  *1:27,  *1:28,  *1:29,
+                *1:30,  *1:31,  *1:32,  *1:33,  *1:34,  *1:35,  *1:36,
+                *1:37,  *1:38,*1:52(to_Ada-MDF)
+        Flags:    (*) Active, (!) Disabled, (g) Load Sharing port
+                  (b) Port blocked on the vlan, (m) Mac-Based port
+                  (i) Port inactivated on the vlan due to VXLAN configuration
+                  (a) Egress traffic allowed for NetLogin
+                  (u) Egress traffic unallowed for NetLogin
+                  (t) Translate VLAN tag for Private-VLAN
+                  (s) Private-VLAN System Port, (L) Loopback port
+                  (x) VMAN Tag Translated port
+                  (A) Dynamically added by Auto-peering
+                  (F) Dynamically added by Fabric Attach
+                  (G) Multi-switch LAG Group port
+                  (H) Dynamically added by MVRP
+                  (I) Dynamically added by IDM
+                  (N) Dynamically added by Netlogin
+                  (U) Dynamically added uplink port
+                  (V) Dynamically added by VM Tracking
+
+Slot-1 1041-Ada-B-Book.4 # exit
