@@ -29,38 +29,37 @@ This product is protected by one or more US patents listed at https://www.extrem
 Press the <tab> or '?' key at any time for completions.
 Remember to save your configuration changes.
 
-There have been 13826 successful logins since last reboot and 0 failed logins since last successful login
-Last Successful Login was on: Mon Dec 18 09:48:39 2023
+There have been 10211 successful logins since last reboot and 0 failed logins since last successful login
+Last Successful Login was on: Thu Dec 21 16:03:43 2023
 
 
 
-Slot-1 1011-Ada-MDF.1 # show vlan
+Slot-1 1411-TA-MDF.1 # show vlan
 Untagged ports auto-move: Inform
 -----------------------------------------------------------------------------------------------
 Name            VID  Protocol Addr       Flags                         Proto  Ports  Virtual   
                                                                               Active router
                                                                               /Total
 -----------------------------------------------------------------------------------------------
-Default         1    --------------------------------T-------------    ANY    0 /4   VR-Default 
+Default         1    ----------------------------------------------    ANY    0 /0   VR-Default 
 Mgmt            4095 192.168.0.1    /24  --------------------------    ANY    0 /1   VR-Mgmt    
-NoLoop          666  ----------------------------------------------    ANY    72/151 VR-Default 
-VLAN10-Ada-Data 10   ----------------------------------------------    ANY    62/137 VR-Default 
-VLAN110-Ada-Chrome 110  ----------------------------------------------    ANY    18/21  VR-Default 
-VLAN210-Ada-Camera 210  ----------------------------------------------    ANY    6 /8   VR-Default 
-VLAN3-Mgmt      3    10.3.10.11     /16  --------------------------    ANY    17/20  VR-Default 
-VLAN322-Ada-Media 322  ----------------------------------------------    ANY    19/24  VR-Default 
-VLAN4-WIRELESS-CONTROL 4    ----------------------------------------------    ANY    3 /5   VR-Default 
-VLAN410-Ada-BYOD 410  ----------------------------------------------    ANY    18/21  VR-Default 
-VLAN450-AD-Staff 450  ----------------------------------------------    ANY    17/20  VR-Default 
-VLAN501-IOT     501  ----------------------------------------------    ANY    17/17  VR-Default 
+NoLoop          666  ----------------------------------------------    ANY    70/131 VR-Default 
+VLAN114-TA-Chrome 114  ----------------------------------------------    ANY    17/19  VR-Default 
+VLAN14-TA-Data  14   ----------------------------------------------    ANY    56/106 VR-Default 
+VLAN214-TA-Camera 214  ----------------------------------------------    ANY    7 /9   VR-Default 
+VLAN3-Mgmt      3    10.3.14.11     /16  --------------------------    ANY    17/19  VR-Default 
+VLAN314-TA-Media 314  ----------------------------------------------    ANY    20/23  VR-Default 
+VLAN4-WIRELESS-CONTROL 4    ----------------------------------------------    ANY    2 /3   VR-Default 
+VLAN414-TA-BYOD 414  ----------------------------------------------    ANY    17/19  VR-Default 
+VLAN454-TA-Staff 454  ----------------------------------------------    ANY    17/19  VR-Default 
+VLAN501-IOT     501  ----------------------------------------------    ANY    17/18  VR-Default 
 VLAN502-SecDoor 502  ----------------------------------------------    ANY    5 /5   VR-Default 
-VLAN510-Ada-Phone 510  ----------------------------------------------    ANY    68/143 VR-Default 
-VLAN531-NHS-Phone 531  ----------------------------------------------    ANY    3 /5   VR-Default 
-VLAN631-NHS-Voice-Sys 631  ----------------------------------------------    ANY    3 /5   VR-Default 
-VLAN7-PUBLIC-Wireless 7    ----------------------------------------------    ANY    17/20  VR-Default 
-VLAN70-SCLC_Restricted 70   ----------------------------------------------    ANY    18/21  VR-Default 
-VLAN710-Ada-FH-GUEST 710  ----------------------------------------------    ANY    17/20  VR-Default 
-VLAN72-Chrome-Wireless 72   ----------------------------------------------    ANY    18/21  VR-Default 
+VLAN514-TA-Phone 514  ----------------------------------------------    ANY    62/112 VR-Default 
+VLAN531-NHS-Phone 531  ----------------------------------------------    ANY    17/19  VR-Default 
+VLAN631-NHS-Voice-Sys 631  ----------------------------------------------    ANY    17/20  VR-Default 
+VLAN7-PUBLIC-Wireless 7    ----------------------------------------------    ANY    17/19  VR-Default 
+VLAN70-SCLC_Restricted 70   ----------------------------------------------    ANY    17/19  VR-Default 
+
 -----------------------------------------------------------------------------------------------
 Flags : (B) BFD Enabled, (c) 802.1ad customer VLAN, (C) EAPS Control VLAN,
         (d) Dynamically created VLAN, (D) VLAN Admin Disabled,
@@ -77,11 +76,11 @@ Flags : (B) BFD Enabled, (c) 802.1ad customer VLAN, (C) EAPS Control VLAN,
         (Y) Policy Enabled
 
 Total number of VLAN(s) : 20 
-Slot-1 1011-Ada-MDF.2 # 
-Slot-1 1011-Ada-MDF.2 # disable cli pa
-Slot-1 1011-Ada-MDF.3 # show vlan VLAN10
-VLAN Interface with name VLAN10-Ada-Data created by user
-    Admin State:         Enabled     Tagging:   802.1Q Tag 10 
+Slot-1 1411-TA-MDF.2 # 
+Slot-1 1411-TA-MDF.2 # disable cli pag
+Slot-1 1411-TA-MDF.3 # show vlan VLAN14
+VLAN Interface with name VLAN14-TA-Data created by user
+    Admin State:         Enabled     Tagging:   802.1Q Tag 14 
     Description:         None
     Virtual router:      VR-Default
     IP Anycast:          Disabled
@@ -100,27 +99,23 @@ VLAN Interface with name VLAN10-Ada-Data created by user
     Suppress ARP:        Disabled
     Suppress ND:         Disabled
     Proxy ARP:           Entry required
-    Ports:   137.         (Number of active ports=62)
-       Untag:    *1:1,    1:2,   *1:3,   *1:4,    1:5,    1:6,    1:7,
-                  1:8,   *1:9,   1:10,  *1:11,   1:12,   1:13,  *1:14,
-                 1:15,  *1:16,  *1:17,   1:18,  *1:19,  *1:20,   1:21,
-                 1:23,   1:24,   1:25,   1:26,   1:27,   1:28,  *1:29,
-                 1:30,  *1:31,   1:32,  *1:33,   1:34,   1:35,   1:36,
-                *1:37,  *1:38,  *1:39,   1:40,  *1:41,   1:42,  *1:43,
-                *1:44,   1:45,  *1:46,  *1:47,  *1:48,   *2:1,   *2:2,
-                 *2:3,   *2:4,   *2:5,   *2:6,    2:7,   *2:8,   *2:9,
-                *2:10,   2:11,  *2:12,  *2:13,  *2:14,  *2:15,  *2:16,
-                *2:21,  *2:27,  *2:28,  *2:30,  *2:44,   2:45,  *2:46,
-                  3:1,    3:2,    3:3,    3:4,    3:5,    3:6,   *3:7,
-                  3:8,   *3:9,  *3:10,   3:11,   3:12,   3:13,   3:14,
-                 3:15,   3:16,   3:17,   3:18,   3:19,   3:20,   3:21,
-                 3:22,   3:24,   3:25,   3:26,   3:27,   3:28,   3:29,
-                 3:30,   3:31,   3:32,   3:33,   3:34,   3:35,   3:36,
-                 3:37,   3:38,   3:39,   3:40,   3:41,   3:42,   3:43,
-                 3:44,   3:45,   3:46,   3:47,   3:48
-       Tag:   1:49(to_Ada_Lab),*1:50(to_Ada_Book),   2:29,  *2:31,  *2:32,  *2:33,  *2:34,
-                *2:35,  *2:36,  *2:37,  *2:38,  *2:39,  *2:40,  *2:41,
-                *2:42,  *2:43,*2:49(to_Ada_Kitchen),   2:50,  *3:23,*1:52(to_FHPS_Core)g
+    Ports:   106.         (Number of active ports=56)
+       Untag:    *1:1,    1:2,   *1:3,   *1:4,    1:5,    1:6,   *1:7,
+                  1:8,   *1:9,   1:10,  *1:11,  *1:12,   1:13,   1:14,
+                 1:15,  *1:16,   1:19,   1:20,   1:21,   1:22,   1:23,
+                 1:24,   1:25,   1:26,  *1:27,  *1:29,   1:30,  *1:31,
+                *1:32,  *1:33,   1:34,   1:35,  *1:36,  *1:37,   1:38,
+                *1:39,   1:40,   1:41,  *1:42,  *1:43,   1:44,  *1:45,
+                 1:46,  *1:47,   1:48,    2:1,    2:2,    2:3,    2:4,
+                  2:5,   *2:6,   *2:7,   *2:8,   *2:9,   2:10,   2:11,
+                 2:12,  *2:13,   2:14,  *2:15,   2:16,   2:17,  *2:18,
+                 2:20,   2:22,   2:28,  *2:29,   2:30,   2:31,  *2:33,
+                *2:35,  *2:36,  *2:37,   2:38,   2:39,   2:40,  *2:41,
+                 2:42,  *2:43,   2:44,  *2:47,   2:48,   3:18,  *3:19,
+                *3:20,  *3:23,  *3:24
+       Tag:   *1:49(to_TA_B_Paper),2:49(to_TA_MC),   *3:1,   *3:2,   *3:3,   *3:4,   *3:5,
+                 *3:6,   *3:7,   *3:8,   *3:9,  *3:10,  *3:11,   3:12,
+                *3:13,  *3:14,  *3:15,  *3:16,*1:52(to_FHPS_Core)g
         Flags:    (*) Active, (!) Disabled, (g) Load Sharing port
                   (b) Port blocked on the vlan, (m) Mac-Based port
                   (i) Port inactivated on the vlan due to VXLAN configuration
@@ -138,4 +133,6 @@ VLAN Interface with name VLAN10-Ada-Data created by user
                   (U) Dynamically added uplink port
                   (V) Dynamically added by VM Tracking
 
-Slot-1 1011-Ada-MDF.4 # exit
+Slot-1 1411-TA-MDF.4 # 
+Slot-1 1411-TA-MDF.4 # 
+Slot-1 1411-TA-MDF.4 # exit
