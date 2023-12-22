@@ -1,0 +1,118 @@
+﻿
+telnet session telnet0 on /dev/ptyb0
+
+**************************************************************************
+**                            Warning Notice                            **
+**  This system is restricted solely to Forest Hills Public Schools     **
+**  authorized users for legitimate school purposes. The actual or      **
+**  attempted unauthorized access, use, or modification of this system  **
+**  is strictly prohibited by Forest Hills Public Schools.              **
+**  Unauthorized users are subject to school disciplinary proceedings   **
+**  and/or criminal and civil penalties under state, federal, or other  **
+**  applicable domestic and foreign laws.  The use of this system may   **
+**  be monitored and recorded for security and administrative reasons.  **
+**  Anyone accessing this system expressly consents to such monitoring  **
+**  and is advised that if monitoring reveals possible evidence of      **
+**  criminal activity, Forest Hills Public Schools may provide the      **
+**  evidence of such activity to law enforcement officials.             **
+**************************************************************************
+
+login: admin
+password: 
+
+ExtremeXOS
+Copyright (C) 1996-2020 Extreme Networks. All rights reserved.
+This product is protected by one or more US patents listed at https://www.extremenetworks.com/company/legal/patents/ along with their foreign counterparts.
+==============================================================================
+
+
+Press the <tab> or '?' key at any time for completions.
+Remember to save your configuration changes.
+
+There have been 23242 successful logins since last reboot and 0 failed logins since last successful login
+Last Successful Login was on: Fri Dec 22 13:59:41 2023
+
+
+
+Slot-1 3011-CHS-MDF.1 # show vlan VLAN30
+VLAN Interface with name VLAN30-CHS-Data created by user
+    Admin State:         Enabled     Tagging:   802.1Q Tag 30 
+    Description:         None
+    Virtual router:      VR-Default
+    IP Anycast:          Disabled
+    IPv4 Forwarding:     Disabled
+    IPv4 MC Forwarding:  Disabled
+    IPv6 Forwarding:     Disabled
+    IPv6 MC Forwarding:  Disabled
+    IPv6:                None
+    STPD:                None
+    Protocol:            Match all unfiltered protocols
+    Loopback:            Disabled
+    NetLogin:            Disabled
+    QosProfile:          None configured
+    Egress Rate Limit Designated Port: None configured
+    Flood Rate Limit QosProfile:       None configured
+    Suppress ARP:        Disabled
+    Suppress ND:         Disabled
+    Proxy ARP:           Entry required
+    Ports:   216.         (Number of active ports=111)
+       Untag:    *1:1,    1:2,    1:3,   *1:4,   *1:5,   *1:6,    1:8,
+                  1:9,   1:10,  *1:11,   1:12,   1:13,  *1:17,   1:18,
+                *1:19,   1:20,  *1:21,   1:22,   1:23,   1:24,   1:25,
+                 1:26,   1:27,   1:28,   1:29,   1:30,   1:31,   1:32,
+                 1:33,  *1:34,  *1:35,   1:36,  *1:37,   1:38,  *1:39,
+                *1:40,  *1:41,  *1:42,  *1:43,  *1:44
+,  *1:45,   1:46,
+                *1:47,   1:48,  *2:34,   2:35,   2:36,   2:37,   2:38,
+                 2:45,   2:47,  *2:48,    3:1,    3:2,    3:3,    3:4,
+                  3:5,    3:6,  *3:15,   3:16,   3:17,   3:18,  *3:20,
+                *3:21,   3:22,  *3:23
+,  *3:24,  *3:25,  *3:26,  *3:27,
+                *3:28,  *3:29,   3:30,   3:31,   3:33,  *3:34,   3:35,
+                 3:36,   3:37,  *3:38,  *3:39,  *3:40,   3:41
+,   3:48,
+                  4:1,    4:2,    4:3,   *4:4,    4:5,    4:6,    4:7,
+                  4:8
+,    4:9,   4:10,   4:11,   4:12,   4:13,   4:14,
+                 4:15,   4:16,   4:17,   4:18,   4:19,   4:20,   4:21,
+                 4:22,  *4:23,  *4:24,  *4:25,  *4:26,   4:27,  *4:28,
+                 4:29,   4:30,   4:31,   4:32,  *4:33,  *4:34,  *4:35,
+                *4:36,   4:37,   4:38,   4:39,   4:40,   4:41,   4:42,
+                 4:43,   4:44,  *4:45,   4:46,  *4:47
+,   *5:1,    5:2,
+                 *5:3,    5:4,    5:5,    5:6,   *5:7,    5:8,   *5:9,
+                *5:11,  *5:12,   5:13,   5:14,  *5:15,  *5:16,   5:17,
+                *5:18,   5:19,   5:20,  *5:21,  *5:22,  *5:23,   5:24,
+                 *6:1,   *6:2,    6:3,   *6:5,    6:6,   *6:7,   *6:8,
+                  6:9,  *6:10,  *6:11,  *6:12,   6:13,  *6:14,   6:15,
+                 6:16,  *6:17,  *6:18,  *6:19,   6:20,   6:21,   6:22,
+                 6:24
+       Tag:   *1:49(to_CHS_C_Ath),*1:50(to_CHS_G_Gym),   *2:1,   *2:2,   *2:3,   *2:4,   *2:5,
+                 *2:6,   *2:7,   *2:8,   *2:9,  *2:10,  *2:11,  *2:12,
+                *2:13,  *2:14,  *2:15,  *2:16,  *2:17,  *2:18,  *2:19,
+                *2:20,  *2:21,  *2:22,  *2:23,  *2:24,  *2:25,  *2:26,
+                *2:27,  *2:28,  *2:29,  *2:30,*2:49(to_CHS_F_Rm225),*2:50(to_CHS_B_Aud),  *3:49,
+              *3:50(to_CHS_Art),*3:51(to_CHS_E_Cafe),  *3:52,*1:51(to_Trans_MDF)g,*1:52(to_FHPS_Core)g
+
+
+
+        Flags:    (*) Active, (!) Disabled, (g) Load Sharing port
+                  (b) Port blocked on the vlan, (m) Mac-Based port
+                  (i) Port inactivated on the vlan due to VXLAN configuration
+                  (a) Egress traffic allowed for NetLogin
+                  (u) Egress traffic unallowed for NetLogin
+                  (t) Translate VLAN tag for Private-VLAN
+                  (s) Private-VLAN System Port, (L) Loopback port
+                  (x) VMAN Tag Translated port
+                  (A) Dynamically added by Auto-peering
+                  (F) Dynamically added by Fabric Attach
+                  (G) Multi-switch LAG Group port
+                  (H) Dynamically added by MVRP
+                  (I) Dynamically added by IDM
+                  (N) Dynamically added by Netlogin
+                  (U) Dynamically added uplink port
+                  (V) Dynamically added by VM Tracking
+
+Slot-1 3011-CHS-MDF.2 # 
+Slot-1 3011-CHS-MDF.2 # 
+Slot-1 3011-CHS-MDF.2 # exit
