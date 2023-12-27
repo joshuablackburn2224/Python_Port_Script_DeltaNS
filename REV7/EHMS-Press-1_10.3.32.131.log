@@ -29,11 +29,12 @@ This product is protected by one or more US patents listed at https://www.extrem
 Press the <tab> or '?' key at any time for completions.
 Remember to save your configuration changes.
 
-There have been 1099 successful logins since last reboot and 0 failed logins since last successful login
-Last Successful Login was on: Fri Dec 22 03:22:52 2023
+There have been 1118 successful logins since last reboot and 0 failed logins since last successful login
+Last Successful Login was on: Wed Dec 27 03:22:52 2023
 
 
 
+32131-EHMS-Press.1 # 
 32131-EHMS-Press.1 # disable cli pag
 32131-EHMS-Press.2 # 
 32131-EHMS-Press.2 # show vlan VLAN32
@@ -78,6 +79,5 @@ VLAN Interface with name VLAN32-EHMS-Data created by user
                   (U) Dynamically added uplink port
                   (V) Dynamically added by VM Tracking
 
-32131-EHMS-Press.3 # 
 32131-EHMS-Press.3 # 
 32131-EHMS-Press.3 # exit
